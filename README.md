@@ -1,2 +1,3 @@
 # CultureUp
-The Cultural HZ app
+The HZ application to let students 
+from different cultures get in touch.
