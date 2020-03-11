@@ -24,24 +24,30 @@ class CasesController extends Controller
      */
     public function create()
     {
-        //
+        return view('welcome');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        $case = new cases();
+        $case->name = request('name');
+        $case->subject = request('subject');
+        $case->isHidden = ((request('isHidden')== 'on') ? true : false);
+        $case->isLocked = ((request('isLocked')== 'on') ? true : false);
+
+        $case->save();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\cases  $cases
+     * @param \App\cases $cases
      * @return \Illuminate\Http\Response
      */
     public function show(cases $cases)
@@ -52,19 +58,19 @@ class CasesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\cases  $cases
+     * @param \App\cases $cases
      * @return \Illuminate\Http\Response
      */
     public function edit(cases $cases)
     {
-        //
+
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\cases  $cases
+     * @param \Illuminate\Http\Request $request
+     * @param \App\cases $cases
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, cases $cases)
@@ -75,7 +81,7 @@ class CasesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\cases  $cases
+     * @param \App\cases $cases
      * @return \Illuminate\Http\Response
      */
     public function destroy(cases $cases)
