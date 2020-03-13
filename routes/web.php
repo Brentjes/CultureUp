@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes();
 
-Route::resource('cases', 'CasesController');
+Route::get('/home', function() {
+    return view('home');
+})->name('home')->middleware('auth');
