@@ -61,7 +61,11 @@ class PageController extends Controller
             }
             $element->left = rand(0,900);
             $element->top = rand(0,900);
-            $element->height = rand(100,400);
+            if($element->type == 'img'){
+                $element->height = 'auto';
+            } else {
+                $element->height = rand(200,500);
+            }
             $element->width = rand(200,500);
             array_push($elements, $element);
 
