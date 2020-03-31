@@ -3,8 +3,8 @@
 @endif
 <div style="
     position: fixed !important;
-    left: {{$element->left}} !important;
-    top: {{$element->top}} !important;
+    left: {{$element->left}};
+    top: {{$element->top}} ;
     height: {{$element->height}};
     width: {{$element->width}};
     @if($element->type == "link")
@@ -13,6 +13,8 @@
     @else
     @if($element->type =="text")
         z-index: 1 !important;
+    @else
+    z-index: 0 !important;
     @endif
         background: white;
         border-color: goldenrod;
