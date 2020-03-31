@@ -32,13 +32,13 @@
 
         <ul class="list-unstyled components">
             <li>
-                <a href="#">Add Text</a>
+                <a href="#"><i class="fas fa-quote-right"></i> Add Text</a>
             </li>
             <li>
-                <a href="#">Add Image</a>
+                <a href="#"><i class="fas fa-image"></i> Add Image</a>
             </li>
             <li>
-                <a href="#">Add Link</a>
+                <a href="#"><i class="fas fa-link"></i> Add Link</a>
             </li>
         </ul>
 
