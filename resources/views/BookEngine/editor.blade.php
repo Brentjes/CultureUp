@@ -26,7 +26,7 @@
 
     <div class="wrapper" >
         <!-- Sidebar -->
-        <nav id="sidebar" class="active" style="z-index: 100">
+        <nav id="sidebar" style="z-index: 100">
             <div class="sidebar-header">
                 <h3>CultureUp Editor</h3>
             </div>
@@ -50,13 +50,11 @@
             <div style="position: absolute; left: 0; top: 0; z-index: -5">
                 @include ('BookEngine.page', compact('page'))
             </div>
-            <div style="z-index: 50">
-                <button type="button" id="sidebarCollapse" class="navbar-btn" style="z-index: 51">
+                <button type="button" id="sidebarCollapse" class="btn btn-light rounded">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
-            </div>
         </div>
     </div>
 
