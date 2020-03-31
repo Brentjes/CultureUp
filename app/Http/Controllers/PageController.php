@@ -57,7 +57,7 @@ class PageController extends Controller
             } else if($element->type == 'text'){
                 $element->text = 'test';
             } else if($element->type == 'img'){
-                $element->imgSrc = 'https://steamuserimages-a.akamaihd.net/ugc/808804068649773216/DEB0B6AC2CFE49799059F277E5C7DCA22AB0C227/?imw=1024&imh=1024&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true';
+                $element->imgSrc = 'https://picsum.photos/'.rand(0,400).'/200';
             }
             $element->left = rand(0,900);
             $element->top = rand(0,900);
@@ -70,9 +70,9 @@ class PageController extends Controller
             array_push($elements, $element);
 
 }
-$Page = new Page;
-        $Page->Elements = $elements;
-return view('BookEngine.Page',compact('Page'));
+$page = new Page;
+        $page->elements = $elements;
+return view('BookEngine.editor',compact('page'));
     }
 
     /**

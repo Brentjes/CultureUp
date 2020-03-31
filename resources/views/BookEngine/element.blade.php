@@ -2,16 +2,18 @@
     <a href="{{$element->linkPage}}">
 @endif
 <div style="
-    position: fixed;
-    left: {{$element->left}};
-    top: {{$element->top}};
+    position: fixed !important;
+    left: {{$element->left}} !important;
+    top: {{$element->top}} !important;
     height: {{$element->height}};
     width: {{$element->width}};
     @if($element->type == "link")
-        /*background: rgba(255,0,0,0);*/
-        background: red;
-        z-index: 500;
+        background: red !important;
+        z-index: 2 !important;
     @else
+    @if($element->type =="text")
+        z-index: 1 !important;
+    @endif
         background: white;
         border-color: goldenrod;
         border-width: 3px;

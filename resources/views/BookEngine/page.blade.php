@@ -1,7 +1,7 @@
 
 
 <div>
-@foreach($Page->Elements as $element)
+@foreach($page->elements as $element)
     @include('BookEngine.element', compact('element'))
 @endforeach
 </div>
