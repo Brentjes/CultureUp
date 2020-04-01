@@ -13,6 +13,10 @@
 
 Auth::routes();
 
-Route::get('/home', function() {
+Route::get('/', function() {
     return view('home');
 })->name('home')->middleware('auth');
+
+Route::get('/proto', function() {
+    return view('cases_proto');
+})->name('cases_proto')->middleware('auth');
