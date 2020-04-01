@@ -1,10 +1,11 @@
 @import "https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700";
 
 html {
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 .wrapper {
+    background-color: #343d46;
     display: flex;
     width: 100%;
 }

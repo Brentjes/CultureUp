@@ -31,7 +31,7 @@ class PageController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -42,7 +42,7 @@ class PageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function show($id)
@@ -51,34 +51,33 @@ class PageController extends Controller
         $elements = [];
         for ($counter = 0; $counter < 10; $counter++) {
             $element = new Element;
-            $element->type = $types[rand(0,2)];
-            if($element->type == 'link'){
+            $element->type = $types[rand(0, 2)];
+            if ($element->type == 'link') {
                 $element->linkPage = 'http://www.google.com';
-            } else if($element->type == 'text'){
+                $element->height = rand(200, 500);
+                $element->width = rand(200, 600);
+            } else if ($element->type == 'text') {
                 $element->text = 'test';
-            } else if($element->type == 'img'){
-                $element->imgSrc = 'https://picsum.photos/'.rand(10,50).'/200';
+                $element->height = rand(200, 500);
+                $element->width = rand(200, 600);
+            } else if ($element->type == 'img') {
+                $element->imgSrc = 'https://picsum.photos/' . rand(1, 300) . '/500';
+                $element->width = rand(200, 600);
+                $element->height = $element->width;
             }
-            $element->left = rand(0,80);
-            $element->top = rand(0,100);
-            if($element->type == 'img'){
-                $element->height = 'auto';
-            } else {
-                $element->height = rand(10,50);
-            }
-            $element->width = rand(10,60);
+            $element->left = rand(0, 80);
+            $element->top = rand(0, 80);
             array_push($elements, $element);
-
-}
-$page = new Page;
+        }
+        $page = new Page;
         $page->elements = $elements;
-return view('BookEngine.editor',compact('page'));
+        return view('BookEngine.editor', compact('page'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -89,8 +88,8 @@ return view('BookEngine.editor',compact('page'));
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -101,7 +100,7 @@ return view('BookEngine.editor',compact('page'));
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

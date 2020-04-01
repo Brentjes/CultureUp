@@ -5,10 +5,11 @@
             position: absolute;
             left: {{$element->left}}vw;
             top: {{$element->top}}vh;
-            height: {{$element->height}}vh;
-            width: {{$element->width}}vw;
+            height: {{$element->height}}px;
+            width: {{$element->width}}px;
         @if($element->type == "link")
-            background: red;
+            background: transparent;
+            border: 3px dotted goldenrod;
             z-index: 2;
         @else
         @if($element->type =="text")
@@ -17,15 +18,13 @@
             z-index: 0;
         @endif
             background: white;
-            border-color: goldenrod;
-            border-width: 3px;
-            border-style: solid;
+            border: 3px solid goldenrod;
         @endif">
 
             @if($element->type == "text")
                 <p>{{$element->text}}</p>
             @elseif($element->type == "img")
-                <img src="{{$element->imgSrc}}" alt="img" width="{{$element->width}}vw" height="{{$element->height}}vh">
+                <img src="{{$element->imgSrc}}" alt="img" width="{{$element->width}}px" height="{{$element->height}}">
             @endif
 
         </div>
