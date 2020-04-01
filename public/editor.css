@@ -1,18 +1,23 @@
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import "https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700";
+
+html {
+    overflow-y: hidden;
+}
 
 .wrapper {
     display: flex;
     width: 100%;
-    align-items: stretch;
-    perspective: 1500px;
+}
+
+#content {
+    z-index: 10;
 }
 
 #sidebar {
-     min-width: 250px;
-     max-width: 250px;
+    min-width: 250px;
+    max-width: 250px;
     min-height: 100vh;
-    transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
-    transform-origin: left;
+    transition: all 0.5s;
     background: white;
     background-image: url("/images/polygon.png");
     background-repeat: no-repeat;
@@ -21,16 +26,15 @@
 
 #sidebar.active {
     margin-left: -250px;
-    transform: rotateY(100deg);
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     background: #fafafa;
 }
 
 p {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
@@ -51,7 +55,6 @@ a, a:hover, a:focus {
 
 #sidebar ul.components {
     padding: 20px 0;
-    /*border-bottom: 1px solid #47748b;*/
 }
 
 #sidebar ul p {
@@ -95,24 +98,19 @@ ul ul a {
 }
 
 #sidebarCollapse span:first-of-type {
-    /* rotate first one */
     transform: rotate(45deg) translate(2px, 2px);
 }
 
 #sidebarCollapse span:nth-of-type(2) {
-    /* second one is not visible */
     opacity: 0;
 }
 
 #sidebarCollapse span:last-of-type {
-    /* rotate third one */
     transform: rotate(-45deg) translate(1px, -1px);
 }
 
 #sidebarCollapse.active span {
-    /* no rotation */
     transform: none;
-    /* all bars are visible */
     opacity: 1;
     margin: 3px auto;
 }

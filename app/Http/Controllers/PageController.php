@@ -57,16 +57,16 @@ class PageController extends Controller
             } else if($element->type == 'text'){
                 $element->text = 'test';
             } else if($element->type == 'img'){
-                $element->imgSrc = 'https://picsum.photos/'.rand(0,400).'/200';
+                $element->imgSrc = 'https://picsum.photos/'.rand(10,50).'/200';
             }
-            $element->left = rand(0,900);
-            $element->top = rand(0,900);
+            $element->left = rand(0,80);
+            $element->top = rand(0,100);
             if($element->type == 'img'){
                 $element->height = 'auto';
             } else {
-                $element->height = rand(200,500);
+                $element->height = rand(10,50);
             }
-            $element->width = rand(200,500);
+            $element->width = rand(10,60);
             array_push($elements, $element);
 
 }
