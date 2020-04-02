@@ -20,3 +20,7 @@ Route::get('/', function() {
 Route::get('/proto', function() {
     return view('cases_proto');
 })->name('cases_proto')->middleware('auth');
+
+Route::get('/student', function() {
+    return view('StudentPage.home');
+})->name('Home')->middleware('auth');

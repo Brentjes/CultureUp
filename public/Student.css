@@ -1,0 +1,26 @@
+
+
+.studentHeader {
+    color: black;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.ribbon {
+   background-image: url("polygon.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.ribbonText {
+    color: white;
+    font-weight: bold;
+    float: left;
+}
+
+.w-60 {
+    width: 60%;
+}

@@ -1,6 +1,7 @@
 @extends ('layouts.culture_up_layout')
 @section ('content')
     <section id="home">
+
         <div class="container-fluid cards">
             <div class="wow card-columns">
                 <a href="/case" class="custom-card">
