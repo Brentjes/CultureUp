@@ -1,30 +1,26 @@
 @if($element->type == "link")
     <a href="{{$element->linkPage}}">
         @endif
-        <div style="
-            position: absolute;
+        <div class="element-Game
+            @if($element->type == "img") element-Game-Image
+            @elseif ($element->type == "text") element-Game-Text
+            @elseif ($element->type == "link") element-Game-Link
+            @endif"
+
+             style="
+                 position: absolute;
             left: {{$element->left}}vw;
             top: {{$element->top}}vh;
-            height: {{$element->height}}px;
-            width: {{$element->width}}px;
-        @if($element->type == "link")
-            background: transparent;
-            border: 3px dotted goldenrod;
-            z-index: 2;
-        @else
-        @if($element->type =="text")
-            z-index: 1;
-        @else
-            z-index: 0;
-        @endif
-            background: white;
-            border: 3px solid goldenrod;
-        @endif">
+            height: {{$element->height}};
+            width: {{$element->width}};
+            @if($element->type =="img")
+                background-image: url({{$element->imgSrc}});
+                background-size: {{$element->width}} {{$element->height}};
+            @endif
+            ">
 
             @if($element->type == "text")
                 <p>{{$element->text}}</p>
-            @elseif($element->type == "img")
-                <img src="{{$element->imgSrc}}" alt="img" width="{{$element->width}}px" height="{{$element->height}}">
             @endif
 
         </div>

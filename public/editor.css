@@ -150,4 +150,29 @@ ul ul a {
     #sidebarCollapse.active span:last-of-type {
         transform: rotate(-45deg) translate(1px, -1px);
     }
+
+
+}
+
+.element-Game-Image{
+    z-index: 0;
+    background-repeat: no-repeat;
+    border: 3px solid goldenrod;
+}
+
+.element-Game-Text{
+    z-index: 1;
+    background: white;
+    border: 3px solid goldenrod;
+}
+
+.element-Game-Link{
+    z-index: 2;
+    background: transparent;
+    border: 3px dotted goldenrod;
+
+}
+
+.element-Game{
+    position: absolute;
 }

@@ -49,21 +49,21 @@ class PageController extends Controller
     {
         $types = ['link', 'img', 'text'];
         $elements = [];
-        for ($counter = 0; $counter < 10; $counter++) {
+        for ($counter = 0; $counter < 5; $counter++) {
             $element = new Element;
-            $element->type = $types[rand(0, 2)];
+            $element->type = $types[rand(0,2)];
             if ($element->type == 'link') {
                 $element->linkPage = 'http://www.google.com';
-                $element->height = rand(200, 500);
-                $element->width = rand(200, 600);
+                $element->height = rand(5, 40) . 'vh';
+                $element->width = rand(5, 40) . 'vw';
             } else if ($element->type == 'text') {
                 $element->text = 'test';
-                $element->height = rand(200, 500);
-                $element->width = rand(200, 600);
+                $element->height = rand(5, 40) . 'vh';
+                $element->width = rand(5, 40)  . 'vw';
             } else if ($element->type == 'img') {
-                $element->imgSrc = 'https://picsum.photos/' . rand(1, 300) . '/500';
-                $element->width = rand(200, 600);
-                $element->height = $element->width;
+                $element->imgSrc = 'https://picsum.photos/id/' . rand(1, 300) . '/500/500';
+                $element->width = rand(5, 40) . 'vw';
+                $element->height = rand(5, 40) . 'vh';
             }
             $element->left = rand(0, 80);
             $element->top = rand(0, 80);
