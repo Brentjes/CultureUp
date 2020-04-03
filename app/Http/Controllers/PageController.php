@@ -71,7 +71,7 @@ class PageController extends Controller
         }
         $page = new Page;
         $page->elements = $elements;
-        return view('BookEngine.editor', compact('page'));
+        return view('BookEngine.Editor.editor', compact('page'));
     }
 
     /**
