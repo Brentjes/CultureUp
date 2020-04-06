@@ -13,4 +13,12 @@ class Question extends Model
     {
         return $this->belongsTo('App\Element');
     }
+
+    /**
+     * Get the anwsers for the question.
+     */
+    public function anwsers()
+    {
+        return $this->hasMany(Anwser::class);
+    }
 }

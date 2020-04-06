@@ -15,9 +15,13 @@ class CreateAnwsersTable extends Migration
     {
         Schema::create('anwsers', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('question_id')->unsigned();
             $table->string('anwser');
             $table->boolean('isCorrect');
             $table->timestamps();
+
+            $table->foreign('question_id')->references('id')->on('questions')
+                ->onDelete('cascade');
         });
     }
 
