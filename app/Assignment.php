@@ -29,4 +29,12 @@ class Assignment extends Model
     {
         return $this->hasMany(Page::class);
     }
+
+    /**
+     * Get the teacher that created the assignment.
+     */
+    public function teacher()
+    {
+        return $this->belongsTo(Teacher::class);
+    }
 }

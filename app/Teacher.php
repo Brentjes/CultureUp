@@ -21,4 +21,12 @@ class Teacher extends Model
     {
         return $this->belongsToMany(Course::class, 'teacher_course');
     }
+
+    /**
+     * The assignment(s) that belong to the teacher.
+     */
+    public function assignments()
+    {
+        return $this->hasMany(Assignment::class);
+    }
 }
