@@ -29,4 +29,20 @@ class Element extends Model
     {
         return $this->hasOne('App\Text');
     }
+
+    /**
+     * Get the image this element belongs to.
+     */
+    public function image()
+    {
+        return $this->belongsTo(Image::class);
+    }
+
+    /**
+     * Get the link record this element belongs to.
+     */
+    public function link()
+    {
+        return $this->belongsTo(Link::class);
+    }
 }
