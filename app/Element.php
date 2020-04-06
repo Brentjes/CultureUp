@@ -13,4 +13,12 @@ class Element extends Model
     {
         return $this->belongsTo(Page::class);
     }
+
+    /**
+     * Get the question this element belongs to.
+     */
+    public function question()
+    {
+        return $this->hasOne('App\Question');
+    }
 }

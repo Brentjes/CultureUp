@@ -25,6 +25,7 @@ class CreateElementsTable extends Migration
 
             $table->foreign('page_id')->references('id')->on('pages')
                 ->onDelete('cascade');
+
         });
     }
 
