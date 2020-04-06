@@ -15,8 +15,12 @@ class CreateTextsTable extends Migration
     {
         Schema::create('texts', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('element_id')->unsigned();
             $table->string('text');
             $table->timestamps();
+
+            $table->foreign('element_id')->references('id')->on('elements')
+                ->onDelete('cascade');
         });
     }
 

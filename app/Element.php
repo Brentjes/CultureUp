@@ -21,4 +21,12 @@ class Element extends Model
     {
         return $this->hasOne('App\Question');
     }
+
+    /**
+     * Get the text this element belongs to.
+     */
+    public function text()
+    {
+        return $this->hasOne('App\Text');
+    }
 }
