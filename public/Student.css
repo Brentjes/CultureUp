@@ -1,4 +1,6 @@
-
+html {
+    overflow-y: hidden !important;
+}
 
 .studentHeader {
     color: black;
@@ -6,6 +8,11 @@
     font-weight: 700;
     margin-bottom: 20px;
     text-transform: uppercase;
+}
+
+.newsThumbnail {
+    width: 80px;
+    height: auto;
 }
 
 .ribbon {
