@@ -15,6 +15,11 @@ class CreateCasesTable extends Migration
     {
         Schema::create('cases', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('subject');
+            $table->boolean('isHidden');
+            $table->boolean('isLocked');
+            $table->string('createdBy');
             $table->timestamps();
         });
     }

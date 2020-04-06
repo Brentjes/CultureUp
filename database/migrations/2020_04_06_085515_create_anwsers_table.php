@@ -15,6 +15,8 @@ class CreateAnwsersTable extends Migration
     {
         Schema::create('anwsers', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('anwser');
+            $table->boolean('isCorrect');
             $table->timestamps();
         });
     }

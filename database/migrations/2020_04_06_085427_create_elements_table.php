@@ -15,6 +15,11 @@ class CreateElementsTable extends Migration
     {
         Schema::create('elements', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('type');
+            $table->integer('positionX');
+            $table->integer('positionY');
+            $table->integer('width');
+            $table->integer('height');
             $table->timestamps();
         });
     }
