@@ -18,7 +18,7 @@ class CreatePagesTable extends Migration
             $table->bigInteger('assignment_id')->unsigned();
             $table->string('name');
             $table->string('description');
-            $table->integer('address');
+            $table->bigInteger('address');
             $table->timestamps();
             $table->foreign('assignment_id')->references('id')->on('assignments')
 

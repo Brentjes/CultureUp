@@ -21,4 +21,12 @@ class Page extends Model
     {
         return $this->hasMany(Element::class);
     }
+
+    /**
+     * Get the link record associated with the page.
+     */
+    public function link()
+    {
+        return $this->hasOne('App\Link');
+    }
 }
