@@ -15,10 +15,14 @@ class CreatePagesTable extends Migration
     {
         Schema::create('pages', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('assignment_id')->unsigned();
             $table->string('name');
             $table->string('description');
             $table->integer('address');
             $table->timestamps();
+            $table->foreign('assignment_id')->references('id')->on('assignments')
+
+                ->onDelete('cascade');
         });
     }
 

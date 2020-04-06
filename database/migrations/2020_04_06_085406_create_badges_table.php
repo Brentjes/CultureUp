@@ -15,8 +15,12 @@ class CreateBadgesTable extends Migration
     {
         Schema::create('badges', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('assignment_id')->unsigned();
             $table->string('name');
             $table->timestamps();
+
+            $table->foreign('assignment_id')->references('id')->on('assignments')
+                ->onDelete('cascade');
         });
     }
 

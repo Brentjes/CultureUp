@@ -13,4 +13,12 @@ class Badge extends Model
     {
         return $this->belongsToMany(Student::class, 'student_badge');
     }
+
+    /**
+     * Get the assignment this badge belongs to.
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\Assignment');
+    }
 }

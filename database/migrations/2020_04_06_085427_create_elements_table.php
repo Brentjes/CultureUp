@@ -15,12 +15,16 @@ class CreateElementsTable extends Migration
     {
         Schema::create('elements', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('page_id')->unsigned();
             $table->string('type');
             $table->integer('positionX');
             $table->integer('positionY');
             $table->integer('width');
             $table->integer('height');
             $table->timestamps();
+
+            $table->foreign('page_id')->references('id')->on('pages')
+                ->onDelete('cascade');
         });
     }
 
