@@ -27,32 +27,9 @@
 <body>
 
 <div class="wrapper">
-    <!-- Sidebar -->
-    <nav id="sidebar" style="z-index: 100">
-        <div class="sidebar-header">
-            <h3>CultureUp Editor</h3>
-        </div>
 
-        <ul class="list-unstyled components">
-            <li>
-                <a href="#"><i class="fas fa-quote-right"></i> Add Text</a>
-            </li>
-            <li>
-                <a href="#"><i class="fas fa-image"></i> Add Image</a>
-            </li>
-            <li>
-                <a href="#"><i class="fas fa-link"></i> Add Link</a>
-            </li>
-        </ul>
-
-    </nav>
-    <!-- Page Content -->
     <div id="content">
-        <button type="button" id="sidebarCollapse" class="btn btn-light rounded">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+
     </div>
 </div>
 

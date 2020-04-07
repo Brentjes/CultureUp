@@ -20,10 +20,12 @@ Route::get('/home', function() {
 //Route::resource('test', 'PageController');
 
 Route::group(array('prefix' => 'assignment'), function() {
+    Route::group(array('prefix' => 'editor'), function() {
+        Route::resource('{assignmentID}/page', 'PageEditorController');
+        Route::resource('/', 'AssignmentController');
+    });
     Route::resource('{assignmentID}/page', 'PageController');
 });
 
-Route::group(array('prefix' => 'assignment/editor'), function() {
-    Route::resource('{assignmentID}/page', 'PageController');
-});
-Route::resource('assignment/editor', 'AssignmentController');
+
+

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Page;
 use App\Element;
 
-class PageController extends Controller
+class PageEditorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -71,7 +71,7 @@ class PageController extends Controller
         }
         $page = new Page;
         $page->elements = $elements;
-        return view('BookEngine.View.view', compact('page'));
+        return view('BookEngine.Editor.editor', compact('page'));
     }
 
     /**
