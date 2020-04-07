@@ -21,10 +21,10 @@ Route::get('/home', function() {
 
 Route::group(array('prefix' => 'assignment'), function() {
     Route::group(array('prefix' => 'editor'), function() {
-        Route::resource('{assignmentID}/page', 'PageEditorController');
-        Route::resource('/', 'AssignmentController');
+        Route::resource('{assignmentID}/page', 'PageEditorController')->middleware('auth');
+        Route::resource('/', 'AssignmentController')->middleware('auth');
     });
-    Route::resource('{assignmentID}/page', 'PageController');
+    Route::resource('{assignmentID}/page', 'PageController')->middleware('auth');
 });
 
 
