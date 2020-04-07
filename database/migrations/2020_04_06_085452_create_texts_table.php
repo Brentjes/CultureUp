@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCasesTable extends Migration
+class CreateTextsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateCasesTable extends Migration
      */
     public function up()
     {
-        Schema::create('cases', function (Blueprint $table) {
+        Schema::create('texts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('subject');
-            $table->boolean('isHidden');
-            $table->boolean('isLocked');
+            $table->bigInteger('element_id')->unsigned();
+            $table->string('text');
             $table->timestamps();
+
+            $table->foreign('element_id')->references('id')->on('elements')
+                ->onDelete('cascade');
         });
     }
 
@@ -30,6 +31,6 @@ class CreateCasesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cases');
+        Schema::dropIfExists('texts');
     }
 }

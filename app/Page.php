@@ -6,8 +6,27 @@ use Illuminate\Database\Eloquent\Model;
 
 class Page extends Model
 {
-    public function Elements(){
+    /**
+     * Get the assignment that the page belongs to.
+     */
+    public function assignment()
+    {
+        return $this->belongsTo(Assignment::class);
+    }
 
-        return $this->hasMany(Element::Class);
+    /**
+     * Get the elements that belong to this page.
+     */
+    public function elements()
+    {
+        return $this->hasMany(Element::class);
+    }
+
+    /**
+     * Get the link record associated with the page.
+     */
+    public function link()
+    {
+        return $this->hasOne('App\Link');
     }
 }

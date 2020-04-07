@@ -8,14 +8,14 @@
             @endif"
 
              style="
-                 position: absolute;
-            left: {{$element->left}}vw;
-            top: {{$element->top}}vh;
-            height: {{$element->height}};
-            width: {{$element->width}};
+                  position: absolute;
+                  left: {{$element->left}}vw;
+                  top: {{$element->top}}vh;
+                  height: {{$element->height}};
+                  width: {{$element->width}};
             @if($element->type =="img")
-                background-image: url({{$element->imgSrc}});
-                background-size: {{$element->width}} {{$element->height}};
+                  background-image: url({{$element->imgSrc}});
+                  background-size: {{$element->width}} {{$element->height}};
             @endif
             ">
 

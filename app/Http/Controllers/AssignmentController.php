@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\cases;
 use Illuminate\Http\Request;
 
-class CasesController extends Controller
+class AssignmentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -52,7 +52,7 @@ class CasesController extends Controller
      */
     public function show(cases $cases)
     {
-        //
+
     }
 
     /**
