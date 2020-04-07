@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\cases;
+use App\Assignment;
 use Illuminate\Http\Request;
 
 class AssignmentController extends Controller
@@ -35,22 +35,22 @@ class AssignmentController extends Controller
      */
     public function store(Request $request)
     {
-        $case = new cases();
-        $case->name = request('name');
-        $case->subject = request('subject');
-        $case->isHidden = ((request('isHidden')== 'on') ? true : false);
-        $case->isLocked = ((request('isLocked')== 'on') ? true : false);
+        $assignment = new assignment();
+        $assignment->name = request('name');
+        $assignment->subject = request('subject');
+        $assignment->isHidden = ((request('isHidden')== 'on') ? true : false);
+        $assignment->isLocked = ((request('isLocked')== 'on') ? true : false);
 
-        $case->save();
+        $assignment->save();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param \App\cases $cases
+     * @param \App\assignment $assignment
      * @return \Illuminate\Http\Response
      */
-    public function show(cases $cases)
+    public function show(assignment $assignment)
     {
 
     }
@@ -58,10 +58,10 @@ class AssignmentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\cases $cases
+     * @param \App\assignment $assignment
      * @return \Illuminate\Http\Response
      */
-    public function edit(cases $cases)
+    public function edit(assignment $assignment)
     {
 
     }
@@ -70,10 +70,10 @@ class AssignmentController extends Controller
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param \App\cases $cases
+     * @param \App\assignment $assignment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, cases $cases)
+    public function update(Request $request, assignment $assignment)
     {
         //
     }
@@ -81,10 +81,10 @@ class AssignmentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\cases $cases
+     * @param \App\assignment $assignment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(cases $cases)
+    public function destroy(assignment $assignment)
     {
         //
     }
