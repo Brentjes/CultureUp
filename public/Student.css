@@ -25,7 +25,10 @@ html, body {
 .ribbonText {
     color: white;
     font-weight: bold;
-    float: left;
+}
+
+.hoverText:hover {
+    color: #EFEEEE;
 }
 
 .w-60 {

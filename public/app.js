@@ -32,26 +32,55 @@ $(document).ready(function () {
 
 // end of prototype functionalit
 
-// webpage animations
+// popper
 
-$(document).ready(function(){
-    $('.header').height($(window).height());
-});
+const button = document.querySelector('#button');
+const tooltip = document.querySelector('#tooltip');
 
-$(document).ready(function () {
-    $('.navbar-toggler-icon').on('click', function () {
+let popperInstance = null;
 
-        $('.animated-icon1').toggleClass('is-active');
+function create() {
+    popperInstance = Popper.createPopper(button, tooltip, {
+        modifiers: [
+            {
+                name: 'offset',
+                options: {
+                    offset: [0, 8],
+                },
+            },
+        ],
     });
+}
+
+function destroy() {
+    if (popperInstance) {
+        popperInstance.destroy();
+        popperInstance = null;
+    }
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function show() {
+    await sleep(1000);
+    tooltip.setAttribute('data-show', '');
+    create();
+}
+
+function hide() {
+    tooltip.removeAttribute('data-show');
+    destroy();
+}
+
+const showEvents = ['mouseenter', 'focus'];
+const hideEvents = ['mouseleave', 'blur'];
+
+showEvents.forEach(event => {
+    button.addEventListener(event, show);
 });
 
-$(document).ready(function () {
-    //initialize swiper when document ready
-    var mySwiper = new Swiper ('.swiper-container', {
-        // Optional parameters
-        direction: 'vertical',
-        loop: true
-    })
+hideEvents.forEach(event => {
+    button.addEventListener(event, hide);
 });
-
-// end of webpage animations

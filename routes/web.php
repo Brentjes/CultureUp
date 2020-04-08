@@ -17,7 +17,7 @@ Route::get('/', function() {
     return view('home');
 })->name('home')->middleware('auth');
 
-Route::get('/proto', function() {
+Route::get('/assignments', function() {
     return view('cases_proto');
 })->name('cases_proto')->middleware('auth');
 

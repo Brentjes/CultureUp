@@ -18,8 +18,6 @@
             integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
             crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="proto.css">
-
-    <title>CultureUp - Home</title>
 </head>
 <body>
 
@@ -32,17 +30,30 @@
     <div class="collapse navbar-collapse" id="main-navigation">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link icon" href="/assignments"><i class="fas fa-globe"></i></a>
+                <a class="nav-link icon" id="button" aria-describedby="student" href="/student"><i class="fas fa-globe"></i></a>
+                <div id="tooltip" role="student">
+                    Shows an overview of your in-progress courses
+                    <div id="arrow" data-popper-arrow></div>
+                </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link icon" href="/statistics"><i class="fas fa-chart-bar"></i></a>
+                <a class="nav-link icon" id="button" aria-describedby="statistics" href="/statistics"><i class="fas fa-chart-bar"></i></a>
+                <div id="tooltip" role="statistics">
+                    View your score and other statistics
+                    <div id="arrow" data-popper-arrow></div>
+                </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link icon" href="/notifications"><i class="fas fa-bell"></i></a>
+                <a class="nav-link icon" id="button" aria-describedby="notifications" href="/notifications"><i class="fas fa-bell"></i></a>
+                <div id="tooltip" role="notifications">
+                    View all your messages
+                    <div id="arrow" data-popper-arrow></div>
+                </div>
             </li>
             <li class="nav-item">
                 <div class="dropdown show">
-                    <a href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">
                         <img class="rounded-circle user-icon" src="default.jpg">
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
@@ -59,13 +70,14 @@
 
 @yield ('content')
 
-<script src="app.js"></script>
 <script type="text/javascript" src="MDB/js/mdb.min.js"></script>
+<script src="https://unpkg.com/@popperjs/core@2"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.2.2/web-animations.min.js"></script>
 <script> new WOW().init();</script>
+<script src="app.js"></script>
 </body>
 </html>

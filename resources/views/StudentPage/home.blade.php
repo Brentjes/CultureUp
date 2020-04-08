@@ -2,6 +2,7 @@
 @section ('content')
     <head>
         <link rel="stylesheet" type="text/css" href="student.css">
+        <title>CultureUp - Home</title>
     </head>
     <section id="home">
 
@@ -19,7 +20,22 @@
 
                     <div class="card rounded text-center w-100 p-0 m-5 pr-0">
                         <div class="card-header d-block justify-content-center ribbon p-0">
-                            <p class="ribbonText p-3 m-0">Progress</p>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="ribbonText text-left p-3 m-0">Progress</p>
+                                </div>
+                                <div class="col text-right">
+                                    <div class="p-3 pr-5 d-block justify-content-center">
+                                        <a href="/assignments" id="button" aria-describedby="tooltip">
+                                            <i class="fas fa-th icon hoverText ribbonText"></i>
+                                        </a>
+                                        <div id="tooltip" role="tooltip">
+                                            View all assignments
+                                            <div id="arrow" data-popper-arrow></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
@@ -66,8 +82,6 @@
                                         </div>
                                     </div>
                                 </li>
-
-
                             </ul>
                         </div>
                     </div>

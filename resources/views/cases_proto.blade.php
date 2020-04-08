@@ -1,5 +1,8 @@
 @extends ('layouts.culture_up_layout')
 @section ('content')
+    <head>
+        <title>CultureUp - Assignments</title>
+    </head>
     <section id="home">
 
         <div class="container-fluid cards">
