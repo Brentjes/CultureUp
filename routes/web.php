@@ -23,6 +23,8 @@ Route::group(array('prefix' => 'assignment'), function() {
     Route::group(array('prefix' => 'editor'), function() {
         Route::resource('{assignmentID}/page', 'PageEditorController')->middleware('auth');
         Route::resource('/', 'AssignmentController')->middleware('auth');
+        //fix the resource route above so we dont have to use this
+        Route::get('{id}/edit', 'AssignmentController@edit');
     });
     Route::resource('{assignmentID}/page', 'PageController')->middleware('auth');
 });

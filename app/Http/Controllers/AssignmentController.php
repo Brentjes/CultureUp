@@ -24,7 +24,7 @@ class AssignmentController extends Controller
      */
     public function create()
     {
-        return view('welcome');
+        return view('BookEngine.Editor.CreateAssignment');
     }
 
     /**
@@ -35,13 +35,12 @@ class AssignmentController extends Controller
      */
     public function store(Request $request)
     {
-        $assignment = new assignment();
-        $assignment->name = request('name');
-        $assignment->subject = request('subject');
-        $assignment->isHidden = ((request('isHidden')== 'on') ? true : false);
-        $assignment->isLocked = ((request('isLocked')== 'on') ? true : false);
 
-        $assignment->save();
+
+        $assignment = new assignment();
+        $this->saveInfoToDB($request, $assignment);
+
+        dd($assignment);
     }
 
     /**
@@ -61,11 +60,20 @@ class AssignmentController extends Controller
      * @param \App\assignment $assignment
      * @return \Illuminate\Http\Response
      */
-    public function edit(assignment $assignment)
+    public function edit($id = null)
     {
+        //fix this
+        //should beable to just use the $assignment instead but now we have to find the assignment maunually first
+        $assignment = $this->getAssignmentByID($id);
 
+        return view('BookEngine.Editor.EditAssignment', compact('assignment'));
     }
 
+
+    private function getAssignmentByID($id = null)
+    {
+        return Assignment::where('id', $id)->firstorfail();
+    }
     /**
      * Update the specified resource in storage.
      *
@@ -75,7 +83,9 @@ class AssignmentController extends Controller
      */
     public function update(Request $request, assignment $assignment)
     {
-        //
+        $this->saveInfoToDB($request, $assignment);
+
+        dd($assignment);
     }
 
     /**
@@ -88,4 +98,34 @@ class AssignmentController extends Controller
     {
         //
     }
+
+    /**
+     * Save The new info to the DataBase
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param \App\assignment $assignment
+     */
+    private function saveInfoToDB($request, $assignment){
+
+        $request->validate([
+            'title' => 'required|string',
+            'subject' => 'required|string',
+            'isHidden'=> 'in:on',
+            'isLocked'=> 'in:on',
+
+        ]);
+
+        $assignment->name = request('title');
+        $assignment->subject = request('subject');
+        $assignment->course_id  = 1;
+        $assignment->teacher_id = 1;
+        $assignment->createdBy = 1;
+        $assignment->isHidden = ((request('isHidden')== 'on') ? true : false);
+        $assignment->isLocked = ((request('isLocked')== 'on') ? true : false);
+
+        $assignment->save();
+
+    }
 }
+
+
