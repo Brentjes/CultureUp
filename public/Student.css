@@ -32,6 +32,10 @@ html, body {
     width: 60%;
 }
 
+.article, .article:active, .article:hover {
+    color: inherit;
+}
+
 .center-row{
     display:flex;
     align-items:center;

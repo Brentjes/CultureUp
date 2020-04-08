@@ -72,16 +72,66 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3 w-100 pr-0">
+                <div class="col-3 w-100 pr-0 h-100">
                     <div class="card rounded  text-center w-100 h-75 p-0 m-5  pr-0">
                         <div class="card-header d-block justify-content-center ribbon p-0 ">
                             <p class="ribbonText p-3 m-0">News Feed</p>
                         </div>
-                        <div class="card-body ">
+                        <div class="card-body">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Cras justo odio</li>
-                                <li class="list-group-item">Dapibus ac facilisis in</li>
-                                <li class="list-group-item">Vestibulum at eros</li>
+                                <a class="list-group-item article" href="/article">
+                                    <div class="row">
+                                        <div class="col text-left pr-0">
+                                            <div class="img-fluid">
+                                                <img class="rounded" src="https://picsum.photos/id/250/1080/1080"
+                                                     style="width: 150px; height: 150px;">
+                                            </div>
+                                        </div>
+                                        <div class="col text-left pl-0">
+                                            <h4 class="h4">Header</h4>
+                                            <blockquote class="blockquote">
+                                                <p class="h6 lead">Excerpt text goes here...</p>
+                                                <footer class="blockquote-footer">Author?</footer>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a class="list-group-item article" href="/article">
+                                    <div class="row">
+                                        <div class="col text-left pr-0">
+                                            <div class="img-fluid">
+                                                <img class="rounded" src="https://picsum.photos/id/255/1080/1080"
+                                                     style="width: 150px; height: 150px;">
+                                            </div>
+                                        </div>
+                                        <div class="col text-left pl-0">
+                                            <h4 class="h4">Header</h4>
+                                            <blockquote class="blockquote">
+                                                <p class="h6 lead">Excerpt text goes here...</p>
+                                                <footer class="blockquote-footer">Author?</footer>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a class="list-group-item article" href="/article">
+                                    <div class="row">
+                                        <div class="col text-left pr-0">
+                                            <div class="img-fluid">
+                                                <img class="rounded" src="https://picsum.photos/id/260/1080/1080"
+                                                     style="width: 150px; height: 150px;">
+                                            </div>
+                                        </div>
+                                        <div class="col text-left pl-0">
+                                            <h4 class="h4">Header</h4>
+                                            <blockquote class="blockquote">
+                                                <p class="h6 lead">Excerpt text goes here...</p>
+                                                <footer class="blockquote-footer">Author?</footer>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </a>
                             </ul>
                         </div>
                     </div>
