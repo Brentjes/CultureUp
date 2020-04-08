@@ -31,3 +31,11 @@ html, body {
 .w-60 {
     width: 60%;
 }
+
+.row{
+    display:flex;
+    align-items:center;
+}
+div.progress{
+    margin:0;
+}

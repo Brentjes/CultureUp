@@ -23,10 +23,10 @@
                         </div>
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item ">
-                                    <div class="row">
+                                <li class="list-group-item p-0">
+                                    <div class="row p-3">
                                         <div class="col">
-                                            <p class="display-5 mb-0 p-2">#1 German culture on the workfloor</p>
+                                            <p class="display-5 mb-0">#1 German culture on the workfloor</p>
                                         </div>
                                         <div class="col">
                                             <div class="progress">
@@ -34,14 +34,13 @@
                                                      role="progressbar" style="width: 50%" aria-valuenow="50"
                                                      aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
-
                                         </div>
                                     </div>
                                 </li>
                                 <li class="list-group-item ">
-                                    <div class="row">
+                                    <div class="row p-3">
                                         <div class="col">
-                                            <p class="display-5 mb-0 p-2">#2 Chinese culture on the workfloor</p>
+                                            <p class="display-5 mb-0">#2 Chinese culture on the workfloor</p>
                                         </div>
                                         <div class="col">
                                             <div class="progress">
@@ -53,8 +52,8 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="list-group-item ">
-                                    <div class="row">
+                                <li class="list-group-item">
+                                    <div class="row p-3">
                                         <div class="col">
                                             <p class="display-5 mb-0">#3 English culture on the workfloor</p>
                                         </div>
