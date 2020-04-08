@@ -21,12 +21,11 @@ Route::get('/home', function() {
 
 Route::group(array('prefix' => 'assignment'), function() {
     Route::group(array('prefix' => 'editor'), function() {
-        Route::resource('{assignmentID}/page', 'PageEditorController')->middleware('auth');
-        Route::resource('/', 'AssignmentController')->middleware('auth');
-        //fix the resource route above so we dont have to use this
-        Route::get('{id}/edit', 'AssignmentController@edit');
+        //replace test and test2 with better names
+        Route::resource('test/{assignmentID}/page', 'PageEditorController')->middleware('auth');
+        Route::resource('test2', 'AssignmentController')->middleware('auth');
     });
-    Route::resource('{assignmentID}/page', 'PageController')->middleware('auth');
+    Route::resource('view/{assignmentID}/page', 'PageController')->middleware('auth');
 });
 
 

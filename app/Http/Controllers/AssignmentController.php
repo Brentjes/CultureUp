@@ -60,20 +60,11 @@ class AssignmentController extends Controller
      * @param \App\assignment $assignment
      * @return \Illuminate\Http\Response
      */
-    public function edit($id = null)
+    public function edit(assignment $assignment)
     {
-        //fix this
-        //should beable to just use the $assignment instead but now we have to find the assignment maunually first
-        $assignment = $this->getAssignmentByID($id);
-
         return view('BookEngine.Editor.EditAssignment', compact('assignment'));
     }
 
-
-    private function getAssignmentByID($id = null)
-    {
-        return Assignment::where('id', $id)->firstorfail();
-    }
     /**
      * Update the specified resource in storage.
      *
