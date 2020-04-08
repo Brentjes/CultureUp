@@ -32,6 +32,12 @@
     <div class="collapse navbar-collapse" id="main-navigation">
         <ul class="navbar-nav">
             <li class="nav-item">
+                <a class="nav-link icon" href="/assignments"><i class="fas fa-globe"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link icon" href="/statistics"><i class="fas fa-chart-bar"></i></a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link icon" href="/notifications"><i class="fas fa-bell"></i></a>
             </li>
             <li class="nav-item">
