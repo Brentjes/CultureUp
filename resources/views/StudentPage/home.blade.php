@@ -23,8 +23,8 @@
                         </div>
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item p-0">
-                                    <div class="row p-3">
+                                <li class="list-group-item">
+                                    <div class="row p-3 center-row">
                                         <div class="col">
                                             <p class="display-5 mb-0">#1 German culture on the workfloor</p>
                                         </div>
@@ -37,8 +37,8 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="list-group-item ">
-                                    <div class="row p-3">
+                                <li class="list-group-item">
+                                    <div class="row p-3 center-row">
                                         <div class="col">
                                             <p class="display-5 mb-0">#2 Chinese culture on the workfloor</p>
                                         </div>
@@ -53,7 +53,7 @@
                                     </div>
                                 </li>
                                 <li class="list-group-item">
-                                    <div class="row p-3">
+                                    <div class="row p-3 center-row">
                                         <div class="col">
                                             <p class="display-5 mb-0">#3 English culture on the workfloor</p>
                                         </div>
