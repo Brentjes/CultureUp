@@ -22,6 +22,10 @@ body {
     url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
 }
 
+.icon {
+    font-size: 20px;
+}
+
 .material-icons {
     padding: 0px 0px 0px 0px;
     font-family: 'Material Icons';
@@ -122,15 +126,6 @@ section::before {
 
 .nav-link:hover {
     color: #EFEEEE;
-}
-
-.name {
-    font-weight: bold;
-}
-
-.name:hover {
-    color: white;
-    cursor: initial;
 }
 
 .navbar-collapse {

@@ -24,3 +24,8 @@ Route::get('/proto', function() {
 Route::get('/student', function() {
     return view('StudentPage.home');
 })->name('Home')->middleware('auth');
+
+Route::get('/logout', function() {
+    Auth::logout();
+    return view('home');
+})->name('home')->middleware('auth');
