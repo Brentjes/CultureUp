@@ -4,17 +4,19 @@
         <link rel="stylesheet" type="text/css" href="student.css">
         <title>CultureUp - Home</title>
     </head>
-    <section id="home">
 
-        <div class="container-fluid text-center">
-            <div class="card rounded text-center m-auto h-auto w-60">
-                <div class="card-body p-0">
-                    <h1 class="display-4 p-0 m-0"><b>Welcome</b></h1>
+    <section id="studentpage">
+        <div class="container-fluid text-center p-0">
+            <div class="card w-100 h-auto">
+                <div class="row d-flex justify-content-center">
+                    <div class="col">
+                        <h1 class="display-3 p-4 lead text-left ml-7">Welcome, J. Doe</h1>
+                    </div>
+                    <div class="col text-right mr-10">
+                        <img class="img-fluid" style="width:250px; height: auto" src="cultureuplogo.png">
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="container-fluid text-center">
             <div class="row">
                 <div class="col-8">
 
