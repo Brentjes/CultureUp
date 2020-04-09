@@ -35,10 +35,14 @@ Route::get('/logout', function() {
 Route::group(array('prefix' => 'assignment'), function() {
     Route::group(array('prefix' => 'editor'), function() {
         //replace test and test2 with better names
-        Route::resource('test/{assignmentID}/page', 'PageEditorController')->middleware('auth');
-        Route::resource('test2', 'AssignmentController')->middleware('auth');
+        // assignment/editor/test2
+        Route::resource('currentPage/{assignmentID}/page', 'PageEditorController')->middleware('auth');
+        Route::resource('current', 'AssignmentEditorController')->middleware('auth');
     });
+    // assignment/view
+
     Route::resource('view/{assignmentID}/page', 'PageController')->middleware('auth');
+    Route::resource('view', 'AssignmentController')->middleware('auth');
 });
 
 

@@ -2,7 +2,7 @@
     <p>{{ $error }}</p>
 @endforeach
 
-<Form method="POST" action="/assignment/editor">
+<Form method="POST" action="/assignment/editor/current">
 
     @csrf
 
