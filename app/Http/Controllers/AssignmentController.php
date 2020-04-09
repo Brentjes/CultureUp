@@ -14,7 +14,9 @@ class AssignmentController extends Controller
      */
     public function index()
     {
-        //
+        $allAssignments = Assignment::latest()->get();
+
+        return view('BookEngine.View.index', compact('allAssignments'));
     }
 
     /**
@@ -24,99 +26,65 @@ class AssignmentController extends Controller
      */
     public function create()
     {
-        return view('BookEngine.Editor.CreateAssignment');
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-
-
-        $assignment = new assignment();
-        $this->saveInfoToDB($request, $assignment);
-
-        dd($assignment);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param \App\assignment $assignment
-     * @return \Illuminate\Http\Response
-     */
-    public function show(assignment $assignment)
-    {
-
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param \App\assignment $assignment
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(assignment $assignment)
-    {
-        return view('BookEngine.Editor.EditAssignment', compact('assignment'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\assignment $assignment
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, assignment $assignment)
-    {
-        $this->saveInfoToDB($request, $assignment);
-
-        dd($assignment);
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param \App\assignment $assignment
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(assignment $assignment)
     {
         //
     }
 
     /**
-     * Save The new info to the DataBase
+     * Display the specified resource.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\assignment $assignment
+     * @param \App\assignment $view
+     * @return \Illuminate\Http\Response
      */
-    private function saveInfoToDB($request, $assignment){
+    public function show(Assignment $view)
+    {
+    $assignment = $view;
 
-        $request->validate([
-            'title' => 'required|string',
-            'subject' => 'required|string',
-            'isHidden'=> 'in:on',
-            'isLocked'=> 'in:on',
 
-        ]);
+        return view('BookEngine.View.start', compact('assignment'));
+    }
 
-        $assignment->name = request('title');
-        $assignment->subject = request('subject');
-        $assignment->course_id  = 1;
-        $assignment->teacher_id = 1;
-        $assignment->createdBy = 1;
-        $assignment->isHidden = ((request('isHidden')== 'on') ? true : false);
-        $assignment->isLocked = ((request('isLocked')== 'on') ? true : false);
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
 
-        $assignment->save();
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
 
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
     }
 }
-
-
