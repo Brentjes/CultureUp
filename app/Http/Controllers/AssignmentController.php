@@ -43,13 +43,13 @@ class AssignmentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\assignment $view
+     * @param \App\assignment $assignment
      * @return \Illuminate\Http\Response
      */
-    public function show(Assignment $view)
+    public function show(Assignment $assignment)
     {
-    $assignment = $view;
 
+        dd($assignment);
 
         return view('BookEngine.View.start', compact('assignment'));
     }

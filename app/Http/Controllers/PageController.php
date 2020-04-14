@@ -32,20 +32,22 @@ class PageController extends Controller
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @return string
      */
     public function store(Request $request)
     {
-        //
+
+
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param int $id
+     * @param \App\page $page
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show($id)
+    public function show(Page $page)
     {
         $types = ['link', 'img', 'text'];
         $elements = [];
@@ -107,4 +109,6 @@ class PageController extends Controller
     {
         //
     }
+
+
 }

@@ -36,7 +36,9 @@ class PageEditorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $page = new Page();
+
+        $this->verifySave($page, $request);
     }
 
     /**
@@ -89,22 +91,42 @@ class PageEditorController extends Controller
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
+     * @param Page $page
+     * @return void
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Page $page)
     {
-        //
+        $this->verifySave($page, $request);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
+     * @param Page $page
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
-    public function destroy($id)
+    public function destroy(Page $page)
     {
-        //
+        $page->delete();
     }
+
+    /**
+     * Save The new info to the DataBase
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param \App\page $page
+     */
+    private function verifySave($page, $request){
+
+        $request->validate([
+            'title' => 'required|string',
+            'description' => 'required|string',
+        ]);
+
+        $page->title = $request->title;
+        $page->description = $request->description;
+
+        $page->save();
+}
 }

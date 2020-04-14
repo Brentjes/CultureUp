@@ -5,7 +5,7 @@
 <Form method="POST" action="/assignment/editor/current">
 
     @csrf
-
+    @method('PUT')
     <div class="field">
         <label class="label" for="title">Title</label>
 

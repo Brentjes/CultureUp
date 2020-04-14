@@ -58,6 +58,69 @@
 
 @include ('BookEngine.page', compact('page'))
 
+<div id="ElementList">
+
+</div>
+
+<script>
+
+    var assignmentUpdateUrl = "/assignment/editor/current/1";
+    var getNewCSRFTokenURL = "/DokSTestingStuffDontTouch";
+
+    function sendAssignmentUpdate() {
+        let assignment = new XMLHttpRequest();
+        var formdata = new FormData();
+
+        assignment.open("POST", assignmentUpdateUrl, true);
+        formdata.append('_method', 'PUT');
+        formdata.append('title', 'Chris');
+        formdata.append('subject', 'Testing ajax form sending');
+
+        // formdata.append('_Token', csrfToken)
+        var csrfRequest = requestNewCSRFToken();
+
+        csrfRequest.onreadystatechange = (function () {
+            if (setCSRFToken(csrfRequest, formdata)) {
+                for (var pair of formdata.entries()) {
+                    console.log(pair[0] + ', ' + pair[1]);
+                }
+                assignment.send()
+            }
+
+        })
+
+        assignment.onreadystatechange = (function () {
+            console.log('SendAssingment')
+        })
+
+    }
+
+
+
+    function requestNewCSRFToken() {
+        let csrfRequest = new XMLHttpRequest();
+
+        csrfRequest.open("GET", getNewCSRFTokenURL, true);
+        csrfRequest.send();
+        return csrfRequest
+    }
+
+    function setCSRFToken(csrfRequest, form) {
+        if (csrfRequest.readyState === 4) {
+            if (csrfRequest.status >= 200 && csrfRequest.status < 400) {
+                form.append('_Token', JSON.parse(csrfRequest.responseText).token)
+                return true
+            }
+        }
+        return false
+    }
+
+
+    sendAssignmentUpdate()
+</script>
+
+
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

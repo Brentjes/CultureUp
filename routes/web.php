@@ -13,6 +13,8 @@
 
 Auth::routes();
 
+
+
 Route::get('/', function() {
     return view('home');
 })->name('home')->middleware('auth');
@@ -41,9 +43,17 @@ Route::group(array('prefix' => 'assignment'), function() {
     });
     // assignment/view
 
-    Route::resource('view/{assignmentID}/page', 'PageController')->middleware('auth');
-    Route::resource('view', 'AssignmentController')->middleware('auth');
+    Route::resource('view/{assignmentID}/page', 'PageController',
+        ['parameters' => ['page' => 'assignment'
+    ]])->middleware('auth');
+    Route::resource('view', 'AssignmentController',
+        ['parameters' => ['view' => 'assignment'
+    ]])->middleware('auth');
 });
 
-
-
+Route::get('DokSTestingStuffDontTouch', function() {
+    session()->regenerate();
+    return response()->json([
+        "token"=>csrf_token()],
+        200);
+})->name('home')->middleware('auth');

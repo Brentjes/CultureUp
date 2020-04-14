@@ -80,6 +80,7 @@ class AssignmentEditorController extends Controller
      */
     public function update(Request $request, assignment $current)
     {
+        dd($request);
         $assignment = $current;
         $this->saveInfoToDB($request, $assignment);
 
@@ -105,7 +106,7 @@ class AssignmentEditorController extends Controller
      * @param \App\assignment $assignment
      */
     private function saveInfoToDB($request, $assignment){
-
+        dd($request);
         $request->validate([
             'title' => 'required|string',
             'subject' => 'required|string',
@@ -117,14 +118,24 @@ class AssignmentEditorController extends Controller
         $assignment->name = request('title');
         $assignment->subject = request('subject');
         $assignment->course_id  = 1;
-        $assignment->teacher_id = 2;
+        $assignment->teacher_id = 1;
         $assignment->createdBy = 1;
         $assignment->isHidden = ((request('isHidden')== 'on') ? true : false);
         $assignment->isLocked = ((request('isLocked')== 'on') ? true : false);
 
         $assignment->save();
+        dd($request);
+    }
+
+    public function refreshToken(Request $request)
+    {
+        session()->regenerate();
+        return response()->json([
+            "token"=>csrf_token()],
+            200);
 
     }
 }
+
 
 
