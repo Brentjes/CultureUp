@@ -69,7 +69,7 @@
 
     function sendAssignmentUpdate() {
         let assignment = new XMLHttpRequest();
-        var formdata = new FormData();
+        let formdata = new FormData();
 
         assignment.open("POST", assignmentUpdateUrl, true);
         formdata.append('_method', 'PUT');
@@ -77,7 +77,7 @@
         formdata.append('subject', 'Testing ajax form sending');
 
         // formdata.append('_Token', csrfToken)
-        var csrfRequest = requestNewCSRFToken();
+        let csrfRequest = requestNewCSRFToken();
 
         csrfRequest.onreadystatechange = (function () {
             if (setCSRFToken(csrfRequest, formdata)) {
