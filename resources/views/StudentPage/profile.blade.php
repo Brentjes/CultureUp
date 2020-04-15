@@ -36,13 +36,13 @@
                             </div>
                             <div class="row">
                                 <div class="col">
-{{--                                    <div class="progress">--}}
-{{--                                        <div class="progress-bar progress-bar-striped bg-info"--}}
-{{--                                             role="progressbar" style="width: 75%" aria-valuenow="75"--}}
-{{--                                             aria-valuemin="0" aria-valuemax="100">--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-                                    <h1>UwU</h1>
+                                    {{--                                    <div class="progress">--}}
+                                    {{--                                        <div class="progress-bar progress-bar-striped bg-info"--}}
+                                    {{--                                             role="progressbar" style="width: 75%" aria-valuenow="75"--}}
+                                    {{--                                             aria-valuemin="0" aria-valuemax="100">--}}
+                                    {{--                                        </div>--}}
+                                    {{--                                    </div>--}}
+                                    <p>UwU</p>
                                 </div>
                             </div>
                         </li>
@@ -55,37 +55,48 @@
                         <p class="ribbonText p-3 m-0">Badges</p>
                     </div>
                     <div class="card-body">
-                        <ul class="list-group list-group-flush">
-                            <a class="list-group-item article" href="/article">
-                                <div class="row">
-                                    <div class="col text-left pr-0">
-                                        <div class="img-fluid">
-                                            <img class="rounded" src="https://picsum.photos/id/250/1080/1080"
-                                                 style="width: 150px; height: 150px;">
-                                        </div>
-                                    </div>
-                                    <a class="list-group-item article" href="/article">
-                                        <div class="row">
-                                            <div class="col text-left pr-0">
-                                                <div class="img-fluid">
-                                                    <img class="rounded" src="https://picsum.photos/id/260/1080/1080"
-                                                         style="width: 150px; height: 150px;">
-                                                </div>
-                                            </div>
-                                            <div class="col text-left pl-0">
-                                                <h4 class="h4">Header</h4>
-                                                <blockquote class="blockquote">
-                                                    <p class="h6 lead">Excerpt text goes here...</p>
-                                                    <footer class="blockquote-footer">Author?</footer>
-                                                </blockquote>
-                                            </div>
-                                        </div>
-                                    </a>
+                        <div class="row">
+                            <div class="col-auto text-left pr-3">
+                                <div class="img-fluid">
+                                    <img src="/flags/PNG/70/bhutan.png"
+                                         style="width: 75px; height: auto;">
                                 </div>
-                        </ul>
+                            </div>
+                            <div class="col-auto text-left pr-3">
+                                <div class="img-fluid">
+                                    <img src="/flags/PNG/70/botswana.png"
+                                         style="width: 75px; height: auto;">
+                                </div>
+                            </div>
+                            <div class="col-auto text-left pr-3">
+                                <div class="img-fluid">
+                                    <img src="/flags/PNG/70/ukraine.png"
+                                         style="width: 75px; height: auto;">
+                                </div>
+                            </div>
+                            <div class="col-auto text-left pr-3">
+                                <div class="img-fluid">
+                                    <img src="/flags/PNG/70/russia.png"
+                                         style="width: 75px; height: auto;">
+                                </div>
+                            </div>
+                            <div class="col-auto text-left pr-3">
+                                <div class="img-fluid">
+                                    <img src="/flags/PNG/70/somalia.png"
+                                         style="width: 75px; height: auto;">
+                                </div>
+                            </div>
+                            <div class="col-auto text-left pr-3">
+                                <div class="img-fluid">
+                                    <img src="/flags/PNG/70/rwanda.png"
+                                         style="width: 75px; height: auto;">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 @endsection
