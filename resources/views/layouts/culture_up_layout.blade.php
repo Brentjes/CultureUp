@@ -59,7 +59,7 @@
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
                         <p class="dropdown-item dropdown-item-text disabled">J. Doe</p>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Profile</a>
+                        <a class="dropdown-item" href="/profile"><i class="fas fa-user"></i> Profile</a>
                         <a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt text-danger"></i> Log out</a>
                     </div>
                 </div>
