@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\cases;
+use App\Assignment;
 use Illuminate\Http\Request;
 
-class CasesController extends Controller
+class AssignmentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,9 @@ class CasesController extends Controller
      */
     public function index()
     {
-        //
+        $allAssignments = Assignment::latest()->get();
+
+        return view('BookEngine.View.index', compact('allAssignments'));
     }
 
     /**
@@ -24,56 +26,53 @@ class CasesController extends Controller
      */
     public function create()
     {
-        return view('welcome');
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $case = new cases();
-        $case->name = request('name');
-        $case->subject = request('subject');
-        $case->isHidden = ((request('isHidden')== 'on') ? true : false);
-        $case->isLocked = ((request('isLocked')== 'on') ? true : false);
-
-        $case->save();
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param \App\cases $cases
-     * @return \Illuminate\Http\Response
-     */
-    public function show(cases $cases)
     {
         //
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Display the specified resource.
      *
-     * @param \App\cases $cases
+     * @param \App\assignment $assignment
      * @return \Illuminate\Http\Response
      */
-    public function edit(cases $cases)
+    public function show(Assignment $assignment)
     {
 
+        dd($assignment);
+
+        return view('BookEngine.View.start', compact('assignment'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\cases $cases
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, cases $cases)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -81,10 +80,10 @@ class CasesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\cases $cases
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(cases $cases)
+    public function destroy($id)
     {
         //
     }

@@ -1,0 +1,265 @@
+html {
+     scroll-behavior: smooth;
+     font-family: 'Roboto';
+ }
+
+body {
+    padding: 0;
+    margin: 0;
+    background: #EFEEEE;
+    overflow-x: hidden;
+}
+
+#tooltip {
+    background: #333;
+    color: white;
+    font-weight: bold;
+    padding: 4px 8px;
+    font-size: 13px;
+    border-radius: 4px;
+    display: none;
+}
+
+#arrow,
+#arrow::before {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    z-index: -1;
+}
+
+#arrow::before {
+    content: '';
+    transform: rotate(45deg);
+    background: #333;
+}
+
+#tooltip[data-popper-placement^='top'] > #arrow {
+    bottom: -4px;
+}
+
+#tooltip[data-popper-placement^='bottom'] > #arrow {
+    top: -4px;
+}
+
+#tooltip[data-popper-placement^='left'] > #arrow {
+    right: -4px;
+}
+
+#tooltip[data-popper-placement^='right'] > #arrow {
+    left: -4px;
+}
+
+#tooltip[data-show] {
+    display: block;
+}
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+    src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+    url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+    url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.icon {
+    font-size: 20px;
+}
+
+.material-icons {
+    padding: 0px 0px 0px 0px;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 15px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #6c757d;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #7B848D;
+}
+
+.navbar {
+    background-image: url('polygon.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right 5% bottom 41%;
+    -webkit-box-shadow: 0 2px 5px 2px rgba(60,64,67,0.15);
+    -moz-box-shadow: 0 2px 5px 2px rgba(60,64,67,0.15);
+    box-shadow: 0 2px 5px 2px rgba(60,64,67,0.15);
+}
+
+.navbar-brand {
+    font-size: 1.35rem;
+}
+
+.navbar-brand:hover {
+    color: #EFEEEE;
+}
+
+.user-icon {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.user-icon img {
+    width: auto;
+    height: 100%;
+}
+
+section::before {
+    display: block;
+    content: " ";
+    margin-top: -50px;
+    height: 50px;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.nav-link,
+.navbar-brand {
+    color: white;
+    cursor: pointer;
+}
+
+.nav-link {
+    margin-right: 1em !important;
+}
+
+.nav-link:hover {
+    color: #EFEEEE;
+}
+
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+.wow {
+    visibility: hidden;
+}
+
+#home {
+    margin-top: 80px;
+}
+
+#overlay {
+    padding-top: 10px;
+    position: absolute;
+    display: block;
+    top: 94vh;
+    width: 100%;
+    min-height: 94vh;
+    background-color: white;
+    z-index: 1;
+    -webkit-box-shadow: 0 2px 5px 2px rgba(60,64,67,0.15);
+    -moz-box-shadow: 0 2px 5px 2px rgba(60,64,67,0.15);
+    box-shadow: 0 2px 5px 2px rgba(60,64,67,0.15);
+    transition-duration: 3s;
+}
+
+.hr {
+    margin: 0px 0px 0px 0px;
+    width: 100vw;
+}
+
+.display-3 {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+.card-columns {
+    column-count: 5;
+}
+
+.card {
+    z-index: 0;
+    width: 450px;
+    margin: 0px;
+    padding: 25px;
+    position: relative;
+}
+
+.cards {
+    padding: 0px 100px;
+}
+
+.card-title {
+    color: black;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.card-text {
+    font-family: 'Roboto';
+}
+
+.card-img-top {
+    -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    width: 270px;
+    height: auto;
+    margin-bottom: 16px;
+}
+
+a.custom-card,
+a.custom-card:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+.page-footer {
+    z-index: 2;
+    background-color: #222;
+    color: #ccc;
+    padding: 60px 0 30px;
+}
+
+.footer-copyright {
+    color: #666;
+    padding: 40px 0;
+}
