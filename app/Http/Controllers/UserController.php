@@ -47,8 +47,9 @@ class UserController extends Controller
      */
     public function show($id = null)
     {
-        if ($id = null) {
-            $user = auth()->user();
+
+        if ($id == null) {
+            $user = \Auth::user();
         } else {
             $user = User::where('id',$id)->first();
         }

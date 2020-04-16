@@ -27,7 +27,7 @@
                             </div>
                             <div class="row center-row text-left">
                                 <div class="col">
-                                    <p class="display-5 mb-0"><b>Name:</b> J. Doe</p>
+                                    <p class="display-5 mb-0"><b>Name:</b> {{$user->name}}</p>
                                     <p class="display-5 mb-0"><b>Teacher:</b> Bugs Bunny</p>
                                     <p class="display-5 mb-0"><b>Country:</b> Bosnia Herzegovina</p>
 
