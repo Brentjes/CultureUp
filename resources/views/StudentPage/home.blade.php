@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-8">
+                <div class="col-7">
 
                     <div class="card rounded text-center w-100 p-0 m-5 pr-0">
                         <div class="card-header d-block justify-content-center ribbon p-0">
@@ -88,7 +88,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3 w-100 pr-0 h-100">
+                <div class="col-4 w-100 pr-0 h-100">
                     <div class="card rounded  text-center w-100 h-75 p-0 m-5  pr-0">
                         <div class="card-header d-block justify-content-center ribbon p-0 ">
                             <p class="ribbonText p-3 m-0">News Feed</p>

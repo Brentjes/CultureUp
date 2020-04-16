@@ -27,6 +27,8 @@ Route::get('/student', function() {
     return view('StudentPage.home');
 })->name('Home')->middleware('auth');
 
+Route::get('/profile/{id?}', 'UserController@show')->name('profile')->middleware('auth');
+
 Route::get('/logout', function() {
     Auth::logout();
     return view('home');
