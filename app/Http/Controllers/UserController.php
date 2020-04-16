@@ -51,7 +51,7 @@ class UserController extends Controller
         if ($id == null) {
             $user = \Auth::user();
         } else {
-            $user = User::where('id',$id)->first();
+            $user = user::findorfail($id);
         }
 //        dd($user);
         return view('StudentPage.profile', compact('user'));

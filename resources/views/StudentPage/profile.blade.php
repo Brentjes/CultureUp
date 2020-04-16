@@ -1,7 +1,7 @@
 @extends ('layouts.culture_up_layout')
 @section ('content')
     <head>
-        <link rel="stylesheet" type="text/css" href="profile.css">
+        <link rel="stylesheet" type="text/css" href="/profile.css">
         <title>CultureUp - Profile</title>
     </head>
 
@@ -22,7 +22,7 @@
                     <div class="card-body">
                         <li class="list-group-item">
                             <div class="img-fluid pt-4 pb-5">
-                                <img src="default.jpg"
+                                <img src="/default.jpg"
                                      style="width: 150px; height: 150px;">
                             </div>
                             <div class="row center-row text-left">

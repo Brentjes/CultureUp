@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="MDB/css/mdb.css">
-    <link rel="stylesheet" type="text/css" href="hamburgers/dist/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="/MDB/css/mdb.css">
+    <link rel="stylesheet" type="text/css" href="/hamburgers/dist/hamburgers.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -17,7 +17,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
             integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
             crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="proto.css">
+    <link rel="stylesheet" type="text/css" href="/proto.css">
 </head>
 <body>
 
@@ -54,7 +54,7 @@
                 <div class="dropdown show">
                     <a href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false">
-                        <img class="rounded-circle user-icon" src="default.jpg">
+                        <img class="rounded-circle user-icon" src="/default.jpg">
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
                         <p class="dropdown-item dropdown-item-text disabled">J. Doe</p>
@@ -70,7 +70,7 @@
 
 @yield ('content')
 
-<script type="text/javascript" src="MDB/js/mdb.min.js"></script>
+<script type="text/javascript" src="/MDB/js/mdb.min.js"></script>
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
@@ -78,6 +78,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.2.2/web-animations.min.js"></script>
 <script> new WOW().init();</script>
-<script src="app.js"></script>
+<script src="/app.js"></script>
 </body>
 </html>
