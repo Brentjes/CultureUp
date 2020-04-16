@@ -13,9 +13,10 @@ class CreateStudentBadgeTable extends Migration
      */
     public function up()
     {
-        Schema::create('student_badge', function (Blueprint $table) {
+        Schema::create('student_badges', function (Blueprint $table) {
             $table->bigInteger('student_id')->unsigned();
             $table->bigInteger('badge_id')->unsigned();
+            $table->timestamps();
             $table->foreign('student_id')->references('id')->on('students')
                 ->onDelete('cascade');
             $table->foreign('badge_id')->references('id')->on('badges')
