@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Assignment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class AssignmentEditorController extends Controller
 {
@@ -25,6 +26,8 @@ class AssignmentEditorController extends Controller
      */
     public function create()
     {
+        $id = 1;
+        $user = User::where('id',$id)->first();
         return view('BookEngine.Editor.Assignment.CreateAssignment');
     }
 
@@ -80,7 +83,7 @@ class AssignmentEditorController extends Controller
      */
     public function update(Request $request, assignment $current)
     {
-        dd($request);
+//        dd($request);
         $assignment = $current;
         $this->saveInfoToDB($request, $assignment);
 
@@ -106,7 +109,7 @@ class AssignmentEditorController extends Controller
      * @param \App\assignment $assignment
      */
     private function saveInfoToDB($request, $assignment){
-        dd($request);
+
         $request->validate([
             'title' => 'required|string',
             'subject' => 'required|string',
@@ -115,16 +118,22 @@ class AssignmentEditorController extends Controller
 
         ]);
 
-        $assignment->name = request('title');
-        $assignment->subject = request('subject');
+        $assignment->name = $request->title;
+        $assignment->subject = $request->subject;
         $assignment->course_id  = 1;
         $assignment->teacher_id = 1;
         $assignment->createdBy = 1;
-        $assignment->isHidden = ((request('isHidden')== 'on') ? true : false);
-        $assignment->isLocked = ((request('isLocked')== 'on') ? true : false);
+        $assignment->isHidden = (($request->isHidden== 'on') ? true : false);
+        $assignment->isLocked = (($request->isLocked== 'on') ? true : false);
 
         $assignment->save();
-        dd($request);
+
+        $response = [
+            'status' => 'success',
+            'message' => 'order stored',
+        ];
+        return $response;
+
     }
 
     public function refreshToken(Request $request)

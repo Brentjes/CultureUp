@@ -49,6 +49,8 @@ class PageEditorController extends Controller
      */
     public function show($id)
     {
+
+
         $types = ['link', 'img', 'text'];
         $elements = [];
         for ($counter = 0; $counter < 5; $counter++) {

@@ -5,9 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>CultureUp - Editor</title>
-
 
 
     <!-- Bootstrap CSS CDN -->
@@ -62,39 +61,74 @@
 
 </div>
 
+<meta>
+
 <script>
 
-    var assignmentUpdateUrl = "/assignment/editor/current/1";
-    var getNewCSRFTokenURL = "/DokSTestingStuffDontTouch";
+    var assignmentUpdateUrl = "/DokSTestingStuff/1";
+    var getNewCSRFTokenURL = "/DokSTestingStuffDontTouch/";
 
     function sendAssignmentUpdate() {
-        let assignment = new XMLHttpRequest();
-        let formdata = new FormData();
+        //let assignment = new XMLHttpRequest();
 
-        assignment.open("POST", assignmentUpdateUrl, true);
-        formdata.append('_method', 'PUT');
+        let formdata = new FormData();
         formdata.append('title', 'Chris');
-        formdata.append('subject', 'Testing ajax form sending');
+        formdata.append('subject', 'Testing AJAX!');
+
+
+        for (var pair of formdata.entries()) {
+            console.log(pair[0] + ', ' + pair[1]);
+        }
+        console.log(assignmentUpdateUrl);
+        fetch("/DokSTestingStuff/1", {
+            method: 'PUT',
+            body: formdata,
+            credentials: 'same-origin',
+            headers: {
+                'X-CSRF-TOKEN': document.head.querySelector("[name~=csrf-token][content]").content
+    }
+    })
+            // .then( (response) => return response.text());
+            .then( (text) => console.log(text))
+            .catch( (error) => console.log(error) );
+
+
+
+        // fetch('/DokSTestingStuff/1', {
+        //     'method': 'put',
+        //     'body': formdata
+        // })
+        //     .then( (result) => console.log(result) )
+        //     .catch( (error) => console.log(error) );
+
+        //let formdata = new FormData();
+
+        //assignment.open("POST", assignmentUpdateUrl, true);
+
 
         // formdata.append('_Token', csrfToken)
-        let csrfRequest = requestNewCSRFToken();
+        // let csrfRequest = requestNewCSRFToken();
+        //
+        // csrfRequest.onreadystatechange = (function () {
+        //     if (setCSRFToken(csrfRequest, formdata)) {
+        //         for (var pair of formdata.entries()) {
+        //             console.log(pair[0] + ', ' + pair[1]);
+        //         }
+        //         fetch('/DokSTestingStuff/1', {
+        //             'method': 'put',
+        //             'body': formdata
+        //         })
+        //             .then( (result) => console.log(result) )
+        //             .catch( (error) => console.log(error) );
+        //     }
+        //
+        // })
 
-        csrfRequest.onreadystatechange = (function () {
-            if (setCSRFToken(csrfRequest, formdata)) {
-                for (var pair of formdata.entries()) {
-                    console.log(pair[0] + ', ' + pair[1]);
-                }
-                assignment.send()
-            }
-
-        })
-
-        assignment.onreadystatechange = (function () {
-            console.log('SendAssingment')
-        })
+        // assignment.onreadystatechange = (function () {
+        //     console.log('SendAssingment')
+        // })
 
     }
-
 
 
     function requestNewCSRFToken() {
@@ -108,7 +142,7 @@
     function setCSRFToken(csrfRequest, form) {
         if (csrfRequest.readyState === 4) {
             if (csrfRequest.status >= 200 && csrfRequest.status < 400) {
-                form.append('_Token', JSON.parse(csrfRequest.responseText).token)
+                form.append('_Token', JSON.parse(csrfRequest.responseText).token);
                 return true
             }
         }
@@ -120,7 +154,6 @@
 </script>
 
 
-
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -129,9 +162,9 @@
         integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
         crossorigin="anonymous"></script>
 <!-- Bootstrap JS -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
-        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
-        crossorigin="anonymous"></script>
+{{--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"--}}
+{{--        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"--}}
+{{--        crossorigin="anonymous"></script>--}}
 <script src="/editor.js"></script>
 
 

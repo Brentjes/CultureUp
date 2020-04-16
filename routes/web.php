@@ -57,3 +57,5 @@ Route::get('DokSTestingStuffDontTouch', function() {
         "token"=>csrf_token()],
         200);
 })->name('home')->middleware('auth');
+
+Route::put('DokSTestingStuff/{id}', 'AssignmentEditorController@update')->middleware('auth');
