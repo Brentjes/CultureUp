@@ -29,6 +29,10 @@ Route::get('/student', function() {
 
 Route::get('/profile/{id?}', 'UserController@show')->name('profile')->middleware('auth');
 
+Route::get('/leaderboard', function() {
+    return view('StudentPage.leaderboard');
+})->name('Leaderboard')->middleware('auth');
+
 Route::get('/logout', function() {
     Auth::logout();
     return view('home');

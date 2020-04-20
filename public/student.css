@@ -15,7 +15,6 @@
     background-image: url("polygon.png");
     background-repeat: no-repeat;
     background-size: cover;
-
 }
 
 .ribbonText {
@@ -51,3 +50,4 @@
 div.progress {
     margin: 0;
 }
+

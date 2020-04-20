@@ -37,7 +37,7 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link icon" id="button" aria-describedby="statistics" href="/statistics"><i class="fas fa-chart-bar"></i></a>
+                <a class="nav-link icon" id="button" aria-describedby="statistics" href="/leaderboard"><i class="fas fa-chart-bar"></i></a>
                 <div id="tooltip" role="statistics">
                     View your score and other statistics
                     <div id="arrow" data-popper-arrow></div>

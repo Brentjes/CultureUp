@@ -13,7 +13,7 @@
                         <h1 class="display-3 p-4 lead text-left ml-7">Welcome, J. Doe</h1>
                     </div>
                     <div class="col text-right mr-10">
-                        <img class="img-fluid" style="width:250px; height: auto" src="/cultureuplogo.png">
+                        <img class="img-fluid" style="width:25vw; height: auto" src="/cultureuplogo.png">
                     </div>
                 </div>
             </div>
