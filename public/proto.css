@@ -122,9 +122,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: right 100% bottom 5%;
-    -webkit-box-shadow: 2px 2px 15px #a2a2c3;
-    -moz-box-shadow: 2px 2px 15px #a2a2c3;
-    box-shadow: 2px 2px 15px #a2a2c3;
 }
 
 .navbar-brand {
@@ -262,4 +259,10 @@ a.custom-card:hover {
 .footer-copyright {
     color: #666;
     padding: 40px 0;
+}
+
+.softshadow {
+    -webkit-box-shadow: 2px 2px 15px #a2a2c3;
+    -moz-box-shadow: 2px 2px 15px #a2a2c3;
+    box-shadow: 2px 2px 15px #a2a2c3;
 }

@@ -21,7 +21,7 @@
 </head>
 <body>
 
-<nav class="navbar fixed-top navbar-expand-md">
+<nav class="navbar fixed-top navbar-expand-md softshadow">
     <a class="navbar-brand" href="/">CultureUp</a>
     <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
         <span class="navbar-toggler-icon"></span>
