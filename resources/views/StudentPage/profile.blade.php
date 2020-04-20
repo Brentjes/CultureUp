@@ -44,7 +44,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6 h-100 pl-5">
+                <div class="col-7 h-100 pl-5">
                     <div class="card rounded text-center w-100 h-75 p-0 m-5">
                         <div class="card-header d-block justify-content-center ribbon p-0 ">
                             <p class="ribbonText p-3 m-0">Badges</p>

@@ -13,7 +13,7 @@
                         <h1 class="display-3 p-4 lead text-left ml-7">Welcome, J. Doe</h1>
                     </div>
                     <div class="col text-right mr-10">
-                        <img class="img-fluid" style="width:25vw; height: auto" src="/cultureuplogo.png">
+                        <img class="img-fluid" style="width:15vw; height: auto" src="/cultureuplogo.png">
                     </div>
                 </div>
             </div>
@@ -99,7 +99,7 @@
                                     <div class="row">
                                         <div class="col text-left pr-0">
                                             <div class="img-fluid">
-                                                <img class="rounded" src="/https://picsum.photos/id/250/1080/1080"
+                                                <img class="rounded" src="https://picsum.photos/id/250/1080/1080"
                                                      style="width: 150px; height: 150px;">
                                             </div>
                                         </div>
@@ -117,7 +117,7 @@
                                     <div class="row">
                                         <div class="col text-left pr-0">
                                             <div class="img-fluid">
-                                                <img class="rounded" src="/https://picsum.photos/id/255/1080/1080"
+                                                <img class="rounded" src="https://picsum.photos/id/255/1080/1080"
                                                      style="width: 150px; height: 150px;">
                                             </div>
                                         </div>
@@ -135,7 +135,7 @@
                                     <div class="row">
                                         <div class="col text-left pr-0">
                                             <div class="img-fluid">
-                                                <img class="rounded" src="/https://picsum.photos/id/260/1080/1080"
+                                                <img class="rounded" src="https://picsum.photos/id/260/1080/1080"
                                                      style="width: 150px; height: 150px;">
                                             </div>
                                         </div>
