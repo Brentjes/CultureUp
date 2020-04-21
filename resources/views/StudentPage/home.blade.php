@@ -19,7 +19,6 @@
             </div>
             <div class="row">
                 <div class="col-7">
-
                     <div class="card rounded text-center w-100 p-0 m-5 pr-0">
                         <div class="card-header d-block justify-content-center ribbon p-0">
                             <div class="row">

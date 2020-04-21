@@ -3,7 +3,7 @@
     font-size: 3rem;
 }
 
-.goldfont {
+.podiumfont {
     font-family: 'Roboto';
     font-size: 3rem;
 }
@@ -13,23 +13,13 @@
     font-size: 2.5rem;
 }
 
-.silverfont {
-    font-family: 'Roboto';
-    font-size: 2.5rem;
-}
-
 .bronze {
     color: #cd7f32;
     font-size: 2.5rem;
 }
 
-.bronzefont {
-    font-family: 'Roboto';
-    font-size: 2.5rem;
-}
-
 .lineheight-min {
-    line-height: 4.4vh;
+    line-height: 5vh;
 }
 
 .pt-10 {
@@ -38,4 +28,13 @@
 
 .pt-20 {
     padding-top: 20vh;
+}
+
+.bar {
+    background-clip: content-box;
+    background-color: white;
+}
+
+.h-15 {
+    height: 15vh;
 }
