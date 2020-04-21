@@ -37,6 +37,22 @@ Route::get('/logout', function () {
     return view('home');
 })->name('home')->middleware('auth');
 
+
+//TEMPORARY TEACHER ROUTES
+Route::get('/teacherhome', function () {
+    return view('TeacherPage.home');
+})->where('name', 'home||')->name('Home')->middleware('auth');
+
+//Route::get('/profile/{id?}', 'UserController@show')->name('profile')->middleware('auth');
+
+Route::get('/teacherprofile', function () {
+    return view('TeacherPage.profile');
+})->name('Teacherprofile')->middleware('auth');
+
+Route::get('/teacherleaderboard', function () {
+    return view('TeacherPage.leaderboard');
+})->name('Leaderboard')->middleware('auth');
+
 //Route::resource('test', 'PageController');
 
 Route::group(array('prefix' => 'assignment'), function () {

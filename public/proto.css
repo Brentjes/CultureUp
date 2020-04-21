@@ -312,3 +312,9 @@ a.custom-card:hover {
     visibility: visible;
     opacity: 1;
 }
+
+
+.teachercolor {
+    color: black;
+    font-weight: unset;
+}
