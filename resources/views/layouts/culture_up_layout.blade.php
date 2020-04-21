@@ -21,7 +21,7 @@
 </head>
 <body>
 
-<nav class="navbar fixed-top navbar-expand-md">
+<nav class="navbar fixed-top navbar-expand-md softshadow">
     <a class="navbar-brand" href="/">CultureUp</a>
     <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
         <span class="navbar-toggler-icon"></span>
@@ -37,7 +37,7 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link icon" id="button" aria-describedby="statistics" href="/statistics"><i class="fas fa-chart-bar"></i></a>
+                <a class="nav-link icon" id="button" aria-describedby="statistics" href="/leaderboard"><i class="fas fa-chart-bar"></i></a>
                 <div id="tooltip" role="statistics">
                     View your score and other statistics
                     <div id="arrow" data-popper-arrow></div>

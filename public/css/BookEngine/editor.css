@@ -19,7 +19,7 @@ html {
     max-width: 250px;
     min-height: 100vh;
     transition: all 0.5s;
-    background: white url("/images/polygon.png") no-repeat;
+    background: white url("/images/newpolygon.png") no-repeat;
     background-size: cover;
  }
 
