@@ -1,0 +1,41 @@
+.gold {
+    color: #daa520;
+    font-size: 3rem;
+}
+
+.goldfont {
+    font-family: 'Roboto';
+    font-size: 3rem;
+}
+
+.silver {
+    color: #D3D3D3;
+    font-size: 2.5rem;
+}
+
+.silverfont {
+    font-family: 'Roboto';
+    font-size: 2.5rem;
+}
+
+.bronze {
+    color: #cd7f32;
+    font-size: 2.5rem;
+}
+
+.bronzefont {
+    font-family: 'Roboto';
+    font-size: 2.5rem;
+}
+
+.lineheight-min {
+    line-height: 4.4vh;
+}
+
+.pt-10 {
+    padding-top: 10vh;
+}
+
+.pt-20 {
+    padding-top: 20vh;
+}

@@ -1,4 +1,4 @@
-@extends ('layouts.culture_up_layout')
+@extends ('layouts.layout')
 @section ('content')
     <head>
         <link rel="stylesheet" type="text/css" href="student.css">
@@ -28,13 +28,10 @@
                                 </div>
                                 <div class="col text-right">
                                     <div class="p-3 pr-5 d-block justify-content-center">
-                                        <a href="/assignments" id="button" aria-describedby="tooltip">
-                                            <i class="fas fa-th icon hoverText ribbonText"></i>
+                                        <a class="custom-tooltip icon" href="/assignments" title=>
+                                            <i class="fas fa-th hoverText ribbonText"></i>
+                                            <span class="tooltiptext">View all assignments</span>
                                         </a>
-                                        <div id="tooltip" role="tooltip">
-                                            View all assignments
-                                            <div id="arrow" data-popper-arrow></div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
