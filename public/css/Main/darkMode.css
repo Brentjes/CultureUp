@@ -118,7 +118,7 @@ body {
 }
 
 .navbar {
-    background-image: url('/images/polygon.png');
+    background-image: url('/images/darkPolygon.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: right 100% bottom 5%;

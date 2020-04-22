@@ -14,7 +14,8 @@
                         <h1 class="display-3 lead text-left" style="font-size:4vw"> Welcome, Lucky Loek</h1>
                     </div>
                     <div class="col mr-20 text-center mt-5 mb-5">
-                        <img class="img-fluid" style="width:15vw; height: auto" src="/images/logo.png">
+                        <img id="logo" class="img-fluid" style="width:25vw; height: auto" src="/images/logoLight.png">
+
                     </div>
                 </div>
             </div>
