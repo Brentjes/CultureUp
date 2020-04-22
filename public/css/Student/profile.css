@@ -21,18 +21,6 @@ html, body {
     height: auto;
 }
 
-.ribbon {
-    background-image: url("/images/polygon.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-
-}
-
-.ribbonText {
-    color: white;
-    font-weight: bold;
-}
-
 .hoverText:hover {
     color: #EFEEEE;
 }

@@ -132,6 +132,18 @@ body {
     color: #EFEEEE;
 }
 
+.ribbon {
+    background-image: url("/images/polygon.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.ribbonText {
+    color: white;
+    font-weight: bold;
+}
+
 .user-icon {
     display: inline-block;
     position: relative;
