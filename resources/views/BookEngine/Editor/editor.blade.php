@@ -65,7 +65,7 @@
 
 <script>
 
-    var assignmentUpdateUrl = "/DokSTestingStuff/1";
+    var assignmentUpdateUrl = "/DokSTestingStuff";
     var getNewCSRFTokenURL = "/DokSTestingStuffDontTouch/";
 
     function sendAssignmentUpdate() {
@@ -74,24 +74,15 @@
         let formdata = new FormData();
         formdata.append('title', 'Chris');
         formdata.append('subject', 'Testing AJAX!');
+        let testData = {
+            title: "chris",
+            subject: "testing Ajax"
+        };
 
 
-        for (var pair of formdata.entries()) {
-            console.log(pair[0] + ', ' + pair[1]);
-        }
-        console.log(assignmentUpdateUrl);
-        fetch("/DokSTestingStuff/1", {
-            method: 'PUT',
-            body: formdata,
-            credentials: 'same-origin',
-            headers: {
-                'X-CSRF-TOKEN': document.head.querySelector("[name~=csrf-token][content]").content
-    }
-    })
-            // .then( (response) => return response.text());
-            .then( (text) => console.log(text))
-            .catch( (error) => console.log(error) );
 
+
+        const csrfToken = document.head.querySelector("[name~=csrf-token][content]").content;
 
 
         // fetch('/DokSTestingStuff/1', {
@@ -114,21 +105,45 @@
         //         for (var pair of formdata.entries()) {
         //             console.log(pair[0] + ', ' + pair[1]);
         //         }
-        //         fetch('/DokSTestingStuff/1', {
-        //             'method': 'put',
-        //             'body': formdata
+        //         fetch("http://localhost/DokSTestingStuff/1", {
+        //             method: 'PUT',
+        //             body: formdata,
+        //             credentials: 'same-origin',
+        //             mode: 'cors',
+        //             headers: {
+        //                 'Content-Type': 'application/json',
+        //                 "X-CSRF-Token": csrfToken
+        //             }
+        //
         //         })
-        //             .then( (result) => console.log(result) )
+        //             // .then( (response) => return response.text());
+        //             .then( (text) => console.log(text))
         //             .catch( (error) => console.log(error) );
         //     }
         //
         // })
 
-        // assignment.onreadystatechange = (function () {
-        //     console.log('SendAssingment')
-        // })
 
+
+        fetch(assignmentUpdateUrl, {
+            method: 'PUT',
+            body: testData,
+            credentials: 'same-origin',
+            mode: 'cors',
+            headers: {
+
+                "X-CSRF-Token": csrfToken
+            }
+
+        })
+            // .then( (response) => return response.text());
+            .then( (text) => console.log(text))
+            .catch( (error) => console.log(error) );
     }
+
+
+
+
 
 
     function requestNewCSRFToken() {
@@ -142,7 +157,7 @@
     function setCSRFToken(csrfRequest, form) {
         if (csrfRequest.readyState === 4) {
             if (csrfRequest.status >= 200 && csrfRequest.status < 400) {
-                form.append('_Token', JSON.parse(csrfRequest.responseText).token);
+                form.append('_token', JSON.parse(csrfRequest.responseText).token);
                 return true
             }
         }

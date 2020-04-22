@@ -63,4 +63,4 @@ Route::get('DokSTestingStuffDontTouch', function () {
         200);
 })->name('home')->middleware('auth');
 
-Route::put('DokSTestingStuff/{id}', 'AssignmentEditorController@dumbTest')->middleware('auth');
+Route::put('DokSTestingStuff', 'AssignmentEditorController@dumbTest')->middleware('auth');

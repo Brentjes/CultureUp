@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Assignment;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\User;
 
 class AssignmentEditorController extends Controller
@@ -75,6 +74,16 @@ class AssignmentEditorController extends Controller
     }
 
     /**
+     * Show the form for editing the specified resource.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function dumbTest(Request $request){
+        dd($request);
+    }
+
+    /**
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
@@ -83,12 +92,21 @@ class AssignmentEditorController extends Controller
      */
     public function update(Request $request, assignment $current)
     {
-//        dd($request);
+        dd($request);
+
         $assignment = $current;
-        $this->saveInfoToDB($request, $assignment);
+        $assignment->name = $request->json('title');
+        $assignment->subject = $request->json('subject');
+        $assignment->course_id  = 1;
+        $assignment->teacher_id = 1;
+        $assignment->createdBy = 1;
+        $assignment->isHidden = (($request->json('isHidden')== 'on') ? true : false);
+        $assignment->isLocked = (($request->json('isLocked')== 'on') ? true : false);
 
-
+        $assignment->save();
     }
+
+
 
     /**
      * Remove the specified resource from storage.
