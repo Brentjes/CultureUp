@@ -10,50 +10,6 @@ body {
     overflow-x: hidden;
 }
 
-#tooltip {
-    background: #333;
-    color: white;
-    font-weight: bold;
-    padding: 4px 8px;
-    font-size: 13px;
-    border-radius: 4px;
-    display: none;
-}
-
-#arrow,
-#arrow::before {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    z-index: -1;
-}
-
-#arrow::before {
-    content: '';
-    transform: rotate(45deg);
-    background: #333;
-}
-
-#tooltip[data-popper-placement^='top'] > #arrow {
-    bottom: -4px;
-}
-
-#tooltip[data-popper-placement^='bottom'] > #arrow {
-    top: -4px;
-}
-
-#tooltip[data-popper-placement^='left'] > #arrow {
-    right: -4px;
-}
-
-#tooltip[data-popper-placement^='right'] > #arrow {
-    left: -4px;
-}
-
-#tooltip[data-show] {
-    display: block;
-}
-
 @font-face {
     font-family: 'Material Icons';
     font-style: normal;
@@ -285,8 +241,8 @@ a.custom-card:hover {
     top: 100%;
     left: 50%;
     margin-left: -60px;
-    background-color: white;
-    color: black;
+    background-color: #282828;
+    color: #e0e0e0;
     text-align: center;
     padding: 5px 0;
     border-radius: 6px;
@@ -294,9 +250,9 @@ a.custom-card:hover {
     z-index: 1;
     opacity: 0;
     transition: opacity 0.2s linear 1s;
-    -webkit-box-shadow: 2px 2px 15px #a2a2c3;
-    -moz-box-shadow: 2px 2px 15px #a2a2c3;
-    box-shadow: 2px 2px 15px #a2a2c3;
+    -webkit-box-shadow: 2px 2px 15px black;
+    -moz-box-shadow: 2px 2px 15px black;
+    box-shadow: 2px 2px 15px black;
 }
 
 .custom-tooltip .tooltiptext::after {
@@ -307,7 +263,7 @@ a.custom-card:hover {
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: transparent transparent white transparent;
+    border-color: transparent transparent #282828 transparent;
 }
 
 .tooltiptext {
@@ -323,8 +279,6 @@ a.custom-card:hover {
     color: black;
     font-weight: unset;
 }
-
-
 
 .dropdown-menu {
     background-color: #282828;
@@ -346,8 +300,6 @@ a.custom-card:hover {
     background: transparent;
     color: grey;
 }
-
-
 
 .card {
     background-color: #1d1d1d;
