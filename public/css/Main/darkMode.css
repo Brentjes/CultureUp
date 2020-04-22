@@ -4,7 +4,7 @@ html {
 }
 
 body {
-    background-color: #121212;
+    background-color: rgba(0, 0, 0, 0.93);
     padding: 0;
     margin: 0;
     overflow-x: hidden;
@@ -324,12 +324,37 @@ a.custom-card:hover {
     font-weight: unset;
 }
 
+
+
+.dropdown-menu {
+    background-color: #282828;
+}
+
+.dropdown-item {
+    color: #e0e0e0;
+}
+
+.dropdown-item:hover {
+    color: black;
+    background-color: #e0e0e0;
+}
+
+.disabled {
+    color: grey !important;
+}
+.disabled:hover {
+    background: transparent;
+    color: grey;
+}
+
+
+
 .card {
     background-color: #1d1d1d;
 }
 
 .list-group-item {
-    background-color: #1d1d1d !important;
+    background-color: #1f1f1f !important;
 }
 
 p {
@@ -352,4 +377,17 @@ th {
     color: #e0e0e0;
 }
 
+.ribbon {
+    background-image: url("/images/darkPolygon.png") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 1px solid grey;
+    background-position: 100% 60%;
+}
+
+.softshadow {
+    -webkit-box-shadow: 2px 2px 15px black;
+    -moz-box-shadow: 2px 2px 15px black;
+    box-shadow: 2px 2px 15px black;
+}
 

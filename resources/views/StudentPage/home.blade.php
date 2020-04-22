@@ -7,13 +7,24 @@
 
     <section id="studentpage">
         <div class="container-fluid text-center p-0">
+{{--            LEGACY SCALING--}}
+{{--            <div class="card w-100 h-auto">--}}
+{{--                <div class="row d-flex justify-content-center">--}}
+{{--                    <div class="col">--}}
+{{--                        <h1 class="display-3 p-4 lead text-left ml-7">Welcome, J. Doe</h1>--}}
+{{--                    </div>--}}
+{{--                    <div class="col text-right mr-10">--}}
+{{--                        <img class="img-fluid" style="width:15vw; height: auto" src="/images/Logo.png">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
             <div class="card w-100 h-auto">
                 <div class="row d-flex justify-content-center">
-                    <div class="col">
-                        <h1 class="display-3 p-4 lead text-left ml-7">Welcome, J. Doe</h1>
+                    <div class="col pl-5 mt-5 mb-5">
+                        <h1 class="display-3 lead text-left" style="font-size:4vw"> Welcome, J. Doe</h1>
                     </div>
-                    <div class="col text-right mr-10">
-                        <img class="img-fluid" style="width:15vw; height: auto" src="/images/logo.png">
+                    <div class="col mr-20 text-center mt-5 mb-5">
+                        <img id="logo" class="img-fluid" style="width:25vw; height: auto" src="/images/logoLight.png">
                     </div>
                 </div>
             </div>

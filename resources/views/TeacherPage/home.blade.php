@@ -15,7 +15,6 @@
                     </div>
                     <div class="col mr-20 text-center mt-5 mb-5">
                         <img id="logo" class="img-fluid" style="width:25vw; height: auto" src="/images/logoLight.png">
-
                     </div>
                 </div>
             </div>
