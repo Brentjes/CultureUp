@@ -1,7 +1,7 @@
-@extends ('layouts.culture_up_layout')
+@extends ('layouts.layout')
 @section ('content')
     <head>
-        <link rel="stylesheet" type="text/css" href="student.css">
+        <link rel="stylesheet" type="text/css" href="/css/student/home.css">
         <title>CultureUp - Home</title>
     </head>
 
@@ -13,13 +13,12 @@
                         <h1 class="display-3 p-4 lead text-left ml-7">Welcome, J. Doe</h1>
                     </div>
                     <div class="col text-right mr-10">
-                        <img class="img-fluid" style="width:15vw; height: auto" src="/cultureuplogo.png">
+                        <img class="img-fluid" style="width:15vw; height: auto" src="/images/logo.png">
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-7">
-
                     <div class="card rounded text-center w-100 p-0 m-5 pr-0">
                         <div class="card-header d-block justify-content-center ribbon p-0">
                             <div class="row">
@@ -28,13 +27,10 @@
                                 </div>
                                 <div class="col text-right">
                                     <div class="p-3 pr-5 d-block justify-content-center">
-                                        <a href="/assignments" id="button" aria-describedby="tooltip">
-                                            <i class="fas fa-th icon hoverText ribbonText"></i>
+                                        <a class="custom-tooltip icon" href="/assignments" title=>
+                                            <i class="fas fa-th hoverText ribbonText"></i>
+                                            <span class="tooltiptext">View all assignments</span>
                                         </a>
-                                        <div id="tooltip" role="tooltip">
-                                            View all assignments
-                                            <div id="arrow" data-popper-arrow></div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

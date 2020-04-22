@@ -1,4 +1,4 @@
-@extends ('layouts.culture_up_layout')
+@extends ('layouts.layout')
 @section ('content')
     <head>
         <title>CultureUp - Assignments</title>

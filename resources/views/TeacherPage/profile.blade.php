@@ -1,7 +1,7 @@
-@extends ('layouts.layout')
+@extends ('layouts.teacherLayout')
 @section ('content')
     <head>
-        <link rel="stylesheet" type="text/css" href="/css/student/profile.css">
+        <link rel="stylesheet" type="text/css" href="/profile.css">
         <title>CultureUp - Profile</title>
     </head>
 
@@ -23,15 +23,15 @@
                         <div class="card-body">
                             <li class="list-group-item">
                                 <div class="img-fluid pt-4 pb-5">
-                                    <img class="rounded" src="/images/default.jpg"
+                                    <img class="rounded" src="/default.jpg"
                                          style="width: 15vw; height: auto;">
                                 </div>
                                 <div class="row center-row text-left">
                                     <div class="col">
                                         <p class="display-5 display-sm-3 display-m-4 display-md-5 mb-0">
-                                            <b>Name:</b> {{$user->name}}</p>
-                                        <p class="display-5 mb-0"><b>Teacher:</b> Bugs Bunny</p>
-                                        <p class="display-5 mb-0"><b>Country:</b> Bosnia Herzegovina</p>
+                                            <b>Name:</b> Teacher</p>
+                                        <p class="display-5 mb-0"><b>Class</b> HBO-ICT</p>
+                                        <p class="display-5 mb-0"><b>Country:</b> China</p>
 
                                     </div>
                                 </div>
