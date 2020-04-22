@@ -36,12 +36,15 @@ function init() {
     document.getElementById('toggle-button').addEventListener('click', toggle_style, false);
 }
 function toggle_style() {
+
+
+
     if(document.getElementById('dynamic-style').href == window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/css/Main/darkMode.css') {
         document.getElementById('dynamic-style').href = '/css/Main/main.css';
 
         document.getElementById('logo').src = '/images/logoLight.png';
 
-        document.getElementById('toggle-button').firstChild.data = 'Dark mode';
+        document.getElementById('toggle-button-text').innerText = 'Dark mode';
 
         document.getElementById('toggleLightIcon').classList.remove('fa-sun');
         document.getElementById('toggleLightIcon').classList.add('fa-moon');
@@ -51,7 +54,7 @@ function toggle_style() {
 
         document.getElementById('logo').src = '/images/logoDark.png'
 
-        document.getElementById('toggle-button').children[1] = 'Light mode';
+        document.getElementById('toggle-button-text').innerText = 'Light mode';
 
         document.getElementById('toggleLightIcon').classList.remove('fa-moon');
         document.getElementById('toggleLightIcon').classList.add('fa-sun');
