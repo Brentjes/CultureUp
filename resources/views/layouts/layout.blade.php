@@ -47,10 +47,15 @@
                     <span class="tooltiptext">Shows an overview of your in-progress courses</span>
                 </a>
             </li>
-
+            <li class="nav-item">
+                <a class="nav-link icon custom-tooltip" href="/home">
+                    <i class="fas fa-tasks"></i>
+                    <span class="tooltiptext">Shows an overview of your in-progress courses</span>
+                </a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link icon custom-tooltip" href="/leaderboard">
-                    <i class="fas fa-chart-bar"></i>
+                    <i class="fas fa-crown"></i>
                     <span class="tooltiptext">View your score and other statistics</span>
                 </a>
             </li>
@@ -60,7 +65,6 @@
                     <span class="tooltiptext">View all your messages</span>
                 </a>
             </li>
-
             <li class="nav-item">
                 <div class="dropdown show">
                     <a href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"

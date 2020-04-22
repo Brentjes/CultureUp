@@ -17,24 +17,24 @@
                     </div>
                 </div>
             </div>
+
             <div class="row">
-                <div class="col-7">
-                    <div class="card rounded text-center w-100 p-0 m-5 pr-0">
-                        <div class="card-header d-block justify-content-center ribbon p-0">
-                            <div class="row">
-                                <div class="col">
-                                    <p class="ribbonText text-left p-3 m-0">Progress</p>
+                <div class="col-7 mt-5 ml-5 mr-5 pl-0 pr-0">
+                    <div class="card rounded w-100 p-0">
+                        <div class="card-header ribbon p-0" style="padding-right: 4px;">
+                            <div class="row justify-content-between w-100 p-3 m-0">
+                                <div class="col-4 my-auto">
+                                    <p class="ribbonText text-left mb-0">Progress</p>
                                 </div>
-                                <div class="col text-right">
-                                    <div class="p-3 pr-5 d-block justify-content-center">
-                                        <a class="custom-tooltip icon" href="/assignments" title=>
-                                            <i class="fas fa-th hoverText ribbonText"></i>
-                                            <span class="tooltiptext">View all assignments</span>
-                                        </a>
-                                    </div>
+                                <div class="col-1 my-auto">
+                                    <a class="custom-tooltip icon" href="/assignments">
+                                        <i class="fas fa-ellipsis-h hoverText ribbonText"></i>
+                                        <span class="tooltiptext">View all assignments</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
+
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
@@ -84,9 +84,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4 w-100 pr-0 h-100">
-                    <div class="card rounded  text-center w-100 h-75 p-0 m-5  pr-0">
-                        <div class="card-header d-block justify-content-center ribbon p-0 ">
+
+                <div class="col-4 w-100 h-100 mt-5 pl-0 pr-0">
+                    <div class="card rounded  text-center w-100 h-75 p-0">
+                        <div class="card-header my-auto ribbon p-0 ">
                             <p class="ribbonText p-3 m-0">News Feed</p>
                         </div>
                         <div class="card-body">
