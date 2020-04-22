@@ -34,6 +34,10 @@ $(document).ready(function () {
 // Dark mode button toggle
 function init() {
     document.getElementById('toggle-button').addEventListener('click', toggle_style, false);
+
+    if(localStorage.getItem('CultureUpDarkMode') === 'true'){
+        toggle_style()
+    }
 }
 function toggle_style() {
 
@@ -48,6 +52,7 @@ function toggle_style() {
 
         document.getElementById('toggleLightIcon').classList.remove('fa-sun');
         document.getElementById('toggleLightIcon').classList.add('fa-moon');
+        localStorage.setItem('CultureUpDarkMode', 'false')
 
     } else {
         document.getElementById('dynamic-style').href = '/css/Main/darkMode.css';
@@ -58,7 +63,8 @@ function toggle_style() {
 
         document.getElementById('toggleLightIcon').classList.remove('fa-moon');
         document.getElementById('toggleLightIcon').classList.add('fa-sun');
+        localStorage.setItem('CultureUpDarkMode', 'true')
     }
-    console.log("hachoooo");
+
 }
 window.addEventListener('load', init, false);
