@@ -218,15 +218,15 @@ a.custom-card:hover {
 }
 
 .softshadow {
-    -webkit-box-shadow: 2px 2px 15px #a2a2c3;
-    -moz-box-shadow: 2px 2px 15px #a2a2c3;
-    box-shadow: 2px 2px 15px #a2a2c3;
+    -webkit-box-shadow: 2px 2px 15px black;
+    -moz-box-shadow: 2px 2px 15px black;
+    box-shadow: 2px 2px 15px black;
 }
 
 .softshadow-inset {
-    -webkit-box-shadow: inset 2px 2px 15px #a2a2c3;
-    -moz-box-shadow: inset 2px 2px 15px #a2a2c3;
-    box-shadow: inset 2px 2px 15px #a2a2c3;
+    -webkit-box-shadow: inset 2px 2px 15px black;
+    -moz-box-shadow: inset 2px 2px 15px black;
+    box-shadow: inset 2px 2px 15px black;
 }
 
 /* Tooltip styling */
@@ -337,9 +337,19 @@ th {
     background-position: 100% 60%;
 }
 
-.softshadow {
-    -webkit-box-shadow: 2px 2px 15px black;
-    -moz-box-shadow: 2px 2px 15px black;
-    box-shadow: 2px 2px 15px black;
+table.table-bordered > thead > tr > th{
+    border:1px solid #313131;
 }
 
+table.table-bordered > tbody > tr > th{
+    border:1px solid #313131;
+}
+
+table.table-bordered > tbody > tr > td{
+    border:1px solid #313131;
+}
+
+.bar {
+    background-clip: content-box;
+    background-color: #1d1d1d !important;
+}

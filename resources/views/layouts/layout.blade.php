@@ -24,9 +24,6 @@
     <link rel="stylesheet" type="text/css" href="/MDB/css/mdb.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/css/main/main.css">
-
-    {{--Dark mode button--}}
     <link id="dynamic-style" rel="stylesheet" type="text/css" href="/css/Main/main.css">
 
     {{--JQuery--}}
@@ -45,9 +42,9 @@
     <div class="collapse navbar-collapse" id="main-navigation">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link icon custom-tooltip" href="/home">
+                <a class="nav-link icon custom-tooltip" href="/globe">
                     <i class="fas fa-globe"></i>
-                    <span class="tooltiptext">Shows an overview of your in-progress courses</span>
+                    <span class="tooltiptext">Shows a globe that grants access to a collection of courses</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -78,7 +75,8 @@
                         <p class="dropdown-item dropdown-item-text disabled">J. Doe</p>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="/profile"><i class="fas fa-user"></i> Profile</a>
-                        <a class="dropdown-item" href="#" id="toggle-button"><i class="fas fa-moon"></i> Dark mode</a>
+                        <a class="dropdown-item" href="#" id="toggle-button"><i id="toggleLightIcon" class="fas fa-moon"></i><span
+                                id="toggle-button-text"> Dark mode</span></a>
                         <a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt text-danger"></i> Log out</a>
                     </div>
                 </div>

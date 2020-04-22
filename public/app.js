@@ -37,34 +37,27 @@ function init() {
 
     if(localStorage.getItem('CultureUpDarkMode') === 'true'){
         toggle_style()
+    } else {
+        document.getElementById('dynamic-style').href = '/css/Main/main.css';
     }
 }
 function toggle_style() {
-
-
-
     if(document.getElementById('dynamic-style').href == window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/css/Main/darkMode.css') {
         document.getElementById('dynamic-style').href = '/css/Main/main.css';
-
         document.getElementById('logo').src = '/images/logoLight.png';
-
         document.getElementById('toggle-button-text').innerText = ' Dark mode';
-
         document.getElementById('toggleLightIcon').classList.remove('fa-sun');
         document.getElementById('toggleLightIcon').classList.add('fa-moon');
-        localStorage.setItem('CultureUpDarkMode', 'false')
+        localStorage.setItem('CultureUpDarkMode', 'false');
 
     } else {
         document.getElementById('dynamic-style').href = '/css/Main/darkMode.css';
-
         document.getElementById('logo').src = '/images/logoDark.png'
-
         document.getElementById('toggle-button-text').innerText = ' Light mode';
-
         document.getElementById('toggleLightIcon').classList.remove('fa-moon');
         document.getElementById('toggleLightIcon').classList.add('fa-sun');
-        localStorage.setItem('CultureUpDarkMode', 'true')
+        localStorage.setItem('CultureUpDarkMode', 'true');
     }
-
+    console.log(localStorage.getItem('CultureUpDarkMode'));
 }
 window.addEventListener('load', init, false);
