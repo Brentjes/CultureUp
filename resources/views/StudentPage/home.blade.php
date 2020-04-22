@@ -1,7 +1,7 @@
 @extends ('layouts.layout')
 @section ('content')
     <head>
-        <link rel="stylesheet" type="text/css" href="student.css">
+        <link rel="stylesheet" type="text/css" href="/css/student/home.css">
         <title>CultureUp - Home</title>
     </head>
 
@@ -13,7 +13,7 @@
                         <h1 class="display-3 p-4 lead text-left ml-7">Welcome, J. Doe</h1>
                     </div>
                     <div class="col text-right mr-10">
-                        <img class="img-fluid" style="width:15vw; height: auto" src="/cultureuplogo.png">
+                        <img class="img-fluid" style="width:15vw; height: auto" src="/images/logo.png">
                     </div>
                 </div>
             </div>

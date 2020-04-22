@@ -118,7 +118,7 @@ body {
 }
 
 .navbar {
-    background-image: url('newpolygon.png');
+    background-image: url('/images/polygon.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: right 100% bottom 5%;
@@ -267,6 +267,12 @@ a.custom-card:hover {
     box-shadow: 2px 2px 15px #a2a2c3;
 }
 
+.softshadow-inset {
+    -webkit-box-shadow: inset 2px 2px 15px #a2a2c3;
+    -moz-box-shadow: inset 2px 2px 15px #a2a2c3;
+    box-shadow: inset 2px 2px 15px #a2a2c3;
+}
+
 /* Tooltip styling */
 .custom-tooltip {
     position: relative;
@@ -312,7 +318,6 @@ a.custom-card:hover {
     visibility: visible;
     opacity: 1;
 }
-
 
 .teachercolor {
     color: black;

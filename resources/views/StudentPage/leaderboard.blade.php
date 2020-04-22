@@ -2,8 +2,8 @@
 @section ('content')
 
     <head>
-        <link rel="stylesheet" type="text/css" href="/profile.css">
-        <link rel="stylesheet" type="text/css" href="/leaderboard.css">
+        <link rel="stylesheet" type="text/css" href="/css/student/profile.css">
+        <link rel="stylesheet" type="text/css" href="/css/student/leaderboard.css">
         <title>CultureUp - Leaderboard</title>
     </head>
 

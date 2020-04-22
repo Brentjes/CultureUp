@@ -24,7 +24,7 @@
     <link rel="stylesheet" type="text/css" href="/MDB/css/mdb.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/proto.css">
+    <link rel="stylesheet" type="text/css" href="/css/main/main.css">
 
     {{--JQuery--}}
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -56,7 +56,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link icon custom-tooltip" href="/notifications">
-                    <i class="fas fa-bell"></i>
+                    <i class="fas fa-bell"></i><span class="badge badge-dark rounded-circle">5</span>
                     <span class="tooltiptext">View all your messages</span>
                 </a>
             </li>
@@ -65,7 +65,7 @@
                 <div class="dropdown show">
                     <a href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false">
-                        <img class="rounded-circle user-icon" src="/default.jpg">
+                        <img class="rounded-circle user-icon" src="/images/default.jpg">
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
                         <p class="dropdown-item dropdown-item-text disabled">J. Doe</p>
