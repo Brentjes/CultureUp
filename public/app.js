@@ -29,3 +29,18 @@ $(document).ready(function () {
 $(document).ready(function () {
     document.getElementById('viewMore').addEventListener('click', viewMore);
 });
+
+
+// Dark mode button toggle
+function init() {
+    document.getElementById('toggle-button').addEventListener('click', toggle_style, false);
+}
+function toggle_style() {
+    if(document.getElementById('dynamic-style').href == window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/css/Main/darkMode.css') {
+        document.getElementById('dynamic-style').href = '/css/Main/main.css';
+    } else {
+        document.getElementById('dynamic-style').href = '/css/Main/darkMode.css';
+    }
+    console.log("hachoooo");
+}
+window.addEventListener('load', init, false);

@@ -1,7 +1,7 @@
 @extends ('layouts.teacherLayout')
 @section ('content')
     <head>
-        <link rel="stylesheet" type="text/css" href="student.css">
+        <link rel="stylesheet" type="text/css" href="/css/teacher/home.css">
         <title>CultureUp - Home</title>
     </head>
 
@@ -10,11 +10,11 @@
         <div class="container-fluid text-center p-0">
             <div class="card w-100 h-auto">
                 <div class="row d-flex justify-content-center">
-                    <div class="col pl-5 mt-5">
+                    <div class="col pl-5 mt-5 mb-5">
                         <h1 class="display-3 lead text-left" style="font-size:4vw"> Welcome, Lucky Loek</h1>
                     </div>
-                    <div class="col mr-20 text-center mt-5">
-                        <img class="img-fluid" style="width:25vw; height: auto" src="/cultureuplogo.png">
+                    <div class="col mr-20 text-center mt-5 mb-5">
+                        <img class="img-fluid" style="width:15vw; height: auto" src="/images/logo.png">
                     </div>
                 </div>
             </div>
@@ -89,13 +89,13 @@
                         <div class="card-header d-block justify-content-center ribbon p-0">
                             <div class="row">
                                 <div class="col">
-                                    <p class="ribbonText text-left p-3 m-0">Top 3 cases</p>
+                                    <p class="ribbonText text-left p-3 m-0">Your top 3 most viewed courses</p>
                                 </div>
                                 <div class="col text-right">
                                     <div class="p-3 pr-5 d-block justify-content-center">
                                         <a class="custom-tooltip icon" href="/assignments" title=>
                                             <i class="fas fa-th hoverText ribbonText"></i>
-                                            <span class="tooltiptext">View all cases</span>
+                                            <span class="tooltiptext">View all your courses</span>
                                         </a>
                                     </div>
                                 </div>
@@ -106,21 +106,24 @@
                                 <li class="list-group-item">
                                     <div class="row p-3 center-row">
                                         <div class="col">
-                                            <p class="display-5 mb-0">#3 English culture on the workfloor</p>
+                                            <p class="display-5 mb-0"><b>#1 Chinese culture on the workfloor</b></p>
+                                            <p class="display-5 mb-0">105 views</p>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="list-group-item">
                                     <div class="row p-3 center-row">
                                         <div class="col">
-                                            <p class="display-5 mb-0">#3 English culture on the workfloor</p>
+                                            <p class="display-5 mb-0"><b>#2 Dutch culture on the workfloor</b></p>
+                                            <p class="display-5 mb-0">54 views</p>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="list-group-item">
                                     <div class="row p-3 center-row">
                                         <div class="col">
-                                            <p class="display-5 mb-0">#3 English culture on the workfloor</p>
+                                            <p class="display-5 mb-0"><b>#3 English culture on the workfloor</b></p>
+                                            <p class="display-5 mb-0">25 views</p>
                                         </div>
                                     </div>
                                 </li>
