@@ -24,7 +24,10 @@
     <link rel="stylesheet" type="text/css" href="/MDB/css/mdb.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/proto.css">
+
+    {{--Dark mode button--}}
+    <link id="dynamic-style" rel="stylesheet" type="text/css" href="/css/Main/main.css">
+
 
     {{--JQuery--}}
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -44,14 +47,14 @@
             <li class="nav-item">
                 <a class="nav-link icon custom-tooltip" href="/teacherhome">
                     <i class="fas fa-globe"></i>
-                    <span class="tooltiptext">Shows an overview of your in-progress courses</span>
+                    <span class="tooltiptext">Shows an overview of your made courses</span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link icon custom-tooltip" href="/teacherleaderboard">
                     <i class="fas fa-chart-bar"></i>
-                    <span class="tooltiptext">View your score and other statistics</span>
+                    <span class="tooltiptext">View your students scores and other statistics</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -71,12 +74,13 @@
                 <div class="dropdown show">
                     <a href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false">
-                        <img class="rounded-circle user-icon" src="/default.jpg">
+                        <img class="rounded-circle user-icon" src="/images/default.jpg">
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
                         <p class="dropdown-item dropdown-item-text disabled">J. Doe</p>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="/teacherprofile"><i class="fas fa-user"></i> Profile</a>
+                        <a class="dropdown-item" href="#" id="toggle-button"><i id="toggleLightIcon" class="fas fa-moon"></i><span id="toggle-button-text"> Dark mode</span></a>
                         <a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt text-danger"></i> Log out</a>
                     </div>
                 </div>
