@@ -26,6 +26,9 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/css/main/main.css">
 
+    {{--Dark mode button--}}
+    <link id="dynamic-style" rel="stylesheet" type="text/css" href="/css/Main/main.css">
+
     {{--JQuery--}}
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -71,6 +74,7 @@
                         <p class="dropdown-item dropdown-item-text disabled">J. Doe</p>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="/profile"><i class="fas fa-user"></i> Profile</a>
+                        <a class="dropdown-item" href="#" id="toggle-button"><i class="fas fa-moon"></i> Dark mode</a>
                         <a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt text-danger"></i> Log out</a>
                     </div>
                 </div>

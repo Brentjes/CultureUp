@@ -4,7 +4,7 @@ html {
 }
 
 body {
-    background-color: #EFEEEE;
+    background-color: #121212;
     padding: 0;
     margin: 0;
     overflow-x: hidden;
@@ -118,7 +118,7 @@ body {
 }
 
 .navbar {
-    background-image: url('/images/polygon.png');
+    background-image: url('/images/darkPolygon.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: right 100% bottom 5%;
@@ -323,3 +323,33 @@ a.custom-card:hover {
     color: black;
     font-weight: unset;
 }
+
+.card {
+    background-color: #1d1d1d;
+}
+
+.list-group-item {
+    background-color: #1d1d1d !important;
+}
+
+p {
+    color: #e0e0e0;
+}
+
+h1 {
+    color: #e0e0e0;
+}
+
+th {
+    color: #e0e0e0;
+}
+
+.h4 {
+    color: #e0e0e0;
+}
+
+.h6 {
+    color: #e0e0e0;
+}
+
+
