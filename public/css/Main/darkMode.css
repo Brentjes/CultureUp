@@ -332,6 +332,7 @@ th {
 
 .ribbon {
     background-image: url("/images/darkPolygon.png") !important;
+    color: #e0e0e0;
     background-repeat: no-repeat;
     background-size: cover;
     border-bottom: 1px solid grey;
@@ -353,4 +354,8 @@ table.table-bordered > tbody > tr > td{
 .bar {
     background-clip: content-box;
     background-color: #1d1d1d !important;
+}
+
+.progress {
+    background-color: #e0e0e0;
 }
