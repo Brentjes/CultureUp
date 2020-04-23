@@ -34,30 +34,29 @@ $(document).ready(function () {
 // Dark mode button toggle
 function init() {
     document.getElementById('toggle-button').addEventListener('click', toggle_style, false);
-
     if(localStorage.getItem('CultureUpDarkMode') === 'true'){
         toggle_style()
     } else {
-        document.getElementById('dynamic-style').href = '/css/Main/main.css';
+        document.getElementById('logo').src = '/images/logoLight.png';
     }
 }
-function toggle_style() {
-    if(document.getElementById('dynamic-style').href == window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/css/Main/darkMode.css') {
-        document.getElementById('dynamic-style').href = '/css/Main/main.css';
-        document.getElementById('logo').src = '/images/logoLight.png';
-        document.getElementById('toggle-button-text').innerText = ' Dark mode';
-        document.getElementById('toggleLightIcon').classList.remove('fa-sun');
-        document.getElementById('toggleLightIcon').classList.add('fa-moon');
-        localStorage.setItem('CultureUpDarkMode', 'false');
 
+function toggle_style() {
+    let byId = function(id) { return document.getElementById(id); };
+    if(byId('dynamic-style').href == window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/css/Main/darkMode.css') {
+        byId('dynamic-style').href = '';
+        byId('logo').src = '/images/logoLight.png';
+        byId('toggle-button-text').innerText = ' Dark mode';
+        byId('toggleLightIcon').classList.remove('fa-sun');
+        byId('toggleLightIcon').classList.add('fa-moon');
+        localStorage.setItem('CultureUpDarkMode', 'false');
     } else {
-        document.getElementById('dynamic-style').href = '/css/Main/darkMode.css';
-        document.getElementById('logo').src = '/images/logoDark.png'
-        document.getElementById('toggle-button-text').innerText = ' Light mode';
-        document.getElementById('toggleLightIcon').classList.remove('fa-moon');
-        document.getElementById('toggleLightIcon').classList.add('fa-sun');
+        byId('dynamic-style').href = '/css/Main/darkMode.css';
+        byId('logo').src = '/images/logoDark.png';
+        byId('toggle-button-text').innerText = ' Light mode';
+        byId('toggleLightIcon').classList.remove('fa-moon');
+        byId('toggleLightIcon').classList.add('fa-sun');
         localStorage.setItem('CultureUpDarkMode', 'true');
     }
-    console.log(localStorage.getItem('CultureUpDarkMode'));
 }
 window.addEventListener('load', init, false);

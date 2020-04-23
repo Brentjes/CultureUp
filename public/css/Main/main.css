@@ -1,3 +1,7 @@
+* {
+    transition-duration: 1s;
+}
+
 html {
     scroll-behavior: smooth;
     font-family: 'Roboto';
@@ -291,3 +295,4 @@ a.custom-card:hover {
     color: black;
     font-weight: unset;
 }
+

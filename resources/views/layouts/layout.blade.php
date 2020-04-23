@@ -24,7 +24,8 @@
     <link rel="stylesheet" type="text/css" href="/MDB/css/mdb.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link id="dynamic-style" rel="stylesheet" type="text/css" href="/css/Main/main.css">
+    <link rel="stylesheet" type="text/css" href="/css/Main/main.css">
+    <link id="dynamic-style" rel="stylesheet" type="text/css" href="">
 
     {{--JQuery--}}
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

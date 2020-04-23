@@ -19,12 +19,12 @@
             {{--                </div>--}}
             {{--            </div>--}}
             <div class="card w-100 h-auto">
-                <div class="row d-flex justify-content-center">
-                    <div class="col pl-5 mt-5 mb-5">
+                <div class="row my-auto">
+                    <div class="col pl-5 mt-5 mb-5 my-auto">
                         <h1 class="display-3 lead text-left" style="font-size:4vw"> Welcome, J. Doe</h1>
                     </div>
                     <div class="col mr-20 text-center mt-5 mb-5">
-                        <img id="logo" class="img-fluid" style="width:25vw; height: auto" src="/images/logoLight.png">
+                        <img id="logo" class="img-fluid switch" style="width:25vw; height: auto" src="/images/logoLight.png">
                     </div>
                 </div>
             </div>
