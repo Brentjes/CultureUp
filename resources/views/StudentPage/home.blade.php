@@ -38,7 +38,7 @@
                                     <p class="ribbonText text-left mb-0">Progress</p>
                                 </div>
                                 <div class="col-1 my-auto">
-                                    <a class="custom-tooltip icon" href="/assignments">
+                                    <a class="custom-tooltip icon" href="/articles">
                                         <i class="fas fa-ellipsis-h hoverText ribbonText"></i>
                                         <span class="tooltiptext">View all assignments</span>
                                     </a>

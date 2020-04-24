@@ -18,9 +18,7 @@ Route::get('/admin', function () {
     return view('home');
 })->name('home')->middleware('auth');
 
-Route::get('/assignments', function () {
-    return view('cases_proto');
-})->name('cases_proto')->middleware('auth');
+Route::get('/articles', 'ArticleController@index')->name('articles')->middleware('auth');
 
 Route::get('/{name}', function () {
     return view('StudentPage.home');
