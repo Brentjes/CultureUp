@@ -82,3 +82,8 @@ Route::get('DokSTestingStuffDontTouch', function () {
 })->name('home')->middleware('auth');
 
 Route::resource('current', "AssignmentEditorController")->middleware('auth');
+
+// Routes for GLOBE (AssignmentPage)
+Route::get('/globe', function () {
+    return view('AssignmentPage.globe');
+})->name('Globe')->middleware('auth');
