@@ -42,7 +42,7 @@
                                         <a class="link-unstyled" href="#">
                                             <div class="row p-5">
                                                 <div class="col text-left">
-                                                    <p class="display-5 mb-0">{{$assignment->name}}</p>
+                                                    <p class="display-5 mb-0">#{{$assignment->id}} {{$assignment->name}}</p>
                                                 </div>
                                                 <div class="col">
                                                     <div class="progress">
