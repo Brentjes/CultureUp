@@ -1,10 +1,8 @@
 <?php
 
-
 use Illuminate\Database\Seeder;
-use App\Assignment;
 use Faker\Factory as Faker;
-
+use App\Assignment;
 class AssignmentSeeder extends Seeder
 {
     /**
