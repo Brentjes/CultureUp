@@ -7,17 +7,7 @@
 
     <section id="studentpage">
         <div class="container-fluid text-center p-0">
-            {{--            LEGACY SCALING--}}
-            {{--            <div class="card w-100 h-auto">--}}
-            {{--                <div class="row d-flex justify-content-center">--}}
-            {{--                    <div class="col">--}}
-            {{--                        <h1 class="display-3 p-4 lead text-left ml-7">Welcome, J. Doe</h1>--}}
-            {{--                    </div>--}}
-            {{--                    <div class="col text-right mr-10">--}}
-            {{--                        <img class="img-fluid" style="width:15vw; height: auto" src="/images/Logo.png">--}}
-            {{--                    </div>--}}
-            {{--                </div>--}}
-            {{--            </div>--}}
+
             <div class="card w-100 h-auto">
                 <div class="row my-auto">
                     <div class="col pl-5 mt-5 mb-5 my-auto">
@@ -38,7 +28,7 @@
                                     <p class="ribbonText text-left mb-0">Progress</p>
                                 </div>
                                 <div class="col-1 my-auto">
-                                    <a class="custom-tooltip icon" href="/assignments">
+                                    <a class="custom-tooltip icon" href="/articles">
                                         <i class="fas fa-ellipsis-h hoverText ribbonText"></i>
                                         <span class="tooltiptext">View all assignments</span>
                                     </a>
@@ -48,10 +38,11 @@
 
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
+                               @foreach($assignments as $assignment)
                                 <li class="list-group-item">
                                     <div class="row p-3 center-row">
                                         <div class="col">
-                                            <p class="display-5 mb-0">#1 German culture on the workfloor</p>
+                                            <p<a href="#" class="display-5 mb-0">{{$assignment->name}}</a></p>
                                         </div>
                                         <div class="col">
                                             <div class="progress">
@@ -62,35 +53,8 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="list-group-item">
-                                    <div class="row p-3 center-row">
-                                        <div class="col">
-                                            <p class="display-5 mb-0">#2 Chinese culture on the workfloor</p>
-                                        </div>
-                                        <div class="col">
-                                            <div class="progress">
-                                                <div class="progress-bar progress-bar-striped bg-info"
-                                                     role="progressbar" style="width: 25%" aria-valuenow="25"
-                                                     aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
+                                @endforeach
 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="row p-3 center-row">
-                                        <div class="col">
-                                            <p class="display-5 mb-0">#3 English culture on the workfloor</p>
-                                        </div>
-                                        <div class="col">
-                                            <div class="progress">
-                                                <div class="progress-bar progress-bar-striped bg-info"
-                                                     role="progressbar" style="width: 75%" aria-valuenow="75"
-                                                     aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
                             </ul>
                         </div>
                     </div>

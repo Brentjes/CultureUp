@@ -78,6 +78,7 @@ body {
 }
 
 .navbar {
+    min-width: 480px;
     background-image: url('/images/polygon.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -165,7 +166,6 @@ section::before {
     -webkit-box-shadow: 0 2px 5px 2px rgba(60, 64, 67, 0.15);
     -moz-box-shadow: 0 2px 5px 2px rgba(60, 64, 67, 0.15);
     box-shadow: 0 2px 5px 2px rgba(60, 64, 67, 0.15);
-    transition-duration: 3s;
 }
 
 .hr {
@@ -294,5 +294,9 @@ a.custom-card:hover {
 .teachercolor {
     color: black;
     font-weight: unset;
+}
+
+.rounded {
+    border-radius: .50rem !important;
 }
 
