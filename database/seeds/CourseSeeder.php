@@ -11,6 +11,7 @@ class CourseSeeder extends Seeder
      */
     public function run()
     {
+
         Course::create(['name' => 'Accountancy Associate degree',]);
         Course::create(['name' => 'Aquacultuur',]);
         Course::create(['name' => 'Bedrijfskunde',]);

@@ -42,12 +42,12 @@
                                 <li class="list-group-item">
                                     <div class="row p-3 center-row">
                                         <div class="col">
-                                            <p<a href="#" class="display-5 mb-0">{{$assignment->name}}</a></p>
+                                            <p class="display-5 mb-0"><a href="#" class="display-5 mb-0">#{{$assignment->id}} {{$assignment->name}}</a></p>
                                         </div>
                                         <div class="col">
                                             <div class="progress">
                                                 <div class="progress-bar progress-bar-striped bg-info"
-                                                     role="progressbar" style="width: 50%" aria-valuenow="50"
+                                                     role="progressbar" style="width: 50%" aria-valuenow="75"
                                                      aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                         </div>

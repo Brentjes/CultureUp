@@ -2,6 +2,11 @@
     transition-duration: 1s;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 html {
     scroll-behavior: smooth;
     font-family: 'Roboto';
