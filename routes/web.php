@@ -60,7 +60,9 @@ Route::group(array('prefix' => 'assignment'), function () {
         //replace test and test2 with better names
         // assignment/editor/test2
         Route::resource('currentPage/{assignmentID}/page', 'PageEditorController')->middleware('auth');
-        Route::resource('current', 'AssignmentEditorController')->middleware('auth');
+        Route::resource('current', 'AssignmentEditorController', ['parameters' => [
+            'current' => 'assignment',
+        ]])->middleware('auth');
     });
     // assignment/view
 
@@ -79,4 +81,4 @@ Route::get('DokSTestingStuffDontTouch', function () {
         200);
 })->name('home')->middleware('auth');
 
-Route::put('DokSTestingStuff', 'AssignmentEditorController@dumbTest')->middleware('auth');
+Route::resource('current', "AssignmentEditorController")->middleware('auth');
