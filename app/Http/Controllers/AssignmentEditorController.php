@@ -95,7 +95,7 @@ class AssignmentEditorController extends Controller
 
         $assignment->save();
 
-        dd(\Auth::user());
+        dd($request);
     }
 
 
