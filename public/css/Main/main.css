@@ -10,10 +10,11 @@
 html {
     scroll-behavior: smooth;
     font-family: 'Roboto';
+    color: #302D2C;
 }
 
 body {
-    background-color: #EFEEEE;
+    background-color: #F2EFEA;
     padding: 0;
     margin: 0;
     overflow-x: hidden;
@@ -84,10 +85,10 @@ body {
 
 .navbar {
     min-width: 480px;
-    background-image: url('/images/polygon.png');
+    background-image: url('/images/trianglify-lowres.png');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: right 100% bottom 5%;
+    background-position: right 100% bottom 60%;
 }
 
 .navbar-brand {
@@ -99,14 +100,14 @@ body {
 }
 
 .ribbon {
-    background-image: url("/images/polygon.png");
-    background-repeat: no-repeat;
+    background-image: url('/images/trianglify-lowres.png');
     background-size: cover;
-
+    background-repeat: no-repeat;
+    background-position: right 0% bottom 60%;
 }
 
 .ribbonText {
-    color: white;
+    color: #FCFCF6;
     font-weight: bold;
 }
 
@@ -135,7 +136,7 @@ section::before {
 
 .nav-link,
 .navbar-brand {
-    color: white;
+    color: #FCFCF6;
     cursor: pointer;
 }
 
@@ -144,7 +145,7 @@ section::before {
 }
 
 .nav-link:hover {
-    color: #EFEEEE;
+    color: #FFFFFF;
 }
 
 .navbar-collapse {
@@ -181,6 +182,7 @@ section::before {
 .display-3 {
     padding-top: 2rem;
     padding-bottom: 1rem;
+    color: #302D2C;
 }
 
 .card-columns {
@@ -188,11 +190,16 @@ section::before {
 }
 
 .card {
+    background-color: #FAF9F3;
     z-index: 0;
     width: 450px;
     margin: 0px;
     padding: 25px;
     position: relative;
+}
+
+.list-group-item {
+    background-color: #FAF9F3;
 }
 
 .cards {
@@ -239,15 +246,15 @@ a.custom-card:hover {
 }
 
 .softshadow {
-    -webkit-box-shadow: 2px 2px 15px #a2a2c3;
-    -moz-box-shadow: 2px 2px 15px #a2a2c3;
-    box-shadow: 2px 2px 15px #a2a2c3;
+    -webkit-box-shadow: 2px 2px 15px #8A8683;
+    -moz-box-shadow: 2px 2px 15px #8A8683;
+    box-shadow: 2px 2px 15px #8A8683;
 }
 
 .softshadow-inset {
-    -webkit-box-shadow: inset 2px 2px 15px #a2a2c3;
-    -moz-box-shadow: inset 2px 2px 15px #a2a2c3;
-    box-shadow: inset 2px 2px 15px #a2a2c3;
+    -webkit-box-shadow: inset 2px 2px 15px #8A8683;
+    -moz-box-shadow: inset 2px 2px 15px #8A8683;
+    box-shadow: inset 2px 2px 15px #8A8683;
 }
 
 /* Tooltip styling */

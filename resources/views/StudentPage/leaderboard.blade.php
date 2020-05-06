@@ -31,13 +31,13 @@
             </div>
             <div class="row text-center justify-content-center" style="height: 25vh;">
                 <div class="col-2 pt-10 bar">
-                    <div class="softshadow w-100 h-100 rounded"></div>
+                    <div class="softshadow w-100 h-100 rounded-top"></div>
                 </div>
                 <div class="col-2 bar">
-                    <div class="softshadow w-100 h-100 rounded"></div>
+                    <div class="softshadow w-100 h-100 rounded-top"></div>
                 </div>
                 <div class="col-2 pt-20 bar h-100">
-                    <div class="softshadow w-100 h-100 rounded"></div>
+                    <div class="softshadow w-100 h-100 rounded-top"></div>
                 </div>
             </div>
             <div class="row">

@@ -8,17 +8,6 @@
     height: auto;
 }
 
-.ribbon {
-    background-image: url("/images/polygon.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.ribbonText {
-    color: white;
-    font-weight: bold;
-}
-
 .hoverText:hover {
     color: #EFEEEE;
 }
@@ -48,3 +37,6 @@ div.progress {
     margin: 0;
 }
 
+div.progress-bar.progress-bar-striped.bg-info {
+    background-color: #48A9A6 !important;
+}
