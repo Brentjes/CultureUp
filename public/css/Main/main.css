@@ -2,6 +2,11 @@
     transition-duration: 1s;
 }
 
+.link-unstyled, .link-unstyled:hover, .link-unstyled:active {
+    text-decoration: none !important;
+    color: #212529 !important;
+}
+
 html {
     scroll-behavior: smooth;
     font-family: 'Roboto';
