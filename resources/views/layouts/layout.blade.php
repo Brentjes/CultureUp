@@ -35,37 +35,15 @@
 
 <body>
 <nav class="navbar fixed-top navbar-expand-md softshadow">
-    <a class="navbar-brand" href="/">CultureUp</a>
+    <a class="navbar-brand" href="/">CultureUp @yield('teacher')</a>
     <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="main-navigation">
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link icon custom-tooltip" href="/globe">
-                    <i class="fas fa-globe"></i>
-                    <span class="tooltiptext">Shows a globe that grants access to a collection of courses</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link icon custom-tooltip" href="/home">
-                    <i class="fas fa-tasks"></i>
-                    <span class="tooltiptext">Shows an overview of your in-progress courses</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link icon custom-tooltip" href="/leaderboard">
-                    <i class="fas fa-crown"></i>
-                    <span class="tooltiptext">View your score and other statistics</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link icon custom-tooltip" href="/notifications">
-                    <i class="fas fa-bell"></i><span class="badge badge-dark rounded-circle">5</span>
-                    <span class="tooltiptext">View all your messages</span>
-                </a>
-            </li>
+            @yield ('teacherIcons')
+            @yield ('studentIcons')
             <li class="nav-item">
                 <div class="dropdown show">
                     <a href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"

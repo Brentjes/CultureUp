@@ -1,24 +1,17 @@
-html, body {
-    overflow-y: hidden !important;
-}
-
-#studentpage {
-    margin-top: 62px;
-}
-
-.flag {
-    width: 5vw;
-    height: auto;
-    border-radius: 0.5vw;
-}
-
-.flag:hover {
-    transform: scale(1.1);
-}
-
 .newsThumbnail {
     width: 80px;
     height: auto;
+}
+
+.ribbon {
+    background-image: url("/images/polygon.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ribbonText {
+    color: white;
+    font-weight: bold;
 }
 
 .hoverText:hover {
@@ -49,3 +42,4 @@ html, body {
 div.progress {
     margin: 0;
 }
+
