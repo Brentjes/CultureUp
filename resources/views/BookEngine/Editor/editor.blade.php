@@ -42,6 +42,15 @@
             <li>
                 <a href="#"><i class="fas fa-link"></i> Add Link</a>
             </li>
+            <li>
+                <input type="text" id="title">
+            </li>
+            <li>
+                <input type="text" id="subject">
+            </li>
+            <li>
+                <input type="button" id="UpdateAssingmentButton">
+            </li>
         </ul>
 
     </nav>
@@ -65,71 +74,63 @@
 
 <script>
 
-    var assignmentUpdateUrl = "/assignment/editor/current/1";
-    var getNewCSRFTokenURL = "/DokSTestingStuffDontTouch/";
+    document.getElementById('UpdateAssingmentButton').addEventListener("click", sendAssignmentUpdate);
+
+
 
     function sendAssignmentUpdate() {
-        //let assignment = new XMLHttpRequest();
+        let assignmentUpdateUrl = "/assignment/editor/current/{{$page->assignment ? $page->assignment->id : 1}}";
+        let body =  {
+            title: document.getElementById('title').value,
+            subject: document.getElementById('subject').value,
+        };
 
-        let formdata = new FormData();
-        formdata.append('title', 'Chris');
-        formdata.append('subject', 'Testing AJAX!');
-        // let testData = {
-        //     title: "chris",
-        //     subject: "testing Ajax"
-        // };
-
-        for (var pair of formdata.entries()) {
-                        console.log(pair[0] + ', ' + pair[1]);
-                    }
-
-
-        const csrfToken = document.head.querySelector("[name~=csrf-token][content]").content;
-
-        fetch(assignmentUpdateUrl, {
-            method: 'PUT',
-            credentials: "same-origin",
-            body: JSON.stringify({
-                title: '1',
-                subject: 'number'
-            }),
-            mode: 'cors',
-            headers: {
-                "Content-Type": "application/json",
-                "X-CSRF-Token": csrfToken
+        if (!(body.title.length > 0 && body.title.length <= 50 && body.subject.length > 0 && body.subject.length <= 200)) {
+            console.log("one of these inputs are to long, please shorten them, title max length = 50, subject max length = 200");
+            if (!(body.title.length > 0 && body.title.length <= 50)) {
+                console.log('title');
+                console.log(body.title.length);
+            }
+            if (!(body.subject.length > 0 && body.subject.length <= 200)) {
+                console.log('subject');
+                console.log(body.subject.length);
             }
 
-        })
-            // .then( (response) => return response.text());
-            .then( (text) => console.log(text))
-            .catch( (error) => console.log(error) );
-    }
-
-
-
-
-
-
-    function requestNewCSRFToken() {
-        let csrfRequest = new XMLHttpRequest();
-
-        csrfRequest.open("GET", getNewCSRFTokenURL, true);
-        csrfRequest.send();
-        return csrfRequest
-    }
-
-    function setCSRFToken(csrfRequest, form) {
-        if (csrfRequest.readyState === 4) {
-            if (csrfRequest.status >= 200 && csrfRequest.status < 400) {
-                form.append('_token', JSON.parse(csrfRequest.responseText).token);
-                return true
-            }
+            return
         }
-        return false
+
+        sendFetchTo(assignmentUpdateUrl, body);
+
+
+
     }
 
 
-    sendAssignmentUpdate()
+    function sendFetchTo(url, body){
+
+
+    fetch(url, {
+        method: 'PUT',
+        credentials: "same-origin",
+        body: JSON.stringify(body),
+        mode: 'cors',
+        headers: {
+            "Content-Type": "application/json",
+            "X-CSRF-Token": document.head.querySelector("[name~=csrf-token][content]").content
+        }
+
+    })
+        // .then( (response) => return response.text());
+        .then( (text) => console.log(text))
+        .catch( (error) => console.log(error) );
+    }
+
+
+
+
+
+
+
 </script>
 
 
