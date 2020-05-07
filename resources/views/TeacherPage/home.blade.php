@@ -1,23 +1,7 @@
 @extends ('layouts.teacherLayout')
-@section ('content')
-    <head>
-        <link rel="stylesheet" type="text/css" href="/css/teacher/home.css">
-        <title>CultureUp - Home</title>
-    </head>
+@extends ('layouts.home')
+@section ('home')
 
-
-    <section id="studentpage">
-        <div class="container-fluid text-center p-0">
-            <div class="card w-100 h-auto">
-                <div class="row d-flex justify-content-center">
-                    <div class="col pl-5 mt-5 mb-5">
-                        <h1 class="display-3 lead text-left" style="font-size:4vw"> Welcome, Lucky Loek</h1>
-                    </div>
-                    <div class="col mr-20 text-center mt-5 mb-5">
-                        <img id="logo" class="img-fluid" style="width:25vw; height: auto" src="/images/logoLight.png">
-                    </div>
-                </div>
-            </div>
             <div class="row">
                 <div class="col-5 w-100 pr-0 h-100">
                     <div class="card rounded  text-center w-100 h-75 p-0 m-5  pr-0">
@@ -141,7 +125,5 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
 @endsection
