@@ -59,7 +59,9 @@ Route::group(array('prefix' => 'assignment'), function () {
     Route::group(array('prefix' => 'editor'), function () {
         //replace test and test2 with better names
         // assignment/editor/test2
-        Route::resource('currentPage/{assignmentID}/page', 'PageEditorController')->middleware('auth');
+        Route::resource('currentPage/{assignmentID}/page', 'PageEditorController', [
+            'as' => 'editor'
+        ])->middleware('auth');
         Route::resource('current', 'AssignmentEditorController', ['parameters' => [
             'current' => 'assignment',
         ]])->middleware('auth');
