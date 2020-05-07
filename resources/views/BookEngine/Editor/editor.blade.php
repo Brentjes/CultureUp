@@ -43,13 +43,22 @@
                 <a href="#"><i class="fas fa-link"></i> Add Link</a>
             </li>
             <li>
-                <input type="text" id="title">
+                <input type="text" id="assignmentTitle">
             </li>
             <li>
-                <input type="text" id="subject">
+                <input type="text" id="assignmentSubject">
             </li>
             <li>
-                <input type="button" id="UpdateAssingmentButton">
+                <input type="button" id="updateAssignmentButton">
+            </li>
+
+
+
+            <li>
+                <input type="button" id="testButton">
+            </li>
+            <li id="testAppend">
+
             </li>
         </ul>
 
@@ -74,15 +83,18 @@
 
 <script>
 
-    document.getElementById('UpdateAssingmentButton').addEventListener("click", sendAssignmentUpdate);
-
-
+    document.getElementById('updateAssignmentButton').addEventListener("click", sendAssignmentUpdate);
+    document.getElementById('testButton').addEventListener('click', function(){
+        console.log('pressed button');
+        createInputField('page')
+    });
+    const currentAssignment = 1;
 
     function sendAssignmentUpdate() {
-        let assignmentUpdateUrl = "/assignment/editor/current/{{$page->assignment ? $page->assignment->id : 1}}";
+        let assignmentUpdateUrl = "/assignment/editor/current/" + currentAssignment.toString();
         let body =  {
-            title: document.getElementById('title').value,
-            subject: document.getElementById('subject').value,
+            title: document.getElementById('assignmentTitle').value,
+            subject: document.getElementById('assignmentSubject').value,
         };
 
         if (!(body.title.length > 0 && body.title.length <= 50 && body.subject.length > 0 && body.subject.length <= 200)) {
@@ -99,20 +111,106 @@
             return
         }
 
-        sendFetchTo(assignmentUpdateUrl, body);
+        sendFetchTo(assignmentUpdateUrl, body, 'put');
 
+    }
+
+    function createInputField(type, old){
+        console.log(type);
+        let inputBox = document.createElement("div");
+        inputBox.id = "InputDeleteMeAfterDoneYes";
+
+        let oldInput = (old) ? false : old;
+
+        let inputBoxTitle = document.createElement('h1');
+        inputBoxTitle.innerText = (oldInput === false) ? 'create' : 'edit' + ' ' + type;
+        inputBox.appendChild(inputBoxTitle);
+        document.getElementById('testAppend').appendChild(inputBox);
+        let boxForInput = document.createElement('div');
+        boxForInput.id = "innerBox";
+        inputBox.appendChild(boxForInput);
+        let sendButton = document.createElement('input');
+        sendButton.type = 'button';
+        sendButton.id = 'inputSendButton';
+        inputBox.appendChild(sendButton);
+        if(type === "page"){
+            createInputPage(old)
+        } else if(type === "element") {
+            createInputElement(old)
+        }
 
 
     }
 
+    function createInputPage(old){
+        console.log('hit this');
+        let target = document.getElementById('innerBox');
+        let inputName = document.createElement('input');
+        inputName.id = 'pageName';
+        target.appendChild(inputName);
+        let inputDescription = document.createElement('input');
+        inputDescription.id = 'pageDescription';
+        target.appendChild(inputDescription);
+        if(old){
+            let pageId = document.createElement('input');
+            target.appendChild(pageId);
+        }
+        document.getElementById('inputSendButton').addEventListener('click', pageFunction.bind(this))
+    }
 
-    function sendFetchTo(url, body){
+    function createInputElement(old){
+
+    }
 
 
+    function getPageInfo(){
+        console.log(document.getElementById('pageName').value + ' test');
+        return {
+            name: document.getElementById('pageName').value,
+            description: document.getElementById('pageDescription').value,
+            assignment_Id: currentAssignment
+        }
+    }
+
+    function pageFunction(){
+        let body = getPageInfo();
+        let lastPart = '/';
+        let method = 'POST';
+        if(document.getElementById('pageId')){
+            lastPart = lastPart+ document.getElementById('pageId').value.toString();
+            method = 'put'
+        }
+        let urlStore = '{{ route('editor.page.store', 1) }}';
+
+        console.log(method);
+        console.log(body);
+        if(method === 'put'){
+            sendFetchTo(url, body, 'PUT');
+
+        } else {
+            sendFetchTo(urlStore, body, 'POST');
+        }
+
+        document.getElementById('InputDeleteMeAfterDoneYes').remove();
+    }
+
+    function newElement(){
+
+    }
+
+    function editElement(){
+
+    }
+
+
+    function sendFetchTo(url, body, method){
+        console.log(method);
+        console.log(body);
+        console.log(url);
     fetch(url, {
-        method: 'PUT',
+        method: 'POST',
         credentials: "same-origin",
-        body: JSON.stringify(body),
+        body: body,
         mode: 'cors',
         headers: {
             "Content-Type": "application/json",
@@ -124,12 +222,6 @@
         .then( (text) => console.log(text))
         .catch( (error) => console.log(error) );
     }
-
-
-
-
-
-
 
 </script>
 
