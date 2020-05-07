@@ -49,61 +49,53 @@ class AssignmentEditorController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\assignment $current
+     * @param $assignment
      * @return \Illuminate\Http\Response
      */
-    public function show(assignment $current)
+    public function show(Assignment $assignment)
     {
-        $assignment = $current;
+
+    dd($assignment);
 
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\assignment $current
+     * @param \App\assignment $assignment
      * @return \Illuminate\Http\Response
      */
-    public function edit(assignment $current)
+    public function edit(assignment $assignment)
     {
-        $assignment = $current;
-
-
 
         return view('BookEngine.Editor.Assignment.EditAssignment', compact('assignment'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
-    public function dumbTest(Request $request){
-        dd($request);
-    }
+
 
     /**
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param \App\assignment $current
+     * @param \App\Assignment $assignment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, assignment $current)
+    public function update(Request $request, Assignment $assignment)
     {
-        dd($request);
 
-        $assignment = $current;
+
+
         $assignment->name = $request->json('title');
         $assignment->subject = $request->json('subject');
         $assignment->course_id  = 1;
         $assignment->teacher_id = 1;
-        $assignment->createdBy = 1;
+        $assignment->createdBy = \Auth::user()->name;
         $assignment->isHidden = (($request->json('isHidden')== 'on') ? true : false);
         $assignment->isLocked = (($request->json('isLocked')== 'on') ? true : false);
 
         $assignment->save();
+
+        dd(\Auth::user());
     }
 
 
@@ -111,12 +103,12 @@ class AssignmentEditorController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\assignment $current
+     * @param \App\assignment $assignment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(assignment $current)
+    public function destroy(assignment $assignment)
     {
-        $assignment = $current;
+
 
     }
 
@@ -125,6 +117,7 @@ class AssignmentEditorController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param \App\assignment $assignment
+     * @return array
      */
     private function saveInfoToDB($request, $assignment){
 

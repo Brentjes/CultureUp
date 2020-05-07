@@ -65,7 +65,7 @@
 
 <script>
 
-    var assignmentUpdateUrl = "/DokSTestingStuff";
+    var assignmentUpdateUrl = "/assignment/editor/current/1";
     var getNewCSRFTokenURL = "/DokSTestingStuffDontTouch/";
 
     function sendAssignmentUpdate() {
@@ -74,64 +74,28 @@
         let formdata = new FormData();
         formdata.append('title', 'Chris');
         formdata.append('subject', 'Testing AJAX!');
-        let testData = {
-            title: "chris",
-            subject: "testing Ajax"
-        };
+        // let testData = {
+        //     title: "chris",
+        //     subject: "testing Ajax"
+        // };
 
-
+        for (var pair of formdata.entries()) {
+                        console.log(pair[0] + ', ' + pair[1]);
+                    }
 
 
         const csrfToken = document.head.querySelector("[name~=csrf-token][content]").content;
 
-
-        // fetch('/DokSTestingStuff/1', {
-        //     'method': 'put',
-        //     'body': formdata
-        // })
-        //     .then( (result) => console.log(result) )
-        //     .catch( (error) => console.log(error) );
-
-        //let formdata = new FormData();
-
-        //assignment.open("POST", assignmentUpdateUrl, true);
-
-
-        // formdata.append('_Token', csrfToken)
-        // let csrfRequest = requestNewCSRFToken();
-        //
-        // csrfRequest.onreadystatechange = (function () {
-        //     if (setCSRFToken(csrfRequest, formdata)) {
-        //         for (var pair of formdata.entries()) {
-        //             console.log(pair[0] + ', ' + pair[1]);
-        //         }
-        //         fetch("http://localhost/DokSTestingStuff/1", {
-        //             method: 'PUT',
-        //             body: formdata,
-        //             credentials: 'same-origin',
-        //             mode: 'cors',
-        //             headers: {
-        //                 'Content-Type': 'application/json',
-        //                 "X-CSRF-Token": csrfToken
-        //             }
-        //
-        //         })
-        //             // .then( (response) => return response.text());
-        //             .then( (text) => console.log(text))
-        //             .catch( (error) => console.log(error) );
-        //     }
-        //
-        // })
-
-
-
         fetch(assignmentUpdateUrl, {
             method: 'PUT',
-            body: testData,
-            credentials: 'same-origin',
+            credentials: "same-origin",
+            body: JSON.stringify({
+                title: '1',
+                subject: 'number'
+            }),
             mode: 'cors',
             headers: {
-
+                "Content-Type": "application/json",
                 "X-CSRF-Token": csrfToken
             }
 
