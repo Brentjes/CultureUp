@@ -42,7 +42,7 @@
                                 <li class="list-group-item">
                                     <div class="row p-3 center-row">
                                         <div class="col">
-                                            <p<a href="#" class="display-5 mb-0">{{$assignment->name}}</a></p>
+                                            <p><a href="#" class="display-5 mb-0">{{$assignment->name}}</a></p>
                                         </div>
                                         <div class="col">
                                             <div class="progress">
