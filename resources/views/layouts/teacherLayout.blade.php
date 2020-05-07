@@ -13,14 +13,8 @@
 
             <li class="nav-item">
                 <a class="nav-link icon custom-tooltip" href="/teacherleaderboard">
-                    <i class="fas fa-chart-bar"></i>
-                    <span class="tooltiptext">View your students scores and other statistics</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link icon custom-tooltip" href="/leaderboard">
                     <i class="fas fa-crown"></i>
-                    <span class="tooltiptext">View your score and the student leaderboard</span>
+                    <span class="tooltiptext">View your students scores and other statistics</span>
                 </a>
             </li>
             <li class="nav-item">
