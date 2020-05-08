@@ -151,6 +151,11 @@ th {
     color: #e0e0e0;
 }
 
+.error-text {
+    color: #e0e0e0 !important;
+}
+
+
 .ribbon {
     background-image: url("/images/darkPolygon.png") !important;
     color: #e0e0e0;
