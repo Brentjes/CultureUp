@@ -18,7 +18,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link icon custom-tooltip" href="/editor">
+                <a class="nav-link icon custom-tooltip" href="/assignment/editor/currentPage/1/page/2">
                     <i class="fas fa-pencil-alt"></i>
                     <span class="tooltiptext">Make a new course</span>
                 </a>
