@@ -18,6 +18,10 @@
 
     <!-- Font Awesome JS -->
     <script src="https://kit.fontawesome.com/5b65a26ca8.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap select -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
 </head>
 <body>
 
@@ -29,54 +33,121 @@
         </div>
 
         <ul class="list-unstyled components">
-            <li class="softshadow">
-                <a href="#"><i class="fas fa-quote-right"></i> Add Text</a>
+            <li class="softshadow stick">
+                <a><i class="fas fa-quote-right"></i> Add Text</a>
             </li>
-            <li class="softshadow">
-                <a href="#"><i class="fas fa-image"></i> Add Image</a>
+            <li class="softshadow stick">
+                <a><i class="fas fa-image"></i> Add Image</a>
             </li>
-            <li class="softshadow">
-                <a href="#"><i class="fas fa-link"></i> Add Link</a>
+            <li class="softshadow stick">
+                <a><i class="fas fa-link"></i> Add Link</a>
             </li>
-            <li class="softshadow">
-                <a href="#"><i class="fas fa-heading"></i> Change Title</a>
+            <li class="softshadow stick">
+                <a onclick="showInfo();"><i class="fas fa-cogs"></i> Edit assignment info</a>
             </li>
-            <li class="softshadow">
-                <a href="#"><i class="fas fa-paragraph"></i> Change Description</a>
-            </li>
-            <li>
-                <input type="button" id="updateAssignmentButton">
-            </li>
-            <li>
-                <input type="text" id="assignmentName">
-            </li>
-            <li>
-                <input type="text" id="assignmentSubject">
-            </li>
-            <li>
-                <label for="testButton">NewPage</label>
-                <input name="testButton" type="button" id="testButton">
-            </li>
-            <li id="testAppend">
-            </li>
-
+            {{--            <li>--}}
+            {{--                <label for="testButton">NewPage</label>--}}
+            {{--                <input name="testButton" type="button" id="testButton">--}}
+            {{--            </li>--}}
+            {{--            <li id="testAppend">--}}
+            {{--            </li>--}}
         </ul>
-
     </nav>
+
+    <div id="content">
+        <button type="button" id="sidebarCollapse" class="btn">
+            <i class="white-icon fas fa-pencil-ruler"></i>
+        </button>
+    </div>
+
     <nav id="bottombar" style="z-index: 100">
-        <div class="sidebar-header text-center pt-2">
+        <div class="text-center pt-2">
             <h3>Timeline</h3>
+        </div>
+        <div class="row w-100 text-center ml-2 pl-5">
+            <div class="col-auto p-3">
+                <div class="card text-white custom-rounded" style="width: 12vw;">
+                    <img class="card-img custom-rounded" src="http://placehold.it/160x90">
+                </div>
+            </div>
+            <div class="col-auto p-3">
+                <div class="card text-white custom-rounded" style="width: 12vw;">
+                    <img class="card-img custom-rounded" src="http://placehold.it/160x90">
+                </div>
+            </div>
+            <div class="col-auto p-3">
+                <div class="card text-white custom-rounded softshadow" style="width: 12vw;">
+                    <img class="card-img custom-rounded" src="http://placehold.it/160x90">
+                </div>
+            </div>
         </div>
 
         <button type="button" id="bottombarCollapse" class="btn">
             <i class="white-icon fas fa-photo-video"></i>
         </button>
     </nav>
-    <!-- Page Content -->
-    <div id="content">
-        <button type="button" id="sidebarCollapse" class="btn">
-            <i class="white-icon fas fa-pencil-ruler"></i>
-        </button>
+
+    <div id="formToggle" class="position-absolute assignment-info"
+         style="top: 40%; left: 50%; transform: translate(-50%, -50%); width: 20vw; z-index: 200;">
+        <div class="card rounded p-0 w-100">
+            <div class="card-header ribbon p-0">
+                <p class="ribbonText text-center p-3 m-0">Edit assignment info</p>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="/assignment/editor/current">
+                    @csrf
+                    <div class="form-group">
+                        <label class="label" for="title">Title</label>
+                        <input class="form-control" type="text" id="assignmentName" placeholder="Enter title"
+                               required
+                               value="{{old("title")}}">
+                        @error('title')
+                        <p>{{$errors->first('title')}}</p>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label" for="subject">Description</label>
+                        <input class="form-control" type="text" id="assignmentSubject" placeholder="Enter subject"
+                               required
+                               value="{{old("subject")}}">
+                        @error('subject')
+                        <p>{{$errors->first('subject')}}</p>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label" for="inputState">Country</label>
+                        <select id="inputState" class="form-control selectpicker" data-live-search="true"
+                                data-size="10">
+                            <option>Afghanistan</option>
+                            <option>African central republic</option>
+                            <option>Albania</option>
+                            <option>Algeria</option>
+                            <option>Andorra</option>
+                            <option>Antigua and barbud</option>
+                            <option>Argentina</option>
+                            <option>Armenia</option>
+                            <option>Australia</option>
+                            <option>...</option>
+                            <option>...</option>
+                            <option>...</option>
+                            <option>...</option>
+                            <option>...</option>
+                        </select>
+                    </div>
+
+                    <div class="row text-center pt-4">
+                        <div class="col">
+                            <button class="btn btn-light" type="submit" id="updateAssignmentButton">Submit</button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-danger" onclick="showInfo()">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -85,11 +156,8 @@
 <div id="ElementList">
 
 </div>
-
 <meta>
-
 <script>
-
 
     const pageInfo = {
         name: '{{$page->name}}',
@@ -97,16 +165,16 @@
         id: '{{$page->id}}'
     };
 
-
     document.getElementById('updateAssignmentButton').addEventListener("click", sendAssignmentUpdate);
-    document.getElementById('testButton').addEventListener('click', function(){
+    document.getElementById('testButton').addEventListener('click', function () {
         createInputField('page', pageInfo)
     });
+
     const currentAssignment = 1;
 
     function sendAssignmentUpdate() {
         let assignmentUpdateUrl = "{{ route('editor.current.update', 1) }}";
-        let body =  {
+        let body = {
             name: document.getElementById('assignmentName').value,
             subject: document.getElementById('assignmentSubject').value,
         };
@@ -121,22 +189,15 @@
                 console.log('subject');
                 console.log(body.subject.length);
             }
-
             return
         }
-
         sendFetchTo(assignmentUpdateUrl, body, 'put');
-
     }
 
-    function createInputField(type, old){
-
-
+    function createInputField(type, old) {
         let inputBox = document.createElement("div");
         inputBox.id = "InputDeleteMeAfterDoneYes";
-
         let oldInput = (old) ? old : false;
-
 
         let inputBoxTitle = document.createElement('h1');
         inputBoxTitle.innerText = ((oldInput === false) ? 'create' : 'edit') + ' ' + type;
@@ -152,17 +213,14 @@
         sendButton.id = 'inputSendButton';
         inputBox.appendChild(sendButton);
 
-        if(type === "page"){
+        if (type === "page") {
             createInputPage(old)
-        } else if(type === "element") {
+        } else if (type === "element") {
             createInputElement(old)
         }
-
-
     }
 
-    function createInputPage(old){
-
+    function createInputPage(old) {
         let target = document.getElementById('innerBox');
 
         let inputName = document.createElement('input');
@@ -173,7 +231,7 @@
         inputDescription.id = 'pageDescription';
         target.appendChild(inputDescription);
 
-        if(old){
+        if (old) {
             let pageId = document.createElement('input');
             pageId.id = 'pageId';
             pageId.type = 'hidden';
@@ -183,12 +241,11 @@
         document.getElementById('inputSendButton').addEventListener('click', pageFunction.bind(this))
     }
 
-    function createInputElement(old){
-
+    function createInputElement(old) {
     }
 
 
-    function getPageInfo(){
+    function getPageInfo() {
         console.log(document.getElementById('pageName').value + ' test');
         return {
             name: document.getElementById('pageName').value,
@@ -197,54 +254,45 @@
         }
     }
 
-    function pageFunction(){
+    function pageFunction() {
         let body = getPageInfo();
         let lastPart = '/';
         let method = 'POST';
         let urlStore = '{{ route('editor.page.store', 1) }}';
-        if(document.getElementById('pageId')){
+        if (document.getElementById('pageId')) {
             urlStore = urlStore + '/' + document.getElementById('pageId').value;
             method = 'PUT';
         }
-
-
-
-
-
-
-            sendFetchTo(urlStore, body, method);
-
-
+        sendFetchTo(urlStore, body, method);
         document.getElementById('InputDeleteMeAfterDoneYes').remove();
     }
 
-    function newElement(){
+    function newElement() {
 
     }
 
-    function editElement(){
+    function editElement() {
 
     }
 
-
-    function sendFetchTo(url, body, method){
+    function sendFetchTo(url, body, method) {
         console.log(method);
         console.log(body);
         console.log(url);
-    fetch(url, {
-        method: method,
-        credentials: "same-origin",
-        body: JSON.stringify(body),
-        mode: 'cors',
-        headers: {
-            "Content-Type": "application/json",
-            "X-CSRF-Token": document.head.querySelector("[name~=csrf-token][content]").content
-        }
+        fetch(url, {
+            method: method,
+            credentials: "same-origin",
+            body: JSON.stringify(body),
+            mode: 'cors',
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRF-Token": document.head.querySelector("[name~=csrf-token][content]").content
+            }
 
-    })
-        // .then( (response) => return response.text());
-        .then( (text) => console.log(text))
-        .catch( (error) => console.log(error) );
+        })
+            // .then( (response) => return response.text());
+            .then((text) => console.log(text))
+            .catch((error) => console.log(error));
     }
 
 </script>
@@ -258,9 +306,12 @@
         integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
         crossorigin="anonymous"></script>
 <!-- Bootstrap JS -->
-{{--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"--}}
-{{--        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"--}}
-{{--        crossorigin="anonymous"></script>--}}
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+{{--Bootstrap select--}}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
 <script src="/editor.js"></script>
 
 

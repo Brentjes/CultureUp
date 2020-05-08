@@ -115,6 +115,39 @@ ul ul a {
     margin-top: 2vh;
 }
 
+.dropdown-toggle {
+    background-color: #FFFFFF;
+    border: 1px solid #ced4da;
+}
+
+.dropdown-item.active.selected, .dropdown-item.active{
+    background-color: #f0f0f0 !important;
+    color: #212529;
+}
+
+.stick:hover {
+    cursor: pointer;
+}
+
+.custom-rounded {
+    border-radius: 0.5vw !important;
+    -webkit-box-shadow: 0 1px 6px 0 rgba(32,33,36,.28);
+    -moz-box-shadow: 0 1px 6px 0 rgba(32,33,36,.28);
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,.28);
+}
+
+.assignment-info {
+    display: none;
+}
+
+.assignment-info.active {
+    display: flex;
+}
+
+.btn-danger {
+    background-color: #ef476f !important;
+}
+
 #bottombarCollapse {
     position: absolute;
     right: 0.3vw;

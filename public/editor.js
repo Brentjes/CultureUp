@@ -10,3 +10,7 @@ $(document).ready(function () {
     });
 });
 
+function showInfo() {
+    document.getElementById('formToggle').classList.toggle('active');
+}
+
