@@ -1,14 +1,13 @@
-@extends ('layouts.layout')
-@extends ('layouts.studentLayout')
+@extends ('layouts.teacherLayout')
 @extends ('layouts.profile')
 @section ('profile')
 
                                 <div class="row center-row text-left">
                                     <div class="col">
                                         <p class="display-5 display-sm-3 display-m-4 display-md-5 mb-0">
-                                            <b>Name:</b> {{$user->name}}</p>
-                                        <p class="display-5 mb-0"><b>Teacher:</b> Bugs Bunny</p>
-                                        <p class="display-5 mb-0"><b>Country:</b> Bosnia Herzegovina</p>
+                                            <b>Name:</b> Teacher</p>
+                                        <p class="display-5 mb-0"><b>Class</b> HBO-ICT</p>
+                                        <p class="display-5 mb-0"><b>Country:</b> China</p>
 
                                     </div>
                                 </div>
@@ -127,4 +126,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </section>
 @endsection

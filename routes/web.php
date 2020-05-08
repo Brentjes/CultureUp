@@ -14,12 +14,17 @@
 //Authentication Routes
 Auth::routes();
 
-Route::get('/assignments', function () {
-    return view('cases_proto');
-})->name('cases_proto')->middleware('auth');
+
+Route::get('/admin', function () {
+    return view('home');
+})->name('home')->middleware('auth');
+
+Route::get('/articles', 'ArticleController@index')->name('articles')->middleware('auth');
 
 Route::get('/{name}', function () {
-    return view('StudentPage.home');
+    return view('StudentPage.home' , [
+        'assignments' => \App\Assignment::take(5)->latest()->get()
+    ]);
 })->where('name', 'home||')->name('Home')->middleware('auth');
 
 //Profile Routes
@@ -44,8 +49,12 @@ Route::group(array('prefix' => 'assignment'), function () {
     Route::group(array('prefix' => 'editor'), function () {
         //replace test and test2 with better names
         // assignment/editor/test2
-        Route::resource('currentPage/{assignmentID}/page', 'PageEditorController')->middleware('auth');
-        Route::resource('current', 'AssignmentEditorController')->middleware('auth');
+        Route::resource('currentPage/{assignmentID}/page', 'PageEditorController', [
+            'as' => 'editor'
+        ])->middleware('auth');
+        Route::resource('current', 'AssignmentEditorController', ['parameters' => [
+            'current' => 'assignment',
+        ]])->middleware('auth');
     });
     // assignment/view
 
@@ -66,4 +75,4 @@ Route::get('DokSTestingStuffDontTouch', function () {
         200);
 })->name('home')->middleware('auth');
 
-Route::put('DokSTestingStuff/{id}', 'AssignmentEditorController@update')->middleware('auth');
+Route::resource('current', "AssignmentEditorController")->middleware('auth');

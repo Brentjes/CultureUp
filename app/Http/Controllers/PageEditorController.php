@@ -15,7 +15,7 @@ class PageEditorController extends Controller
      */
     public function index()
     {
-        //
+        return 'you got the otherpath';
     }
 
     /**
@@ -36,9 +36,11 @@ class PageEditorController extends Controller
      */
     public function store(Request $request)
     {
+        return 'you hit the store path';
         $page = new Page();
 
         $this->verifySave($page, $request);
+
     }
 
     /**
