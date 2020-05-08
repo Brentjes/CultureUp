@@ -83,10 +83,17 @@
 
 <script>
 
+
+    const pageInfo = {
+        name: '{{$page->name}}',
+        description: '{{$page->description}}',
+        id: '{{$page->id}}'
+    };
+
+
     document.getElementById('updateAssignmentButton').addEventListener("click", sendAssignmentUpdate);
     document.getElementById('testButton').addEventListener('click', function(){
-        console.log('pressed button');
-        createInputField('page')
+        createInputField('page', pageInfo)
     });
     const currentAssignment = 1;
 
@@ -116,25 +123,28 @@
     }
 
     function createInputField(type, old){
-        old = false;
-        console.log(type);
+
+
         let inputBox = document.createElement("div");
         inputBox.id = "InputDeleteMeAfterDoneYes";
-        console.log(old);
+
         let oldInput = (old) ? old : false;
-        console.log(old);
+
 
         let inputBoxTitle = document.createElement('h1');
         inputBoxTitle.innerText = ((oldInput === false) ? 'create' : 'edit') + ' ' + type;
         inputBox.appendChild(inputBoxTitle);
         document.getElementById('testAppend').appendChild(inputBox);
+
         let boxForInput = document.createElement('div');
         boxForInput.id = "innerBox";
         inputBox.appendChild(boxForInput);
+
         let sendButton = document.createElement('input');
         sendButton.type = 'button';
         sendButton.id = 'inputSendButton';
         inputBox.appendChild(sendButton);
+
         if(type === "page"){
             createInputPage(old)
         } else if(type === "element") {
@@ -145,17 +155,22 @@
     }
 
     function createInputPage(old){
-        console.log('hit this');
+
         let target = document.getElementById('innerBox');
+
         let inputName = document.createElement('input');
         inputName.id = 'pageName';
         target.appendChild(inputName);
+
         let inputDescription = document.createElement('input');
         inputDescription.id = 'pageDescription';
         target.appendChild(inputDescription);
+
         if(old){
             let pageId = document.createElement('input');
             pageId.id = 'pageId';
+            pageId.type = 'hidden';
+            pageId.value = old.id;
             target.appendChild(pageId);
         }
         document.getElementById('inputSendButton').addEventListener('click', pageFunction.bind(this))
@@ -181,13 +196,12 @@
         let method = 'POST';
         let urlStore = '{{ route('editor.page.store', 1) }}';
         if(document.getElementById('pageId')){
-            urlStore = '{{ route('editor.page.update', ['assignmentID' => 1, 'page' => 1]) }}';
-            method = 'PUT'
+            urlStore = urlStore + '/' + document.getElementById('pageId').value;
+            method = 'PUT';
         }
 
 
-        console.log(method);
-        console.log(body);
+
 
 
 
