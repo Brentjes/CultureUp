@@ -43,7 +43,7 @@
                 <a href="#"><i class="fas fa-link"></i> Add Link</a>
             </li>
             <li>
-                <input type="text" id="assignmentTitle">
+                <input type="text" id="assignmentName">
             </li>
             <li>
                 <input type="text" id="assignmentSubject">
@@ -91,17 +91,17 @@
     const currentAssignment = 1;
 
     function sendAssignmentUpdate() {
-        let assignmentUpdateUrl = "/assignment/editor/current/" + currentAssignment.toString();
+        let assignmentUpdateUrl = "{{ route('editor.current.update', 1) }}";
         let body =  {
-            title: document.getElementById('assignmentTitle').value,
+            name: document.getElementById('assignmentName').value,
             subject: document.getElementById('assignmentSubject').value,
         };
 
-        if (!(body.title.length > 0 && body.title.length <= 50 && body.subject.length > 0 && body.subject.length <= 200)) {
+        if (!(body.name.length > 0 && body.name.length <= 50 && body.subject.length > 0 && body.subject.length <= 200)) {
             console.log("one of these inputs are to long, please shorten them, title max length = 50, subject max length = 200");
-            if (!(body.title.length > 0 && body.title.length <= 50)) {
-                console.log('title');
-                console.log(body.title.length);
+            if (!(body.name.length > 0 && body.name.length <= 50)) {
+                console.log('name');
+                console.log(body.name.length);
             }
             if (!(body.subject.length > 0 && body.subject.length <= 200)) {
                 console.log('subject');
@@ -116,14 +116,16 @@
     }
 
     function createInputField(type, old){
+        old = false;
         console.log(type);
         let inputBox = document.createElement("div");
         inputBox.id = "InputDeleteMeAfterDoneYes";
-
-        let oldInput = (old) ? false : old;
+        console.log(old);
+        let oldInput = (old) ? old : false;
+        console.log(old);
 
         let inputBoxTitle = document.createElement('h1');
-        inputBoxTitle.innerText = (oldInput === false) ? 'create' : 'edit' + ' ' + type;
+        inputBoxTitle.innerText = ((oldInput === false) ? 'create' : 'edit') + ' ' + type;
         inputBox.appendChild(inputBoxTitle);
         document.getElementById('testAppend').appendChild(inputBox);
         let boxForInput = document.createElement('div');
@@ -153,6 +155,7 @@
         target.appendChild(inputDescription);
         if(old){
             let pageId = document.createElement('input');
+            pageId.id = 'pageId';
             target.appendChild(pageId);
         }
         document.getElementById('inputSendButton').addEventListener('click', pageFunction.bind(this))
@@ -176,20 +179,20 @@
         let body = getPageInfo();
         let lastPart = '/';
         let method = 'POST';
-        if(document.getElementById('pageId')){
-            lastPart = lastPart+ document.getElementById('pageId').value.toString();
-            method = 'put'
-        }
         let urlStore = '{{ route('editor.page.store', 1) }}';
+        if(document.getElementById('pageId')){
+            urlStore = '{{ route('editor.page.update', ['assignmentID' => 1, 'page' => 1]) }}';
+            method = 'PUT'
+        }
+
 
         console.log(method);
         console.log(body);
-        if(method === 'put'){
-            sendFetchTo(url, body, 'PUT');
 
-        } else {
-            sendFetchTo(urlStore, body, 'POST');
-        }
+
+
+            sendFetchTo(urlStore, body, method);
+
 
         document.getElementById('InputDeleteMeAfterDoneYes').remove();
     }
@@ -208,9 +211,9 @@
         console.log(body);
         console.log(url);
     fetch(url, {
-        method: 'POST',
+        method: method,
         credentials: "same-origin",
-        body: body,
+        body: JSON.stringify(body),
         mode: 'cors',
         headers: {
             "Content-Type": "application/json",

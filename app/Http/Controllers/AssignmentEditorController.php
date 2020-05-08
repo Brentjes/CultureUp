@@ -85,7 +85,7 @@ class AssignmentEditorController extends Controller
 
 
 
-        $assignment->name = $request->json('title');
+        $assignment->name = $request->json('name');
         $assignment->subject = $request->json('subject');
         $assignment->course_id  = 1;
         $assignment->teacher_id = 1;

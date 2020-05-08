@@ -63,8 +63,8 @@ Route::group(array('prefix' => 'assignment'), function () {
             'as' => 'editor'
         ])->middleware('auth');
         Route::resource('current', 'AssignmentEditorController', ['parameters' => [
-            'current' => 'assignment',
-        ]])->middleware('auth');
+            'current' => 'assignment',],
+            'as' => 'editor'])->middleware('auth');
     });
     // assignment/view
 
