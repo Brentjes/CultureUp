@@ -5,8 +5,6 @@
         <title>CultureUp - Profile</title>
     </head>
 
-    {{--    <h1>/-=óÒÓwÒÓò=-\</h1>--}}
-
     <div id="studentpage">
         <div class="container">
             <div class="row">
