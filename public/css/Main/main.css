@@ -2,6 +2,16 @@
     transition-duration: 1s;
 }
 
+#content {
+    margin-top: 62px;
+    min-height: 100vh;
+}
+
+.link-unstyled, .link-unstyled:hover, .link-unstyled:active {
+    text-decoration: none !important;
+    color: #212529 !important;
+}
+
 html {
     scroll-behavior: smooth;
     font-family: 'Roboto';
@@ -79,6 +89,7 @@ body {
 
 .navbar {
     min-width: 480px;
+    width: 100vw;
     background-image: url('/images/polygon.png');
     background-repeat: no-repeat;
     background-size: cover;

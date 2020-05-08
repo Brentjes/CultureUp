@@ -11,6 +11,7 @@
 |
 */
 
+//Authentication Routes
 Auth::routes();
 
 
@@ -26,40 +27,31 @@ Route::get('/{name}', function () {
     ]);
 })->where('name', 'home||')->name('Home')->middleware('auth');
 
+//Profile Routes
 Route::get('/profile/{id?}', 'UserController@show')->name('profile')->middleware('auth');
 
+
+//Leaderboard Routes
 Route::get('/leaderboard', function () {
     return view('StudentPage.leaderboard');
 })->name('Leaderboard')->middleware('auth');
 
-Route::get('/logout', function () {
-    Auth::logout();
-    return view('home');
-})->name('home')->middleware('auth');
+
+//Teacher routes
+Route::namespace('Teacher')->prefix('teacher')->name('teacher.')->middleware('auth')->group(function () {
+    Route::resource('/', 'TeacherController', ['except' => ['show', 'create', 'store']]);
+    Route::resource('/progress', 'ProgressController', ['except' => ['show', 'create', 'store']]);
+});
 
 
-//TEMPORARY TEACHER ROUTES
-Route::get('/teacherhome', function () {
-    return view('TeacherPage.home');
-})->where('name', 'home||')->name('Home')->middleware('auth');
-
-//Route::get('/profile/{id?}', 'UserController@show')->name('profile')->middleware('auth');
-
-Route::get('/teacherprofile', function () {
-    return view('TeacherPage.profile');
-})->name('Teacherprofile')->middleware('auth');
-
-Route::get('/teacherleaderboard', function () {
-    return view('TeacherPage.leaderboard');
-})->name('Leaderboard')->middleware('auth');
-
-//Route::resource('test', 'PageController');
 
 Route::group(array('prefix' => 'assignment'), function () {
     Route::group(array('prefix' => 'editor'), function () {
         //replace test and test2 with better names
         // assignment/editor/test2
-        Route::resource('currentPage/{assignmentID}/page', 'PageEditorController')->middleware('auth');
+        Route::resource('currentPage/{assignmentID}/page', 'PageEditorController', [
+            'as' => 'editor'
+        ])->middleware('auth');
         Route::resource('current', 'AssignmentEditorController', ['parameters' => [
             'current' => 'assignment',
         ]])->middleware('auth');
@@ -74,6 +66,8 @@ Route::group(array('prefix' => 'assignment'), function () {
         ]])->middleware('auth');
 });
 
+
+//Jochems zn meuk
 Route::get('DokSTestingStuffDontTouch', function () {
     session()->regenerate();
     return response()->json([

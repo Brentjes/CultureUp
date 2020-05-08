@@ -13,12 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
-            integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
-            crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
-            integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
-            crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5b65a26ca8.js" crossorigin="anonymous"></script>
 
     {{--css--}}
     <link rel="stylesheet" type="text/css" href="/MDB/css/mdb.css">
@@ -35,37 +30,15 @@
 
 <body>
 <nav class="navbar fixed-top navbar-expand-md softshadow">
-    <a class="navbar-brand" href="/">CultureUp</a>
+    <a class="navbar-brand" href="/">CultureUp @yield('teacher')</a>
     <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="main-navigation">
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link icon custom-tooltip" href="/globe">
-                    <i class="fas fa-globe"></i>
-                    <span class="tooltiptext">Shows a globe that grants access to a collection of courses</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link icon custom-tooltip" href="/home">
-                    <i class="fas fa-tasks"></i>
-                    <span class="tooltiptext">Shows an overview of your in-progress courses</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link icon custom-tooltip" href="/leaderboard">
-                    <i class="fas fa-crown"></i>
-                    <span class="tooltiptext">View your score and other statistics</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link icon custom-tooltip" href="/notifications">
-                    <i class="fas fa-bell"></i><span class="badge badge-dark rounded-circle">5</span>
-                    <span class="tooltiptext">View all your messages</span>
-                </a>
-            </li>
+            @yield ('teacherIcons')
+            @yield ('studentIcons')
             <li class="nav-item">
                 <div class="dropdown show">
                     <a href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
@@ -76,7 +49,8 @@
                         <p class="dropdown-item dropdown-item-text disabled">J. Doe</p>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="/profile"><i class="fas fa-user"></i> Profile</a>
-                        <a class="dropdown-item" href="#" id="toggle-button"><i id="toggleLightIcon" class="fas fa-moon"></i><span
+                        <a class="dropdown-item" href="#" id="toggle-button"><i id="toggleLightIcon"
+                                                                                class="fas fa-moon"></i><span
                                 id="toggle-button-text"> Dark mode</span></a>
                         <a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt text-danger"></i> Log out</a>
                     </div>
