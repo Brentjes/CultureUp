@@ -1,3 +1,4 @@
+@section ('content')
 <head>
     <link rel="stylesheet" type="text/css" href="/css/main/home.css">
     <title>CultureUp - Home</title>
@@ -20,3 +21,4 @@
         @yield ('home')
     </div>
 </section>
+    @endsection
