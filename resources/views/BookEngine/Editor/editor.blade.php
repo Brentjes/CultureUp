@@ -38,24 +38,24 @@
                 <a href="#"><i class="fas fa-link"></i> Add Link</a>
             </li>
             <li class="softshadow">
-                <a href="#"><i class="fas fa-image"></i> Change Title</a>
+                <a href="#"><i class="fas fa-heading"></i> Change Title</a>
             </li>
             <li class="softshadow">
-                <a href="#"><i class="fas fa-link"></i> Change Description</a>
+                <a href="#"><i class="fas fa-paragraph"></i> Change Description</a>
             </li>
             <li>
                 <input type="button" id="testButton">
             </li>
             <li id="testAppend">
-{{--            <li>--}}
-{{--                <input type="text" id="title">--}}
-{{--            </li>--}}
-{{--            <li>--}}
-{{--                <input type="text" id="subject">--}}
-{{--            </li>--}}
-{{--            <li>--}}
-{{--                <input type="button" id="UpdateAssingmentButton">--}}
-{{--            </li>--}}
+            <li>
+                <input type="text" id="title">
+            </li>
+            <li>
+                <input type="text" id="subject">
+            </li>
+            <li>
+                <input type="button" id="UpdateAssingmentButton">
+            </li>
         </ul>
 
     </nav>
