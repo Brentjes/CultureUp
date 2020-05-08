@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Assignment extends Model
 {
+
+
     /**
      * Get the course that owns the assignment.
      */
