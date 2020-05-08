@@ -12,16 +12,12 @@
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
           integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="/css/BookEngine/editor.css">
 
     <!-- Font Awesome JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
-            integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
-            crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
-            integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
-            crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5b65a26ca8.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -29,17 +25,17 @@
     <!-- Sidebar -->
     <nav id="sidebar" style="z-index: 100">
         <div class="sidebar-header">
-            <h3>CultureUp Editor</h3>
+            <h3>CultureUP Editor</h3>
         </div>
 
         <ul class="list-unstyled components">
-            <li>
+            <li class="softshadow">
                 <a href="#"><i class="fas fa-quote-right"></i> Add Text</a>
             </li>
-            <li>
+            <li class="softshadow">
                 <a href="#"><i class="fas fa-image"></i> Add Image</a>
             </li>
-            <li>
+            <li class="softshadow">
                 <a href="#"><i class="fas fa-link"></i> Add Link</a>
             </li>
             <li class="softshadow">
@@ -49,30 +45,37 @@
                 <a href="#"><i class="fas fa-paragraph"></i> Change Description</a>
             </li>
             <li>
+                <input type="button" id="updateAssignmentButton">
+            </li>
+            <li>
                 <input type="text" id="assignmentName">
             </li>
             <li>
                 <input type="text" id="assignmentSubject">
             </li>
             <li>
-                <input type="button" id="updateAssignmentButton">
-            </li>
-
-            <li>
-                <input type="button" id="testButton">
+                <label for="testButton">NewPage</label>
+                <input name="testButton" type="button" id="testButton">
             </li>
             <li id="testAppend">
-
             </li>
+
         </ul>
 
     </nav>
+    <nav id="bottombar" style="z-index: 100">
+        <div class="sidebar-header text-center pt-2">
+            <h3>Timeline</h3>
+        </div>
+
+        <button type="button" id="bottombarCollapse" class="btn">
+            <i class="white-icon fas fa-photo-video"></i>
+        </button>
+    </nav>
     <!-- Page Content -->
     <div id="content">
-        <button type="button" id="sidebarCollapse" class="btn btn-light rounded">
-            <span></span>
-            <span></span>
-            <span></span>
+        <button type="button" id="sidebarCollapse" class="btn">
+            <i class="white-icon fas fa-pencil-ruler"></i>
         </button>
     </div>
 </div>
