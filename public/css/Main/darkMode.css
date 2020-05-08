@@ -1,0 +1,178 @@
+body {
+    background-color: rgba(0, 0, 0, 0.93);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #6c757d;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #7B848D;
+}
+
+.navbar {
+    background-image: url('/images/darkPolygon.png');
+    background-position: right 100% bottom 5%;
+}
+
+.navbar-brand:hover {
+    color: #EFEEEE;
+}
+
+.nav-link,
+.navbar-brand {
+    color: #e0e0e0;
+}
+
+.nav-link:hover {
+    color: #EFEEEE;
+}
+
+#overlay {
+    background-color: #212529;
+    -webkit-box-shadow: 0 2px 5px 2px rgba(60, 64, 67, 0.15);
+    -moz-box-shadow: 0 2px 5px 2px rgba(60, 64, 67, 0.15);
+    box-shadow: 0 2px 5px 2px rgba(60, 64, 67, 0.15);
+}
+
+.hr {
+    border-top: 1px solid grey !important;
+}
+
+.display-3 {
+    color: #e0e0e0;
+}
+
+.card-title {
+    color: #e0e0e0;
+}
+
+.card-img-top {
+    -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.softshadow {
+    -webkit-box-shadow: 2px 2px 15px black;
+    -moz-box-shadow: 2px 2px 15px black;
+    box-shadow: 2px 2px 15px black;
+}
+
+.softshadow-inset {
+    -webkit-box-shadow: inset 2px 2px 15px black;
+    -moz-box-shadow: inset 2px 2px 15px black;
+    box-shadow: inset 2px 2px 15px black;
+}
+
+.custom-tooltip .tooltiptext {
+    background-color: #282828;
+    color: #e0e0e0;
+    transition: opacity 0.2s linear 1s;
+    -webkit-box-shadow: 2px 2px 15px black;
+    -moz-box-shadow: 2px 2px 15px black;
+    box-shadow: 2px 2px 15px black;
+}
+
+.custom-tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #282828 transparent;
+}
+
+.teachercolor {
+    color: #e0e0e0;
+    font-weight: unset;
+}
+
+.dropdown-menu {
+    background-color: #282828;
+}
+
+.dropdown-item {
+    color: #e0e0e0;
+}
+
+.dropdown-item:hover {
+    color: black;
+    background-color: #e0e0e0;
+}
+
+.disabled {
+    color: grey !important;
+}
+.disabled:hover {
+    background: transparent;
+    color: grey;
+}
+
+.card {
+    background-color: #1d1d1d;
+}
+
+.list-group-item {
+    background-color: #1f1f1f !important;
+}
+
+p {
+    color: #e0e0e0;
+}
+
+h1 {
+    color: #e0e0e0;
+}
+
+th {
+    color: #e0e0e0;
+}
+
+.h4 {
+    color: #e0e0e0;
+}
+
+.h6 {
+    color: #e0e0e0;
+}
+
+.ribbon {
+    background-image: url("/images/darkPolygon.png") !important;
+    color: #e0e0e0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 1px solid grey;
+    background-position: 100% 60%;
+}
+
+table.table-bordered > thead > tr > th{
+    border:1px solid #313131;
+}
+
+table.table-bordered > tbody > tr > th{
+    border:1px solid #313131;
+}
+
+table.table-bordered > tbody > tr > td{
+    border:1px solid #313131;
+}
+
+.bar {
+    background-clip: content-box;
+    background-color: #1d1d1d !important;
+}
+
+.progress {
+    background-color: #e0e0e0;
+}
+

@@ -1,0 +1,189 @@
+@import "https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700";
+
+html {
+    overflow: hidden;
+}
+
+.white-icon {
+    color: #f0f0f0;
+}
+
+.wrapper {
+    background-color: #f9f9f9;
+    display: flex;
+    width: 100%;
+}
+
+#content {
+    z-index: 10;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+    transition: all 0.5s;
+    background-color: #f9f9f9;
+    -webkit-box-shadow: 0 1px 6px 0 rgba(32,33,36,.28);
+    -moz-box-shadow: 0 1px 6px 0 rgba(32,33,36,.28);
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,.28);
+ }
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#bottombar {
+    position: absolute;
+    min-height: 250px;
+    max-height: 250px;
+    min-width: 100vw;
+    transition: all 0.5s;
+    background-color: #f9f9f9;
+    -webkit-box-shadow: 0 1px 6px 0 rgba(32,33,36,.28);
+    -moz-box-shadow: 0 1px 6px 0 rgba(32,33,36,.28);
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,.28);
+    bottom: 0vh;
+}
+
+#bottombar.active {
+    margin-bottom: -250px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a, a:hover, a:focus {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+#sidebar .sidebar-header {
+    color: #323232;
+    padding: 20px;
+    padding-left: 10px;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+}
+
+#sidebar ul p {
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    background: #FEFEFE;
+    color: #323232;
+    margin-bottom: 7px;
+    margin-right: 5px;
+    border-top-right-radius: 50vh;
+    border-bottom-right-radius: 50vh;
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    color: #4B4B4B;
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #f0f0f0;
+}
+
+#sidebarCollapse {
+    width: 50px;
+    height: 50px;
+    background: #3399ff;
+    border-radius: 20vh;
+    margin-left: 1vw;
+    margin-top: 2vh;
+}
+
+#bottombarCollapse {
+    position: absolute;
+    right: 0.3vw;
+    bottom: 27vh;
+    margin-right: 1vw;
+    margin-bottom: 10vh;
+    width: 50px;
+    height: 50px;
+    background: #3399ff;
+    border-radius: 20vh;
+    margin-right: 1vw;
+    margin-bottom: 2vh;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+        transform: rotateY(100deg);
+    }
+    #sidebar.active {
+        margin-left: 0;
+        transform: none;
+    }
+
+    #sidebarCollapse span:first-of-type,
+    #sidebarCollapse span:nth-of-type(2),
+    #sidebarCollapse span:last-of-type {
+        transform: none;
+        opacity: 1;
+        margin: 5px auto;
+    }
+
+    /* Removing the vertical margin and make the first and last bars rotate again when the sidebar is open, hiding the second bar */
+    #sidebarCollapse.active span {
+        margin: 0 auto;
+    }
+
+    #sidebarCollapse.active span:first-of-type {
+        transform: rotate(45deg) translate(2px, 2px);
+    }
+
+    #sidebarCollapse.active span:nth-of-type(2) {
+        opacity: 0;
+    }
+
+    #sidebarCollapse.active span:last-of-type {
+        transform: rotate(-45deg) translate(1px, -1px);
+    }
+
+
+}
+
+.element-Game-Image{
+    z-index: 0;
+    background-repeat: no-repeat;
+    border: 3px solid goldenrod;
+}
+
+.element-Game-Text{
+    z-index: 1;
+    background: white;
+    border: 3px solid goldenrod;
+}
+
+.element-Game-Link{
+    z-index: 2;
+    background: transparent;
+    border: 3px dotted goldenrod;
+
+}
+
+.element-Game{
+    position: absolute;
+}

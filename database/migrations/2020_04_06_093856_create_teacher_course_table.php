@@ -16,6 +16,7 @@ class CreateTeacherCourseTable extends Migration
         Schema::create('teacher_course', function (Blueprint $table) {
             $table->bigInteger('teacher_id')->unsigned();
             $table->bigInteger('course_id')->unsigned();
+            $table->timestamps();
             $table->foreign('teacher_id')->references('id')->on('teachers')
                 ->onDelete('cascade');
             $table->foreign('course_id')->references('id')->on('courses')
