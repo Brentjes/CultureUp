@@ -42,6 +42,12 @@
             <li>
                 <a href="#"><i class="fas fa-link"></i> Add Link</a>
             </li>
+            <li class="softshadow">
+                <a href="#"><i class="fas fa-heading"></i> Change Title</a>
+            </li>
+            <li class="softshadow">
+                <a href="#"><i class="fas fa-paragraph"></i> Change Description</a>
+            </li>
             <li>
                 <input type="text" id="assignmentName">
             </li>
@@ -51,8 +57,6 @@
             <li>
                 <input type="button" id="updateAssignmentButton">
             </li>
-
-
 
             <li>
                 <input type="button" id="testButton">

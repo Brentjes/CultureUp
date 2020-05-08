@@ -1,3 +1,4 @@
+@section ('content')
 <head>
     <link rel="stylesheet" type="text/css" href="/css/teacher/profile.css">
     <title>CultureUp - Profile</title>
@@ -26,3 +27,4 @@
                     </div>
                 </div>
 </section>
+@endsection
