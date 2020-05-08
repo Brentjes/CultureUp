@@ -134,6 +134,11 @@ h1 {
     color: #e0e0e0;
 }
 
+h2 {
+    color: #e0e0e0;
+}
+
+
 th {
     color: #e0e0e0;
 }
@@ -175,4 +180,5 @@ table.table-bordered > tbody > tr > td{
 .progress {
     background-color: #e0e0e0;
 }
+
 
