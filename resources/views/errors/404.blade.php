@@ -27,16 +27,16 @@
                                     <p class="">-home</p>
                                 </a>
                                 <a href="/home">
-                                    -assignment</p>
+                                    <p>-assignment</p>
                                 </a>
                                 <a href="/home">
-                                    -home
+                                    <p>-home</p>
                                 </a>
                                 <a href="/home">
-                                    -home
+                                    <p>-home</p>
                                 </a>
                                 <a href="/home">
-                                    -home
+                                    <p>-home</p>
                                 </a>
                             </div>
 {{--                            <div class="col mr-20 text-right mt-5 mb-5">--}}
