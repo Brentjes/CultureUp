@@ -94,15 +94,13 @@
                 <p class="ribbonText text-center p-3 m-0">Edit assignment info</p>
             </div>
             <div class="card-body">
-                <form method="POST" action="/assignment/editor/current">
-                    @csrf
-                    <div class="form-group">
+                                    <div class="form-group">
                         <label class="label" for="title">Title</label>
                         <input class="form-control" type="text" id="assignmentName" placeholder="Enter title"
                                required
-                               value="{{old("title")}}">
+                               value="{{old("name")}}">
                         @error('title')
-                        <p>{{$errors->first('title')}}</p>
+                        <p>{{$errors->first('name')}}</p>
                         @enderror
                     </div>
 
@@ -145,7 +143,7 @@
                             <button class="btn btn-danger" onclick="showInfo()">Cancel</button>
                         </div>
                     </div>
-                </form>
+
             </div>
         </div>
     </div>
@@ -165,34 +163,16 @@
         id: '{{$page->id}}'
     };
 
-    document.getElementById('updateAssignmentButton').addEventListener("click", sendAssignmentUpdate);
-    document.getElementById('testButton').addEventListener('click', function () {
-        createInputField('page', pageInfo)
-    });
+    try {
+        //doenst exist anymore
+        document.getElementById('testButton').addEventListener('click', function () {
+            createInputField('page', pageInfo)
+        });
+    } catch {}
 
     const currentAssignment = 1;
 
-    function sendAssignmentUpdate() {
-        let assignmentUpdateUrl = "{{ route('editor.current.update', 1) }}";
-        let body = {
-            name: document.getElementById('assignmentName').value,
-            subject: document.getElementById('assignmentSubject').value,
-        };
-
-        if (!(body.name.length > 0 && body.name.length <= 50 && body.subject.length > 0 && body.subject.length <= 200)) {
-            console.log("one of these inputs are to long, please shorten them, title max length = 50, subject max length = 200");
-            if (!(body.name.length > 0 && body.name.length <= 50)) {
-                console.log('name');
-                console.log(body.name.length);
-            }
-            if (!(body.subject.length > 0 && body.subject.length <= 200)) {
-                console.log('subject');
-                console.log(body.subject.length);
-            }
-            return
-        }
-        sendFetchTo(assignmentUpdateUrl, body, 'put');
-    }
+    @include("BookEngine.Editor.js.assignmentEdit")
 
     function createInputField(type, old) {
         let inputBox = document.createElement("div");
@@ -275,25 +255,7 @@
 
     }
 
-    function sendFetchTo(url, body, method) {
-        console.log(method);
-        console.log(body);
-        console.log(url);
-        fetch(url, {
-            method: method,
-            credentials: "same-origin",
-            body: JSON.stringify(body),
-            mode: 'cors',
-            headers: {
-                "Content-Type": "application/json",
-                "X-CSRF-Token": document.head.querySelector("[name~=csrf-token][content]").content
-            }
 
-        })
-            // .then( (response) => return response.text());
-            .then((text) => console.log(text))
-            .catch((error) => console.log(error));
-    }
 
 </script>
 

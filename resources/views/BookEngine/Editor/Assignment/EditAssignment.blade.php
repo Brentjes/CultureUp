@@ -94,58 +94,56 @@
                 <p class="ribbonText text-center p-3 m-0">Edit assignment info</p>
             </div>
             <div class="card-body">
-                <form method="POST" action="/assignment/editor/current">
-                    @csrf
-                    <div class="form-group">
-                        <label class="label" for="title">Title</label>
-                        <input class="form-control" type="text" id="assignmentName" placeholder="Enter title"
-                               required
-                               value="{{old("title")}}">
-                        @error('title')
-                        <p>{{$errors->first('title')}}</p>
-                        @enderror
-                    </div>
+                <div class="form-group">
+                    <label class="label" for="title">Title</label>
+                    <input class="form-control" type="text" id="assignmentName" placeholder="Enter title"
+                           required
+                           value="{{old("name")}}">
+                    @error('title')
+                    <p>{{$errors->first('name')}}</p>
+                    @enderror
+                </div>
 
-                    <div class="form-group">
-                        <label class="label" for="subject">Description</label>
-                        <input class="form-control" type="text" id="assignmentSubject" placeholder="Enter subject"
-                               required
-                               value="{{old("subject")}}">
-                        @error('subject')
-                        <p>{{$errors->first('subject')}}</p>
-                        @enderror
-                    </div>
+                <div class="form-group">
+                    <label class="label" for="subject">Description</label>
+                    <input class="form-control" type="text" id="assignmentSubject" placeholder="Enter subject"
+                           required
+                           value="{{old("subject")}}">
+                    @error('subject')
+                    <p>{{$errors->first('subject')}}</p>
+                    @enderror
+                </div>
 
-                    <div class="form-group">
-                        <label class="label" for="inputState">Country</label>
-                        <select id="inputState" class="form-control selectpicker" data-live-search="true"
-                                data-size="10">
-                            <option>Afghanistan</option>
-                            <option>African central republic</option>
-                            <option>Albania</option>
-                            <option>Algeria</option>
-                            <option>Andorra</option>
-                            <option>Antigua and barbud</option>
-                            <option>Argentina</option>
-                            <option>Armenia</option>
-                            <option>Australia</option>
-                            <option>...</option>
-                            <option>...</option>
-                            <option>...</option>
-                            <option>...</option>
-                            <option>...</option>
-                        </select>
-                    </div>
+                <div class="form-group">
+                    <label class="label" for="inputState">Country</label>
+                    <select id="inputState" class="form-control selectpicker" data-live-search="true"
+                            data-size="10">
+                        <option>Afghanistan</option>
+                        <option>African central republic</option>
+                        <option>Albania</option>
+                        <option>Algeria</option>
+                        <option>Andorra</option>
+                        <option>Antigua and barbud</option>
+                        <option>Argentina</option>
+                        <option>Armenia</option>
+                        <option>Australia</option>
+                        <option>...</option>
+                        <option>...</option>
+                        <option>...</option>
+                        <option>...</option>
+                        <option>...</option>
+                    </select>
+                </div>
 
-                    <div class="row text-center pt-4">
-                        <div class="col">
-                            <button class="btn btn-light" type="submit" id="updateAssignmentButton">Submit</button>
-                        </div>
-                        <div class="col">
-                            <button class="btn btn-danger" onclick="showInfo()">Cancel</button>
-                        </div>
+                <div class="row text-center pt-4">
+                    <div class="col">
+                        <button class="btn btn-light" type="submit" id="updateAssignmentButton">Submit</button>
                     </div>
-                </form>
+                    <div class="col">
+                        <button class="btn btn-danger" onclick="showInfo()">Cancel</button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -161,52 +159,9 @@
 
 <script>
 
-    document.getElementById('updateAssignmentButton').addEventListener("click", sendAssignmentUpdate);
+    @include("BookEngine.Editor.js.assignmentEdit")
 
-    function sendAssignmentUpdate() {
-        let assignmentUpdateUrl = "{{ route('editor.current.update', $assignment->id) }}";
-        let body =  {
-            name: document.getElementById('assignmentName').value,
-            subject: document.getElementById('assignmentSubject').value,
-        };
 
-        if (!(body.name.length > 0 && body.name.length <= 50 && body.subject.length > 0 && body.subject.length <= 200)) {
-            console.log("one of these inputs are to long, please shorten them, title max length = 50, subject max length = 200");
-            if (!(body.name.length > 0 && body.name.length <= 50)) {
-                console.log('name');
-                console.log(body.name.length);
-            }
-            if (!(body.subject.length > 0 && body.subject.length <= 200)) {
-                console.log('subject');
-                console.log(body.subject.length);
-            }
-
-            return
-        }
-
-        sendFetchTo(assignmentUpdateUrl, body, 'put');
-
-    }
-
-    function sendFetchTo(url, body, method){
-        console.log(method);
-        console.log(body);
-        console.log(url);
-        fetch(url, {
-            method: method,
-            credentials: "same-origin",
-            body: JSON.stringify(body),
-            mode: 'cors',
-            headers: {
-                "Content-Type": "application/json",
-                "X-CSRF-Token": document.head.querySelector("[name~=csrf-token][content]").content
-            }
-
-        })
-            // .then( (response) => return response.text());
-            .then( (text) => console.log(text))
-            .catch( (error) => console.log(error) );
-    }
 
 </script>
 
@@ -219,9 +174,12 @@
         integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
         crossorigin="anonymous"></script>
 <!-- Bootstrap JS -->
-{{--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"--}}
-{{--        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"--}}
-{{--        crossorigin="anonymous"></script>--}}
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+{{--Bootstrap select--}}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
 <script src="/editor.js"></script>
 
 
