@@ -18,6 +18,10 @@
 
     <!-- Font Awesome JS -->
     <script src="https://kit.fontawesome.com/5b65a26ca8.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap select -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
 </head>
 <body>
 
@@ -29,54 +33,121 @@
         </div>
 
         <ul class="list-unstyled components">
-            <li class="softshadow">
-                <a href="#"><i class="fas fa-quote-right"></i> Add Text</a>
+            <li class="softshadow stick">
+                <a><i class="fas fa-quote-right"></i> Add Text</a>
             </li>
-            <li class="softshadow">
-                <a href="#"><i class="fas fa-image"></i> Add Image</a>
+            <li class="softshadow stick">
+                <a><i class="fas fa-image"></i> Add Image</a>
             </li>
-            <li class="softshadow">
-                <a href="#"><i class="fas fa-link"></i> Add Link</a>
+            <li class="softshadow stick">
+                <a><i class="fas fa-link"></i> Add Link</a>
             </li>
-            <li class="softshadow">
-                <a href="#"><i class="fas fa-heading"></i> Change Title</a>
+            <li class="softshadow stick">
+                <a onclick="showInfo();"><i class="fas fa-cogs"></i> Edit assignment info</a>
             </li>
-            <li class="softshadow">
-                <a href="#"><i class="fas fa-paragraph"></i> Change Description</a>
-            </li>
-            <li>
-                <input type="button" id="updateAssignmentButton">
-            </li>
-            <li>
-                <input type="text" id="assignmentName">
-            </li>
-            <li>
-                <input type="text" id="assignmentSubject">
-            </li>
-            <li>
-                <label for="testButton">NewPage</label>
-                <input name="testButton" type="button" id="testButton">
-            </li>
-            <li id="testAppend">
-            </li>
-
+            {{--            <li>--}}
+            {{--                <label for="testButton">NewPage</label>--}}
+            {{--                <input name="testButton" type="button" id="testButton">--}}
+            {{--            </li>--}}
+            {{--            <li id="testAppend">--}}
+            {{--            </li>--}}
         </ul>
-
     </nav>
+
+    <div id="content">
+        <button type="button" id="sidebarCollapse" class="btn">
+            <i class="white-icon fas fa-pencil-ruler"></i>
+        </button>
+    </div>
+
     <nav id="bottombar" style="z-index: 100">
-        <div class="sidebar-header text-center pt-2">
+        <div class="text-center pt-2">
             <h3>Timeline</h3>
+        </div>
+        <div class="row w-100 text-center ml-2 pl-5">
+            <div class="col-auto p-3">
+                <div class="card text-white custom-rounded" style="width: 12vw;">
+                    <img class="card-img custom-rounded" src="http://placehold.it/160x90">
+                </div>
+            </div>
+            <div class="col-auto p-3">
+                <div class="card text-white custom-rounded" style="width: 12vw;">
+                    <img class="card-img custom-rounded" src="http://placehold.it/160x90">
+                </div>
+            </div>
+            <div class="col-auto p-3">
+                <div class="card text-white custom-rounded softshadow" style="width: 12vw;">
+                    <img class="card-img custom-rounded" src="http://placehold.it/160x90">
+                </div>
+            </div>
         </div>
 
         <button type="button" id="bottombarCollapse" class="btn">
             <i class="white-icon fas fa-photo-video"></i>
         </button>
     </nav>
-    <!-- Page Content -->
-    <div id="content">
-        <button type="button" id="sidebarCollapse" class="btn">
-            <i class="white-icon fas fa-pencil-ruler"></i>
-        </button>
+
+    <div id="formToggle" class="position-absolute assignment-info"
+         style="top: 40%; left: 50%; transform: translate(-50%, -50%); width: 20vw; z-index: 200;">
+        <div class="card rounded p-0 w-100">
+            <div class="card-header ribbon p-0">
+                <p class="ribbonText text-center p-3 m-0">Edit assignment info</p>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="/assignment/editor/current">
+                    @csrf
+                    <div class="form-group">
+                        <label class="label" for="title">Title</label>
+                        <input class="form-control" type="text" id="assignmentName" placeholder="Enter title"
+                               required
+                               value="{{old("title")}}">
+                        @error('title')
+                        <p>{{$errors->first('title')}}</p>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label" for="subject">Description</label>
+                        <input class="form-control" type="text" id="assignmentSubject" placeholder="Enter subject"
+                               required
+                               value="{{old("subject")}}">
+                        @error('subject')
+                        <p>{{$errors->first('subject')}}</p>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label" for="inputState">Country</label>
+                        <select id="inputState" class="form-control selectpicker" data-live-search="true"
+                                data-size="10">
+                            <option>Afghanistan</option>
+                            <option>African central republic</option>
+                            <option>Albania</option>
+                            <option>Algeria</option>
+                            <option>Andorra</option>
+                            <option>Antigua and barbud</option>
+                            <option>Argentina</option>
+                            <option>Armenia</option>
+                            <option>Australia</option>
+                            <option>...</option>
+                            <option>...</option>
+                            <option>...</option>
+                            <option>...</option>
+                            <option>...</option>
+                        </select>
+                    </div>
+
+                    <div class="row text-center pt-4">
+                        <div class="col">
+                            <button class="btn btn-light" type="submit" id="updateAssignmentButton">Submit</button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-danger" onclick="showInfo()">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 
