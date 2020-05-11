@@ -55,8 +55,8 @@
     </nav>
 
     <div id="content">
-        <button type="button" id="sidebarCollapse" class="btn">
-            <i class="white-icon fas fa-pencil-ruler"></i>
+        <button type="button" id="sidebarCollapse" class="blue-icon btn">
+            <i class="m-0 fas fa-pencil-ruler"></i>
         </button>
     </div>
 
@@ -82,8 +82,8 @@
             </div>
         </div>
 
-        <button type="button" id="bottombarCollapse" class="btn">
-            <i class="white-icon fas fa-photo-video"></i>
+        <button type="button" id="bottombarCollapse" class="btn blue-icon" style="padding: 12px 6px;">
+            <i class="fas fa-photo-video"></i>
         </button>
     </nav>
 
