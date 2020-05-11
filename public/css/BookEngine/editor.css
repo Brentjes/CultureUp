@@ -8,6 +8,10 @@ html {
 
 .blue-icon {
     color: #f0f0f0;
+    width: 50px;
+    height: 50px;
+    background: #3399ff;
+    border-radius: 20vh;
 }
 
 .wrapper {
@@ -107,12 +111,18 @@ ul ul a {
 }
 
 #sidebarCollapse {
-    width: 50px;
-    height: 50px;
-    background: #3399ff;
-    border-radius: 20vh;
     margin-left: 1vw;
     margin-top: 2vh;
+}
+
+#bottombarCollapse {
+    position: absolute;
+    right: 0.3vw;
+    bottom: 27vh;
+    margin-right: 1vw;
+    margin-bottom: 10vh;
+    margin-right: 1vw;
+    margin-bottom: 2vh;
 }
 
 .dropdown-toggle {
@@ -146,20 +156,6 @@ ul ul a {
 
 .btn-danger {
     background-color: #ef476f !important;
-}
-
-#bottombarCollapse {
-    position: absolute;
-    right: 0.3vw;
-    bottom: 27vh;
-    margin-right: 1vw;
-    margin-bottom: 10vh;
-    width: 50px;
-    height: 50px;
-    background: #3399ff;
-    border-radius: 20vh;
-    margin-right: 1vw;
-    margin-bottom: 2vh;
 }
 
 @media (max-width: 768px) {

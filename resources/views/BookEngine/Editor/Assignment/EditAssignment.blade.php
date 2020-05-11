@@ -34,57 +34,12 @@
 
         <ul class="list-unstyled components">
             <li class="softshadow stick">
-                <a><i class="fas fa-quote-right"></i> Add Text</a>
-            </li>
-            <li class="softshadow stick">
-                <a><i class="fas fa-image"></i> Add Image</a>
-            </li>
-            <li class="softshadow stick">
-                <a><i class="fas fa-link"></i> Add Link</a>
+                <a onclick="addPage();"><i class="fas fa-plus"></i> New page</a>
             </li>
             <li class="softshadow stick">
                 <a onclick="showInfo();"><i class="fas fa-cogs"></i> Edit assignment info</a>
             </li>
-            {{--            <li>--}}
-            {{--                <label for="testButton">NewPage</label>--}}
-            {{--                <input name="testButton" type="button" id="testButton">--}}
-            {{--            </li>--}}
-            {{--            <li id="testAppend">--}}
-            {{--            </li>--}}
         </ul>
-    </nav>
-
-    <div id="content">
-        <button type="button" id="sidebarCollapse" class="btn">
-            <i class="white-icon fas fa-pencil-ruler"></i>
-        </button>
-    </div>
-
-    <nav id="bottombar" style="z-index: 100">
-        <div class="text-center pt-2">
-            <h3>Timeline</h3>
-        </div>
-        <div class="row w-100 text-center ml-2 pl-5">
-            <div class="col-auto p-3">
-                <div class="card text-white custom-rounded" style="width: 12vw;">
-                    <img class="card-img custom-rounded" src="http://placehold.it/160x90">
-                </div>
-            </div>
-            <div class="col-auto p-3">
-                <div class="card text-white custom-rounded" style="width: 12vw;">
-                    <img class="card-img custom-rounded" src="http://placehold.it/160x90">
-                </div>
-            </div>
-            <div class="col-auto p-3">
-                <div class="card text-white custom-rounded softshadow" style="width: 12vw;">
-                    <img class="card-img custom-rounded" src="http://placehold.it/160x90">
-                </div>
-            </div>
-        </div>
-
-        <button type="button" id="bottombarCollapse" class="btn">
-            <i class="white-icon fas fa-photo-video"></i>
-        </button>
     </nav>
 
     <div id="formToggle" class="position-absolute assignment-info"
@@ -106,7 +61,7 @@
 
                 <div class="form-group">
                     <label class="label" for="subject">Description</label>
-                    <input class="form-control" type="text" id="assignmentSubject" placeholder="Enter subject"
+                    <input class="form-control" type="text" id="assignmentSubject" placeholder="Enter description"
                            required
                            value="{{old("subject")}}">
                     @error('subject')
@@ -147,9 +102,74 @@
             </div>
         </div>
     </div>
+
+    <div id="pageToggle" class="position-absolute assignment-info"
+         style="top: 40%; left: 50%; transform: translate(-50%, -50%); width: 20vw; z-index: 200;">
+        <div class="card rounded p-0 w-100">
+            <div class="card-header ribbon p-0">
+                <p class="ribbonText text-center p-3 m-0">New page</p>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label class="label" for="title">Title</label>
+                    <input class="form-control" type="text" id="assignmentName" placeholder="Enter title"
+                           required
+                           value="{{old("name")}}">
+                    @error('title')
+                    <p>{{$errors->first('name')}}</p>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label class="label" for="subject">Description (optional)</label>
+                    <input class="form-control" type="text" id="assignmentSubject" placeholder="Enter description"
+                           required
+                           value="{{old("subject")}}">
+                    @error('subject')
+                    <p>{{$errors->first('subject')}}</p>
+                    @enderror
+                </div>
+
+                <div class="row text-center pt-4">
+                    <div class="col">
+                        <button class="btn btn-light" type="submit" id="updateAssignmentButton">Submit</button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-danger" onclick="addPage()">Cancel</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row position-absolute" style="margin-left: 15%; width: 100vw;">
+        <div class="col-auto p-3">
+            <div class="card text-white custom-rounded softshadow" style="width: 12vw;">
+                <img class="card-img custom-rounded" src="http://placehold.it/160x90">
+                <div class="card-img-overlay">
+                    <h2 class="card-title" style="font-size: 1.6vw;">1</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-auto p-3">
+            <div class="card text-white custom-rounded softshadow" style="width: 12vw;">
+                <img class="card-img custom-rounded" src="http://placehold.it/160x90">
+                <div class="card-img-overlay">
+                    <h2 class="card-title" style="font-size: 1.6vw;">2</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-auto p-3">
+            <div class="card text-white custom-rounded softshadow" style="width: 12vw;">
+                <img class="card-img custom-rounded" src="http://placehold.it/160x90">
+                <div class="card-img-overlay">
+                    <h2 class="card-title" style="font-size: 1.6vw;">3</h2>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-
 
 <div id="ElementList">
 
@@ -158,11 +178,7 @@
 <meta>
 
 <script>
-
     @include("BookEngine.Editor.js.assignmentEdit")
-
-
-
 </script>
 
 

@@ -14,6 +14,10 @@ function showInfo() {
     document.getElementById('formToggle').classList.toggle('active');
 }
 
+function addPage() {
+    document.getElementById('pageToggle').classList.toggle('active');
+}
+
 function sendFetchTo(url, body, method) {
     console.log(method);
     console.log(body);

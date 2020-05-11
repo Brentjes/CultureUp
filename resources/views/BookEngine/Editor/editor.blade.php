@@ -80,6 +80,11 @@
                     <img class="card-img custom-rounded" src="http://placehold.it/160x90">
                 </div>
             </div>
+            <div class="col-auto my-auto">
+                <button type="button" id="addPage" class="btn blue-icon">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
         </div>
 
         <button type="button" id="bottombarCollapse" class="btn blue-icon" style="padding: 12px 6px;">
@@ -94,55 +99,55 @@
                 <p class="ribbonText text-center p-3 m-0">Edit assignment info</p>
             </div>
             <div class="card-body">
-                                    <div class="form-group">
-                        <label class="label" for="title">Title</label>
-                        <input class="form-control" type="text" id="assignmentName" placeholder="Enter title"
-                               required
-                               value="{{old("name")}}">
-                        @error('title')
-                        <p>{{$errors->first('name')}}</p>
-                        @enderror
-                    </div>
+                <div class="form-group">
+                    <label class="label" for="title">Title</label>
+                    <input class="form-control" type="text" id="assignmentName" placeholder="Enter title"
+                           required
+                           value="{{old("name")}}">
+                    @error('title')
+                    <p>{{$errors->first('name')}}</p>
+                    @enderror
+                </div>
 
-                    <div class="form-group">
-                        <label class="label" for="subject">Description</label>
-                        <input class="form-control" type="text" id="assignmentSubject" placeholder="Enter subject"
-                               required
-                               value="{{old("subject")}}">
-                        @error('subject')
-                        <p>{{$errors->first('subject')}}</p>
-                        @enderror
-                    </div>
+                <div class="form-group">
+                    <label class="label" for="subject">Description</label>
+                    <input class="form-control" type="text" id="assignmentSubject" placeholder="Enter subject"
+                           required
+                           value="{{old("subject")}}">
+                    @error('subject')
+                    <p>{{$errors->first('subject')}}</p>
+                    @enderror
+                </div>
 
-                    <div class="form-group">
-                        <label class="label" for="inputState">Country</label>
-                        <select id="inputState" class="form-control selectpicker" data-live-search="true"
-                                data-size="10">
-                            <option>Afghanistan</option>
-                            <option>African central republic</option>
-                            <option>Albania</option>
-                            <option>Algeria</option>
-                            <option>Andorra</option>
-                            <option>Antigua and barbud</option>
-                            <option>Argentina</option>
-                            <option>Armenia</option>
-                            <option>Australia</option>
-                            <option>...</option>
-                            <option>...</option>
-                            <option>...</option>
-                            <option>...</option>
-                            <option>...</option>
-                        </select>
-                    </div>
+                <div class="form-group">
+                    <label class="label" for="inputState">Country</label>
+                    <select id="inputState" class="form-control selectpicker" data-live-search="true"
+                            data-size="10">
+                        <option>Afghanistan</option>
+                        <option>African central republic</option>
+                        <option>Albania</option>
+                        <option>Algeria</option>
+                        <option>Andorra</option>
+                        <option>Antigua and barbud</option>
+                        <option>Argentina</option>
+                        <option>Armenia</option>
+                        <option>Australia</option>
+                        <option>...</option>
+                        <option>...</option>
+                        <option>...</option>
+                        <option>...</option>
+                        <option>...</option>
+                    </select>
+                </div>
 
-                    <div class="row text-center pt-4">
-                        <div class="col">
-                            <button class="btn btn-light" type="submit" id="updateAssignmentButton">Submit</button>
-                        </div>
-                        <div class="col">
-                            <button class="btn btn-danger" onclick="showInfo()">Cancel</button>
-                        </div>
+                <div class="row text-center pt-4">
+                    <div class="col">
+                        <button class="btn btn-light" type="submit" id="updateAssignmentButton">Submit</button>
                     </div>
+                    <div class="col">
+                        <button class="btn btn-danger" onclick="showInfo()">Cancel</button>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -168,7 +173,8 @@
         document.getElementById('testButton').addEventListener('click', function () {
             createInputField('page', pageInfo)
         });
-    } catch {}
+    } catch {
+    }
 
     const currentAssignment = 1;
 
@@ -254,7 +260,6 @@
     function editElement() {
 
     }
-
 
 
 </script>
