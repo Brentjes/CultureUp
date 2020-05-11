@@ -34,6 +34,22 @@
                     <p>{{$errors->first('subject')}}</p>
                     @enderror
                 </div>
+
+                <br>
+
+                @foreach($assigments as $assignment)
+                <div class="field">
+                    <label class="label" for="country">Case location</label>
+                    <br>
+                    <select id="country" name="country">
+                        <option value="{{$assignment->country_code}}">{{$assignment->country}}</option>
+                    </select>
+                    @error('country')
+                    <p>{{$errors->first('country')}}</p>
+                    @enderror
+                </div>
+                @endforeach
+
                 <div class="pt-3">
                     <div class="form-check form-check-inline">
                         <input type="checkbox" class="form-check-input" name="isHidden"
