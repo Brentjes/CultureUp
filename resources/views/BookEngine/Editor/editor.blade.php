@@ -29,21 +29,21 @@
     <!-- Sidebar -->
     <nav id="sidebar" style="z-index: 100">
         <div class="sidebar-header">
-            <h3>CultureUP Editor</h3>
+            <h3 style="font-size: 1.5vw;">CultureUP Editor</h3>
         </div>
 
         <ul class="list-unstyled components">
             <li class="softshadow stick">
-                <a><i class="fas fa-quote-right"></i> Add Text</a>
+                <a><i class="bar-icon fas fa-quote-right"></i><span class="bar-text"> Add Text</span></a>
             </li>
             <li class="softshadow stick">
-                <a><i class="fas fa-image"></i> Add Image</a>
+                <a><i class="bar-icon fas fa-image"></i><span class="bar-text"> Add Image</span></a>
             </li>
             <li class="softshadow stick">
-                <a><i class="fas fa-link"></i> Add Link</a>
+                <a><i class="bar-icon fas fa-link"></i><span class="bar-text"> Add Link</span></a>
             </li>
             <li class="softshadow stick">
-                <a onclick="showInfo();"><i class="fas fa-cogs"></i> Edit assignment info</a>
+                <a onclick="showInfo();"><i class="bar-icon fas fa-cog"></i><span class="bar-text"> Edit assignment info</span></a>
             </li>
             {{--            <li>--}}
             {{--                <label for="testButton">NewPage</label>--}}
@@ -61,8 +61,8 @@
     </div>
 
     <nav id="bottombar" style="z-index: 100">
-        <div class="text-center pt-2">
-            <h3>Timeline</h3>
+        <div class="text-center pt-2 sidebar-header">
+            <h3 class="d-inline" style="color: #323232; font-size: 1.5vw;">Timeline</h3><i class="d-inline ml-2 fas fa-ellipsis-h bar-icon" style="color: #323232;"></i>
         </div>
         <div class="row w-100 text-center ml-2 pl-5">
             <div class="col-auto p-3">
