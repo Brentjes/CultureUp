@@ -29,7 +29,7 @@
     <!-- Sidebar -->
     <nav id="sidebar" style="z-index: 100">
         <div class="sidebar-header">
-            <h3 style="font-size: 1.5vw;">CultureUP Editor</h3>
+            <h3>CultureUP Editor</h3>
         </div>
 
         <ul class="list-unstyled components">
@@ -43,10 +43,7 @@
                 <a><i class="bar-icon fas fa-link"></i><span class="bar-text"> Add Link</span></a>
             </li>
             <li class="softshadow stick">
-                <a onclick="editAssignmentToggle();"><i class="bar-icon fas fa-cog"></i><span class="bar-text"> Edit assignment info</span></a>
-            </li>
-            <li class="softshadow stick">
-                <a onclick="addPageToggle();"><i class="fas fa-plus"></i>edit page</a>
+                <a onclick="addPageToggle();"><i class="bar-icon fas fa-cog"></i> <span class="bar-text"> Page settings</span></a>
             </li>
             {{--            <li>--}}
             {{--                <label for="testButton">NewPage</label>--}}
@@ -63,23 +60,24 @@
         </button>
     </div>
 
+    <!-- Bottombar -->
     <nav id="bottombar" style="z-index: 100">
         <div class="text-center pt-2 sidebar-header">
-            <h3 class="d-inline" style="color: #323232; font-size: 1.5vw;">Timeline</h3><i class="d-inline ml-2 fas fa-ellipsis-h bar-icon" style="color: #323232;"></i>
+            <h3 class="d-inline" style="color: #212529;">Timeline</h3><i class="d-inline ml-2 fas fa-ellipsis-h bar-icon" style="color: #323232; margin: 0px"></i>
         </div>
-        <div class="row w-100 text-center ml-2 pl-5">
-            <div class="col-auto p-3">
-                <div class="card text-white custom-rounded" style="width: 12vw;">
+        <div class="row w-100 text-center ml-2 pl-5" style="height: 200px; margin-top: -3px">
+            <div class="col-auto p-3 my-auto">
+                <div class="card text-white custom-rounded h-auto" style="width: 15vw;">
                     <img class="card-img custom-rounded" src="http://placehold.it/160x90">
                 </div>
             </div>
-            <div class="col-auto p-3">
-                <div class="card text-white custom-rounded" style="width: 12vw;">
+            <div class="col-auto p-3 my-auto">
+                <div class="card text-white custom-rounded h-auto" style="width: 15vw;">
                     <img class="card-img custom-rounded" src="http://placehold.it/160x90">
                 </div>
             </div>
-            <div class="col-auto p-3">
-                <div class="card text-white custom-rounded softshadow" style="width: 12vw;">
+            <div class="col-auto p-3 my-auto">
+                <div class="card text-white custom-rounded softshadow h-auto" style="width: 15vw;">
                     <img class="card-img custom-rounded" src="http://placehold.it/160x90">
                 </div>
             </div>
@@ -91,7 +89,7 @@
         </div>
 
         <button type="button" id="bottombarCollapse" class="btn blue-icon" style="padding: 12px 6px;">
-            <i class="fas fa-photo-video"></i>
+            <i class="fas fa-film"></i>
         </button>
     </nav>
 

@@ -23,8 +23,8 @@ html {
 }
 
 #sidebar {
-    min-width: 14vw;
-    max-width: 14vw;
+    min-width: 250px;
+    max-width: 250px;
     min-height: 100vh;
     transition: all 0.5s;
     background-color: #f9f9f9;
@@ -34,32 +34,25 @@ html {
  }
 
 #sidebar.active {
-    margin-left: -14vw;
+    margin-left: -250px;
 }
 
-.bar-icon {
-    font-size: 1vw;
-}
-
-.bar-text {
-    font-size: 1vw;
-}
 
 #bottombar {
     position: absolute;
-    min-height: 14vw;
-    max-height: 14vw;
+    min-height: 250px;
+    max-height: 250px;
     min-width: 100vw;
     transition: all 0.5s;
     background-color: #f9f9f9;
     -webkit-box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
     -moz-box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
     box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
-    bottom: 0vh;
+    bottom: 0;
 }
 
 #bottombar.active {
-    margin-bottom: -14vw;
+    margin-bottom: -250px;
 }
 
 body {
@@ -81,9 +74,9 @@ a, a:hover, a:focus {
 }
 
 #sidebar .sidebar-header {
-    color: #323232;
-    padding: 2.7vh;
-    padding-left: 1.3vh;
+    color: #212529;
+    padding: 20px;
+    padding-left: 20px;
 }
 
 .h3-resize {
@@ -121,14 +114,14 @@ ul ul a {
 }
 
 #sidebarCollapse {
-    margin-left: 1vw;
-    margin-top: 2vh;
+    margin-left: 25px;
+    margin-top: 25px;
 }
 
 #bottombarCollapse {
     position: absolute;
-    right: 1vw;
-    bottom: 15vw;
+    right: 25px;
+    bottom: 275px;
 }
 
 .dropdown-toggle {
@@ -166,21 +159,18 @@ ul ul a {
 
 @media (max-width: 768px) {
     #sidebar {
-        margin-left: -13vw;
-
+        margin-left: -250px;
     }
 
     #sidebar.active {
         margin-left: 0;
-        transform: none;
     }
 
-    #sidebar {
-        margin-bottom: -13vw;
-
+    #bottombar {
+        margin-bottom: -250px;
     }
 
-    #sidebar.active {
+    #bottombar.active {
         margin-bottom: 0;
     }
 }
