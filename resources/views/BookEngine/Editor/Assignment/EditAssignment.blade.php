@@ -34,10 +34,10 @@
 
         <ul class="list-unstyled components">
             <li class="softshadow stick">
-                <a onclick="addPage();"><i class="fas fa-plus"></i> New page</a>
+                <a id="newPageToggleButton"><i class="fas fa-plus"></i> New page</a>
             </li>
             <li class="softshadow stick">
-                <a onclick="showInfo();"><i class="fas fa-cogs"></i> Edit assignment info</a>
+                <a id="editAssignmentToggleButton"><i class="fas fa-cogs"></i> Edit assignment info</a>
             </li>
         </ul>
     </nav>
@@ -95,7 +95,7 @@
                         <button class="btn btn-light" type="submit" id="updateAssignmentButton">Submit</button>
                     </div>
                     <div class="col">
-                        <button class="btn btn-danger" onclick="showInfo()">Cancel</button>
+                        <button class="btn btn-danger" onclick="untoggleOtherForm()">Cancel</button>
                     </div>
                 </div>
 
@@ -112,7 +112,7 @@
             <div class="card-body">
                 <div class="form-group">
                     <label class="label" for="title">Title</label>
-                    <input class="form-control" type="text" id="assignmentName" placeholder="Enter title"
+                    <input class="form-control" type="text" id="pageName" placeholder="Enter title"
                            required
                            value="{{old("name")}}">
                     @error('title')
@@ -122,8 +122,8 @@
 
                 <div class="form-group">
                     <label class="label" for="subject">Description (optional)</label>
-                    <input class="form-control" type="text" id="assignmentSubject" placeholder="Enter description"
-                           required
+                    <input class="form-control" type="text" id="pageDescription" placeholder="Enter description"
+
                            value="{{old("subject")}}">
                     @error('subject')
                     <p>{{$errors->first('subject')}}</p>
@@ -132,10 +132,10 @@
 
                 <div class="row text-center pt-4">
                     <div class="col">
-                        <button class="btn btn-light" type="submit" id="updateAssignmentButton">Submit</button>
+                        <button class="btn btn-light" type="submit" id="newPageButton">Submit</button>
                     </div>
                     <div class="col">
-                        <button class="btn btn-danger" onclick="addPage()">Cancel</button>
+                        <button class="btn btn-danger" onclick="untoggleOtherForm()">Cancel</button>
                     </div>
                 </div>
 
@@ -143,32 +143,18 @@
         </div>
     </div>
 
-    <div class="row position-absolute" style="margin-left: 15%; width: 100vw;">
+    <div class="row position-absolute" style="margin-left: 15%; width: 85vw;">
+        @foreach($assignment->pages as $page)
         <div class="col-auto p-3">
             <div class="card text-white custom-rounded softshadow" style="width: 12vw;">
                 <img class="card-img custom-rounded" src="http://placehold.it/160x90">
                 <div class="card-img-overlay">
-                    <h2 class="card-title" style="font-size: 1.6vw;">1</h2>
+                    <h2 class="card-title" style="font-size: 1vw;">{{$page->name}}</h2>
                 </div>
             </div>
         </div>
-        <div class="col-auto p-3">
-            <div class="card text-white custom-rounded softshadow" style="width: 12vw;">
-                <img class="card-img custom-rounded" src="http://placehold.it/160x90">
-                <div class="card-img-overlay">
-                    <h2 class="card-title" style="font-size: 1.6vw;">2</h2>
-                </div>
-            </div>
-        </div>
-        <div class="col-auto p-3">
-            <div class="card text-white custom-rounded softshadow" style="width: 12vw;">
-                <img class="card-img custom-rounded" src="http://placehold.it/160x90">
-                <div class="card-img-overlay">
-                    <h2 class="card-title" style="font-size: 1.6vw;">3</h2>
-                </div>
-            </div>
-        </div>
-    </div>
+        @endforeach
+
 </div>
 
 <div id="ElementList">
@@ -179,6 +165,7 @@
 
 <script>
     @include("BookEngine.Editor.js.assignmentEdit")
+    @include("BookEngine.Editor.js.newPage")
 </script>
 
 

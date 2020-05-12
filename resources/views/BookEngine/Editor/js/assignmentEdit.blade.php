@@ -25,5 +25,5 @@ sendFetchTo(assignmentUpdateUrl, body, 'put').then((text) => assignmentDone(text
 
 function assignmentDone(text){
 console.log(text);
-showInfo();
+editAssignmentToggle();
 }
