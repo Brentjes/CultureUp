@@ -43,7 +43,10 @@
                 <a><i class="bar-icon fas fa-link"></i><span class="bar-text"> Add Link</span></a>
             </li>
             <li class="softshadow stick">
-                <a onclick="showInfo();"><i class="bar-icon fas fa-cog"></i><span class="bar-text"> Edit assignment info</span></a>
+                <a onclick="editAssignmentToggle();"><i class="bar-icon fas fa-cog"></i><span class="bar-text"> Edit assignment info</span></a>
+            </li>
+            <li class="softshadow stick">
+                <a onclick="addPageToggle();"><i class="fas fa-plus"></i>edit page</a>
             </li>
             {{--            <li>--}}
             {{--                <label for="testButton">NewPage</label>--}}
@@ -145,7 +148,7 @@
                         <button class="btn btn-light" type="submit" id="updateAssignmentButton">Submit</button>
                     </div>
                     <div class="col">
-                        <button class="btn btn-danger" onclick="showInfo()">Cancel</button>
+                        <button class="btn btn-danger" onclick="untoggleOtherForm()">Cancel</button>
                     </div>
                 </div>
 
@@ -157,7 +160,7 @@
 @include ('BookEngine.page', compact('page'))
 
 <div id="ElementList">
-
+<div>{{$page->title}}</div>
 </div>
 <meta>
 <script>
@@ -180,86 +183,7 @@
 
     @include("BookEngine.Editor.js.assignmentEdit")
 
-    function createInputField(type, old) {
-        let inputBox = document.createElement("div");
-        inputBox.id = "InputDeleteMeAfterDoneYes";
-        let oldInput = (old) ? old : false;
-
-        let inputBoxTitle = document.createElement('h1');
-        inputBoxTitle.innerText = ((oldInput === false) ? 'create' : 'edit') + ' ' + type;
-        inputBox.appendChild(inputBoxTitle);
-        document.getElementById('testAppend').appendChild(inputBox);
-
-        let boxForInput = document.createElement('div');
-        boxForInput.id = "innerBox";
-        inputBox.appendChild(boxForInput);
-
-        let sendButton = document.createElement('input');
-        sendButton.type = 'button';
-        sendButton.id = 'inputSendButton';
-        inputBox.appendChild(sendButton);
-
-        if (type === "page") {
-            createInputPage(old)
-        } else if (type === "element") {
-            createInputElement(old)
-        }
-    }
-
-    function createInputPage(old) {
-        let target = document.getElementById('innerBox');
-
-        let inputName = document.createElement('input');
-        inputName.id = 'pageName';
-        target.appendChild(inputName);
-
-        let inputDescription = document.createElement('input');
-        inputDescription.id = 'pageDescription';
-        target.appendChild(inputDescription);
-
-        if (old) {
-            let pageId = document.createElement('input');
-            pageId.id = 'pageId';
-            pageId.type = 'hidden';
-            pageId.value = old.id;
-            target.appendChild(pageId);
-        }
-        document.getElementById('inputSendButton').addEventListener('click', pageFunction.bind(this))
-    }
-
-    function createInputElement(old) {
-    }
-
-
-    function getPageInfo() {
-        console.log(document.getElementById('pageName').value + ' test');
-        return {
-            name: document.getElementById('pageName').value,
-            description: document.getElementById('pageDescription').value,
-            assignment_Id: currentAssignment
-        }
-    }
-
-    function pageFunction() {
-        let body = getPageInfo();
-        let lastPart = '/';
-        let method = 'POST';
-        let urlStore = '{{ route('editor.page.store', 1) }}';
-        if (document.getElementById('pageId')) {
-            urlStore = urlStore + '/' + document.getElementById('pageId').value;
-            method = 'PUT';
-        }
-        sendFetchTo(urlStore, body, method);
-        document.getElementById('InputDeleteMeAfterDoneYes').remove();
-    }
-
-    function newElement() {
-
-    }
-
-    function editElement() {
-
-    }
+{{--    @include("BookEngine.Editor.js.newPage")--}}
 
 
 </script>

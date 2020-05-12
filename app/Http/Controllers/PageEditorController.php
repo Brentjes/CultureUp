@@ -33,15 +33,27 @@ class PageEditorController extends Controller
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @param Assignment $assignmentID
+     * @return void
      */
     public function store(Request $request, Assignment $assignmentID)
     {
 
+
+
+        $request->validate([
+            'name' => 'required|string',
+            'description' => 'nullable|string',
+        ]);
         $page = new Page();
 
-        $this->verifySave($page, $request, $assignmentID->id);
+        $page->name = $request->name;
+        $page->description = $request->description? $request->description : ' ';
+        $page->assignment_id = $assignmentID->id;
+        $page->address = $page->assignment_id;
 
+        $page->save();
+        dd($page);
 
     }
 
@@ -105,9 +117,19 @@ class PageEditorController extends Controller
     public function update(Request $request, Assignment $assignmentID, Page $page)
     {
         if(!($assignmentID->id === $page->assignment_id)){
-            return $assignmentID . ' ' . $page->assignment_id ;
+            return $assignmentID . ' ' . $page->assignment_id;
         };
-        $this->verifySave($page, $request, $page->assignment_Id);
+        $request->validate([
+            'name' => 'required|string',
+            'description' => 'string',
+        ]);
+
+        $page->name = $request->name;
+        $page->description = $request->description? $request->description : ' ';
+
+        $page->address = $page->assignment_id;
+
+        $page->save();
         dd($page);
     }
 
@@ -121,27 +143,5 @@ class PageEditorController extends Controller
     public function destroy(Page $page)
     {
         $page->delete();
-    }
-
-    /**
-     * Save The new info to the DataBase
-     *
-     * @param \App\page $page
-     * @param \Illuminate\Http\Request $request
-     * @param Assignment $assignment
-     */
-    private function verifySave($page, $request, $assignment){
-
-        $request->validate([
-            'name' => 'required|string',
-            'description' => 'required|string',
-        ]);
-
-        $page->name = $request->name;
-        $page->description = $request->description;
-        $page->assignment_id = (isset($page->assignment_id))?$page->assignment_id : $assignment->id;
-        $page->address = $page->assignment_id;
-
-        $page->save();
     }
 }

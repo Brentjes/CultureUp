@@ -9,19 +9,42 @@ $(document).ready(function () {
         $(this).toggleClass('active');
     });
 });
+document.getElementById('editAssignmentToggleButton').addEventListener('click', editAssignmentToggle);
+function editAssignmentToggle() {
+    const id = 'formToggle';
+    untoggleOtherForm(id);
+    toggleForm(id);
 
-function showInfo() {
-    document.getElementById('formToggle').classList.toggle('active');
+}
+document.getElementById('newPageToggleButton').addEventListener('click', addPageToggle);
+function addPageToggle() {
+    const id = 'pageToggle';
+    untoggleOtherForm(id);
+    toggleForm(id)
 }
 
-function addPage() {
-    document.getElementById('pageToggle').classList.toggle('active');
+function toggleForm(formID){
+    try {
+        document.getElementById(formID).classList.toggle('active');
+    }catch{}
 }
+
+function untoggleOtherForm(ignoreMe){
+    const formIds = ['pageToggle', 'formToggle'];
+    formIds.forEach(function(formid) {
+        if (ignoreMe !== formid) {
+
+            try {
+                document.getElementById(formid).classList.toggle('active', false);
+            } catch {
+            }
+        }
+    })
+}
+
+//document.getElementsByClassName('jsFindCancel').addEventListener('click', untoggleOtherForm);
 
 function sendFetchTo(url, body, method) {
-    console.log(method);
-    console.log(body);
-    console.log(url);
     return fetch(url, {
         method: method,
         credentials: "same-origin",
