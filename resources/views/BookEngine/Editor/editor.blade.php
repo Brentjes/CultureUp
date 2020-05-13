@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>CultureUp - Editor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <title class="float-left">CultureUp - Editor</title>
 
 
     <!-- Bootstrap CSS CDN -->
@@ -55,7 +56,7 @@
     </nav>
 
     <div id="content">
-        <button type="button" id="sidebarCollapse" class="blue-icon btn">
+        <button type="button" id="sidebarCollapse" class="blue-icon btn d-flex justify-content-center">
             <i class="m-0 fas fa-pencil-ruler"></i>
         </button>
     </div>
@@ -82,13 +83,13 @@
                 </div>
             </div>
             <div class="col-auto my-auto">
-                <button type="button" id="addPage" class="btn blue-icon">
+                <button type="button" id="addPage" class="btn blue-icon d-flex justify-content-center">
                     <i class="fas fa-plus"></i>
                 </button>
             </div>
         </div>
 
-        <button type="button" id="bottombarCollapse" class="btn blue-icon" style="padding: 12px 6px;">
+        <button type="button" id="bottombarCollapse" class="btn blue-icon d-flex justify-content-center" style="padding: 12px 6px;">
             <i class="fas fa-film"></i>
         </button>
     </nav>
