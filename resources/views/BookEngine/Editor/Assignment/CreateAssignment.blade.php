@@ -25,7 +25,7 @@
                     @enderror
                 </div>
 
-                <div class="field">
+                <div class="field form-group">
                     <label class="label" for="subject">Subject</label>
                     <input class="form-control" type="text" name="subject" id="subject" placeholder="Enter subject"
                            value="{{old("subject")}}"
@@ -35,20 +35,18 @@
                     @enderror
                 </div>
 
-                <br>
-
-                @foreach($assigments as $assignment)
                 <div class="field">
                     <label class="label" for="country">Case location</label>
                     <br>
                     <select id="country" name="country">
-                        <option value="{{$assignment->country_code}}">{{$assignment->country}}</option>
+                        @foreach($countries as $country)
+                        <option value="{{$country->country_code}}">{{$country->country}}</option>
+                        @endforeach
                     </select>
                     @error('country')
                     <p>{{$errors->first('country')}}</p>
                     @enderror
                 </div>
-                @endforeach
 
                 <div class="pt-3">
                     <div class="form-check form-check-inline">

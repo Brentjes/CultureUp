@@ -15,7 +15,7 @@ class CreateCountriesTable extends Migration
     {
         Schema::create('countries', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('assignment_id')->unsigned();
+            $table->bigInteger('assignment_id')->unsigned()->nullable();
             $table->string('country_code');
             $table->float('lat', 10, 6);
             $table->float('long', 10, 6);

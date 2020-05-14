@@ -9,7 +9,7 @@ class Country extends Model
     /**
      * The assignment(s) that belong to the country.
      */
-    public function countries()
+    public function assignments()
     {
         return $this->hasMany(Assignment::class);
     }
