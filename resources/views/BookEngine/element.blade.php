@@ -9,8 +9,8 @@
 
              style="
                   position: absolute;
-                  left: {{$element->left}}vw;
-                  top: {{$element->top}}vh;
+                  left: {{$element->left}}px;
+                  top: {{$element->top}}px;
                   height: {{$element->height}};
                   width: {{$element->width}};
             @if($element->type =="img")
