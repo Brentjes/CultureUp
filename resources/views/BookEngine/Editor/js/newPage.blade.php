@@ -15,6 +15,5 @@ sendFetchTo(NewPageUrl, body, 'post').then((text) => pageDone(text))
 }
 
 function pageDone(text){
-console.log(text);
-untoggleOtherForm();
+location.reload();
 }

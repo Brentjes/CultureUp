@@ -66,31 +66,32 @@ class PageEditorController extends Controller
      */
     public function show(Assignment $assignmentID, Page $page)
     {
-        $types = ['link', 'img', 'text'];
-        $elements = [];
-        for ($counter = 0; $counter < 5; $counter++) {
-            $element = new Element;
-            $element->type = $types[rand(0,2)];
-            if ($element->type == 'link') {
-                $element->linkPage = 'http://www.google.com';
-                $element->height = rand(40, 100) . 'px';
-                $element->width = rand(4, 100) . 'px';
-            } else if ($element->type == 'text') {
-                $element->text = 'test';
-                $element->height = rand(50, 400) . 'px';
-                $element->width = rand(50, 400)  . 'px';
-            } else if ($element->type == 'img') {
-                $element->imgSrc = 'https://picsum.photos/id/' . rand(1, 300) . '/500/500';
-                $element->width = rand(50, 400) . 'px';
-                $element->height = rand(50, 400) . 'px';
-            }
-            $element->left = rand(0, 1900);
-            $element->top = rand(0, 1040);
-            array_push($elements, $element);
-        }
-        $page = new Page;
-        $page->elements = $elements;
-        return view('BookEngine.Editor.editor', compact('page'));
+//        $types = ['link', 'img', 'text'];
+//        $elements = [];
+//        for ($counter = 0; $counter < 5; $counter++) {
+//            $element = new Element;
+//            $element->type = $types[rand(0,2)];
+//            if ($element->type == 'link') {
+//                $element->linkPage = 'http://www.google.com';
+//                $element->height = rand(5, 40) . 'vh';
+//                $element->width = rand(5, 40) . 'vw';
+//            } else if ($element->type == 'text') {
+//                $element->text = 'test';
+//                $element->height = rand(5, 40) . 'vh';
+//                $element->width = rand(5, 40)  . 'vw';
+//            } else if ($element->type == 'img') {
+//                $element->imgSrc = 'https://picsum.photos/id/' . rand(1, 300) . '/500/500';
+//                $element->width = rand(5, 40) . 'vw';
+//                $element->height = rand(5, 40) . 'vh';
+//            }
+//            $element->left = rand(0, 80);
+//            $element->top = rand(0, 80);
+//            array_push($elements, $element);
+//        }
+//        $page = new Page;
+//        $page->elements = $elements;
+
+        return view('BookEngine.Editor.editor', ['page'=>$page, 'assignment'=>$assignmentID]);
     }
 
     /**

@@ -1,7 +1,7 @@
 document.getElementById('updateAssignmentButton').addEventListener("click", sendAssignmentUpdate);
 
 function sendAssignmentUpdate() {
-let assignmentUpdateUrl = "{{ route('editor.current.update', 1) }}";
+let assignmentUpdateUrl = "{{ route('editor.current.update', $assignment->id) }}";
 let body = {
 name: document.getElementById('assignmentName').value,
 subject: document.getElementById('assignmentSubject').value,
