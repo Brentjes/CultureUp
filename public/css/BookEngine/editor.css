@@ -8,7 +8,7 @@ html {
     height: 100vh;
     top: 0;
     left: 0;
-    background-color: #f9f9f9;
+    background-color: #f9f9f9;php
 }
 
 .resize-drag {
@@ -19,10 +19,7 @@ html {
     border-radius: 8px;
     padding: 20px;
     touch-action: none;
-
     width: 120px;
-
-    /* This makes things *much* easier */
     box-sizing: border-box;
 }
 
