@@ -1,5 +1,15 @@
 document.getElementById('updateAssignmentButton').addEventListener("click", sendAssignmentUpdate);
 
+try {
+document.getElementById('editAssignmentToggleButton').addEventListener('click', editAssignmentToggle);
+}catch{}
+function editAssignmentToggle() {
+const id = 'formToggle';
+untoggleOtherForm(id);
+toggleForm(id);
+
+}
+
 function sendAssignmentUpdate() {
 let assignmentUpdateUrl = "{{ route('editor.current.update', $assignment->id) }}";
 let body = {
