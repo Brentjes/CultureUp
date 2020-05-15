@@ -33,8 +33,11 @@ class ProgressController extends Controller
                 ->rightJoin('courses', 'courses.id', '=', 'teacher_course.course_id')
                 ->where('teacher_course.teacher_id', '=', $teacher->id)->get();
 
-//        return dd($students);
-        return view('teacher.progress')->with('students', $students);
+        $assignments = DB::table('student_assignment')
+            ->select('assignments.id', 'assignments.name', 'assignments.subject')
+            ->rightJoin('assignments', 'assignments.id', '=', 'student_assignment.assignment_id')->get();
+//        return dd($students); $assignments(ID)
+        return view('teacher.progress')->with('students', $students)->with('assignments', $assignments);
     }
 
     /**
