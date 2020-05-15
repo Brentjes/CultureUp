@@ -30,6 +30,9 @@ Route::get('/{name}', function () {
 //Profile Routes
 Route::get('/profile/{id?}', 'UserController@show')->name('profile')->middleware('auth');
 
+Route::get('test', function() {
+    return view('draganddrop');
+});
 
 //Leaderboard Routes
 Route::get('/leaderboard', function () {
@@ -43,14 +46,13 @@ Route::namespace('Teacher')->prefix('teacher')->name('teacher.')->middleware('au
     Route::resource('/progress', 'ProgressController', ['except' => ['show', 'create', 'store']]);
 });
 
-
-
 Route::group(array('prefix' => 'assignment'), function () {
     Route::group(array('prefix' => 'editor'), function () {
         //replace test and test2 with better names
         // assignment/editor/test2
         Route::resource('currentPage/{assignmentID}/page', 'PageEditorController', [
-            'as' => 'editor'
+            'as' => 'editor', 'parameters' => [
+                'assignmentID' => 'assignment', 'page' => 'page']
         ])->middleware('auth');
         Route::resource('current', 'AssignmentEditorController', ['parameters' => [
             'current' => 'assignment',],

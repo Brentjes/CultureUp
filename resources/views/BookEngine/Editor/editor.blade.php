@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>CultureUp - Editor</title>
-
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <title class="float-left">CultureUp - Editor</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
@@ -18,234 +18,106 @@
 
     <!-- Font Awesome JS -->
     <script src="https://kit.fontawesome.com/5b65a26ca8.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap select -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
 </head>
 <body>
 
 <div class="wrapper">
     <!-- Sidebar -->
     <nav id="sidebar" style="z-index: 100">
+        <button type="button" id="sidebarCollapse" class="blue-icon btn d-flex justify-content-center">
+            <i class="m-0 fas fa-pencil-ruler"></i>
+        </button>
         <div class="sidebar-header">
             <h3>CultureUP Editor</h3>
         </div>
 
         <ul class="list-unstyled components">
-            <li class="softshadow">
-                <a href="#"><i class="fas fa-quote-right"></i> Add Text</a>
+            <li class="softshadow stick" id="addText">
+                <a><i class="bar-icon fas fa-quote-right"></i><span class="bar-text"> Add Text</span></a>
             </li>
-            <li class="softshadow">
-                <a href="#"><i class="fas fa-image"></i> Add Image</a>
+            <li class="softshadow stick" id="addImg">
+                <a><i class="bar-icon fas fa-image"></i><span class="bar-text"> Add Image</span></a>
             </li>
-            <li class="softshadow">
-                <a href="#"><i class="fas fa-link"></i> Add Link</a>
+            <li class="softshadow stick" id="addLink">
+                <a><i class="bar-icon fas fa-link"></i><span class="bar-text"> Add Link</span></a>
             </li>
-            <li class="softshadow">
-                <a href="#"><i class="fas fa-heading"></i> Change Title</a>
+            <li class="softshadow stick">
+                <a id="editPageToggleButton"><i class="bar-icon fas fa-cog"></i> <span class="bar-text"> Page settings</span></a>
             </li>
-            <li class="softshadow">
-                <a href="#"><i class="fas fa-paragraph"></i> Change Description</a>
-            </li>
-            <li>
-                <input type="button" id="updateAssignmentButton">
-            </li>
-            <li>
-                <input type="text" id="assignmentName">
-            </li>
-            <li>
-                <input type="text" id="assignmentSubject">
-            </li>
-            <li>
-                <label for="testButton">NewPage</label>
-                <input name="testButton" type="button" id="testButton">
-            </li>
-            <li id="testAppend">
-            </li>
-
         </ul>
-
     </nav>
+
+    <div id="content">
+    @include ('BookEngine.page', compact('page'))
+    </div>
+
+    <!-- Bottombar -->
     <nav id="bottombar" style="z-index: 100">
-        <div class="sidebar-header text-center pt-2">
-            <h3>Timeline</h3>
+        <div class="text-center pt-2 sidebar-header">
+            <h3 class="d-inline" style="color: #212529;">Timeline</h3><i
+                class="d-inline ml-2 fas fa-ellipsis-h bar-icon" style="color: #323232; margin: 0px"></i>
+        </div>
+        <div class="row w-100 text-center ml-2 pl-5" style="height: 200px; margin-top: -3px">
+            <div class="col-auto p-3 my-auto">
+                <div class="card text-white custom-rounded h-auto" style="width: 15vw;">
+                    <img class="card-img custom-rounded" src="http://placehold.it/160x90">
+                </div>
+            </div>
+            <div class="col-auto p-3 my-auto">
+                <div class="card text-white custom-rounded h-auto" style="width: 15vw;">
+                    <img class="card-img custom-rounded" src="http://placehold.it/160x90">
+                </div>
+            </div>
+            <div class="col-auto p-3 my-auto">
+                <div class="card text-white custom-rounded softshadow h-auto" style="width: 15vw;">
+                    <img class="card-img custom-rounded" src="http://placehold.it/160x90">
+                </div>
+            </div>
+            <div class="col-auto my-auto">
+                <button type="button" id="newPageToggleButton" class="btn blue-icon d-flex justify-content-center">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
         </div>
 
-        <button type="button" id="bottombarCollapse" class="btn">
-            <i class="white-icon fas fa-photo-video"></i>
+        <button type="button" id="bottombarCollapse" class="btn blue-icon d-flex justify-content-center"
+                style="padding: 12px 6px;">
+            <i class="fas fa-film"></i>
         </button>
     </nav>
-    <!-- Page Content -->
-    <div id="content">
-        <button type="button" id="sidebarCollapse" class="btn">
-            <i class="white-icon fas fa-pencil-ruler"></i>
-        </button>
-    </div>
-</div>
 
-@include ('BookEngine.page', compact('page'))
+    @include('BookEngine.Editor.Page.PageForm', ['type' => "edit"])
+    @include('BookEngine.Editor.Page.PageForm', ['type' => "new"])
+</div>
 
 <div id="ElementList">
-
+<div>{{$page->title}}</div>
 </div>
-
 <meta>
-
 <script>
 
 
-    const pageInfo = {
-        name: '{{$page->name}}',
-        description: '{{$page->description}}',
-        id: '{{$page->id}}'
-    };
 
-
-    document.getElementById('updateAssignmentButton').addEventListener("click", sendAssignmentUpdate);
-    document.getElementById('testButton').addEventListener('click', function(){
-        createInputField('page', pageInfo)
-    });
+    try {
+        //doesn't exist anymore
+        document.getElementById('testButton').addEventListener('click', function () {
+            createInputField('page', pageInfo)
+        });
+    } catch {
+    }
     const currentAssignment = 1;
 
-    function sendAssignmentUpdate() {
-        let assignmentUpdateUrl = "{{ route('editor.current.update', 1) }}";
-        let body =  {
-            name: document.getElementById('assignmentName').value,
-            subject: document.getElementById('assignmentSubject').value,
-        };
-
-        if (!(body.name.length > 0 && body.name.length <= 50 && body.subject.length > 0 && body.subject.length <= 200)) {
-            console.log("one of these inputs are to long, please shorten them, title max length = 50, subject max length = 200");
-            if (!(body.name.length > 0 && body.name.length <= 50)) {
-                console.log('name');
-                console.log(body.name.length);
-            }
-            if (!(body.subject.length > 0 && body.subject.length <= 200)) {
-                console.log('subject');
-                console.log(body.subject.length);
-            }
-
-            return
-        }
-
-        sendFetchTo(assignmentUpdateUrl, body, 'put');
-
-    }
-
-    function createInputField(type, old){
 
 
-        let inputBox = document.createElement("div");
-        inputBox.id = "InputDeleteMeAfterDoneYes";
+{{--    @include("BookEngine.Editor.js.assignmentEdit")--}}
 
-        let oldInput = (old) ? old : false;
+{{--    @include("BookEngine.Editor.js.newPage")--}}
+    @include("BookEngine.Editor.js.editPage")
 
-
-        let inputBoxTitle = document.createElement('h1');
-        inputBoxTitle.innerText = ((oldInput === false) ? 'create' : 'edit') + ' ' + type;
-        inputBox.appendChild(inputBoxTitle);
-        document.getElementById('testAppend').appendChild(inputBox);
-
-        let boxForInput = document.createElement('div');
-        boxForInput.id = "innerBox";
-        inputBox.appendChild(boxForInput);
-
-        let sendButton = document.createElement('input');
-        sendButton.type = 'button';
-        sendButton.id = 'inputSendButton';
-        inputBox.appendChild(sendButton);
-
-        if(type === "page"){
-            createInputPage(old)
-        } else if(type === "element") {
-            createInputElement(old)
-        }
-
-
-    }
-
-    function createInputPage(old){
-
-        let target = document.getElementById('innerBox');
-
-        let inputName = document.createElement('input');
-        inputName.id = 'pageName';
-        target.appendChild(inputName);
-
-        let inputDescription = document.createElement('input');
-        inputDescription.id = 'pageDescription';
-        target.appendChild(inputDescription);
-
-        if(old){
-            let pageId = document.createElement('input');
-            pageId.id = 'pageId';
-            pageId.type = 'hidden';
-            pageId.value = old.id;
-            target.appendChild(pageId);
-        }
-        document.getElementById('inputSendButton').addEventListener('click', pageFunction.bind(this))
-    }
-
-    function createInputElement(old){
-
-    }
-
-
-    function getPageInfo(){
-        console.log(document.getElementById('pageName').value + ' test');
-        return {
-            name: document.getElementById('pageName').value,
-            description: document.getElementById('pageDescription').value,
-            assignment_Id: currentAssignment
-        }
-    }
-
-    function pageFunction(){
-        let body = getPageInfo();
-        let lastPart = '/';
-        let method = 'POST';
-        let urlStore = '{{ route('editor.page.store', 1) }}';
-        if(document.getElementById('pageId')){
-            urlStore = urlStore + '/' + document.getElementById('pageId').value;
-            method = 'PUT';
-        }
-
-
-
-
-
-
-            sendFetchTo(urlStore, body, method);
-
-
-        document.getElementById('InputDeleteMeAfterDoneYes').remove();
-    }
-
-    function newElement(){
-
-    }
-
-    function editElement(){
-
-    }
-
-
-    function sendFetchTo(url, body, method){
-        console.log(method);
-        console.log(body);
-        console.log(url);
-    fetch(url, {
-        method: method,
-        credentials: "same-origin",
-        body: JSON.stringify(body),
-        mode: 'cors',
-        headers: {
-            "Content-Type": "application/json",
-            "X-CSRF-Token": document.head.querySelector("[name~=csrf-token][content]").content
-        }
-
-    })
-        // .then( (response) => return response.text());
-        .then( (text) => console.log(text))
-        .catch( (error) => console.log(error) );
-    }
 
 </script>
 
@@ -253,19 +125,28 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
+
 <!-- Popper.JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
         integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
         crossorigin="anonymous"></script>
+
 <!-- Bootstrap JS -->
-{{--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"--}}
-{{--        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"--}}
-{{--        crossorigin="anonymous"></script>--}}
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+
+{{--Bootstrap select--}}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
 <script src="/editor.js"></script>
 
+{{--interactjs--}}
+<script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
+
+<script src="/js/renderEngine.js"></script>
 
 </body>
-
 </html>
 
 
