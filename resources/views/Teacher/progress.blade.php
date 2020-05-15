@@ -24,7 +24,7 @@
                 <tbody>
                 @foreach($students as $student)
                     <tr data-toggle="collapse" data-target="#row{{$student->id}}" class="accordion-toggle">
-                        <td>{{$student->name}}</td>
+                        <td>{{$student->user->name}}</td>
                         <td>{{$student->course_name}}</td>
                         <td>TODO: 3/10 Completed</td>
                     </tr>
