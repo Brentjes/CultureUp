@@ -50,7 +50,8 @@ Route::group(array('prefix' => 'assignment'), function () {
         //replace test and test2 with better names
         // assignment/editor/test2
         Route::resource('currentPage/{assignmentID}/page', 'PageEditorController', [
-            'as' => 'editor'
+            'as' => 'editor', 'parameters' => [
+                'assignmentID' => 'assignment', 'page' => 'page']
         ])->middleware('auth');
         Route::resource('current', 'AssignmentEditorController', ['parameters' => [
             'current' => 'assignment',],

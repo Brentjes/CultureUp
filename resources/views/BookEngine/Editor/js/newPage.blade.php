@@ -1,19 +1,40 @@
+try{
+document.getElementById('newPageToggleButton').addEventListener('click', addPageToggle);
+}catch{}
+
+function addPageToggle() {
+console.log('hit')
+const id = 'newPageToggle';
+untoggleOtherForm(id);
+toggleForm(id)
+}
+try{
 document.getElementById('newPageButton').addEventListener("click", sendNewPage);
+}catch{}
 
-function sendNewPage() {
-let NewPageUrl = "{{ route('editor.page.store', $assignment->id) }}";
-let body = {
-name: document.getElementById('pageName').value,
-description: document.getElementById('pageDescription').value,
-};
+function sendNewPage(){
+let url = "{{ route('editor.page.store', $assignment->id) }}";
+sendPage(url, 'post', 'new')
+}
 
-{{--if(body.description === ""){--}}
-{{--body.description = "//00"}--}}
+function sendPage(PageUrl, method, prefix) {
 
-sendFetchTo(NewPageUrl, body, 'post').then((text) => pageDone(text))
+let body = getPageInfo(prefix)
+
+
+
+
+sendFetchTo(PageUrl , body, method).then((text) => pageDone(text))
 
 }
 
 function pageDone(text){
-location.reload();
+{{--location.reload();--}}
+}
+
+function getPageInfo(prefix){
+return body = {
+name: document.getElementById(prefix+'PageName').value,
+description: document.getElementById(prefix+'PageDescription').value,
+}
 }

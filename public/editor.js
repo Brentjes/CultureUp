@@ -9,19 +9,8 @@ $(document).ready(function () {
         $(this).toggleClass('active');
     });
 });
-document.getElementById('editAssignmentToggleButton').addEventListener('click', editAssignmentToggle);
-function editAssignmentToggle() {
-    const id = 'formToggle';
-    untoggleOtherForm(id);
-    toggleForm(id);
 
-}
-document.getElementById('newPageToggleButton').addEventListener('click', addPageToggle);
-function addPageToggle() {
-    const id = 'pageToggle';
-    untoggleOtherForm(id);
-    toggleForm(id)
-}
+
 
 function toggleForm(formID){
     try {
@@ -30,7 +19,7 @@ function toggleForm(formID){
 }
 
 function untoggleOtherForm(ignoreMe){
-    const formIds = ['pageToggle', 'formToggle'];
+    const formIds = ['newPageToggle', 'formToggle', 'editPageToggle'];
     formIds.forEach(function(formid) {
         if (ignoreMe !== formid) {
 

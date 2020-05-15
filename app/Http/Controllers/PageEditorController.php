@@ -117,12 +117,14 @@ class PageEditorController extends Controller
      */
     public function update(Request $request, Assignment $assignmentID, Page $page)
     {
+
+
         if(!($assignmentID->id === $page->assignment_id)){
             return $assignmentID . ' ' . $page->assignment_id;
         };
         $request->validate([
             'name' => 'required|string',
-            'description' => 'string',
+            'description' => 'nullable|string',
         ]);
 
         $page->name = $request->name;
