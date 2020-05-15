@@ -47,11 +47,10 @@ Route::namespace('Teacher')->prefix('teacher')->name('teacher.')->middleware('au
 
 Route::group(array('prefix' => 'assignment'), function () {
     Route::group(array('prefix' => 'editor'), function () {
-        //replace test and test2 with better names
-        // assignment/editor/test2
         Route::resource('currentPage/{assignmentID}/page', 'PageEditorController', [
             'as' => 'editor'
         ])->middleware('auth');
+        // Route for creating new assignment via form
         Route::resource('current', 'AssignmentEditorController', ['parameters' => [
             'current' => 'assignment',
         ]])->middleware('auth');
