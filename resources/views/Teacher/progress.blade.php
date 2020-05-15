@@ -8,8 +8,8 @@
 
 @section('content')
     <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">Student progress</h3>
+        <div class="card-header ribbon">
+            <h3 class="card-title ribbonText">Student progress</h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body p-0">
@@ -30,7 +30,38 @@
                     </tr>
                     <tr>
                         <td colspan="6" class="hiddenRow">
-                            <div class="accordian-body collapse" id="row{{$student->id}}"> {{$student->id}}</div>
+                            <div class="accordian-body collapse" id="row{{$student->id}}">
+                                <div class="m-3">
+                                    <table class="table table-secondary table-sm">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Assignment</th>
+                                            <th scope="col">Progress</th>
+                                            <th scope="col">Score</th>
+                                            <th scope="col">Buttons</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach($student->assignments() as $assignment)
+                                        <tr>
+                                            <td>Test1</td>
+                                            <td>
+                                                <div class="progress-group">
+                                                    <div class="progress sm">
+
+                                                        <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
+
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>9/10</td>
+                                            <td></td>
+                                        </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 @endforeach

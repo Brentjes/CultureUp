@@ -10,17 +10,16 @@ $(document).ready(function () {
     });
 });
 
-
-
-function toggleForm(formID){
+function toggleForm(formID) {
     try {
         document.getElementById(formID).classList.toggle('active');
-    }catch{}
+    } catch {
+    }
 }
 
-function untoggleOtherForm(ignoreMe){
+function untoggleOtherForm(ignoreMe) {
     const formIds = ['newPageToggle', 'formToggle', 'editPageToggle'];
-    formIds.forEach(function(formid) {
+    formIds.forEach(function (formid) {
         if (ignoreMe !== formid) {
 
             try {
@@ -45,5 +44,31 @@ function sendFetchTo(url, body, method) {
         }
 
     })
+}
+
+document.getElementById('addText').addEventListener('click', addElement);
+document.getElementById('addImg').addEventListener('click', addElement);
+document.getElementById('addLink').addEventListener('click', addElement);
+
+function addElement() {
+    let element = document.createElement('div');
+    switch (this.id) {
+        case 'addText':
+            element.textContent = "test";
+            element.setAttribute('class', 'resize-drag');
+            document.getElementById('content').appendChild(element);
+            break;
+        case 'addImg':
+            element.setAttribute('class', 'resize-drag');
+            element.style = "background-image: url(https://picsum.photos/id/" + Math.floor(Math.random() * 40) + 1 + "/1080); background-size: cover; background-color: transparent;";
+            document.getElementById('content').appendChild(element);
+            break;
+        case 'addLink':
+            element.setAttribute('class', 'resize-drag');
+            element.style = "background-color: transparent; border: 1px dashed #3399ff;";
+            document.getElementById('content').appendChild(element);
+            break;
+    }
 
 }
+
