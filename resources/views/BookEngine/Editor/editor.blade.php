@@ -102,14 +102,7 @@
 
 
 
-    try {
-        //doesn't exist anymore
-        document.getElementById('testButton').addEventListener('click', function () {
-            createInputField('page', pageInfo)
-        });
-    } catch {
-    }
-    const currentAssignment = 1;
+
 
 
 
