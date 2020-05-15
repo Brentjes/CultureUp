@@ -2,6 +2,27 @@ html {
     overflow: hidden;
 }
 
+#content {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #f9f9f9;php
+}
+
+.resize-drag {
+    background-color: #3399ff;
+    color: #f0f0f0;
+    font-size: 20px;
+    font-family: sans-serif;
+    border-radius: 8px;
+    padding: 20px;
+    touch-action: none;
+    width: 120px;
+    box-sizing: border-box;
+}
+
 .blue-icon {
     color: #f0f0f0;
     width: 50px;
@@ -12,7 +33,7 @@ html {
 
 .wrapper {
     background-color: #f9f9f9;
-    display: flex;
+    display: block;
     width: 100%;
 }
 
@@ -21,6 +42,7 @@ html {
 }
 
 #sidebar {
+    position: absolute;
     min-width: 250px;
     max-width: 250px;
     min-height: 100vh;
@@ -37,6 +59,7 @@ html {
 
 
 #bottombar {
+    z-index: 10;
     position: absolute;
     min-height: 250px;
     max-height: 250px;
@@ -112,7 +135,8 @@ ul ul a {
 }
 
 #sidebarCollapse {
-    margin-left: 25px;
+    position: absolute;
+    margin-left: 275px;
     margin-top: 25px;
 }
 

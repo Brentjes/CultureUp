@@ -9,6 +9,7 @@ $(document).ready(function () {
         $(this).toggleClass('active');
     });
 });
+
 document.getElementById('editAssignmentToggleButton').addEventListener('click', editAssignmentToggle);
 function editAssignmentToggle() {
     const id = 'formToggle';
