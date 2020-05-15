@@ -57,5 +57,16 @@ function sendFetchTo(url, body, method) {
         }
 
     })
+}
+
+document.getElementById('addText').addEventListener('click', addText);
+document.getElementById('addImg').addEventListener('click', addImg);
+document.getElementById('addLink').addEventListener('click', addLink);
+
+let factory = document.getElementById('elementFactory');
+function addText() {
+    console.log('test');
+    factory.createElement('div');
 
 }
+

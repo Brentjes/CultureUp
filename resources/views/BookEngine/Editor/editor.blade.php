@@ -36,13 +36,13 @@
         </div>
 
         <ul class="list-unstyled components">
-            <li class="softshadow stick">
+            <li class="softshadow stick" id="addText">
                 <a><i class="bar-icon fas fa-quote-right"></i><span class="bar-text"> Add Text</span></a>
             </li>
-            <li class="softshadow stick">
+            <li class="softshadow stick" id="addImage">
                 <a><i class="bar-icon fas fa-image"></i><span class="bar-text"> Add Image</span></a>
             </li>
-            <li class="softshadow stick">
+            <li class="softshadow stick" id="addLink">
                 <a><i class="bar-icon fas fa-link"></i><span class="bar-text"> Add Link</span></a>
             </li>
             <li class="softshadow stick">
@@ -52,7 +52,7 @@
         </ul>
     </nav>
 
-    <div id="content">
+    <div id="content" id="elementFactory">
     @include ('BookEngine.page', compact('page'))
     </div>
 
@@ -152,11 +152,6 @@
     </div>
 </div>
 
-<div id="ElementList">
-    <div>{{$page->title}}
-    </div>
-</div>
-<meta>
 <script>
 
     const pageInfo = {
