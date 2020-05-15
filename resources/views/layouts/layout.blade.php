@@ -9,11 +9,15 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     {{--fonts--}}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
-    <script src="https://kit.fontawesome.com/5b65a26ca8.js" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+            integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+            crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+            integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+            crossorigin="anonymous"></script>
 
     {{--css--}}
     <link rel="stylesheet" type="text/css" href="/MDB/css/mdb.css">
@@ -22,15 +26,11 @@
     <link rel="stylesheet" type="text/css" href="/css/Main/main.css">
     <link id="dynamic-style" rel="stylesheet" type="text/css" href="">
 
-    {{--JQuery--}}
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
 </head>
 
 <body>
 <nav class="navbar fixed-top navbar-expand-md softshadow">
-    <a class="navbar-brand" href="/">CultureUp @yield('teacher')</a>
+    <a class="navbar-brand" href="/">CultureUp</a>
     <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -61,6 +61,11 @@
 </nav>
 
 @yield ('content')
+
+{{--JQuery--}}
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
 
 {{--Bootstrap--}}
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
