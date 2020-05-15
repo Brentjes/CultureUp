@@ -39,7 +39,7 @@
             <li class="softshadow stick" id="addText">
                 <a><i class="bar-icon fas fa-quote-right"></i><span class="bar-text"> Add Text</span></a>
             </li>
-            <li class="softshadow stick" id="addImage">
+            <li class="softshadow stick" id="addImg">
                 <a><i class="bar-icon fas fa-image"></i><span class="bar-text"> Add Image</span></a>
             </li>
             <li class="softshadow stick" id="addLink">
@@ -51,7 +51,7 @@
         </ul>
     </nav>
 
-    <div id="content" id="elementFactory">
+    <div id="content">
     @include ('BookEngine.page', compact('page'))
     </div>
 
