@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <title class="float-left">CultureUp - Editor</title>
 
-
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
           integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -29,6 +28,9 @@
 <div class="wrapper">
     <!-- Sidebar -->
     <nav id="sidebar" style="z-index: 100">
+        <button type="button" id="sidebarCollapse" class="blue-icon btn d-flex justify-content-center">
+            <i class="m-0 fas fa-pencil-ruler"></i>
+        </button>
         <div class="sidebar-header">
             <h3>CultureUP Editor</h3>
         </div>
@@ -46,25 +48,18 @@
             <li class="softshadow stick">
                 <a id="editPageToggleButton"><i class="bar-icon fas fa-cog"></i> <span class="bar-text"> Page settings</span></a>
             </li>
-            {{--            <li>--}}
-            {{--                <label for="testButton">NewPage</label>--}}
-            {{--                <input name="testButton" type="button" id="testButton">--}}
-            {{--            </li>--}}
-            {{--            <li id="testAppend">--}}
-            {{--            </li>--}}
         </ul>
     </nav>
 
     <div id="content">
-        <button type="button" id="sidebarCollapse" class="blue-icon btn d-flex justify-content-center">
-            <i class="m-0 fas fa-pencil-ruler"></i>
-        </button>
+    @include ('BookEngine.page', compact('page'))
     </div>
 
     <!-- Bottombar -->
     <nav id="bottombar" style="z-index: 100">
         <div class="text-center pt-2 sidebar-header">
-            <h3 class="d-inline" style="color: #212529;">Timeline</h3><i class="d-inline ml-2 fas fa-ellipsis-h bar-icon" style="color: #323232; margin: 0px"></i>
+            <h3 class="d-inline" style="color: #212529;">Timeline</h3><i
+                class="d-inline ml-2 fas fa-ellipsis-h bar-icon" style="color: #323232; margin: 0px"></i>
         </div>
         <div class="row w-100 text-center ml-2 pl-5" style="height: 200px; margin-top: -3px">
             <div class="col-auto p-3 my-auto">
@@ -89,7 +84,8 @@
             </div>
         </div>
 
-        <button type="button" id="bottombarCollapse" class="btn blue-icon d-flex justify-content-center" style="padding: 12px 6px;">
+        <button type="button" id="bottombarCollapse" class="btn blue-icon d-flex justify-content-center"
+                style="padding: 12px 6px;">
             <i class="fas fa-film"></i>
         </button>
     </nav>
@@ -97,8 +93,6 @@
     @include('BookEngine.Editor.Page.PageForm', ['type' => "edit"])
     @include('BookEngine.Editor.Page.PageForm', ['type' => "new"])
 </div>
-
-@include ('BookEngine.page', compact('page'))
 
 <div id="ElementList">
 <div>{{$page->title}}</div>
@@ -109,13 +103,12 @@
 
 
     try {
-        //doenst exist anymore
+        //doesn't exist anymore
         document.getElementById('testButton').addEventListener('click', function () {
             createInputField('page', pageInfo)
         });
     } catch {
     }
-
     const currentAssignment = 1;
 
 
@@ -132,22 +125,28 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
+
 <!-- Popper.JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
         integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
         crossorigin="anonymous"></script>
+
 <!-- Bootstrap JS -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
         integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
+
 {{--Bootstrap select--}}
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
 
 <script src="/editor.js"></script>
 
+{{--interactjs--}}
+<script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
+
+<script src="/js/renderEngine.js"></script>
 
 </body>
-
 </html>
 
 
