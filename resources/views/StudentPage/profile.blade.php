@@ -1,4 +1,3 @@
-@extends ('layouts.layout')
 @extends ('layouts.studentLayout')
 @extends ('layouts.profile')
 @section ('profile')
