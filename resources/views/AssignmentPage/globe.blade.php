@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
+@extends ('layouts.studentLayout')
+@section('content')
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>CultureUp - Globe</title>
 
     <link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css" />
     <link rel="stylesheet" href="/css/Assignment/globe.css" />
@@ -76,7 +74,7 @@
             view.ui.empty("top-left");
 
             const extremesLayer = new GeoJSONLayer({
-                url: "cases.geojson",
+                url: "/GeoJSON/cases.geojson",
                 elevationInfo: {
                     mode: "absolute-height",
                     offset: offset
@@ -147,7 +145,7 @@
 
 <div id="viewDiv"></div>
 
-
 </body>
 
 </html>
+    @endsection
