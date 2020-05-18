@@ -40,11 +40,28 @@
                 <a id="editAssignmentToggleButton"><i class="fas fa-cogs"></i> Edit assignment info</a>
             </li>
         </ul>
+        <div>
+            <button id="DeleteButton">DeleteAssingment</button>
+            <input type="hidden" value="2">
+        </div>
+        <div>
+            <button class="DeleteButtonPage">test</button>
+            <input type="hidden" value="3">
+        </div>
+        <div>
+            <button class="DeleteButtonPage">test</button>
+            <input type="hidden" value="8">
+        </div>
+        <div>
+            <button class="DeleteButtonPage">test</button>
+            <input type="hidden" value="1337">
+        </div>
     </nav>
 
     @include('BookEngine.Editor.Assignment.AssignmentForm')
 
     @include('BookEngine.Editor.Page.PageForm', ['type' => "new"])
+
 
 
     <div class="row position-absolute" style="margin-left: 15%; width: 85vw;">
@@ -72,6 +89,15 @@
     <script>
         @include("BookEngine.Editor.js.assignmentEdit")
         @include("BookEngine.Editor.js.newPage")
+        @include("BookEngine.Editor.js.DeletePage")
+
+        document.getElementById('DeleteButton').addEventListener('click', deleteAssignment);
+
+        function deleteAssignment(){
+            const url = "{{route('editor.current.show', $assignment->id)}}";
+            sendFetchTo(url, 'empty', 'DELETE').then(function(text){console.log(text)})
+        }
+
     </script>
 
 
