@@ -47,4 +47,12 @@ class Assignment extends Model
     {
         return $this->belongsToMany(Student::class, 'student_assignments');
     }
+
+    /**
+     * Get the country that belongs to the assignment.
+     */
+    public function country()
+    {
+        return $this->belongsTo(Country::class);
+    }
 }

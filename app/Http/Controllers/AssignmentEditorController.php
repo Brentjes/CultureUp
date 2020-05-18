@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Assignment;
 use Illuminate\Http\Request;
 use App\User;
+use App\Country;
 
 class AssignmentEditorController extends Controller
 {
@@ -27,7 +28,8 @@ class AssignmentEditorController extends Controller
     {
         $id = 1;
         $user = User::where('id',$id)->first();
-        return view('BookEngine.Editor.Assignment.CreateAssignment');
+        $countries = Country::all();
+        return view('BookEngine.Editor.Assignment.CreateAssignment', compact('countries'));
     }
 
     /**

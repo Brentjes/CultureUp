@@ -1,0 +1,67 @@
+html,
+body,
+#viewDiv,
+#container {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    color: #323232;
+    font-family: Roboto;
+}
+
+body {
+    /*background-image: url(/images/polygon.png);*/
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* popup styling */
+
+.esri-popup__content {
+    margin: 0;
+}
+
+.esri-popup__header-title {
+    font-size: 18px;
+}
+
+.esri-feature.esri-widget {
+    margin-top: 0px;
+}
+
+.esri-popup__footer {
+    display: none;
+}
+
+.esri-feature__main-container .popupImage {
+    max-height: 200px;
+    overflow: hidden;
+}
+
+.esri-widget {
+    margin-top: 75px;
+    border-radius: 10px;
+    background-color: #EFEEEE;
+}
+
+.popupImage > img {
+    width: 100%;
+}
+
+.popupDescription {
+    padding: 2em;
+}
+
+p.info {
+    margin-bottom: 2em;
+    font-size: 1.1em;
+}
+
+.popupDescription > p:last-child {
+    margin-bottom: 0;
+}
+
+.esri-attribution__sources.esri-interactive, .esri-attribution__powered-by{
+    display: none;
+}

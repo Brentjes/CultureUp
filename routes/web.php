@@ -48,12 +48,11 @@ Route::namespace('Teacher')->prefix('teacher')->name('teacher.')->middleware('au
 
 Route::group(array('prefix' => 'assignment'), function () {
     Route::group(array('prefix' => 'editor'), function () {
-        //replace test and test2 with better names
-        // assignment/editor/test2
         Route::resource('currentPage/{assignmentID}/page', 'PageEditorController', [
             'as' => 'editor', 'parameters' => [
                 'assignmentID' => 'assignment', 'page' => 'page']
         ])->middleware('auth');
+        // Route for creating new assignment via form
         Route::resource('current', 'AssignmentEditorController', ['parameters' => [
             'current' => 'assignment',],
             'as' => 'editor'])->middleware('auth');
@@ -78,3 +77,8 @@ Route::get('DokSTestingStuffDontTouch', function () {
 })->name('home')->middleware('auth');
 
 Route::resource('current', "AssignmentEditorController")->middleware('auth');
+
+// Routes for GLOBE (AssignmentPage)
+Route::get('/globe', function () {
+    return view('AssignmentPage.globe');
+})->name('Globe')->middleware('auth');
