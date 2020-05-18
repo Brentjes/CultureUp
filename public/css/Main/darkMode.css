@@ -1,3 +1,7 @@
+.esri-widget {
+    background-color: #1d1d1d;
+}
+
 body {
     background-color: rgba(0, 0, 0, 0.93);
 }
@@ -185,5 +189,4 @@ table.table-bordered > tbody > tr > td{
 .progress {
     background-color: #e0e0e0;
 }
-
 

@@ -39,14 +39,9 @@
 </head>
 
 <body>
-<nav class="navbar fixed-top navbar-expand-md softshadow">
+<nav class="navbar fixed-top navbar-expand softshadow">
     <a class="navbar-brand" href="/">CultureUp</a>
-    <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="main-navigation">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav ml-auto">
             @yield ('teacherIcons')
             @yield ('studentIcons')
             <li class="nav-item">
@@ -67,7 +62,6 @@
                 </div>
             </li>
         </ul>
-    </div>
 </nav>
 
 @yield ('content')

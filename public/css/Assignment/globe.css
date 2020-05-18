@@ -16,10 +16,6 @@ body {
     background-size: cover;
 }
 
-#viewDiv canvas {
-    filter: saturate(1.2) drop-shadow(0 0 100px white);
-}
-
 /* popup styling */
 
 .esri-popup__content {
@@ -30,6 +26,10 @@ body {
     font-size: 18px;
 }
 
+.esri-feature.esri-widget {
+    margin-top: 0px;
+}
+
 .esri-popup__footer {
     display: none;
 }
@@ -37,6 +37,12 @@ body {
 .esri-feature__main-container .popupImage {
     max-height: 200px;
     overflow: hidden;
+}
+
+.esri-widget {
+    margin-top: 75px;
+    border-radius: 10px;
+    background-color: #EFEEEE;
 }
 
 .popupImage > img {
@@ -54,4 +60,8 @@ p.info {
 
 .popupDescription > p:last-child {
     margin-bottom: 0;
+}
+
+.esri-attribution__sources.esri-interactive, .esri-attribution__powered-by{
+    display: none;
 }
