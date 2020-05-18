@@ -1,3 +1,4 @@
+@section ('content')
 <head>
     <link rel="stylesheet" type="text/css" href="/css/Main/profile.css">
     <link rel="stylesheet" type="text/css" href="/css/Main/leaderboard.css">
@@ -70,3 +71,4 @@
         </div>
     </div>
 </section>
+@endsection

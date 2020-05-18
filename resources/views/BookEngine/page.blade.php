@@ -1,7 +1,7 @@
-
-
-<div style="z-index: -3;">
 @foreach($page->elements as $element)
-    @include('BookEngine.element', compact('element'))
+    <div class="resize-drag" style="user-select: none;">
+{{--        @include('BookEngine.element', compact('element'))--}}
+        <h3>test</h3>
+    </div>
 @endforeach
-</div>
+

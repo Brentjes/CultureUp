@@ -25,6 +25,9 @@ class ProgressController extends Controller
     public function index()
     {
         $teacher = Teacher::where('user_id', Auth::id())->first();
+        $courses = $teacher->courses;
+        $course = $courses[0];
+
         $students =
             DB::table('students')
                 ->select('users.id', 'users.name', 'users.email', 'students.course_id', 'students.score', 'courses.name as course_name')
@@ -32,9 +35,12 @@ class ProgressController extends Controller
                 ->leftJoin('users', 'users.id', '=', 'students.user_id')
                 ->rightJoin('courses', 'courses.id', '=', 'teacher_course.course_id')
                 ->where('teacher_course.teacher_id', '=', $teacher->id)->get();
-
-//        return dd($students);
-        return view('teacher.progress')->with('students', $students);
+        $students = $course->students;
+        $assignments = DB::table('student_assignment')
+            ->select('assignments.id', 'assignments.name', 'assignments.subject')
+            ->rightJoin('assignments', 'assignments.id', '=', 'student_assignment.assignment_id')->get();
+//        return dd($students); $assignments(ID)
+        return view('teacher.progress')->with('students', $students)->with('assignments', $assignments);
     }
 
     /**

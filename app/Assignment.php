@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Assignment extends Model
 {
+
+
     /**
      * Get the course that owns the assignment.
      */
@@ -36,6 +38,14 @@ class Assignment extends Model
     public function teacher()
     {
         return $this->belongsTo(Teacher::class);
+    }
+
+    /**
+     * The student(s) that have achieved this assignment.
+     */
+    public function students()
+    {
+        return $this->belongsToMany(Student::class, 'student_assignments');
     }
 
     /**
