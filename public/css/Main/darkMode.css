@@ -195,3 +195,14 @@ table.table-bordered > tbody > tr > td{
     background-color: #e0e0e0;
 }
 
+.esri-feature.esri-widget {
+    background-color: #1d1d1d;
+}
+
+.esri-popup__header {
+    background-color: #1d1d1d;
+}
+
+.esri-popup__header-title:hover, .esri-popup__button {
+    background-color: #1d1d1d !important;
+}
