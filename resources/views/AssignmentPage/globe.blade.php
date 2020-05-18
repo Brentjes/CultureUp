@@ -29,9 +29,19 @@
                         })
                     ]
                 });
-
-                let mapTexture = LocalStorage.getItem('CultureUpDarkMode') === 'true' ? "dark-gray-vector" : "gray-vector";
+                try {
+                    document.getElementById('toggle-button').addEventListener('click', switchMapTexture)
+                }catch{}
+                let mapTexture = localStorage.getItem('CultureUpDarkMode') === 'true' ? "dark-gray-vector" : "gray-vector";
                 console.log(mapTexture);
+                console.log((localStorage.getItem('CultureUpDarkMode') === 'true'));
+
+                function switchMapTexture(){
+                    mapTexture = !(localStorage.getItem('CultureUpDarkMode') === 'true') ? "dark-gray-vector" : "gray-vector";
+                    console.log(mapTexture);
+                    console.log(!(localStorage.getItem('CultureUpDarkMode') === 'true'));
+                    map.basemap = mapTexture
+                }
 
                 var map = new Map({
                     basemap: mapTexture
