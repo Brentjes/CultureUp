@@ -98,7 +98,7 @@
                         },
                     },
                     popupTemplate: {
-                        title: "{location}",
+                        title: "{name}",
                         content: `
             <div class="popupImage">
               <img src="{imageUrl}"/>
@@ -115,9 +115,8 @@
               </p>
                <div class="text-center">
                 <a class="link-unstyled btn btn-outline-light putUrlHere" href="">
-                    BEANS!
+                    Take me there!
                 </a>
-
                </div>
             </div>
           `
@@ -163,8 +162,6 @@
     <div id="viewDiv"></div>
 
     </body>
-        <script>
-            document.getElementById('viewDiv').addEventListener('click', tryAndUpdateTheUrlThingyPleaseWork)
-        </script>
+
     </html>
 @endsection
