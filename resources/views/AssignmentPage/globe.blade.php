@@ -22,24 +22,13 @@
 
                 const offset = 300000; // offset from the ground used for the clouds
 
-                const basemap = new Basemap({
-                    baseLayers: [
-                        new TileLayer({
-                            url: "https://tiles.arcgis.com/tiles/nGt4QxSblgDfeJn9/arcgis/rest/services/terrain_with_heavy_bathymetry/MapServer"
-                        })
-                    ]
-                });
                 try {
                     document.getElementById('toggle-button').addEventListener('click', switchMapTexture)
                 }catch{}
                 let mapTexture = localStorage.getItem('CultureUpDarkMode') === 'true' ? "dark-gray-vector" : "gray-vector";
-                console.log(mapTexture);
-                console.log((localStorage.getItem('CultureUpDarkMode') === 'true'));
 
                 function switchMapTexture(){
                     mapTexture = !(localStorage.getItem('CultureUpDarkMode') === 'true') ? "dark-gray-vector" : "gray-vector";
-                    console.log(mapTexture);
-                    console.log(!(localStorage.getItem('CultureUpDarkMode') === 'true'));
                     map.basemap = mapTexture
                 }
 
@@ -134,8 +123,7 @@
 
     </head>
 
-    <body>
-
+    <body class="assignment-background">
     <div id="viewDiv"></div>
 
     </body>

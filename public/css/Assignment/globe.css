@@ -10,12 +10,6 @@ body,
     font-family: Roboto;
 }
 
-body {
-    /*background-image: url(/images/polygon.png);*/
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 /* popup styling */
 
 .esri-popup__content {
@@ -62,6 +56,6 @@ p.info {
     margin-bottom: 0;
 }
 
-.esri-attribution__sources.esri-interactive, .esri-attribution__powered-by{
+.esri-attribution__sources.esri-interactive, .esri-attribution__powered-by {
     display: none;
 }
