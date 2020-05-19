@@ -107,26 +107,53 @@
               <p class="info">
                 <span class="esri-icon-favorites"></span> {type}
               </p>
-              <p class="info" id="location">
-                <span class="esri-icon-map-pin"></span> {location}
+              <p class="info">
+                <span class="esri-icon-map-pin"></span><span class="locationUrl">{location}</span>
               </p>
               <p class="info">
                 <span class="esri-icon-documentation"></span> {facts}
               </p>
                <div class="text-center">
-                <p class="info">
-                    <a class="link-unstyled btn btn-outline-light" href='' onclick="console.log(document.getElementById('location').innerText)">
-                        Take me there!
-                    </a>
-                </p>
+                <a class="link-unstyled btn btn-outline-light putUrlHere" href="">
+                    Take me there!
+                </a>
                </div>
             </div>
           `
-
                     }
                 });
                 map.layers.add(extremesLayer);
             });
+
+
+
+            function updateUrlButton(){
+
+
+                let counter = 0;
+
+                function update(counter){
+                if(document.getElementsByClassName('locationUrl')[0] !== undefined){
+
+                    try {
+                        document.getElementsByClassName('putUrlHere')[0].href = document.getElementsByClassName('locationUrl')[0].innerText;
+                    }catch{}
+                        return;
+
+                } else {
+                    if (counter === 5) {
+
+                        return;
+                    }
+                    counter++;
+
+                    setTimeout(function(){update(counter)}, 1000)
+                }
+                }
+
+                update(counter)
+            }
+
         </script>
     </head>
 
@@ -134,6 +161,8 @@
     <div id="viewDiv"></div>
 
     </body>
-
+        <script>
+            document.getElementById('viewDiv').addEventListener('click', updateUrlButton)
+        </script>
     </html>
 @endsection
