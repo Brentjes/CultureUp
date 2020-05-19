@@ -128,29 +128,20 @@
 
 
             function updateUrlButton(){
-
-
                 let counter = 0;
-
                 function update(counter){
-                if(document.getElementsByClassName('locationUrl')[0] !== undefined){
-
                     try {
                         document.getElementsByClassName('putUrlHere')[0].href = document.getElementsByClassName('locationUrl')[0].innerText;
-                    }catch{}
-                        return;
-
-                } else {
-                    if (counter === 5) {
-
-                        return;
+                    }catch {
+                        if (counter >= 5) {
+                            return;
+                        }
+                        counter++;
+                        setTimeout(function () {
+                            update(counter)
+                        }, 1000)
                     }
-                    counter++;
-
-                    setTimeout(function(){update(counter)}, 1000)
                 }
-                }
-
                 update(counter)
             }
 
