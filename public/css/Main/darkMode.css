@@ -206,3 +206,9 @@ table.table-bordered > tbody > tr > td{
 .esri-popup__header-title:hover, .esri-popup__button {
     background-color: #1d1d1d !important;
 }
+
+.esri-popup--shadow {
+    -webkit-box-shadow: 2px 2px 15px black;
+    -moz-box-shadow: 2px 2px 15px black;
+    box-shadow: 2px 2px 15px black;
+}

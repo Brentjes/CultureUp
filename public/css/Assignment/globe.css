@@ -35,8 +35,21 @@ body,
 
 .esri-widget {
     margin-top: 75px;
-    border-radius: 10px;
-    background-color: #EFEEEE;
+    background-color: #FFFFFF;
+}
+
+.esri-popup--shadow {
+    -webkit-box-shadow: 2px 2px 15px #a2a2c3;
+    -moz-box-shadow: 2px 2px 15px #a2a2c3;
+    box-shadow: 2px 2px 15px #a2a2c3;
+}
+
+.esri-popup__header {
+    background-color: #FFFFFF;
+}
+
+.esri-popup__header-title:hover, .esri-popup__button {
+    background-color: #FFFFFF !important;
 }
 
 .popupImage > img {

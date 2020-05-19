@@ -24,10 +24,11 @@
 
                 try {
                     document.getElementById('toggle-button').addEventListener('click', switchMapTexture)
-                }catch{}
+                } catch {
+                }
                 let mapTexture = localStorage.getItem('CultureUpDarkMode') === 'true' ? "dark-gray-vector" : "gray-vector";
 
-                function switchMapTexture(){
+                function switchMapTexture() {
                     mapTexture = !(localStorage.getItem('CultureUpDarkMode') === 'true') ? "dark-gray-vector" : "gray-vector";
                     map.basemap = mapTexture
                 }
@@ -68,7 +69,7 @@
                         collapseEnabled: false
                     },
                     highlightOptions: {
-                        color: [255, 255, 255],
+                        color: '#a8dafc',
                         haloOpacity: 0.5
                     }
                 });
@@ -112,6 +113,11 @@
               <p class="info">
                 <span class="esri-icon-documentation"></span> {facts}
               </p>
+               <div class="text-center">
+                <a class="link-unstyled btn btn-outline-light" href="/">
+                    Take me there!
+                </a>
+               </div>
             </div>
           `
                     }
@@ -119,8 +125,6 @@
                 map.layers.add(extremesLayer);
             });
         </script>
-
-
     </head>
 
     <body class="assignment-background">
