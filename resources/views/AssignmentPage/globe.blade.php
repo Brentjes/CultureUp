@@ -98,7 +98,7 @@
                         },
                     },
                     popupTemplate: {
-                        title: "{name}",
+                        title: "{location}",
                         content: `
             <div class="popupImage">
               <img src="{imageUrl}"/>
@@ -108,15 +108,16 @@
                 <span class="esri-icon-favorites"></span> {type}
               </p>
               <p class="info">
-                <span class="esri-icon-map-pin"></span> {location}
+                <span class="esri-icon-map-pin"></span><span class="locationUrl">{location}</span>
               </p>
               <p class="info">
                 <span class="esri-icon-documentation"></span> {facts}
               </p>
                <div class="text-center">
-                <a class="link-unstyled btn btn-outline-light" href="/">
-                    Take me there!
+                <a class="link-unstyled btn btn-outline-light putUrlHere" href="">
+                    BEANS!
                 </a>
+
                </div>
             </div>
           `
@@ -124,6 +125,37 @@
                 });
                 map.layers.add(extremesLayer);
             });
+
+            function testLog(){
+                console.log('yes')
+            }
+
+            function tryAndUpdateTheUrlThingyPleaseWork(){
+
+
+                let counter = 0;
+
+                function update(counter){
+                if(document.getElementsByClassName('locationUrl')[0] !== undefined){
+
+                    try {
+                        document.getElementsByClassName('putUrlHere')[0].href = document.getElementsByClassName('locationUrl')[0].innerText;
+                    }catch{}
+                        return;
+
+                } else {
+                    if (counter === 5) {
+
+                        return;
+                    }
+                    counter++;
+
+                    setTimeout(function(){update(counter)}, 1000)
+                }
+                }
+
+                update(counter)
+            }
         </script>
     </head>
 
@@ -131,6 +163,8 @@
     <div id="viewDiv"></div>
 
     </body>
-
+        <script>
+            document.getElementById('viewDiv').addEventListener('click', tryAndUpdateTheUrlThingyPleaseWork)
+        </script>
     </html>
 @endsection
