@@ -44,12 +44,8 @@ body,
     box-shadow: 2px 2px 15px #a2a2c3;
 }
 
-.esri-popup__header {
-    background-color: #FFFFFF;
-}
-
 .esri-popup__header-title:hover, .esri-popup__button {
-    background-color: #FFFFFF !important;
+    background-color: #FFFFFF;
 }
 
 .popupImage > img {

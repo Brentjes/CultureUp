@@ -107,19 +107,22 @@
               <p class="info">
                 <span class="esri-icon-favorites"></span> {type}
               </p>
-              <p class="info">
+              <p class="info" id="location">
                 <span class="esri-icon-map-pin"></span> {location}
               </p>
               <p class="info">
                 <span class="esri-icon-documentation"></span> {facts}
               </p>
                <div class="text-center">
-                <a class="link-unstyled btn btn-outline-light" href="/">
-                    Take me there!
-                </a>
+                <p class="info">
+                    <a class="link-unstyled btn btn-outline-light" href='' onclick="console.log(document.getElementById('location').innerText)">
+                        Take me there!
+                    </a>
+                </p>
                </div>
             </div>
           `
+
                     }
                 });
                 map.layers.add(extremesLayer);
