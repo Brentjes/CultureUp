@@ -67,17 +67,6 @@ Route::group(array('prefix' => 'assignment'), function () {
         ]])->middleware('auth');
 });
 
-
-//Jochems zn meuk
-Route::get('DokSTestingStuffDontTouch', function () {
-    session()->regenerate();
-    return response()->json([
-        "token" => csrf_token()],
-        200);
-})->name('home')->middleware('auth');
-
-Route::resource('current', "AssignmentEditorController")->middleware('auth');
-
 // Routes for GLOBE (AssignmentPage)
 Route::get('/globe', function () {
     return view('AssignmentPage.globe');

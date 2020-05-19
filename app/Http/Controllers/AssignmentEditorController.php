@@ -148,15 +148,6 @@ class AssignmentEditorController extends Controller
         return $response;
 
     }
-
-    public function refreshToken(Request $request)
-    {
-        session()->regenerate();
-        return response()->json([
-            "token"=>csrf_token()],
-            200);
-
-    }
 }
 
 
