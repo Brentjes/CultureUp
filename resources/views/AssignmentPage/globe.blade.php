@@ -125,11 +125,9 @@
                 map.layers.add(extremesLayer);
             });
 
-            function testLog(){
-                console.log('yes')
-            }
 
-            function tryAndUpdateTheUrlThingyPleaseWork(){
+
+            function updateUrlButton(){
 
 
                 let counter = 0;
@@ -155,6 +153,7 @@
 
                 update(counter)
             }
+
         </script>
     </head>
 
@@ -162,6 +161,8 @@
     <div id="viewDiv"></div>
 
     </body>
-
+        <script>
+            document.getElementById('viewDiv').addEventListener('click', updateUrlButton)
+        </script>
     </html>
 @endsection
