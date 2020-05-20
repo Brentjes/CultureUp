@@ -72,9 +72,11 @@
                         <img class="card-img custom-rounded" src="http://placehold.it/160x90">
                         <div class="card-img-overlay">
                             <h2 class="card-title" style="font-size: 1vw;">{{$page->name}}</h2>
+                            <button class="DeleteButtonPage">Test</button>
                         </div>
                     </div>
                 </a>
+                <button class="DeleteButtonPage">Test</button>
             </div>
         @endforeach
 
