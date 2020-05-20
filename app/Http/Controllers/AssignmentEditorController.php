@@ -110,7 +110,7 @@ class AssignmentEditorController extends Controller
      */
     public function destroy(assignment $assignment)
     {
-        return 'goodjob';
+        $assignment->delete();
 
     }
 
