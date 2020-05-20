@@ -27,7 +27,7 @@ class Student extends Model
      */
     public function assignments()
     {
-        return $this->belongsToMany(Assignment::class, 'student_assignment');
+        return $this->belongsToMany(Assignment::class, 'student_assignment')->using(StudentAssignment::class)->withPivot(['progress',]);;
     }
 
 
