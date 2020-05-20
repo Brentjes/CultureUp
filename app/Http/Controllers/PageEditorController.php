@@ -16,7 +16,7 @@ class PageEditorController extends Controller
      */
     public function index()
     {
-        return 'you got the otherpath';
+
     }
 
     /**
