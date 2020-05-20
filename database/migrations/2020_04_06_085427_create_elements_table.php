@@ -16,8 +16,8 @@ class CreateElementsTable extends Migration
         Schema::create('elements', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('page_id')->unsigned();
-            $table->bigInteger('image_id')->unsigned();
-            $table->bigInteger('link_id')->unsigned();
+            $table->bigInteger('image_id')->unsigned()->nullable();
+            $table->bigInteger('link_id')->unsigned()->nullable();
             $table->string('type');
             $table->integer('positionX');
             $table->integer('positionY');

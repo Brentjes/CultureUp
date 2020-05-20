@@ -2,9 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\Pivot;
 
-class StudentAssignment extends Model
+class StudentAssignment extends Pivot
 {
 
 }
