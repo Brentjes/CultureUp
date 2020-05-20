@@ -1,5 +1,5 @@
-@extends ('layouts.layout');
-@section ('content');
+@extends ('layouts.layout')
+@section ('content')
 
 @foreach ($errors->all() as $error)
     <p>{{ $error }}</p>
