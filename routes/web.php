@@ -71,3 +71,8 @@ Route::group(array('prefix' => 'assignment'), function () {
 Route::get('/globe', function () {
     return view('AssignmentPage.globe');
 })->name('Globe')->middleware('auth');
+
+// test json decode
+Route::get('/globetest', function () {
+    return view('AssignmentPage.json');
+})->name('Globe')->middleware('auth');
