@@ -28,7 +28,7 @@
 <div class="wrapper">
     <!-- Sidebar -->
     <nav id="sidebar" style="z-index: 100">
-        <button type="button" id="sidebarCollapse" class="blue-icon btn d-flex justify-content-center">
+        <button type="button" id="sidebarCollapse" class="blue-icon btn align-content-center">
             <i class="m-0 fas fa-pencil-ruler"></i>
         </button>
         <div class="sidebar-header">
@@ -79,13 +79,13 @@
                 </div>
             </div>
             <div class="col-auto my-auto">
-                <button type="button" id="newPageToggleButton" class="btn blue-icon d-flex justify-content-center">
+                <button type="button" id="newPageToggleButton" class="btn blue-icon align-content-center">
                     <i class="fas fa-plus"></i>
                 </button>
             </div>
         </div>
 
-        <button type="button" id="bottombarCollapse" class="btn blue-icon d-flex justify-content-center"
+        <button type="button" id="bottombarCollapse" class="btn blue-icon align-content-center"
                 style="padding: 12px 6px;">
             <i class="fas fa-film"></i>
         </button>
