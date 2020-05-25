@@ -53,7 +53,8 @@ class PageEditorController extends Controller
         $page->address = $page->assignment_id;
 
         $page->save();
-        dd($page);
+
+        return 'success';
 
     }
 
