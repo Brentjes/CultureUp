@@ -47,7 +47,8 @@ class CountryController extends Controller
     public function show($country)
     {
         $country = Country::where('country', $country)->firstOrFail()->get();
-        return view('AssignmentPage.list')->with('country', $country);
+        $assignments = $country->assignments;
+        return view('AssignmentPage.list')->with('assignments', $assignments);
     }
 
     /**
