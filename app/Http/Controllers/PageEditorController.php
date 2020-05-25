@@ -16,7 +16,7 @@ class PageEditorController extends Controller
      */
     public function index()
     {
-        return 'you got the otherpath';
+
     }
 
     /**
@@ -137,12 +137,14 @@ class PageEditorController extends Controller
     /**
      * Remove the specified resource from storage.
      *
+     * @param Assignment $assignment
      * @param Page $page
-     * @return \Illuminate\Http\Response
+     * @return void
      * @throws \Exception
      */
-    public function destroy(Page $page)
+    public function destroy(Assignment $assignment, $page)
     {
+        dd($assignment);
         $page->delete();
     }
 }

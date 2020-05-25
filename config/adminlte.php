@@ -215,10 +215,11 @@ return [
 //        ],
         ['header' => 'STUDENT OPTIONS'],
         [
-            'text' => ' Progress',
+            'text' => 'Progress',
             'icon' => 'fas fa-chart-line',
             'url' => 'teacher/progress',
         ],
+
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
@@ -229,6 +230,13 @@ return [
             'text' => 'change_password',
             'url' => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
+        ],
+        
+        ['header' => 'ADMINISTRATION OPTIONS'],
+        [
+            'text' => 'Teacher Management',
+            'icon' => 'fas fa-chalkboard-teacher',
+            'url' => 'admin/teachers',
         ],
     ],
 

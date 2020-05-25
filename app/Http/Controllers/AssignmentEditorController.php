@@ -110,7 +110,7 @@ class AssignmentEditorController extends Controller
      */
     public function destroy(assignment $assignment)
     {
-        return 'goodjob';
+        $assignment->delete();
 
     }
 
@@ -146,15 +146,6 @@ class AssignmentEditorController extends Controller
             'message' => 'order stored',
         ];
         return $response;
-
-    }
-
-    public function refreshToken(Request $request)
-    {
-        session()->regenerate();
-        return response()->json([
-            "token"=>csrf_token()],
-            200);
 
     }
 }

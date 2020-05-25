@@ -47,6 +47,11 @@ Route::namespace('Teacher')->prefix('teacher')->name('teacher.')->middleware('au
     Route::resource('/progress', 'ProgressController', ['except' => ['show', 'create', 'store']]);
 });
 
+//Administration routes
+Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth')->group(function () {
+    Route::resource('/teachers', 'AdminController', ['except' => ['show', 'create', 'store']]);
+});
+
 Route::group(array('prefix' => 'assignment'), function () {
     Route::group(array('prefix' => 'editor'), function () {
         Route::resource('currentPage/{assignmentID}/page', 'PageEditorController', [
@@ -57,7 +62,14 @@ Route::group(array('prefix' => 'assignment'), function () {
         Route::resource('current', 'AssignmentEditorController', ['parameters' => [
             'current' => 'assignment',],
             'as' => 'editor'])->middleware('auth');
+
+        Route::resource('currentElement/{assignmentID}/page/{pageID}/element', 'ElementController')->middleware('auth');
     });
+
+    //element/create
+
+
+
     // assignment/view
 
     Route::resource('view/{assignmentID}/page', 'PageController',
@@ -84,4 +96,9 @@ Route::resource('current', "AssignmentEditorController")->middleware('auth');
 // Routes for GLOBE (AssignmentPage)
 Route::get('/globe', function () {
     return view('AssignmentPage.globe');
+})->name('Globe')->middleware('auth');
+
+// test json decode
+Route::get('/globetest', function () {
+    return view('AssignmentPage.json');
 })->name('Globe')->middleware('auth');
