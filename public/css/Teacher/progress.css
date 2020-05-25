@@ -1,0 +1,18 @@
+.hiddenRow {
+    padding: 0 !important;
+}
+
+.ribbon {
+    background-image: url("/images/polygon.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ribbonText {
+    color: white;
+    font-weight: bold;
+}
+
+.progress-group {
+    margin: 1%;
+}
