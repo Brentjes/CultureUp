@@ -26,8 +26,6 @@ class AssignmentEditorController extends Controller
      */
     public function create()
     {
-        $id = 1;
-        $user = User::where('id',$id)->first();
         $countries = Country::all();
         return view('BookEngine.Editor.Assignment.CreateAssignment', compact('countries'));
     }
@@ -40,12 +38,28 @@ class AssignmentEditorController extends Controller
      */
     public function store(Request $request)
     {
-
+        //IMPORTANT, ALLOW CHOOSING COURSE SAME FOR UPDATE
 
         $assignment = new assignment();
-        $this->saveInfoToDB($request, $assignment);
+        $request->validate([
+            'title' => 'required|string',
+            'subject' => 'required|string',
+            'isHidden'=> 'in:on',
+            'isLocked'=> 'in:on',
 
-        dd($assignment);
+        ]);
+
+        $assignment->name = $request->title;
+        $assignment->subject = $request->subject;
+        $assignment->course_id  = 1;
+        $assignment->teacher_id = \Auth::user()->teacher->id;
+        $assignment->createdBy = \Auth::user()->name;
+        $assignment->isHidden = (($request->isHidden== 'on') ? true : false);
+        $assignment->isLocked = (($request->isLocked== 'on') ? true : false);
+
+        $assignment->save();
+
+        return redirect(route('editor.current.show', ['assignment' => $assignment->id]));
     }
 
     /**
@@ -84,20 +98,24 @@ class AssignmentEditorController extends Controller
      */
     public function update(Request $request, Assignment $assignment)
     {
+        $request->validate([
+            'name' => 'required|string',
+            'subject' => 'required|string',
+            'isHidden'=> 'in:on',
+            'isLocked'=> 'in:on',
 
+        ]);
 
 
         $assignment->name = $request->json('name');
         $assignment->subject = $request->json('subject');
         $assignment->course_id  = 1;
-        $assignment->teacher_id = 1;
-        $assignment->createdBy = \Auth::user()->name;
         $assignment->isHidden = (($request->json('isHidden')== 'on') ? true : false);
         $assignment->isLocked = (($request->json('isLocked')== 'on') ? true : false);
 
         $assignment->save();
 
-        dd($request);
+        return 'success';
     }
 
 
@@ -111,6 +129,7 @@ class AssignmentEditorController extends Controller
     public function destroy(assignment $assignment)
     {
         $assignment->delete();
+        return 'success';
 
     }
 
