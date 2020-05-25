@@ -24,7 +24,7 @@ Route::get('/articles', 'ArticleController@index')->name('articles')->middleware
 Route::get('/{name}', function () {
     return view('StudentPage.home', [
         'assignments' => \App\Assignment::take(5)->latest()->get(),
-        'articles' => \App\Article::take(3)->latest()->get()
+        'articles' => \App\Article::take(4)->latest()->get()
     ]);
 })->where('name', 'home||')->name('Home')->middleware('auth');
 

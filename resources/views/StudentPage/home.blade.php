@@ -65,7 +65,7 @@
                                 <div class="row">
                                     <div class="col text-left pr-0">
                                         <div class="img-fluid">
-                                            <img class="rounded" src="https://picsum.photos/id/250/1080/1080"
+                                            <img class="rounded" src="https://picsum.photos/id/{{$article->id}}/1080/1080"
                                                  style="width: 150px; height: 150px;">
                                         </div>
                                     </div>
