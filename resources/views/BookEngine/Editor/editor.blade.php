@@ -33,6 +33,7 @@
         </button>
         <div class="sidebar-header">
             <h3>CultureUP Editor</h3>
+            <h4>{{$page->name}}</h4>
         </div>
 
         <ul class="list-unstyled components">
