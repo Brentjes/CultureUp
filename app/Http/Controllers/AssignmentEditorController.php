@@ -40,7 +40,7 @@ class AssignmentEditorController extends Controller
     {
         //IMPORTANT, ALLOW CHOOSING COURSE SAME FOR UPDATE
 
-        $assignment = new assignment();
+
         $request->validate([
             'title' => 'required|string',
             'subject' => 'required|string',
@@ -48,12 +48,13 @@ class AssignmentEditorController extends Controller
             'isLocked'=> 'in:on',
 
         ]);
-
+        $assignment = new Assignment();
         $assignment->name = $request->title;
         $assignment->subject = $request->subject;
         $assignment->course_id  = 1;
         $assignment->teacher_id = \Auth::user()->teacher->id;
         $assignment->createdBy = \Auth::user()->name;
+        $assignment->country_id = 1;
         $assignment->isHidden = (($request->isHidden== 'on') ? true : false);
         $assignment->isLocked = (($request->isLocked== 'on') ? true : false);
 
