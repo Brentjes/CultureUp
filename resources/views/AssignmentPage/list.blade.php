@@ -3,7 +3,7 @@
     <head>
         <title>CultureUp - List</title>
     </head>
-{{--    @foreach($country->assignments as $assignment)--}}
-        {{dd($country->assignments->get())}}
-{{--    @endforeach--}}
+    @foreach($assignments as $assignment)
+        <p>A</p>
+    @endforeach
 @endsection
