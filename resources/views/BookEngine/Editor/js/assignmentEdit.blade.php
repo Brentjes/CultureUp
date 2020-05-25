@@ -2,7 +2,8 @@ document.getElementById('updateAssignmentButton').addEventListener("click", send
 
 try {
 document.getElementById('editAssignmentToggleButton').addEventListener('click', editAssignmentToggle);
-}catch{}
+} catch {}
+
 function editAssignmentToggle() {
 const id = 'formToggle';
 untoggleOtherForm(id);
@@ -29,11 +30,19 @@ console.log(body.subject.length);
 }
 return
 }
-sendFetchTo(assignmentUpdateUrl, body, 'put').then((text) => assignmentDone(text))
+sendFetchTo(assignmentUpdateUrl, body, 'put').then(function (response) {
+return response.text().then(function (text) {
 
-}
+assignmentDone(text);
 
-function assignmentDone(text){
-console.log(text);
+
+})
+})
+
+
+function assignmentDone(text) {
+if (text === 'success') {
 editAssignmentToggle();
+}
+}
 }

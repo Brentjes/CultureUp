@@ -31,10 +31,6 @@ Route::get('/{name}', function () {
 //Profile Routes
 Route::get('/profile/{id?}', 'UserController@show')->name('profile')->middleware('auth');
 
-Route::get('test', function () {
-    return view('draganddrop');
-});
-
 //Leaderboard Routes
 Route::get('/leaderboard', function () {
     return view('StudentPage.leaderboard');
@@ -68,8 +64,6 @@ Route::group(array('prefix' => 'assignment'), function () {
 
     //element/create
 
-
-
     // assignment/view
 
     Route::resource('view/{assignmentID}/page', 'PageController',
@@ -100,5 +94,11 @@ Route::get('/globe', function () {
 
 // test json decode
 Route::get('/globetest', function () {
-    return view('AssignmentPage.json');
+    $countries = json_decode(file_get_contents('GeoJSON/cases.json'))->country;
+
+
+    return view('AssignmentPage.json', compact('countries'));
 })->name('Globe')->middleware('auth');
+
+//test countries foreach
+Route::get('/{country}', 'CountryController@show')->name('country')->middleware('auth');

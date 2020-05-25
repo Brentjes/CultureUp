@@ -1,33 +1,31 @@
 @extends ('layouts.layout')
 @section ('content')
 
-    @foreach ($errors->all() as $error)
-        <p>{{ $error }}</p>
-    @endforeach
-
     <head>
         <link href="/css/main/main.css">
     </head>
     <div class="mt-5 pt-5 container d-flex justify-content-center">
         <div class="card rounded p-0">
             <div class="card-header ribbon p-0">
-                <p class="ribbonText text-center p-3 m-0">Create</p>
+                <p class="ribbonText text-center p-3 m-0">Create an Element</p>
             </div>
             <div class="card-body">
                 <form method="POST" action="{{ route('element.store', ['assignmentID' => 1, 'pageID' => 1]) }}">
                     @csrf
                     <div class="form-group">
-                        <label class="label" for="positionX">positionX</label>
-                        <input class="form-control" type="text" name="positionX" id="positionX" placeholder="Enter positionX" required
-                               value="{{old("positionX")}}">
-                        @error('title')
+                        <label class="label" for="positionX">position X</label>
+                        {{--only periods are registered as numbers, not comma's--}}
+                        <input class="form-control" type="text" name="positionX" id="positionX" placeholder="Enter position X"
+                               value="{{old("positionX")}}"
+                               required>
+                        @error('positionX')
                         <p>{{$errors->first('positionX')}}</p>
                         @enderror
                     </div>
 
                     <div class="field form-group">
-                        <label class="label" for="positionY">positionY</label>
-                        <input class="form-control" type="text" name="positionY" id="positionY" placeholder="Enter positionY"
+                        <label class="label" for="positionY">position Y</label>
+                        <input class="form-control" type="text" name="positionY" id="positionY" placeholder="Enter position Y"
                                value="{{old("positionY")}}"
                                required>
                         @error('positionY')
@@ -57,7 +55,7 @@
                     </div>
 
                     <div class="field">
-                        <label class="label" for="country">Case location</label>
+                        <label class="label" for="country">case type</label>
                         <br>
                         <select id="country" name="type">
                             <option value="text">text</option>
@@ -71,10 +69,10 @@
                     </div>
 
                     <div class="field form-group">
-                        <label class="label" for="height">text</label>
-                        <textarea id="textArea" name="textArea" rows="4" cols="50">Insert mom here</textarea>
-                        @error('height')
-                        <p>{{$errors->first('height')}}</p>
+                        <label class="label" for="text">text</label>
+                        <textarea id="textArea" name="textArea" rows="4" cols="50" placeholder="Insert text here"></textarea>
+                        @error('text')
+                        <p>{{$errors->first('text')}}</p>
                         @enderror
                     </div>
 
@@ -84,10 +82,10 @@
                             <button class="btn btn-light" type="submit">Submit</button>
                         </div>
                         <div class="col">
-                            <button class="btn btn-light">Cancel</button>
+{{--                            <button class="btn btn-light">Cancel</button>--}}
+                            <button class="btn btn-danger">Cancel</button>
                         </div>
                     </div>
-
                 </form>
             </div>
         </div>

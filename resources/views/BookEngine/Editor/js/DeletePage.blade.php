@@ -1,32 +1,43 @@
-try{
+try {
 var allPageDeleteButtons = document.getElementsByClassName('DeleteButtonPage');
 
-for(let i = 0; i < allPageDeleteButtons.length; i++) {
-allPageDeleteButtons[i].addEventListener("click", function(e) {
+for (let i = 0; i < allPageDeleteButtons.length; i++) {
+allPageDeleteButtons[i].addEventListener("click", function (e) {
 
 let element = e.srcElement
 
-
-if(element.tagName === 'path'){
+if (element.tagName === 'path') {
 element = element.parentElement
-console.log(element.tagName)
+
 }
-if(element.tagName === 'svg'){
+if (element.tagName === 'svg') {
 element = element.parentElement
-console.log(element.tagName)
+
 }
-if(element.tagName === 'BUTTON'){
+if (element.tagName === 'BUTTON') {
 element = element.parentElement
-console.log(element.tagName)
+
 }
-if(element.tagName === 'DIV'){
+if (element.tagName === 'DIV') {
 
-element = element.children[1].href
+element = element
 }
 
+sendFetchTo(element.children[1].href, 'delete', 'DELETE').then(function (response) {
+return response.text().then(function (text) {
 
-sendFetchTo(element, 'delete', 'DELETE');
+deleteNow(text, element);
+
 
 })
+})
+})
 }
-}catch{}
+} catch {}
+
+function deleteNow(text, element) {
+console.log(text)
+if (text === "success") {
+element.parentNode.removeChild(element);
+}
+}
