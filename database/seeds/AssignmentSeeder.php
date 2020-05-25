@@ -18,6 +18,7 @@ class AssignmentSeeder extends Seeder
                 Assignment::create([
                     'course_id' => rand(1, 28),
                     'teacher_id' => rand(1, 25),
+                    'country_id' => rand(1, 244),
                     'name' => $faker->randomElement([
                         'English on the workfloor',
                         'German on the workfloor',

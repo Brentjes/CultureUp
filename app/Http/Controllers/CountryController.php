@@ -44,9 +44,10 @@ class CountryController extends Controller
      * @param  \App\Country  $country
      * @return \Illuminate\Http\Response
      */
-    public function show(Country $country)
+    public function show($country)
     {
-        //
+        $country = Country::where('country', $country)->firstOrFail()->get();
+        return view('AssignmentPage.list')->with('country', $country);
     }
 
     /**

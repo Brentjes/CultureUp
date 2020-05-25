@@ -3,7 +3,7 @@
 @section ('studentIcons')
     <li class="nav-item">
         <a class="nav-link icon custom-tooltip" href="/globe">
-            <i class="fas fa-globe"></i>
+            <i class="fas fa-globe-americas"></i>
             <span class="tooltiptext">Shows a globe that grants access to a collection of courses</span>
         </a>
     </li>
