@@ -38,11 +38,14 @@
                 <div class="field">
                     <label class="label" for="country">Case location</label>
                     <br>
-                    <select id="country" name="country">
-                        @foreach($countries as $country)
-                        <option value="{{$country->country_code}}">{{$country->country}}</option>
-                        @endforeach
-                    </select>
+                    <div class="form-group">
+                        <select id="inputState" class="form-control selectpicker" data-live-search="true"
+                                data-size="10">
+                            @foreach($countries as $country)
+                                <option value="{{$country->country_code}}">{{$country->country}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                     @error('country')
                     <p>{{$errors->first('country')}}</p>
                     @enderror

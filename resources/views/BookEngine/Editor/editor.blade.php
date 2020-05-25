@@ -130,11 +130,6 @@
         integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
 
-{{--Bootstrap select--}}
-<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
-
-<script src="/editor.js"></script>
-
 {{--interactjs--}}
 <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
 
