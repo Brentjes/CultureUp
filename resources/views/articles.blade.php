@@ -1,12 +1,13 @@
-@extends ('layouts.layout')
+@extends ('layouts.studentLayout')
 @section ('content')
     <head>
+        <link rel="stylesheet" type="text/css" href="public/css/Articles/article.css">
         <title>CultureUp - Assignments</title>
     </head>
     <section id="home">
 
         <div class="container-fluid cards">
-            <div class="wow fadeInUp card-columns">
+            <div class="wow fadeInUp card-columns d-inline-block">
                 @foreach ($articles as $article)
                     <a href="/case" class="custom-card">
                         <div class="card rounded text-center h-auto rounded softshadow">

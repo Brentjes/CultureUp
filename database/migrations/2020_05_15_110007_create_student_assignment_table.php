@@ -21,6 +21,7 @@ class CreateStudentAssignmentTable extends Migration
                 ->onDelete('cascade');
             $table->foreign('assignment_id')->references('id')->on('assignments')
                 ->onDelete('cascade');
+            $table->integer('progress');
         });
     }
 

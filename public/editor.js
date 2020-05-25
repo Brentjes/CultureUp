@@ -46,9 +46,16 @@ function sendFetchTo(url, body, method) {
     })
 }
 
-document.getElementById('addText').addEventListener('click', addElement);
-document.getElementById('addImg').addEventListener('click', addElement);
-document.getElementById('addLink').addEventListener('click', addElement);
+try {
+    document.getElementById('addText').addEventListener('click', addElement);
+}catch{}
+try{
+    document.getElementById('addImg').addEventListener('click', addElement);
+}catch{}
+try{
+    document.getElementById('addLink').addEventListener('click', addElement);
+}catch{}
+
 
 function addElement() {
     let element = document.createElement('div');

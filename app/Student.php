@@ -23,6 +23,15 @@ class Student extends Model
     }
 
     /**
+     * The assignments that belong to the student.
+     */
+    public function assignments()
+    {
+        return $this->belongsToMany(Assignment::class, 'student_assignment');
+    }
+
+
+    /**
  * The badges that belong to the student.
  */
     public function badges()
@@ -30,11 +39,4 @@ class Student extends Model
         return $this->belongsToMany(Badge::class, 'student_badge');
     }
 
-    /**
-     * The badges that belong to the student.
-     */
-    public function assignments()
-    {
-        return $this->belongsToMany(Badge::class, 'student_assignment');
-    }
 }

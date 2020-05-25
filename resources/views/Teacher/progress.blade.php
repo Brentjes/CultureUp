@@ -42,19 +42,18 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($student->assignments() as $assignment)
+
+                                        @foreach($student->assignments as $assignment)
                                         <tr>
-                                            <td>Test1</td>
+                                            <td>{{$assignment->name}}</td>
                                             <td>
                                                 <div class="progress-group">
                                                     <div class="progress sm">
-
-                                                        <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
-
+                                                        <div class="progress-bar progress-bar-aqua" style="width: 60%"></div>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td>9/10</td>
+                                            <td>6/10</td>
                                             <td></td>
                                         </tr>
                                             @endforeach

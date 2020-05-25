@@ -22,15 +22,16 @@ Route::get('/admin', function () {
 Route::get('/articles', 'ArticleController@index')->name('articles')->middleware('auth');
 
 Route::get('/{name}', function () {
-    return view('StudentPage.home' , [
-        'assignments' => \App\Assignment::take(5)->latest()->get()
+    return view('StudentPage.home', [
+        'assignments' => \App\Assignment::take(5)->latest()->get(),
+        'articles' => \App\Article::take(3)->latest()->get()
     ]);
 })->where('name', 'home||')->name('Home')->middleware('auth');
 
 //Profile Routes
 Route::get('/profile/{id?}', 'UserController@show')->name('profile')->middleware('auth');
 
-Route::get('test', function() {
+Route::get('test', function () {
     return view('draganddrop');
 });
 
@@ -67,6 +68,8 @@ Route::group(array('prefix' => 'assignment'), function () {
         ]])->middleware('auth');
 });
 
+// Article routes
+Route::resource('article' , 'ArticleController');
 
 //Jochems zn meuk
 Route::get('DokSTestingStuffDontTouch', function () {

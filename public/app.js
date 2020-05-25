@@ -8,7 +8,7 @@ function viewMore() {
         document.getElementById('viewMore').innerHTML = '<span class="material-icons btn">expand_more</span> View more';
 
     } else {
-        document.getElementById("overlay").style.top = "200vh";
+        document.getElementById("overlay").style.top = "550vh";
         document.getElementById('viewMore').innerHTML = '<span class="material-icons btn">expand_less</span> View less';
 
     }
