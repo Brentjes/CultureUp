@@ -39,23 +39,11 @@
             <li class="softshadow stick">
                 <a id="editAssignmentToggleButton"><i class="fas fa-cogs"></i> Edit assignment info</a>
             </li>
+            <li class="softshadow stick">
+                <a id="DeleteButton"><i class="fas fa-trash-alt"></i> Delete assignment</a>
+            </li>
         </ul>
-        <div>
-            <button id="DeleteButton">DeleteAssingment</button>
-            <input type="hidden" value="2">
-        </div>
-        <div>
-            <button class="DeleteButtonPage">test</button>
-            <input type="hidden" value="3">
-        </div>
-        <div>
-            <button class="DeleteButtonPage">test</button>
-            <input type="hidden" value="8">
-        </div>
-        <div>
-            <button class="DeleteButtonPage">test</button>
-            <input type="hidden" value="1337">
-        </div>
+
     </nav>
 
     @include('BookEngine.Editor.Assignment.AssignmentForm')
@@ -67,16 +55,20 @@
     <div class="row position-absolute" style="margin-left: 15%; width: 85vw;">
         @foreach($assignment->pages as $page)
             <div class="col-auto p-3">
+                <button style="all:unset; z-index: 100; right: 0;  width: 30px; height: 30px; color: #f0f0f0" class="btn-danger DeleteButtonPage float-right d-flex justify-content-center position-absolute rounded-circle text-center"><i class="fas fa-trash-alt"></i></button>
                 <a href="{{ route('editor.page.show', ['assignmentID' => $assignment->id, 'page' => $page->id]) }}">
+
                     <div class="card text-white custom-rounded softshadow" style="width: 12vw;">
+
                         <img class="card-img custom-rounded" src="http://placehold.it/160x90">
                         <div class="card-img-overlay">
+
+
+
                             <h2 class="card-title" style="font-size: 1vw;">{{$page->name}}</h2>
-                            <button class="DeleteButtonPage">Test</button>
                         </div>
                     </div>
                 </a>
-                <button class="DeleteButtonPage">Test</button>
             </div>
         @endforeach
 

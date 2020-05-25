@@ -11,7 +11,7 @@
                 <h1 class="display-3 lead text-left" style="font-size:4vw"> Welcome, {{ Auth::user()->name }}</h1>
             </div>
             <div class="col mr-20 text-center m-4">
-                <img class="img-fluid" style="width:15vw; height: auto" src="/cultureuplogo.png">
+                <img class="img-fluid" style="width:15vw; height: auto" src="/images/logoLight.png">
             </div>
         </div>
     </div>
@@ -27,6 +27,6 @@
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+
 @stop
 
