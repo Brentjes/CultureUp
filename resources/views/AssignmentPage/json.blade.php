@@ -1,11 +1,11 @@
-<?php
-
-$json = file_get_contents('GeoJSON/cases.json');
-
-$data = json_decode($json);
-
-echo '<p><strong>Country:</strong> ', $data->properties->name, '</p>';
 
 
-?>
+@foreach($countries as $country)
+
+    <p>{{$country->country}}</p>
+    <p>{{$country->country_code}}</p>
+    <p>{{$country->lat}}</p>
+    <p>{{$country->long}}</p>
+
+@endforeach
 
