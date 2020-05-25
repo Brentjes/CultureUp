@@ -9,24 +9,37 @@ let element = e.srcElement
 
 if(element.tagName === 'path'){
 element = element.parentElement
-console.log(element.tagName)
+
 }
 if(element.tagName === 'svg'){
 element = element.parentElement
-console.log(element.tagName)
+
 }
 if(element.tagName === 'BUTTON'){
 element = element.parentElement
-console.log(element.tagName)
+
 }
 if(element.tagName === 'DIV'){
 
-element = element.children[1].href
+element = element
 }
 
 
-sendFetchTo(element, 'delete', 'DELETE');
+sendFetchTo(element.children[1].href, 'delete', 'DELETE').then(function(response) {
+return response.text().then(function(text) {
+if(text === "success"){
+element.id = "deleteme"
+removeElement(element.id);
+}
+});
+});
 
 })
 }
 }catch{}
+
+function removeElement(elementId) {
+// Removes an element from the document
+let element = document.getElementById(elementId);
+element.parentNode.removeChild(element);
+}
