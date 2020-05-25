@@ -9,7 +9,7 @@
         <div class="container-fluid cards">
             <div class="wow fadeInUp card-columns d-inline-block">
                 @foreach ($articles as $article)
-                    <a href="/case" class="custom-card">
+                    <a href="{{ route('article.show', $article) }}" class="custom-card">
                         <div class="card rounded text-center h-auto rounded softshadow">
                             <img class="img-fluid rounded" src="https://picsum.photos/id/{{$article->id}}/700">
                             <div class="card-body pb-0">
