@@ -22,17 +22,13 @@ Route::get('/admin', function () {
 Route::get('/articles', 'ArticleController@index')->name('articles')->middleware('auth');
 
 Route::get('/{name}', function () {
-    return view('StudentPage.home' , [
+    return view('StudentPage.home', [
         'assignments' => \App\Assignment::take(5)->latest()->get()
     ]);
 })->where('name', 'home||')->name('Home')->middleware('auth');
 
 //Profile Routes
 Route::get('/profile/{id?}', 'UserController@show')->name('profile')->middleware('auth');
-
-Route::get('test', function() {
-    return view('draganddrop');
-});
 
 //Leaderboard Routes
 Route::get('/leaderboard', function () {
@@ -67,8 +63,6 @@ Route::group(array('prefix' => 'assignment'), function () {
 
     //element/create
 
-
-
     // assignment/view
 
     Route::resource('view/{assignmentID}/page', 'PageController',
@@ -88,3 +82,6 @@ Route::get('/globe', function () {
 Route::get('/globetest', function () {
     return view('AssignmentPage.json');
 })->name('Globe')->middleware('auth');
+
+//test countries foreach
+Route::get('/{country}', 'CountryController@show')->name('country')->middleware('auth');
