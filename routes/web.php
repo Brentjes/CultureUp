@@ -23,7 +23,8 @@ Route::get('/articles', 'ArticleController@index')->name('articles')->middleware
 
 Route::get('/{name}', function () {
     return view('StudentPage.home', [
-        'assignments' => \App\Assignment::take(5)->latest()->get()
+        'assignments' => \App\Assignment::take(5)->latest()->get(),
+        'articles' => \App\Article::take(4)->latest()->get()
     ]);
 })->where('name', 'home||')->name('Home')->middleware('auth');
 
@@ -72,6 +73,19 @@ Route::group(array('prefix' => 'assignment'), function () {
         ['parameters' => ['view' => 'assignment'
         ]])->middleware('auth');
 });
+
+// Article routes
+Route::resource('article' , 'ArticleController');
+
+//Jochems zn meuk
+Route::get('DokSTestingStuffDontTouch', function () {
+    session()->regenerate();
+    return response()->json([
+        "token" => csrf_token()],
+        200);
+})->name('home')->middleware('auth');
+
+Route::resource('current', "AssignmentEditorController")->middleware('auth');
 
 // Routes for GLOBE (AssignmentPage)
 Route::get('/globe', function () {

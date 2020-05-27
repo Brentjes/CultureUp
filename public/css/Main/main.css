@@ -170,12 +170,12 @@ section::before {
 }
 
 #overlay {
-    padding-top: 10px;
+    /*padding-top: 10px;*/
     position: absolute;
     display: block;
     top: 94vh;
     width: 100%;
-    min-height: 94vh;
+    min-height: 750vh;
     background-color: white;
     z-index: 1;
     -webkit-box-shadow: 0 2px 5px 2px rgba(60, 64, 67, 0.15);

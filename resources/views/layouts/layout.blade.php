@@ -48,7 +48,7 @@
                     <img class="rounded-circle user-icon" src="/images/default.jpg">
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                    <p class="dropdown-item dropdown-item-text disabled">J. Doe</p>
+                    <p class="dropdown-item dropdown-item-text disabled">{{\Auth::user()->name}}</p>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="/profile"><i class="fas fa-user"></i> Profile</a>
                     <a class="dropdown-item" href="#" id="toggle-button"><i id="toggleLightIcon"
