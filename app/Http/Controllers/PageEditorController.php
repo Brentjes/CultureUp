@@ -53,7 +53,8 @@ class PageEditorController extends Controller
         $page->address = $page->assignment_id;
 
         $page->save();
-        dd($page);
+
+        return 'success';
 
     }
 
@@ -142,9 +143,10 @@ class PageEditorController extends Controller
      * @return void
      * @throws \Exception
      */
-    public function destroy(Assignment $assignment, $page)
+    public function destroy(Assignment $assignmentID, Page $page)
     {
-        dd($assignment);
+
         $page->delete();
+        return 'success';
     }
 }

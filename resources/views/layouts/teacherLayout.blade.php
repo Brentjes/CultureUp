@@ -6,7 +6,7 @@
 @section ('teacherIcons')
     <li class="nav-item">
         <a class="nav-link icon custom-tooltip" href="/teacherhome">
-            <i class="fas fa-globe"></i>
+            <i class="fas fa-globe-americas"></i>
             <span class="tooltiptext">Shows an overview of your made courses</span>
         </a>
     </li>
@@ -19,7 +19,7 @@
     </li>
     <li class="nav-item">
         <a class="nav-link icon custom-tooltip" href="/assignment/editor/currentPage/1/page/2">
-            <i class="fas fa-pencil-alt"></i>
+            <i class="fas fa-pencil-ruler"></i>
             <span class="tooltiptext">Make a new course</span>
         </a>
     </li>

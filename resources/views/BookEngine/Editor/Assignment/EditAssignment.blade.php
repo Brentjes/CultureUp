@@ -30,6 +30,7 @@
     <nav id="sidebar" style="z-index: 100">
         <div class="sidebar-header">
             <h3>CultureUP Editor</h3>
+            <h4>{{$assignment->name}}</h4>
         </div>
 
         <ul class="list-unstyled components">
@@ -39,23 +40,11 @@
             <li class="softshadow stick">
                 <a id="editAssignmentToggleButton"><i class="fas fa-cogs"></i> Edit assignment info</a>
             </li>
+            <li class="softshadow stick">
+                <a id="DeleteButton"><i class="fas fa-trash-alt"></i> Delete assignment</a>
+            </li>
         </ul>
-        <div>
-            <button id="DeleteButton">DeleteAssingment</button>
-            <input type="hidden" value="2">
-        </div>
-        <div>
-            <button class="DeleteButtonPage">test</button>
-            <input type="hidden" value="3">
-        </div>
-        <div>
-            <button class="DeleteButtonPage">test</button>
-            <input type="hidden" value="8">
-        </div>
-        <div>
-            <button class="DeleteButtonPage">test</button>
-            <input type="hidden" value="1337">
-        </div>
+
     </nav>
 
     @include('BookEngine.Editor.Assignment.AssignmentForm')
