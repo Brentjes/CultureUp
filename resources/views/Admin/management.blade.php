@@ -11,7 +11,7 @@
                 <h3 class="card-title">Active Teachers</h3>
 
                 <div class="card-tools">
-                    <a class="btn btn-xs btn-success float-left mr-2" href="./create">
+                    <a class="btn btn-xs btn-success float-left mr-2" href="{{route('admin.teachers.create')}}">
                         <i class="fas fa-plus-circle"></i> Add Teacher</a>
                     <div class="input-group input-group-sm" style="width: 150px;">
                         <input id="TeacherTableSearch" type="text" onkeyup="tableSearch()" name="table_search" class="form-control float-right" placeholder="Search">

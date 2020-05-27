@@ -15,7 +15,6 @@
             <h3 class="card-title">Unsorted users</h3>
 
             <div class="card-tools">
-                <a class="btn btn-xs btn-success float-left mr-2" href="#">
                 <div class="input-group input-group-sm" style="width: 350px;">
                     <input id="TeacherTableSearch" type="text" onkeyup="tableSearch()" name="table_search" class="form-control float-right" placeholder="Search for a user">
 
@@ -42,7 +41,7 @@
                         <td>{{$user->id}}</td>
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
-                        <td><button type="button" class="btn btn-sm btn-success float-right"><i class="fas fa-minus-circle"></i> Make Teacher</button></td>
+                        <td><button type="button" class="btn btn-sm btn-success float-right"><i class="fas fa-plus-circle"></i> Make Teacher</button></td>
                     </tr>
                 @endforeach
                 </tbody>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Teacher;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -32,7 +33,11 @@ class AdminController extends Controller
      */
     public function create()
     {
-        $users = Users::all();
+        $users = DB::select('    SELECT users.* FROM users
+                                 LEFT JOIN teachers ON users.id=teachers.user_id
+                                 LEFT JOIN students ON users.id=students.user_id
+                                 WHERE teachers.id IS NULL AND students.id IS NULL
+                            ');
 
         return view('admin.create_teacher')->with('users', $users);
     }
