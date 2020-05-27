@@ -86,7 +86,7 @@ Route::get('/globe', function () {
 
 // test json decode
 Route::get('/globetest', function () {
-    $countries = json_decode(file_get_contents('GeoJSON/cases.json'))->country;
+    $countries = json_decode(file_get_contents('GeoJSON/cases.geojson'))->country;
 
 
     return view('AssignmentPage.json', compact('countries'));

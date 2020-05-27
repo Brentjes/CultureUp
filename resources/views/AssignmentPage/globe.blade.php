@@ -98,20 +98,20 @@
                         },
                     },
                     popupTemplate: {
-                        title: "{name}",
+                        title: "{country}",
                         content: `
             <div class="popupImage">
               <img src="{imageUrl}"/>
             </div>
             <div class="popupDescription">
               <p class="info">
-                <span class="esri-icon-favorites"></span> {type}
-              </p>
-              <p class="info">
                 <span class="esri-icon-map-pin"></span><span class="locationUrl">{location}</span>
               </p>
               <p class="info">
                 <span class="esri-icon-documentation"></span> {facts}
+              </p>
+              <p class="info">
+                <span class="esri-icon-announcement"></span> {cases}
               </p>
                <div class="text-center">
                 <a class="link-unstyled btn btn-outline-light putUrlHere" href="">
