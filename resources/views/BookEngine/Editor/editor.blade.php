@@ -59,8 +59,7 @@
     <!-- Bottombar -->
     <nav id="bottombar" style="z-index: 100">
         <div class="text-center pt-2 sidebar-header">
-            <h3 class="d-inline" style="color: #212529;">Timeline</h3><i
-                class="d-inline ml-2 fas fa-ellipsis-h bar-icon" style="color: #323232; margin: 0px"></i>
+            <h3 class="d-inline" style="color: #212529;">Timeline</h3>
         </div>
         <div class="row w-100 text-center ml-2 pl-5" style="height: 200px; margin-top: -3px">
             <div class="col-auto p-3 my-auto">
@@ -134,6 +133,7 @@
 <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
 
 <script src="/js/renderEngine.js"></script>
+<script src="/editor.js"></script>
 
 </body>
 </html>

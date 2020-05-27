@@ -10,7 +10,7 @@
                 <p class="ribbonText text-center p-3 m-0">Create an Element</p>
             </div>
             <div class="card-body">
-                <form method="POST" action="{{ route('element.store', ['assignmentID' => 1, 'pageID' => 1]) }}">
+                <form method="POST" action="{{ route('element.store', ['assignmentID' => 5, 'pageID' => 10]) }}">
                     @csrf
                     <div class="form-group">
                         <label class="label" for="positionX">position X</label>
@@ -67,6 +67,15 @@
                         <p>{{$errors->first('country')}}</p>
                         @enderror
                     </div>
+
+{{--                    <div class="field">--}}
+{{--                        <label class="label" for="country">case type</label>--}}
+{{--                        <br>--}}
+{{--                        <textarea name="text"></textarea>--}}
+{{--                        @error('country')--}}
+{{--                        <p>{{$errors->first('country')}}</p>--}}
+{{--                        @enderror--}}
+{{--                    </div>--}}
 
                     <div class="field form-group">
                         <label class="label" for="text">text</label>
