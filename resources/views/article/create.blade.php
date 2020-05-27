@@ -10,7 +10,8 @@
                 <p class="ribbonText text-center p-3 m-0">Create an Element</p>
             </div>
             <div class="card-body">
-                <form method = "POST" action= "/articles">
+                <form method = "POST" action= "{{ Route('article.store') }}">
+{{--                <form method = "POST" action= "/article/create">--}}
                     @csrf
 
 
@@ -40,8 +41,8 @@
 
                     <div class="field form-group">
                         <label class="label" for="text">text</label>
-                        <textarea id="textArea" name="textArea" rows="4" cols="50"
-                                  placeholder="Your text goes here"></textarea>
+                        <textarea id="textArea" name="text" rows="4" cols="50"
+                                  placeholder="Your text goes here">{{old("text")}}</textarea>
                         @error('text')
                         <p>{{$errors->first('text')}}</p>
                         @enderror
@@ -54,7 +55,14 @@
                         </div>
                         <div class="col">
                             {{--                            <button class="btn btn-light">Cancel</button>--}}
-                            <button class="btn btn-danger">Cancel</button>
+{{--                            <button class="btn btn-danger">Cancel</button>--}}
+{{--                            <button class="btn btn-danger">--}}
+{{--                                <a href="/articles">--}}
+{{--                                    Cancel--}}
+{{--                                </a>--}}
+{{--                            </button>--}}
+
+                                <button class="btn btn-danger" onclick="validateArticle()">Cancel</button>
                         </div>
                     </div>
                 </form>
