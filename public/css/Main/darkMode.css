@@ -1,0 +1,230 @@
+.esri-widget {
+    background-color: #1d1d1d;
+}
+
+a {
+    color: #FFFFFF !important;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.93);
+}
+
+.assignment-background {
+    background-color: #1d1d1d;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='100%25' gradientTransform='rotate(0,768,377)'%3E%3Cstop offset='0' stop-color='%231d1d1d'/%3E%3Cstop offset='1' stop-color='%23000000'/%3E%3C/linearGradient%3E%3Cpattern patternUnits='userSpaceOnUse' id='b' width='521' height='434.2' x='0' y='0' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.03'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect x='0' y='0' fill='url(%23b)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #6c757d;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #7B848D;
+}
+
+.navbar {
+    background-image: url('/images/darkPolygon.png');
+    background-position: right 100% bottom 5%;
+}
+
+.navbar-brand:hover {
+    color: #EFEEEE;
+}
+
+.nav-link,
+.navbar-brand {
+    color: #e0e0e0;
+}
+
+label {
+    color: #e0e0e0;
+}
+
+.ribbonText {
+    color: #e0e0e0;
+}
+
+.nav-link:hover {
+    color: #EFEEEE;
+}
+
+#overlay {
+    background-color: #212529;
+    -webkit-box-shadow: 0 2px 5px 2px rgba(60, 64, 67, 0.15);
+    -moz-box-shadow: 0 2px 5px 2px rgba(60, 64, 67, 0.15);
+    box-shadow: 0 2px 5px 2px rgba(60, 64, 67, 0.15);
+}
+
+.hr {
+    border-top: 1px solid grey !important;
+}
+
+.display-3 {
+    color: #e0e0e0;
+}
+
+.card-title {
+    color: #e0e0e0;
+}
+
+.card-img-top {
+    -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.softshadow {
+    -webkit-box-shadow: 2px 2px 15px black;
+    -moz-box-shadow: 2px 2px 15px black;
+    box-shadow: 2px 2px 15px black;
+}
+
+.softshadow-inset {
+    -webkit-box-shadow: inset 2px 2px 15px black;
+    -moz-box-shadow: inset 2px 2px 15px black;
+    box-shadow: inset 2px 2px 15px black;
+}
+
+.custom-tooltip .tooltiptext {
+    background-color: #282828;
+    color: #e0e0e0;
+    transition: opacity 0.2s linear 1s;
+    -webkit-box-shadow: 2px 2px 15px black;
+    -moz-box-shadow: 2px 2px 15px black;
+    box-shadow: 2px 2px 15px black;
+}
+
+.custom-tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #282828 transparent;
+}
+
+.teachercolor {
+    color: #e0e0e0;
+    font-weight: unset;
+}
+
+.dropdown-menu {
+    background-color: #282828;
+}
+
+.dropdown-item {
+    color: #e0e0e0;
+}
+
+.dropdown-item:hover {
+    color: black;
+    background-color: #e0e0e0;
+}
+
+.disabled {
+    color: grey !important;
+}
+.disabled:hover {
+    background: transparent;
+    color: grey;
+}
+
+.card {
+    background-color: #1d1d1d;
+}
+
+.list-group-item {
+    background-color: #1f1f1f !important;
+}
+
+p {
+    color: #e0e0e0;
+}
+
+h1 {
+    color: #e0e0e0;
+}
+
+h2 {
+    color: #e0e0e0;
+}
+
+
+th {
+    color: #e0e0e0;
+}
+
+.h4 {
+    color: #e0e0e0;
+}
+
+.h6 {
+    color: #e0e0e0;
+}
+
+.error-text {
+    color: #e0e0e0 !important;
+}
+
+
+.ribbon {
+    background-image: url("/images/darkPolygon.png") !important;
+    color: #e0e0e0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 1px solid grey;
+    background-position: 100% 60%;
+}
+
+table.table-bordered > thead > tr > th{
+    border:1px solid #313131;
+}
+
+table.table-bordered > tbody > tr > th{
+    border:1px solid #313131;
+}
+
+table.table-bordered > tbody > tr > td{
+    border:1px solid #313131;
+}
+
+.bar {
+    background-clip: content-box;
+    background-color: #1d1d1d !important;
+}
+
+.progress {
+    background-color: #e0e0e0;
+}
+
+.esri-feature.esri-widget {
+    background-color: #1d1d1d;
+}
+
+.esri-popup__header {
+    background-color: #1d1d1d !important;
+}
+
+.esri-popup__header-title:hover, .esri-popup__button {
+    background-color: #1d1d1d !important;
+}
+
+.esri-popup--shadow {
+    -webkit-box-shadow: 2px 2px 15px black !important;
+    -moz-box-shadow: 2px 2px 15px black !important;
+    box-shadow: 2px 2px 15px black !important;
+}
+
+.link-unstyled {
+    color: #EFEEEE !important;
+}

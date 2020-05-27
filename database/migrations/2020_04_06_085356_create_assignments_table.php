@@ -17,6 +17,7 @@ class CreateAssignmentsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('course_id')->unsigned();
             $table->bigInteger('teacher_id')->unsigned();
+            $table->bigInteger('country_id')->unsigned();
             $table->string('name');
             $table->string('subject');
             $table->boolean('isHidden');
@@ -26,6 +27,8 @@ class CreateAssignmentsTable extends Migration
             $table->foreign('course_id')->references('id')->on('courses')
                 ->onDelete('cascade');
             $table->foreign('teacher_id')->references('id')->on('teachers')
+                ->onDelete('cascade');
+            $table->foreign('country_id')->references('id')->on('countries')
                 ->onDelete('cascade');
         });
     }

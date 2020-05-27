@@ -1,12 +1,39 @@
-@import "https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700";
-
 html {
     overflow: hidden;
 }
 
+#content {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #f9f9f9;
+}
+
+.resize-drag {
+    background-color: #3399ff;
+    color: #f0f0f0;
+    font-size: 20px;
+    font-family: sans-serif;
+    border-radius: 8px;
+    padding: 20px;
+    touch-action: none;
+    width: 120px;
+    box-sizing: border-box;
+}
+
+.blue-icon {
+    color: #f0f0f0;
+    width: 50px;
+    height: 50px;
+    background: #3399ff;
+    border-radius: 100px;
+}
+
 .wrapper {
-    background-color: #343d46;
-    display: flex;
+    background-color: #f9f9f9;
+    display: block;
     width: 100%;
 }
 
@@ -15,25 +42,46 @@ html {
 }
 
 #sidebar {
+    position: absolute;
     min-width: 250px;
     max-width: 250px;
     min-height: 100vh;
     transition: all 0.5s;
-    background: white url("../../images/polygon.png") no-repeat;
-    background-size: cover;
+    background-color: #f9f9f9;
+    -webkit-box-shadow: 0 1px 6px 0 rgba(32,33,36,.28);
+    -moz-box-shadow: 0 1px 6px 0 rgba(32,33,36,.28);
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,.28);
  }
 
 #sidebar.active {
     margin-left: -250px;
 }
 
+
+#bottombar {
+    z-index: 10;
+    position: absolute;
+    min-height: 250px;
+    max-height: 250px;
+    min-width: 100vw;
+    transition: all 0.5s;
+    background-color: #f9f9f9;
+    -webkit-box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
+    -moz-box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
+    bottom: 0;
+}
+
+#bottombar.active {
+    margin-bottom: -250px;
+}
+
 body {
-    font-family: 'Roboto', sans-serif;
-    background: #fafafa;
+    font-family: 'Rubik', sans-serif;
 }
 
 p {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
@@ -47,9 +95,13 @@ a, a:hover, a:focus {
 }
 
 #sidebar .sidebar-header {
-    color: white;
+    color: #212529;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.1);
+    padding-left: 10px;
+}
+
+.h3-resize {
+    font-size: 3vh !important;
 }
 
 #sidebar ul.components {
@@ -57,117 +109,110 @@ a, a:hover, a:focus {
 }
 
 #sidebar ul p {
-    color: #fff;
     padding: 10px;
 }
 
 #sidebar ul li a {
-    padding: 10px;
+    background: #FEFEFE;
+    color: #323232;
+    margin-bottom: 7px;
+    margin-right: 7px;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    padding: 12px;
     font-size: 1.1em;
     display: block;
 }
-#sidebar ul li a:hover {
-    color: #dcdcdc;
-}
 
-#sidebar ul li.active > a, a[aria-expanded="true"] {
-    color: #fff;
-    background: #6d7fcc;
+#sidebar ul li a:hover {
+    color: #4B4B4B;
 }
 
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #6d7fcc;
+    background: #f0f0f0;
 }
 
 #sidebarCollapse {
-    width: 40px;
-    height: 40px;
-    background: #f5f5f5;
+    position: absolute;
+    margin-left: 275px;
+    margin-top: 25px;
 }
 
-#sidebarCollapse span {
-    width: 100%;
-    height: 2px;
-    margin: 0 auto;
-    display: block;
-    background: #555;
-    transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+#bottombarCollapse {
+    position: absolute;
+    right: 25px;
+    bottom: 275px;
 }
 
-#sidebarCollapse span:first-of-type {
-    transform: rotate(45deg) translate(2px, 2px);
+.dropdown-toggle {
+    background-color: #FFFFFF;
+    border: 1px solid #ced4da;
 }
 
-#sidebarCollapse span:nth-of-type(2) {
-    opacity: 0;
+.dropdown-item.active.selected, .dropdown-item.active{
+    background-color: #f0f0f0 !important;
+    color: #212529;
 }
 
-#sidebarCollapse span:last-of-type {
-    transform: rotate(-45deg) translate(1px, -1px);
+.stick:hover {
+    cursor: pointer;
 }
 
-#sidebarCollapse.active span {
-    transform: none;
-    opacity: 1;
-    margin: 3px auto;
+.custom-rounded {
+    border-radius: 0.5vw !important;
+    -webkit-box-shadow: 0 1px 6px 0 rgba(32,33,36,.28);
+    -moz-box-shadow: 0 1px 6px 0 rgba(32,33,36,.28);
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,.28);
+}
+
+.assignment-info {
+    display: none;
+}
+
+.assignment-info.active {
+    display: flex;
+}
+
+.btn-danger {
+    background-color: #ef476f !important;
 }
 
 @media (max-width: 768px) {
     #sidebar {
         margin-left: -250px;
-        transform: rotateY(100deg);
     }
+
     #sidebar.active {
         margin-left: 0;
-        transform: none;
     }
 
-    #sidebarCollapse span:first-of-type,
-    #sidebarCollapse span:nth-of-type(2),
-    #sidebarCollapse span:last-of-type {
-        transform: none;
-        opacity: 1;
-        margin: 5px auto;
+    #bottombar {
+        margin-bottom: -250px;
     }
 
-    /* Removing the vertical margin and make the first and last bars rotate again when the sidebar is open, hiding the second bar */
-    #sidebarCollapse.active span {
-        margin: 0 auto;
+    #bottombar.active {
+        margin-bottom: 0;
     }
-
-    #sidebarCollapse.active span:first-of-type {
-        transform: rotate(45deg) translate(2px, 2px);
-    }
-
-    #sidebarCollapse.active span:nth-of-type(2) {
-        opacity: 0;
-    }
-
-    #sidebarCollapse.active span:last-of-type {
-        transform: rotate(-45deg) translate(1px, -1px);
-    }
-
-
 }
 
 .element-Game-Image{
     z-index: 0;
     background-repeat: no-repeat;
-    border: 3px solid goldenrod;
+    border: 3px solid #3399ff;
 }
 
 .element-Game-Text{
     z-index: 1;
     background: white;
-    border: 3px solid goldenrod;
+    border: 3px solid #3399ff;
 }
 
 .element-Game-Link{
     z-index: 2;
     background: transparent;
-    border: 3px dotted goldenrod;
+    border: 3px dotted #3399ff;
 
 }
 

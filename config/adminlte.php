@@ -167,7 +167,7 @@ return [
 
     'use_route_url' => false,
 
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'teacher',
 
     'logout_url' => 'logout',
 
@@ -208,84 +208,41 @@ return [
     */
 
     'menu' => [
+//        [
+//            'text' => 'blog',
+//            'url'  => 'admin/blog',
+//            'can'  => 'manage-blog',
+//        ],
+        ['header' => 'ASSIGNMENT OPTIONS'],
         [
-            'text' => 'search',
-            'search' => true,
-            'topnav' => true,
+            'text' => 'Create new assignment',
+            'url' => 'assignment/editor/current/create',
+            'icon' => 'fas fa-fw fa-plus',
         ],
+        ['header' => 'STUDENT OPTIONS'],
         [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
+            'text' => 'Progress',
+            'icon' => 'fas fa-chart-line',
+            'url' => 'teacher/progress',
         ],
-        [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
+
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
-            'url'  => 'admin/settings',
+            'url' => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
             'text' => 'change_password',
-            'url'  => 'admin/settings',
+            'url' => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
+
+        ['header' => 'ADMINISTRATION OPTIONS'],
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'aqua',
+            'text' => 'Teacher Management',
+            'icon' => 'fas fa-chalkboard-teacher',
+            'url' => 'admin/teachers',
         ],
     ],
 
