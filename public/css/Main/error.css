@@ -1,0 +1,56 @@
+html{overflow: hidden !important;}
+
+#studentpage {
+    margin-top: 62px;
+    min-height: 100vh;
+}
+
+.newsThumbnail {
+    width: 80px;
+    height: auto;
+}
+
+.ribbon {
+    background-image: url("/images/polygon.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ribbonText {
+    color: white;
+    font-weight: bold;
+}
+
+.hoverText:hover {
+    color: #EFEEEE;
+}
+
+.w-60 {
+    width: 60%;
+}
+
+.ml-7 {
+    margin-left: 7%;
+}
+
+.mr-10 {
+    margin-right: 10%
+}
+
+.article, .article:active, .article:hover {
+    color: inherit;
+}
+
+.center-row {
+    display: flex;
+    align-items: center;
+}
+
+div.progress {
+    margin: 0;
+}
+
+.error-text {
+    color: rgba(69,86,95,0.35);
+}
+

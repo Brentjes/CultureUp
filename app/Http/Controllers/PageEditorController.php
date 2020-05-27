@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Page;
 use App\Element;
+use App\Assignment;
 
 class PageEditorController extends Controller
 {
@@ -15,7 +16,7 @@ class PageEditorController extends Controller
      */
     public function index()
     {
-        return 'you got the otherpath';
+
     }
 
     /**
@@ -32,52 +33,66 @@ class PageEditorController extends Controller
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @param Assignment $assignmentID
+     * @return void
      */
-    public function store(Request $request)
+    public function store(Request $request, Assignment $assignmentID)
     {
-        return 'you hit the store path';
+
+
+
+        $request->validate([
+            'name' => 'required|string',
+            'description' => 'nullable|string',
+        ]);
         $page = new Page();
 
-        $this->verifySave($page, $request);
+        $page->name = $request->name;
+        $page->description = $request->description? $request->description : ' ';
+        $page->assignment_id = $assignmentID->id;
+        $page->address = $page->assignment_id;
+
+        $page->save();
+
+        return 'success';
 
     }
 
     /**
      * Display the specified resource.
      *
-     * @param int $id
+     * @param Assignment $assignmentID
+     * @param \App\Page $page
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show($id)
+    public function show(Assignment $assignmentID, Page $page)
     {
+//        $types = ['link', 'img', 'text'];
+//        $elements = [];
+//        for ($counter = 0; $counter < 5; $counter++) {
+//            $element = new Element;
+//            $element->type = $types[rand(0,2)];
+//            if ($element->type == 'link') {
+//                $element->linkPage = 'http://www.google.com';
+//                $element->height = rand(5, 40) . 'vh';
+//                $element->width = rand(5, 40) . 'vw';
+//            } else if ($element->type == 'text') {
+//                $element->text = 'test';
+//                $element->height = rand(5, 40) . 'vh';
+//                $element->width = rand(5, 40)  . 'vw';
+//            } else if ($element->type == 'img') {
+//                $element->imgSrc = 'https://picsum.photos/id/' . rand(1, 300) . '/500/500';
+//                $element->width = rand(5, 40) . 'vw';
+//                $element->height = rand(5, 40) . 'vh';
+//            }
+//            $element->left = rand(0, 80);
+//            $element->top = rand(0, 80);
+//            array_push($elements, $element);
+//        }
+//        $page = new Page;
+//        $page->elements = $elements;
 
-
-        $types = ['link', 'img', 'text'];
-        $elements = [];
-        for ($counter = 0; $counter < 5; $counter++) {
-            $element = new Element;
-            $element->type = $types[rand(0,2)];
-            if ($element->type == 'link') {
-                $element->linkPage = 'http://www.google.com';
-                $element->height = rand(5, 40) . 'vh';
-                $element->width = rand(5, 40) . 'vw';
-            } else if ($element->type == 'text') {
-                $element->text = 'test';
-                $element->height = rand(5, 40) . 'vh';
-                $element->width = rand(5, 40)  . 'vw';
-            } else if ($element->type == 'img') {
-                $element->imgSrc = 'https://picsum.photos/id/' . rand(1, 300) . '/500/500';
-                $element->width = rand(5, 40) . 'vw';
-                $element->height = rand(5, 40) . 'vh';
-            }
-            $element->left = rand(0, 80);
-            $element->top = rand(0, 80);
-            array_push($elements, $element);
-        }
-        $page = new Page;
-        $page->elements = $elements;
-        return view('BookEngine.Editor.editor', compact('page'));
+        return view('BookEngine.Editor.editor', ['page'=>$page, 'assignment'=>$assignmentID]);
     }
 
     /**
@@ -95,42 +110,43 @@ class PageEditorController extends Controller
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
+     * @param Assignment $assignmentID
      * @param Page $page
-     * @return void
+     * @return string
      */
-    public function update(Request $request, Page $page)
+    public function update(Request $request, Assignment $assignmentID, Page $page)
     {
-        $this->verifySave($page, $request);
+
+
+        if(!($assignmentID->id === $page->assignment_id)){
+            return $assignmentID . ' ' . $page->assignment_id;
+        };
+        $request->validate([
+            'name' => 'required|string',
+            'description' => 'nullable|string',
+        ]);
+
+        $page->name = $request->name;
+        $page->description = $request->description? $request->description : ' ';
+
+        $page->address = $page->assignment_id;
+
+        $page->save();
+        dd($page);
     }
 
     /**
      * Remove the specified resource from storage.
      *
+     * @param Assignment $assignment
      * @param Page $page
-     * @return \Illuminate\Http\Response
+     * @return void
      * @throws \Exception
      */
-    public function destroy(Page $page)
+    public function destroy(Assignment $assignmentID, Page $page)
     {
+
         $page->delete();
+        return 'success';
     }
-
-    /**
-     * Save The new info to the DataBase
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\page $page
-     */
-    private function verifySave($page, $request){
-
-        $request->validate([
-            'title' => 'required|string',
-            'description' => 'required|string',
-        ]);
-
-        $page->title = $request->title;
-        $page->description = $request->description;
-
-        $page->save();
-}
 }

@@ -1,5 +1,5 @@
-@extends ('layouts.layout');
-@section ('content');
+@extends ('layouts.layout')
+@section ('content')
 
 @foreach ($errors->all() as $error)
     <p>{{ $error }}</p>
@@ -25,7 +25,7 @@
                     @enderror
                 </div>
 
-                <div class="field">
+                <div class="field form-group">
                     <label class="label" for="subject">Subject</label>
                     <input class="form-control" type="text" name="subject" id="subject" placeholder="Enter subject"
                            value="{{old("subject")}}"
@@ -34,6 +34,23 @@
                     <p>{{$errors->first('subject')}}</p>
                     @enderror
                 </div>
+
+                <div class="field">
+                    <label class="label" for="country">Case location</label>
+                    <br>
+                    <div class="form-group">
+                        <select id="inputState" class="form-control selectpicker" data-live-search="true"
+                                data-size="10">
+                            @foreach($countries as $country)
+                                <option value="{{$country->country_code}}">{{$country->country}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    @error('country')
+                    <p>{{$errors->first('country')}}</p>
+                    @enderror
+                </div>
+
                 <div class="pt-3">
                     <div class="form-check form-check-inline">
                         <input type="checkbox" class="form-check-input" name="isHidden"

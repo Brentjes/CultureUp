@@ -213,12 +213,19 @@ return [
 //            'url'  => 'admin/blog',
 //            'can'  => 'manage-blog',
 //        ],
+        ['header' => 'ASSIGNMENT OPTIONS'],
+        [
+            'text' => 'Create new assignment',
+            'url' => 'assignment/editor/current/create',
+            'icon' => 'fas fa-fw fa-plus',
+        ],
         ['header' => 'STUDENT OPTIONS'],
         [
-            'text' => ' Progress',
+            'text' => 'Progress',
             'icon' => 'fas fa-chart-line',
             'url' => 'teacher/progress',
         ],
+
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
@@ -229,6 +236,13 @@ return [
             'text' => 'change_password',
             'url' => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
+        ],
+
+        ['header' => 'ADMINISTRATION OPTIONS'],
+        [
+            'text' => 'Teacher Management',
+            'icon' => 'fas fa-chalkboard-teacher',
+            'url' => 'admin/teachers',
         ],
     ],
 

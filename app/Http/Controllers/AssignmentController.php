@@ -48,9 +48,6 @@ class AssignmentController extends Controller
      */
     public function show(Assignment $assignment)
     {
-
-        dd($assignment);
-
         return view('BookEngine.View.start', compact('assignment'));
     }
 

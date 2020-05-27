@@ -8,8 +8,8 @@
 
 @section('content')
     <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">Student progress</h3>
+        <div class="card-header ribbon">
+            <h3 class="card-title ribbonText">Student progress</h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body p-0">
@@ -24,13 +24,43 @@
                 <tbody>
                 @foreach($students as $student)
                     <tr data-toggle="collapse" data-target="#row{{$student->id}}" class="accordion-toggle">
-                        <td>{{$student->name}}</td>
-                        <td>{{$student->course_name}}</td>
+                        <td>{{$student->user->name}}</td>
+                        <td>{{$student->course->name}}</td>
                         <td>TODO: 3/10 Completed</td>
                     </tr>
                     <tr>
                         <td colspan="6" class="hiddenRow">
-                            <div class="accordian-body collapse" id="row{{$student->id}}"> {{$student->id}}</div>
+                            <div class="accordian-body collapse" id="row{{$student->id}}">
+                                <div class="m-3">
+                                    <table class="table table-secondary table-sm">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Assignment</th>
+                                            <th scope="col">Progress</th>
+                                            <th scope="col">Score</th>
+                                            <th scope="col">Buttons</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        @foreach($student->assignments as $assignment)
+                                        <tr>
+                                            <td>{{$assignment->name}}</td>
+                                            <td>
+                                                <div class="progress-group">
+                                                    <div class="progress sm">
+                                                        <div class="progress-bar progress-bar-aqua" style="width: {{$assignment->pivot->progress}}0%"></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>{{$assignment->pivot->progress}}/10</td>
+                                            <td></td>
+                                        </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 @endforeach

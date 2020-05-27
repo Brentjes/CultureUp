@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Assignment;
 use Illuminate\Http\Request;
 use App\User;
+use App\Country;
 
 class AssignmentEditorController extends Controller
 {
@@ -21,29 +22,45 @@ class AssignmentEditorController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
     {
-        $id = 1;
-        $user = User::where('id',$id)->first();
-        return view('BookEngine.Editor.Assignment.CreateAssignment');
+        $countries = Country::all();
+        return view('BookEngine.Editor.Assignment.CreateAssignment', compact('countries'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function store(Request $request)
     {
+        //IMPORTANT, ALLOW CHOOSING COURSE SAME FOR UPDATE
 
 
-        $assignment = new assignment();
-        $this->saveInfoToDB($request, $assignment);
+        $request->validate([
+            'title' => 'required|string',
+            'subject' => 'required|string',
+            'isHidden'=> 'in:on',
+            'isLocked'=> 'in:on',
 
-        dd($assignment);
+        ]);
+        $assignment = new Assignment();
+        $assignment->name = $request->title;
+        $assignment->subject = $request->subject;
+        $assignment->course_id  = 1;
+        $assignment->teacher_id = \Auth::user()->teacher->id;
+        $assignment->createdBy = \Auth::user()->name;
+        $assignment->country_id = 1;
+        $assignment->isHidden = (($request->isHidden== 'on') ? true : false);
+        $assignment->isLocked = (($request->isLocked== 'on') ? true : false);
+
+        $assignment->save();
+
+        return redirect(route('editor.current.show', ['assignment' => $assignment->id]));
     }
 
     /**
@@ -55,7 +72,7 @@ class AssignmentEditorController extends Controller
     public function show(Assignment $assignment)
     {
 
-    dd($assignment);
+        return view('BookEngine.Editor.Assignment.EditAssignment', compact('assignment'));
 
     }
 
@@ -82,20 +99,24 @@ class AssignmentEditorController extends Controller
      */
     public function update(Request $request, Assignment $assignment)
     {
+        $request->validate([
+            'name' => 'required|string',
+            'subject' => 'required|string',
+            'isHidden'=> 'in:on',
+            'isLocked'=> 'in:on',
+
+        ]);
 
 
-
-        $assignment->name = $request->json('title');
+        $assignment->name = $request->json('name');
         $assignment->subject = $request->json('subject');
         $assignment->course_id  = 1;
-        $assignment->teacher_id = 1;
-        $assignment->createdBy = \Auth::user()->name;
         $assignment->isHidden = (($request->json('isHidden')== 'on') ? true : false);
         $assignment->isLocked = (($request->json('isLocked')== 'on') ? true : false);
 
         $assignment->save();
 
-        dd($request);
+        return 'success';
     }
 
 
@@ -108,7 +129,8 @@ class AssignmentEditorController extends Controller
      */
     public function destroy(assignment $assignment)
     {
-
+        $assignment->delete();
+        return 'success';
 
     }
 
@@ -144,15 +166,6 @@ class AssignmentEditorController extends Controller
             'message' => 'order stored',
         ];
         return $response;
-
-    }
-
-    public function refreshToken(Request $request)
-    {
-        session()->regenerate();
-        return response()->json([
-            "token"=>csrf_token()],
-            200);
 
     }
 }
