@@ -126,13 +126,13 @@
             });
 
 
-
-            function updateUrlButton(){
+            function updateUrlButton() {
                 let counter = 0;
-                function update(counter){
+
+                function update(counter) {
                     try {
                         document.getElementsByClassName('putUrlHere')[0].href = document.getElementsByClassName('locationUrl')[0].innerText;
-                    }catch {
+                    } catch {
                         if (counter >= 5) {
                             return;
                         }
@@ -142,6 +142,7 @@
                         }, 1000)
                     }
                 }
+
                 update(counter)
             }
 
@@ -149,11 +150,15 @@
     </head>
 
     <body class="assignment-background">
-    <div id="viewDiv"></div>
+
+    <a class="btn btn-primary" style="position: absolute; right: 20px; top: 20px; margin: 100px 100px 0px 0px; background-color: #54a9e1" href="/countries" role="button">Edit countries</a>
+    <div id="viewDiv">
+
+    </div>
 
     </body>
-        <script>
-            document.getElementById('viewDiv').addEventListener('click', updateUrlButton)
-        </script>
+    <script>
+        document.getElementById('viewDiv').addEventListener('click', updateUrlButton)
+    </script>
     </html>
 @endsection

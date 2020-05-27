@@ -87,10 +87,12 @@ Route::get('DokSTestingStuffDontTouch', function () {
 
 Route::resource('current', "AssignmentEditorController")->middleware('auth');
 
-// Routes for GLOBE (AssignmentPage)
+// Routes for GLOBE and COUNTRIES(AssignmentPage)
 Route::get('/globe', function () {
     return view('AssignmentPage.globe');
 })->name('Globe')->middleware('auth');
+
+Route::resource('countries', 'CountryController')->middleware('auth');
 
 // test json decode
 Route::get('/globetest', function () {
