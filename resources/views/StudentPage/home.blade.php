@@ -107,23 +107,12 @@
                                             </blockquote>
                                         </div>
                                     </div>
-                                </a>
-
-                                <a class="list-group-item article" href="/article">
-                                    <div class="row">
-                                        <div class="col text-left pr-0">
-                                            <div class="img-fluid">
-                                                <img class="rounded" src="https://picsum.photos/id/255/1080/1080"
-                                                     style="width: 150px; height: 150px;">
-                                            </div>
-                                        </div>
-                                        <div class="col text-left pl-0">
-                                            <h4 class="h4">Header</h4>
-                                            <blockquote class="blockquote">
-                                                <p class="h6 lead">Excerpt text goes here...</p>
-                                                <footer class="blockquote-footer">Author?</footer>
-                                            </blockquote>
-                                        </div>
+                                    <div class="col text-left pl-0">
+                                        <h4 class="h4">{{$article->title}}</h4>
+                                        <blockquote class="blockquote">
+                                            <p class="h6 lead">{{$article->excerpt}}</p>
+                                            <footer class="blockquote-footer">{{Auth::user()->name}}</footer>
+                                        </blockquote>
                                     </div>
                                 </a>
 
