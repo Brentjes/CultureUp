@@ -23,14 +23,14 @@ Route::get('/admin', function () {
 //Route::resource('article' , 'ArticleController');
 //Route::get('/articles', 'ArticleController@index')->name('articles')->middleware('auth');
 //
-//Route::get('/{name}', function () {
-//    return view('StudentPage.home', [
-//        'assignments' => \App\Assignment::take(5)->latest()->get(),
-//        'articles' => \App\Article::take(4)->latest()->get()
-//    ]);
-//})->where('name', 'home||')->name('Home')->middleware('auth');
+Route::get('/{name}', function () {
+    return view('StudentPage.home', [
+        'assignments' => \App\Assignment::take(5)->latest()->get(),
+        'articles' => \App\Article::take(4)->latest()->get()
+    ]);
+})->where('name', 'home||')->name('Home')->middleware('auth');
 
-Route::get('/', 'articleController@home');
+
 Route::get('/articles', 'ArticleController@index');
 //Route::post('/article/create', 'ArticleController@store');
 //Route::post('/articles', 'ArticleController@store');
