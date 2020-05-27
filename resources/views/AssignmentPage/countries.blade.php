@@ -12,16 +12,12 @@
     </head>
 
     <body class="assignment-background">
-    <div class="container-fluid">
 
+    <div class="container-fluid p-0">
     <div class="row">
-        <div class="card rounded softshadow" style="margin-top: 100px; margin-left: 150px; width: 1200px">
+        <div class="card rounded softshadow w-100 h-auto">
             <div class="card-header d-block justify-content-center ribbon p-0">
-                <div class="row">
-                    <div class="col">
-                        <p class="ribbonText text-center p-3 m-0"> descriptions</p>
-                    </div>
-                </div>
+                        <p class="ribbonText text-center p-3 m-0">Country descriptions</p>
             </div>
             <div class="card-body p-0">
                 <table class="table text-center table-bordered">

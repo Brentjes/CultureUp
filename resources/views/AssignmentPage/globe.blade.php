@@ -150,8 +150,9 @@
     </head>
 
     <body class="assignment-background">
-
-    <a class="btn btn-primary" style="position: absolute; right: 20px; top: 20px; margin: 100px 100px 0px 0px; background-color: #54a9e1" href="/countries" role="button">Edit countries</a>
+    <div><a class="btn btn-outline-primary countryBtn"
+            href="/countries" role="button">Edit countries</a>
+    </div>
     <div id="viewDiv">
 
     </div>
