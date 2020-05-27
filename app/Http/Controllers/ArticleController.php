@@ -22,26 +22,17 @@ class ArticleController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-<<<<<<< HEAD
+     * <<<<<<< HEAD
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
     {
         return view('article.create');
-=======
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
->>>>>>> develop
+
     }
 
+
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-<<<<<<< HEAD
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function store()
@@ -49,13 +40,6 @@ class ArticleController extends Controller
         Article::create($this->validateArticle());
 
         return redirect('/articles');
-=======
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
->>>>>>> develop
     }
 
     /**
@@ -102,7 +86,7 @@ class ArticleController extends Controller
     {
         //
     }
-<<<<<<< HEAD
+
 
     protected function validateArticle()
     {
@@ -112,7 +96,4 @@ class ArticleController extends Controller
             'body' => ['required', 'min:80', 'max:300000', 'string'],
         ]);
     }
-
-=======
->>>>>>> develop
 }
