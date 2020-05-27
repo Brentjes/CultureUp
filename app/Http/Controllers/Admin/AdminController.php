@@ -32,7 +32,9 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        $users = Users::all();
+
+        return view('admin.create_teacher')->with('users', $users);
     }
 
     /**

@@ -45,7 +45,7 @@ Route::namespace('Teacher')->prefix('teacher')->name('teacher.')->middleware('au
 
 //Administration routes
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth')->group(function () {
-    Route::resource('/teachers', 'AdminController', ['except' => ['show', 'create', 'store']]);
+    Route::resource('/teachers', 'AdminController', ['except' => ['show', 'destroy', 'store']]);
 });
 
 Route::group(array('prefix' => 'assignment'), function () {
