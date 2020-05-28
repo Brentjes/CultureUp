@@ -28,7 +28,7 @@
     </section>
     <section id="overlay">
         <div class="container text-center expand">
-            <button id="viewMore" type="button text-center" class="btn btn-outline-secondary"><span
+            <button id="viewMore" type="button text-center" class="btn btn-outline-secondary" style="margin-top: 2px;"><span
                     class="material-icons btn">expand_more</span>
                 View more
             </button>
