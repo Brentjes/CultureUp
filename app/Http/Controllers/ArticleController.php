@@ -17,6 +17,10 @@ class ArticleController extends Controller
         $articles = Article::latest()->get();
 
         return view('articles', compact('articles'));
+
+//        $articles = \App\Article::all();
+//
+//        return view ('/articles', compact('articles'));
     }
 
     /**
@@ -35,11 +39,28 @@ class ArticleController extends Controller
     /**
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store()
+    public function store(Request $request)
     {
-        Article::create($this->validateArticle());
+//        'title' => ['required', 'min:5', 'max: 40', 'string'],
+//            'excerpt' => ['required', 'min:10', 'max:255', 'string'],
+//            'text' => ['required', 'min:10', 'max:300000', 'string'],
+
+//        $article = Article::create($this->validateArticle());
+        $request -> validate([
+            'title' => 'required | min: 5 | max: 50 | string',
+            'excerpt' => 'required | min: 25 | max: 255 | string',
+            'text' => 'required | min: 5 | max: 2000 | string',
+        ]);
+        $article = new Article();
+        $article -> title = $request -> title;
+        $article -> excerpt = $request -> excerpt;
+        $article -> text = $request -> text;
+
+        $article -> save();
 
         return redirect('/articles');
+
+//        return request()->all();
     }
 
     /**
@@ -93,7 +114,7 @@ class ArticleController extends Controller
         return request()->validate([
             'title' => ['required', 'min:5', 'max: 40', 'string'],
             'excerpt' => ['required', 'min:10', 'max:255', 'string'],
-            'body' => ['required', 'min:80', 'max:300000', 'string'],
+            'text' => ['required', 'min:10', 'max:300000', 'string'],
         ]);
     }
 }
