@@ -54,7 +54,10 @@
                     <a class="dropdown-item" href="#" id="toggle-button"><i id="toggleLightIcon"
                                                                             class="fas fa-moon"></i><span
                             id="toggle-button-text"> Dark mode</span></a>
-                    <a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt text-danger"></i> Log out</a>
+                    <a class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt text-danger"></i> Log out</a>
+                    <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">
+                                @csrf
+                    </form>
                 </div>
             </div>
         </li>

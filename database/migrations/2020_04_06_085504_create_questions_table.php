@@ -16,7 +16,7 @@ class CreateQuestionsTable extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('element_id')->unsigned();
-            $table->string('name');
+            $table->string('question');
             $table->integer('score');
             $table->timestamps();
 

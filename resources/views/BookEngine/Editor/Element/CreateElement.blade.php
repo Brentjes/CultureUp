@@ -7,7 +7,7 @@
                 <p class="ribbonText text-center p-3 m-0">Create an Element</p>
             </div>
             <div class="card-body">
-                <form method="POST" action="{{ route('element.store', ['assignment' => 23, 'page' => 11]) }}">
+                <form method="POST" action="{{ route('element.store', ['assignment' => $assignment->id, 'page' => $page->id]) }}">
                     @csrf
                     <div class="form-group">
                         <label class="label" for="positionX">position X</label>
@@ -95,6 +95,24 @@
                         @error('country')
                         <p>{{$errors->first('country')}}</p>
                         @enderror
+                    </div>
+                    <div>
+                        <input type="text" name="question"></input>
+                    </div>
+                    <div>
+                        <input type="text" name="answers[0][answer]" value="['test']">
+                    </div>
+                    <div>
+                        <input type="checkbox" name="answers[0][isCorrect]">
+                    </div>
+                    <div>
+                        <input type="text" name="answers[1][answer]" value="['test']">
+                    </div>
+                    <div>
+                        <input type="checkbox" name="answers[1][isCorrect]">
+                    </div>
+                    <div>
+                        <input name="score" type="number"></input>
                     </div>
 
 
