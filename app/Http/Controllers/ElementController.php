@@ -67,6 +67,7 @@ class ElementController extends Controller
             'height' => 'required|numeric',
             'type' => 'required|string'
         ]);
+
         $element = new Element();
         $element->positionX = $request->positionX;
         $element->positionY = $request->positionY;
@@ -84,7 +85,7 @@ class ElementController extends Controller
 
 
                 break;
-            case 'Link':
+            case 'link':
                 $element->type = $request->type;
                 $type = new Link();
                 $request->validate([
@@ -99,7 +100,7 @@ class ElementController extends Controller
 
 
                 break;
-            case 'Image':
+            case 'image':
                 $element->type = $request->type;
                 $request->validate([
                     'alt' => 'required|string',
@@ -110,11 +111,33 @@ class ElementController extends Controller
                 $type->image = $request->image;
 
                 break;
-            case 'Question':
+            case 'question':
                 $element->type = $request->type;
+                $request->validate([
+                    'question' => 'required|string',
+                    'answers' => 'required|array|between:2,5',
+                    'score' => 'required|numeric'
+                ]);
 
+                $type = new Question();
+                $type->name = $request->question;
+                $type->score = $request->score;
 
+                $allAnswer = [];
+                foreach ($request->answers as $answerReq) {
+                    //fix validator
+                    $answerReq->validate([
+                        'answer' => 'required|string',
+                        'isCorrect' => 'in:on',
 
+                    ]);
+                    $answer = new Answer();
+                    $answer->answer = $answerReq->answer;
+                    $answer->isCorrect = (($answerReq->isCorrect== 'on') ? true : false);
+
+                    array_push($allAnswer, $answer);
+
+                        }
                 break;
             default;
             $returnMessage = 'Type is not defined or Incorrect '.($request->type?$request->type:'undefined');
@@ -125,6 +148,12 @@ class ElementController extends Controller
         $element->save();
         $type->element_id = $element->id;
         $type->save();
+        if($type === 'Question'){
+            foreach ($allAnswer as $answer){
+                $answer->question_id = $type->id;
+                $answer->save();
+            }
+        }
         dd($request);
     }
 
