@@ -116,6 +116,8 @@ class ElementController extends Controller
                 $request->validate([
                     'question' => 'required|string',
                     'answers' => 'required|array|between:2,5',
+                    'answers.*.answer' => 'required|string',
+                    'answers.*.isCorrect' => 'in:on',
                     'score' => 'required|numeric'
                 ]);
 
@@ -124,13 +126,15 @@ class ElementController extends Controller
                 $type->score = $request->score;
 
                 $allAnswer = [];
-                foreach ($request->answers as $answerReq) {
-                    //fix validator
-                    $answerReq->validate([
-                        'answer' => 'required|string',
-                        'isCorrect' => 'in:on',
 
-                    ]);
+    //                for ($i = 0; $i < sizeof($request->answers); $i++) {
+    //                    dd($request->answers[$i]);
+    //                }
+
+                foreach ($request->answers as $answerReq) {
+
+                    dd($answerReq->answer);
+
                     $answer = new Answer();
                     $answer->answer = $answerReq->answer;
                     $answer->isCorrect = (($answerReq->isCorrect== 'on') ? true : false);
