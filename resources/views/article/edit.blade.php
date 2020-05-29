@@ -56,7 +56,19 @@
                         <div class="col">
                             <button class="btn btn-danger" onclick="validateArticle()">Cancel</button>
                         </div>
+
+                        <form method="POST" action="/article/{{ $article->id }}">
+                            @csrf
+                            @method('delete')
+                            <div class="col">
+                                <div class="control">
+                                    <button class="btn btn-danger" type="submit">Delete</button>
+                                </div>
+                            </div>
+                        </form>
+
                     </div>
+
                 </form>
             </div>
         </div>
