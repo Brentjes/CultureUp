@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Teacher;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
 {
@@ -50,7 +52,11 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $teacher = new Teacher();
+        $teacher->user_id = request('user_id');
+        $teacher->save();
+
+        return redirect()->route('admin.teachers.index')->with('success','Teacher created successfully!');
     }
 
     /**
@@ -93,8 +99,13 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(teacher $teacher)
     {
-        //
+        if($teacher->user->id == Auth::user()->id) {
+            return redirect()->route('admin.teachers.index')->with('danger','You can not remove your own role!');
+        }
+        $teacher->delete();
+
+        return redirect()->route('admin.teachers.index')->with('warning','Teacher role removed!');
     }
 }

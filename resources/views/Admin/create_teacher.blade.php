@@ -41,7 +41,17 @@
                         <td>{{$user->id}}</td>
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
-                        <td><button type="button" class="btn btn-sm btn-success float-right"><i class="fas fa-plus-circle"></i> Make Teacher</button></td>
+                        <td><form class="mb-0"
+                                  action="{{route('admin.teachers.store')}}"
+                                  method="POST">
+                                @csrf
+                                {{ method_field('POST') }}
+                                <button type="submit" class="btn btn-success btn-sm float-right">
+                                    <i class="fas fa-plus-circle"></i> Make Teacher
+                                </button>
+                                <input type="hidden" name="user_id" value="{{$user->id}}">
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>
