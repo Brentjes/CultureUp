@@ -48,10 +48,10 @@
 
             <div class="row text-center pt-4">
                 <div class="col">
-                    <button class="btn btn-light" type="submit" id="updateAssignmentButton">Submit</button>
+                    <button class="btn btn-danger" onclick="untoggleOtherForm()">Cancel</button>
                 </div>
                 <div class="col">
-                    <button class="btn btn-danger" onclick="untoggleOtherForm()">Cancel</button>
+                    <button class="btn btn-light" type="submit" id="updateAssignmentButton">Submit</button>
                 </div>
             </div>
 

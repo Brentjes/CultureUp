@@ -72,10 +72,10 @@
                 </div>
                 <div class="row text-center pt-4">
                     <div class="col">
-                        <button class="btn btn-light" type="submit">Submit</button>
+                        <button class="btn btn-light">Cancel</button>
                     </div>
                     <div class="col">
-                        <button class="btn btn-light">Cancel</button>
+                        <button class="btn btn-light" type="submit">Submit</button>
                     </div>
                 </div>
 

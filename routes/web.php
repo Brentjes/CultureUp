@@ -14,7 +14,6 @@
 //Authentication Routes
 Auth::routes();
 
-
 Route::get('/admin', function () {
     return view('home');
 })->name('home')->middleware('auth');

@@ -1,7 +1,4 @@
-@extends ('layouts.layout')
-@section ('content')
-
-    <head>
+ <head>
         <link href="/css/main/main.css">
     </head>
     <div class="mt-5 pt-5 container d-flex justify-content-center">
@@ -121,15 +118,13 @@
 
                     <div class="row text-center pt-4">
                         <div class="col">
-                            <button class="btn btn-light" type="submit">Submit</button>
+                            <button class="btn btn-danger">Cancel</button>
                         </div>
                         <div class="col">
-{{--                            <button class="btn btn-light">Cancel</button>--}}
-                            <button class="btn btn-danger">Cancel</button>
+                            <button class="btn btn-light" type="submit">Submit</button>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-@endsection
