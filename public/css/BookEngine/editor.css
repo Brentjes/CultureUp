@@ -42,6 +42,7 @@ html {
 }
 
 #sidebar {
+    top: 0;
     position: absolute;
     min-width: 250px;
     max-width: 250px;

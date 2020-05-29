@@ -47,16 +47,18 @@
                 <a><i class="bar-icon fas fa-link"></i><span class="bar-text"> Add Link</span></a>
             </li>
             <li class="softshadow stick">
-                <a id="editPageToggleButton"><i class="bar-icon fas fa-cog"></i> <span class="bar-text"> Page settings</span></a>
+                <a id="editPageToggleButton"><i class="bar-icon fas fa-cog"></i> <span
+                        class="bar-text"> Page settings</span></a>
             </li>
             <li class="softshadow stick" id="test">
-                <a href="{{route('element.create', [$page->assignment->id, $page->id])}}"><i class="bar-icon fas fa-quote-right"></i><span class="bar-text"> elementText</span></a>
+                <a href="{{route('element.create', [$page->assignment->id, $page->id])}}"><i
+                        class="bar-icon fas fa-quote-right"></i><span class="bar-text"> elementText</span></a>
             </li>
         </ul>
     </nav>
 
     <div id="content">
-    @include ('BookEngine.page', compact('page'))
+        @include ('BookEngine.page', compact('page'))
     </div>
 
     <!-- Bottombar -->
@@ -95,26 +97,20 @@
 
     @include('BookEngine.Editor.Page.PageForm', ['type' => "edit"])
     @include('BookEngine.Editor.Page.PageForm', ['type' => "new"])
+    @include ('BookEngine.Editor.Element.CreateImage')
 </div>
 
 <div id="ElementList">
-<div>{{$page->title}}</div>
+    <div>{{$page->title}}</div>
 </div>
 <meta>
 <script>
 
 
+    {{--    @include("BookEngine.Editor.js.assignmentEdit")--}}
 
-
-
-
-
-{{--    @include("BookEngine.Editor.js.assignmentEdit")--}}
-
-{{--    @include("BookEngine.Editor.js.newPage")--}}
+    {{--    @include("BookEngine.Editor.js.newPage")--}}
     @include("BookEngine.Editor.js.editPage")
-
-
 </script>
 
 
