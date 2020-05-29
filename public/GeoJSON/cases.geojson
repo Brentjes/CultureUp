@@ -7,9 +7,10 @@
         "country_code": "CN",
         "country": "China",
         "imageUrl": "https://images.pexels.com/photos/1115175/pexels-photo-1115175.jpeg",
-        "cases": "5 cases available",
         "location": "East Asia",
-        "facts": "China is the world's third biggest country by territory, and has the largest population. It is one of the longest-running civilizations on earth with its unique and attractive culture. <br><br>It has developed at record speed to become the second largest economy in the world."
+        "language": "The official language of China is Mandarin.",
+        "population": "The population of China is 1.393 billion.",
+        "facts": "China is the world's third biggest country by territory and has the largest population. It is one of the longest-running civilizations on earth with its unique and attractive culture. China has developed at record speed, to become the second largest economy in the world."
       },
       "geometry": {
         "type": "Point",
@@ -24,10 +25,11 @@
       "properties": {
         "country_code": "IN",
         "country": "India",
-        "imageUrl": "https://secure.i.telegraph.co.uk/multimedia/archive/02933/UPS-India_2933735b.jpg",
-        "cases": "300 points, Indian badge",
-        "facts": "This case is all about the important business etiquette in India",
-        "location": "South Asia"
+        "imageUrl": "https://images.unsplash.com/photo-1576568740080-b957a912a91c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+        "location": "South Asia",
+        "language": "The official languages are Hindi and English.",
+        "population": "The population of India is 1.353 billion.",
+        "facts": "Its government is a constitutional republic that represents a highly diverse population consisting of thousands of ethnic groups and likely hundreds of languages. India has the largest postal network in the world, with over 1,55,015 post offices."
       },
       "geometry": {
         "type": "Point",
@@ -41,7 +43,12 @@
       "type": "Feature",
       "properties": {
         "country_code": "US",
-        "country": "United States"
+        "country": "United States",
+        "language": " ",
+        "imageUrl": " ",
+        "population": " ",
+        "location": " ",
+        "facts": " "
       },
       "geometry": {
         "type": "Point",
@@ -55,7 +62,12 @@
       "type": "Feature",
       "properties": {
         "country_code": "ID",
-        "country": "Indonesia"
+        "country": "Indonesia",
+        "imageUrl": "https://images.unsplash.com/photo-1538582709238-0a503bd5ae04?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+        "location": "Southeast Asia and Oceania",
+        "language": "The official language is Indonesian",
+        "population": "The population is 267.7 million",
+        "facts": " "
       },
       "geometry": {
         "type": "Point",
@@ -69,7 +81,12 @@
       "type": "Feature",
       "properties": {
         "country_code": "BR",
-        "country": "Brazil"
+        "country": "Brazil",
+        "imageUrl": " ",
+        "location": " ",
+        "language": " ",
+        "population": " ",
+        "facts": " "
       },
       "geometry": {
         "type": "Point",
@@ -83,7 +100,12 @@
       "type": "Feature",
       "properties": {
         "country_code": "PK",
-        "country": "Pakistan"
+        "country": "Pakistan",
+        "imageUrl": "https://images.unsplash.com/photo-1539268644145-19e91dd45e51?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1048&q=80",
+        "location": "South Asia",
+        "language": "The official languages are Urdu and English",
+        "population": "The population of Pakistan is 212.2 million.",
+        "facts": "One of the world's earliest and largest civilizations flourished in this region. Pakistan's superior position in Asia makes it a center of trade in the region. Their largest natural deep port of the world acts as a portal for western China."
       },
       "geometry": {
         "type": "Point",
@@ -97,7 +119,12 @@
       "type": "Feature",
       "properties": {
         "country_code": "NG",
-        "country": "Nigeria"
+        "country": "<strong>Nigeria</strong>",
+        "imageUrl": "https://images.unsplash.com/photo-1572816225927-d08fb138f2b2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+        "location": "West Africa",
+        "language": "The official language is English.",
+        "population": "The population of Nigeria is 195.9 million.",
+        "facts": "Nigeria has over 500 indigenous languages and 250 ethnic groups with a distinct culture and traditions.They are a large producer of crude oil, with an average of 2,5 million barrels a day. It plays a vital role in the Nigerian economy."
       },
       "geometry": {
         "type": "Point",
@@ -111,7 +138,12 @@
       "type": "Feature",
       "properties": {
         "country_code": "BD",
-        "country": "Bangladesh"
+        "country": "Bangladesh",
+        "imageUrl": "https://images.unsplash.com/photo-1583429891508-015ef9cd958e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+        "location": "South Asia",
+        "language": "The official language is Bengali",
+        "population": "The population of Bangladesh is 161.4 million",
+        "facts": "Bangladesh as a country only exists since 1971. It used to be East Pakistan until its independence. Many worldwide clothing brands source their products from Bangladesh, with an estimated 4,000 garment factories in operation. Along with this, problems of child labour and lack of work environment safety exist."
       },
       "geometry": {
         "type": "Point",
@@ -125,7 +157,12 @@
       "type": "Feature",
       "properties": {
         "country_code": "RU",
-        "country": "Russia"
+        "country": "Russia",
+        "imageUrl": "https://images.unsplash.com/photo-1545761931-0d597948c4c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "location": "Eastern Europe and Northern Asia",
+        "language": "The official language is Russian.",
+        "population": "The population of Russia is 144.5 million.",
+        "facts": "Russia has more billionaires than anywhere else in the world - 79, according to Forbes. It does seem that Russia is a very corrupt country, ranked 137 out of 198 on Transparency International’s 2019 Corruption Perception Index. Moscow and St. Petersburg are the two most important cultural and financial centres in Russia  "
       },
       "geometry": {
         "type": "Point",
@@ -139,7 +176,12 @@
       "type": "Feature",
       "properties": {
         "country_code": "MX",
-        "country": "Mexico"
+        "country": "Mexico",
+        "imageUrl": " ",
+        "location": " ",
+        "language": " ",
+        "population": " ",
+        "facts": " "
       },
       "geometry": {
         "type": "Point",

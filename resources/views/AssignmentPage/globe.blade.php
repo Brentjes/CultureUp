@@ -105,13 +105,16 @@
             </div>
             <div class="popupDescription">
               <p class="info">
-                <span class="esri-icon-map-pin"></span><span class="locationUrl">{location}</span>
+                <span class="esri-icon-map-pin"></span><span> {location}</span>
               </p>
               <p class="info">
-                <span class="esri-icon-documentation"></span> {facts}
+                <span class="esri-icon-chat"></span><span> {language}</span>
               </p>
               <p class="info">
-                <span class="esri-icon-announcement"></span> {cases}
+                <span class="esri-icon-group"></span> {population}
+              </p>
+              <p class="info">
+                <span class="esri-icon-collection"></span> {facts}
               </p>
                <div class="text-center">
                 <a class="link-unstyled btn btn-outline-light putUrlHere" href="">
@@ -150,9 +153,9 @@
     </head>
 
     <body class="assignment-background">
-    <div><a class="btn btn-outline-primary countryBtn"
-            href="/countries" role="button">Edit countries</a>
-    </div>
+{{--    <div><a class="btn btn-outline-primary countryBtn"--}}
+{{--            href="/countries" role="button">Edit countries</a>--}}
+{{--    </div>--}}
     <div id="viewDiv">
 
     </div>

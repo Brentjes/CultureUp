@@ -30,7 +30,7 @@ body,
 }
 
 .esri-feature__main-container .popupImage {
-    max-height: 200px;
+    max-height: 150px;
     overflow: hidden;
 }
 
@@ -58,7 +58,7 @@ body,
 }
 
 p.info {
-    margin-bottom: 2em;
+    margin-bottom: 1.5em;
     font-size: 1.1em;
 }
 
