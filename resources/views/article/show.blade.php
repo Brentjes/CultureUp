@@ -11,7 +11,7 @@
             {{$article->text}}
         </div>
         <div class="card-footer text-center p-2">
-            {{Auth::user()->name}}
+            {{$article->user->name}}
         </div>
     </div>
 

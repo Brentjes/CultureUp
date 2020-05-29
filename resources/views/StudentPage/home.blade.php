@@ -73,7 +73,7 @@
                                         <h4 class="h4">{{$article->title}}</h4>
                                         <blockquote class="blockquote">
                                             <p class="h6 lead">{{$article->excerpt}}</p>
-                                            <footer class="blockquote-footer">{{Auth::user()->name}}</footer>
+                                            <footer class="blockquote-footer">{{$article->user->name}}</footer>
                                         </blockquote>
                                     </div>
                                 </div>

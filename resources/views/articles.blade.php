@@ -17,7 +17,7 @@
                                     <h4 class="h4">{{$article->title}}</h4>
                                     <blockquote class="blockquote">
                                         <p class="h6 lead">{{$article->excerpt}}</p>
-                                        <footer class="blockquote-footer pt-4">{{Auth::user()->name}}</footer>
+                                        <footer class="blockquote-footer pt-4">{{$article->user->name}}</footer>
                                     </blockquote>
                                 </div>
                             </div>
@@ -34,11 +34,7 @@
             </button>
             <hr>
             <h2 class="display-3">Lorem Ipsum <br>
-{{--                <button class="btn btn-outline-info text-center">--}}
-{{--                    <a href="article/create">--}}
-{{--                        Create--}}
-{{--                    </a>--}}
-{{--                </button>--}}
+
 
                 <button type="button text-center" class="btn btn-outline-info">
                     <a href="article/create">
