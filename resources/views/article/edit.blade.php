@@ -9,11 +9,10 @@
     <div class="mt-5 pt-5 container d-flex justify-content-center">
         <div class="card rounded p-0">
             <div class="card-header ribbon p-0">
-                <p class="ribbonText text-center p-3 m-0">Create an Article</p>
+                <p class="ribbonText text-center p-3 m-0">Edit an Article</p>
             </div>
             <div class="card-body">
-                <form method = "POST" action= "{{ Route('article.store') }}">
-{{--                <form method = "POST" action= "/article/create">--}}
+                <form method = "POST" action= "{{ Route('article.update') }}">
                     @csrf
 
 
@@ -56,15 +55,7 @@
                             <button class="btn btn-light" type="submit">Submit</button>
                         </div>
                         <div class="col">
-                            {{--                            <button class="btn btn-light">Cancel</button>--}}
-{{--                            <button class="btn btn-danger">Cancel</button>--}}
-{{--                            <button class="btn btn-danger">--}}
-{{--                                <a href="/articles">--}}
-{{--                                    Cancel--}}
-{{--                                </a>--}}
-{{--                            </button>--}}
-
-                                <button class="btn btn-danger" onclick="validateArticle()">Cancel</button>
+                            <button class="btn btn-danger" onclick="validateArticle()">Cancel</button>
                         </div>
                     </div>
                 </form>

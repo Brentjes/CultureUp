@@ -51,7 +51,7 @@
                     @foreach ($articles->where('user_id' , Auth::user()->id) as $article)
                         <i href="{{ route('article.show', $article -> id) }}" class="custom-card">
                             <div class="card rounded text-center h-auto rounded softshadow">
-                                <i class="fas fa-pencil-alt float-right m-2"></i>
+                                <a href="article/{{$article->id}}/edit"><i class="fas fa-pencil-alt float-right m-2"></i></a>
                                 <img class="img-fluid rounded" src="https://picsum.photos/id/{{$article->id}}/700">
                                 <div class="card-body pb-0">
                                     <div class="col text-left p-0">

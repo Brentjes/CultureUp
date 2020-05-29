@@ -41,11 +41,6 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-//        'title' => ['required', 'min:5', 'max: 40', 'string'],
-//            'excerpt' => ['required', 'min:10', 'max:255', 'string'],
-//            'text' => ['required', 'min:10', 'max:300000', 'string'],
-
-//        $article = Article::create($this->validateArticle());
         $request -> validate([
             'title' => 'required | min: 5 | max: 50 | string',
             'excerpt' => 'required | min: 25 | max: 255 | string',
@@ -61,7 +56,6 @@ class ArticleController extends Controller
 
         return redirect('/articles');
 
-//        return request()->all();
     }
 
     /**
@@ -83,7 +77,7 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        //
+        return ('article.edit');
     }
 
     /**
@@ -95,7 +89,20 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request -> validate([
+            'title' => 'required | min: 5 | max: 50 | string',
+            'excerpt' => 'required | min: 25 | max: 255 | string',
+            'text' => 'required | min: 5 | max: 2000 | string',
+        ]);
+        $article = new Article();
+        $article -> title = $request -> title;
+        $article -> excerpt = $request -> excerpt;
+        $article -> text = $request -> text;
+        $article -> user_id = \Auth::user()->id;
+
+        $article -> save();
+
+        return redirect('/articles');
     }
 
     /**
