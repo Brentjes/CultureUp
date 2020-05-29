@@ -59,7 +59,7 @@ Route::group(array('prefix' => 'assignment'), function () {
             'current' => 'assignment',],
             'as' => 'editor'])->middleware('auth');
 
-        Route::resource('currentElement/{assignmentID}/page/{pageID}/element', 'ElementController')->middleware('auth');
+        Route::resource('currentElement/{assignment}/page/{page}/element', 'ElementController')->middleware('auth');
     });
 
     //element/create

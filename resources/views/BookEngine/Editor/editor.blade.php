@@ -49,6 +49,9 @@
             <li class="softshadow stick">
                 <a id="editPageToggleButton"><i class="bar-icon fas fa-cog"></i> <span class="bar-text"> Page settings</span></a>
             </li>
+            <li class="softshadow stick" id="test">
+                <a href="{{route('element.create', [$page->assignment->id, $page->id])}}"><i class="bar-icon fas fa-quote-right"></i><span class="bar-text"> elementText</span></a>
+            </li>
         </ul>
     </nav>
 

@@ -10,7 +10,7 @@
                 <p class="ribbonText text-center p-3 m-0">Create an Element</p>
             </div>
             <div class="card-body">
-                <form method="POST" action="{{ route('element.store', ['assignmentID' => 5, 'pageID' => 10]) }}">
+                <form method="POST" action="{{ route('element.store', ['assignment' => 23, 'page' => 11]) }}">
                     @csrf
                     <div class="form-group">
                         <label class="label" for="positionX">position X</label>
@@ -79,9 +79,24 @@
 
                     <div class="field form-group">
                         <label class="label" for="text">text</label>
-                        <textarea id="textArea" name="textArea" rows="4" cols="50" placeholder="Insert text here"></textarea>
+                        <textarea id="textArea" name="text" rows="4" cols="50" placeholder="Insert text here"></textarea>
                         @error('text')
                         <p>{{$errors->first('text')}}</p>
+                        @enderror
+                    </div>
+
+                    <div class="field">
+                        <label class="label" for="page_id">page_id</label>
+                        <br>
+                        <select id="country" name="page_id">
+                            @foreach($assignment->pages as $pageInfo)
+                                @if($pageInfo->id !== $page->id)
+                                <option value="{{$pageInfo->id}}">{{$pageInfo->name}}</option>
+                                @endif
+                            @endforeach
+                        </select>
+                        @error('country')
+                        <p>{{$errors->first('country')}}</p>
                         @enderror
                     </div>
 

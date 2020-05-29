@@ -21,7 +21,7 @@ class ElementController extends Controller
      */
     public function index($assignment, $page)
     {
-        dd($assignment);
+        dd($page);
         //
     }
 
@@ -34,27 +34,30 @@ class ElementController extends Controller
      */
     public function create(Assignment $assignment, Page $page)
     {
-        return view ('BookEngine.Editor.Element.CreateElement', ['assignmentID'=>$assignment, 'pageID'=>$page,]);
+
+        return view ('BookEngine.Editor.Element.CreateElement', ['assignment'=>$assignment, 'page'=>$page,]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param Assignment $assignment
+     * @param Assignment $assignmentID
      * @param Page $page
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request, Assignment $assignment, Page $page)
     {
+        //$assingment returns the value that page should be
+        //and $page returns the value that assignment should be
         if(!isset(\Auth::user()->teacher)){
-            return view('errors.404');
+            return abort(404);
         }
-    dd($assignment);
+
         if($page->assignment->id !== $assignment->id){
             return 'Page isnt owned by this assingment or or this page doesnt belong to this assingment';
         }
-
+//        dd($request);
         //gather postion x and y from element data-x and data-y
 
         $request->validate([
@@ -71,13 +74,14 @@ class ElementController extends Controller
         $element->height = $request->height;
         $element->page_id = $page->id;
         switch ($request->type) {
-            case 'Text':
+            case 'text':
                 $element->type = $request->type;
                 $request->validate([
                     'text' => 'required|string'
                 ]);
                 $type = new Text();
                 $type->text = $request->text;
+
 
                 break;
             case 'Link':
@@ -113,7 +117,7 @@ class ElementController extends Controller
 
                 break;
             default;
-            $returnMessage = 'Type is not defined or Incorrect'.($request->type?$request->type:'undefined');
+            $returnMessage = 'Type is not defined or Incorrect '.($request->type?$request->type:'undefined');
                 return $returnMessage;
             break;
         }
@@ -156,7 +160,7 @@ class ElementController extends Controller
     public function update(Request $request, $id)
     {
         if(!isset(\Auth::user()->teacher)){
-            return view('errors.404');
+            return abort(404);
         }
         //
     }
@@ -170,7 +174,7 @@ class ElementController extends Controller
     public function destroy($id)
     {
         if(!isset(\Auth::user()->teacher)){
-            return view('errors.404');
+            return abort(404);
         }
         //
     }
