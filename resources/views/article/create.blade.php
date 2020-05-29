@@ -4,6 +4,8 @@
     <head>
         <link href="/css/main/main.css">
     </head>
+
+
     <div class="mt-5 pt-5 container d-flex justify-content-center">
         <div class="card rounded p-0">
             <div class="card-header ribbon p-0">
@@ -69,4 +71,5 @@
             </div>
         </div>
     </div>
+
 @endsection

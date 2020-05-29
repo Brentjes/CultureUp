@@ -55,6 +55,7 @@ class ArticleController extends Controller
         $article -> title = $request -> title;
         $article -> excerpt = $request -> excerpt;
         $article -> text = $request -> text;
+        $article -> user_id = \Auth::user()->id;
 
         $article -> save();
 
