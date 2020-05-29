@@ -13,7 +13,8 @@
             </div>
             <div class="card-body">
                 <form method="POST" action="/article/{{ $article->id }}">
-                    @csrf @method('PUT')
+                    @csrf
+                    @method('PUT')
 
 
                     <div class="field form-group">

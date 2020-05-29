@@ -41,18 +41,18 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        $request -> validate([
+        $request->validate([
             'title' => 'required | min: 5 | max: 50 | string',
             'excerpt' => 'required | min: 25 | max: 255 | string',
             'text' => 'required | min: 5 | max: 2000 | string',
         ]);
         $article = new Article();
-        $article -> title = $request -> title;
-        $article -> excerpt = $request -> excerpt;
-        $article -> text = $request -> text;
-        $article -> user_id = \Auth::user()->id;
+        $article->title = $request->title;
+        $article->excerpt = $request->excerpt;
+        $article->text = $request->text;
+        $article->user_id = \Auth::user()->id;
 
-        $article -> save();
+        $article->save();
 
         return redirect('/articles');
 
@@ -78,7 +78,7 @@ class ArticleController extends Controller
     public function edit(Article $article)
     {
         return view('article.edit', ['article' => $article]);
-        return redirect ('/articles' . $article -> id);
+
     }
 
     /**
@@ -88,20 +88,22 @@ class ArticleController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id)
     {
-        $request -> validate([
+        request()->validate([
             'title' => 'required | min: 5 | max: 50 | string',
             'excerpt' => 'required | min: 25 | max: 255 | string',
             'text' => 'required | min: 5 | max: 2000 | string',
         ]);
-        $article = new Article();
-        $article -> title = $request -> title;
-        $article -> excerpt = $request -> excerpt;
-        $article -> text = $request -> text;
-        $article -> user_id = \Auth::user()->id;
 
-        $article -> save();
+        $article = Article::find($id);
+//        $article = $this->update(Article) ;
+        $article->title = request('title');
+        $article->excerpt = request('excerpt');
+        $article->text = request('text');
+        $article->user_id = \Auth::user()->id;
+
+        $article->save();
 
         return redirect('/articles');
     }
