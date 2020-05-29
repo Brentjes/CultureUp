@@ -51,10 +51,10 @@
 
                     <div class="row text-center pt-4">
                         <div class="col">
-                            <button class="btn btn-light" type="submit">Submit</button>
+                            <button class="btn btn-success" type="submit">Submit</button>
                         </div>
                         <div class="col">
-                            <button class="btn btn-danger" onclick="validateArticle()">Cancel</button>
+                            <button class="btn btn-light" onclick="validateArticle()">Cancel</button>
                         </div>
 
                         <form method="POST" action="/article/{{ $article->id }}">
