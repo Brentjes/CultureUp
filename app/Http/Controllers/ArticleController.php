@@ -73,11 +73,12 @@ class ArticleController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function edit($id)
+    public function edit(Article $article)
     {
-        return ('article.edit');
+        return view('article.edit', ['article' => $article]);
+        return redirect ('/articles' . $article -> id);
     }
 
     /**

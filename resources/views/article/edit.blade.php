@@ -9,18 +9,17 @@
     <div class="mt-5 pt-5 container d-flex justify-content-center">
         <div class="card rounded p-0">
             <div class="card-header ribbon p-0">
-                <p class="ribbonText text-center p-3 m-0">Edit an Article</p>
+                <p class="ribbonText text-center p-3 m-0">Edit your Article</p>
             </div>
             <div class="card-body">
-                <form method = "POST" action= "{{ Route('article.update') }}">
-                    @csrf
+                <form method="POST" action="/article/{{ $article->id }}">
+                    @csrf @method('PUT')
 
 
                     <div class="field form-group">
                         <label class="label" for="title">Title</label>
                         <input class="form-control" type="text" name="title" id="title"
-                               placeholder="Your title goes here"
-                               value="{{old("title")}}"
+                               value="{{$article-> title}}"
                                required>
                         @error('title')
                         <p>{{$errors->first('title')}}</p>
@@ -31,8 +30,7 @@
                     <div class="field form-group">
                         <label class="label" for="excerpt">excerpt</label>
                         <input class="form-control" type="text" name="excerpt" id="excerpt"
-                               placeholder="Your excerpt goes here"
-                               value="{{old("excerpt")}}"
+                               value="{{$article -> excerpt}}"
                                required>
                         @error('excerpt')
                         <p>{{$errors->first('excerpt')}}</p>
@@ -43,7 +41,7 @@
                     <div class="field form-group">
                         <label class="label" for="text">text</label>
                         <textarea id="textArea" name="text" rows="4" cols="50"
-                                  placeholder="Your text goes here">{{old("text")}}</textarea>
+                                  required>{{ $article -> text}}</textarea>
                         @error('text')
                         <p>{{$errors->first('text')}}</p>
                         @enderror
