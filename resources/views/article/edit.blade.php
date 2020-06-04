@@ -9,9 +9,16 @@
     <div class="mt-5 pt-5 container d-flex justify-content-center">
         <div class="card rounded p-0">
             <div class="card-header ribbon p-0">
-                <p class="ribbonText text-center p-3 m-0">Edit your Article</p>
+                <form method="POST" action="/article/{{$article->id}}">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger float-right mt-2 mb-2 mr-2 ml-0" type="submit"><i class="fas fa-trash-alt"></i></button>
+                </form>
+                <p class="ribbonText text-center p-3 m-0 ml-5">Edit your Article</p>
             </div>
+
             <div class="card-body">
+
                 <form method="POST" action="/article/{{ $article->id }}">
                     @csrf
                     @method('PUT')
@@ -56,20 +63,22 @@
                         <div class="col">
                             <button class="btn btn-light">Cancel</button>
                         </div>
-
                     </div>
                 </form>
 
-                <form method="POST" action="/article/{{$article->id}}">
-                    @csrf
-                    @method('DELETE')
-                    <div class="col">
-                        <div class="control">
-                            <button class="btn btn-danger" type="submit">Delete</button>
-                        </div>
-                    </div>
-                </form>
             </div>
+{{--            <div class="card-footer">--}}
+
+{{--                <form method="POST" action="/article/{{$article->id}}">--}}
+{{--                    @csrf--}}
+{{--                    @method('DELETE')--}}
+{{--                    --}}{{--                    <div class="col">--}}
+{{--                    --}}{{--                        <div class="control">--}}
+{{--                    <button class="btn btn-danger float-right" type="submit">Delete</button>--}}
+{{--                    --}}{{--                        </div>--}}
+{{--                    --}}{{--                    </div>--}}
+{{--                </form>--}}
+{{--        </div>--}}
         </div>
     </div>
 
