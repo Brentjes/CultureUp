@@ -1,9 +1,11 @@
 @extends ('layouts.layout')
+@section('title', $user->name)
 @section ('content')
     <head>
         <link rel="stylesheet" type="text/css" href="/css/teacher/profile.css">
-        <title>CultureUp - Profile</title>
+
     </head>
+
 
     <section id="studentpage">
         <div class="container">

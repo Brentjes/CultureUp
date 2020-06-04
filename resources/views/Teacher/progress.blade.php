@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('Teacher', 'Dashboard')
+@section('title', 'Teacher - Progress')
 
 @section('content_header')
 

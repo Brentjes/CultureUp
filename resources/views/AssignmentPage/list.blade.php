@@ -1,8 +1,7 @@
 @extends ('layouts.layout')
+@section('title', 'List')
 @section('content')
-    <head>
-        <title>CultureUp - List</title>
-    </head>
+
 
     <section id="home">
         <div class="container-fluid cards">
