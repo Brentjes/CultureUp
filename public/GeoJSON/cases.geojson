@@ -172,6 +172,25 @@
         ]
       }
     },
+        {
+          "type": "Feature",
+          "properties": {
+            "country_code": "DE",
+            "country": "Germany",
+            "imageUrl": "https://images.unsplash.com/photo-1527142573877-7d395d8fa568?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80",
+            "location": "Western Europe",
+            "language": "The official language is German.",
+            "population": "The population of Germany is 83.02 million.",
+            "facts": "Germany is Europe's most industrialised and populous country. Famed for its technological achievements, it has also produced some of Europe's most celebrated composers, philosophers and poets."
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              10.451526,
+              51.165691
+            ]
+          }
+        },
     {
       "type": "Feature",
       "properties": {

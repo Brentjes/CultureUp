@@ -6,7 +6,6 @@
 
         <link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css"/>
         <link rel="stylesheet" href="/css/Assignment/globe.css"/>
-
         <script src="https://js.arcgis.com/4.15/"></script>
 
         <script>
@@ -16,12 +15,10 @@
                 "esri/layers/TileLayer",
                 "esri/layers/GeoJSONLayer",
                 "esri/Basemap",
-
                 "esri/geometry/Mesh"
+
             ], function (Map, SceneView, TileLayer, GeoJSONLayer, Basemap, Mesh) {
-
                 const offset = 300000; // offset from the ground used for the clouds
-
                 try {
                     document.getElementById('toggle-button').addEventListener('click', switchMapTexture)
                 } catch {
@@ -33,10 +30,10 @@
                     map.basemap = mapTexture
                 }
 
-                var map = new Map({
+                // Renders the map
+                const map = new Map({
                     basemap: mapTexture
                 });
-
                 const view = new SceneView({
                     container: "viewDiv",
                     map: map,
@@ -73,9 +70,9 @@
                         haloOpacity: 0.5
                     }
                 });
-
                 view.ui.empty("top-left");
 
+                // The country descriptions & popup
                 const extremesLayer = new GeoJSONLayer({
                     url: "/GeoJSON/cases.geojson",
                     elevationInfo: {
@@ -88,7 +85,8 @@
                             type: "point-3d",
                             symbolLayers: [
                                 {
-                                    type: "icon", // autocasts as new IconSymbol3DLayer()
+                                    // autocasts as new IconSymbol3DLayer()
+                                    type: "icon",
                                     resource: {
                                         href: '/images/map-marker-alt-solid.svg'
                                     },
@@ -99,8 +97,8 @@
                     },
                     popupTemplate: {
                         title: "{country}",
-                        content: `
-            <div class="popupImage">
+                        content:
+                            `<div class="popupImage">
               <img src="{imageUrl}"/>
             </div>
             <div class="popupDescription">
@@ -121,13 +119,11 @@
                     Take me there!
                 </a>
                </div>
-            </div>
-          `
+            </div>`
                     }
                 });
                 map.layers.add(extremesLayer);
             });
-
 
             function updateUrlButton() {
                 let counter = 0;
@@ -148,18 +144,11 @@
 
                 update(counter)
             }
-
         </script>
     </head>
 
     <body class="assignment-background">
-{{--    <div><a class="btn btn-outline-primary countryBtn"--}}
-{{--            href="/countries" role="button">Edit countries</a>--}}
-{{--    </div>--}}
-    <div id="viewDiv">
-
-    </div>
-
+    <div id="viewDiv"></div>
     </body>
     <script>
         document.getElementById('viewDiv').addEventListener('click', updateUrlButton)
