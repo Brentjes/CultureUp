@@ -1,4 +1,5 @@
 @extends ('layouts.layout')
+@section('title', 'Home')
 @section ('content')
     <head>
         <link rel="stylesheet" type="text/css" href="/css/main/home.css">

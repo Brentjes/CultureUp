@@ -1,4 +1,5 @@
 @extends ('layouts.layout')
+@section('title', 'Leaderboard')
 @section ('content')
 <head>
     <link rel="stylesheet" type="text/css" href="/css/Main/leaderboard.css">

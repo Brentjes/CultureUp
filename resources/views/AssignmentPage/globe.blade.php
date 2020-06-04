@@ -1,8 +1,9 @@
 @extends ('layouts.layout')
+@section('title', 'Globe')
 @section('content')
+
     <head>
 
-        <title>CultureUp - Globe</title>
 
         <link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css"/>
         <link rel="stylesheet" href="/css/Assignment/globe.css"/>
