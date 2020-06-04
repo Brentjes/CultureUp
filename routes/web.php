@@ -102,14 +102,16 @@ Route::get('DokSTestingStuffDontTouch', function () {
 
 Route::resource('current', "AssignmentEditorController")->middleware('auth');
 
-// Routes for GLOBE (AssignmentPage)
+// Routes for GLOBE and COUNTRIES(AssignmentPage)
 Route::get('/globe', function () {
     return view('AssignmentPage.globe');
 })->name('Globe')->middleware('auth');
 
+Route::resource('countries', 'CountryController')->middleware('auth');
+
 // test json decode
 Route::get('/globetest', function () {
-    $countries = json_decode(file_get_contents('GeoJSON/cases.json'))->country;
+    $countries = json_decode(file_get_contents('GeoJSON/cases.geojson'))->country;
 
 
     return view('AssignmentPage.json', compact('countries'));
