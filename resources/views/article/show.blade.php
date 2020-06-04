@@ -10,6 +10,9 @@
             {{$article->excerpt}} <br>
             {{$article->text}}
         </div>
+        <div class="card-footer text-center p-2">
+            {{$article->user->name}}
+        </div>
     </div>
 
 </div>

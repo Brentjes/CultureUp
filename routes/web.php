@@ -19,8 +19,10 @@ Route::get('/admin', function () {
     return view('home');
 })->name('home')->middleware('auth');
 
+// Article routes
+Route::resource('article' , 'ArticleController');
 Route::get('/articles', 'ArticleController@index')->name('articles')->middleware('auth');
-
+//
 Route::get('/{name}', function () {
     return view('StudentPage.home', [
         'assignments' => \App\Assignment::take(5)->latest()->get(),
@@ -28,8 +30,22 @@ Route::get('/{name}', function () {
     ]);
 })->where('name', 'home||')->name('Home')->middleware('auth');
 
+//Route::resource('/articles', 'ArticleController');
+//Route::get('/articles', 'ArticleController@index');
+//Route::post('/article/create', 'ArticleController@store');
+//Route::post('/articles', 'ArticleController@store');
+//Route::get('/article/create', 'ArticleController@create');
+
+
+
 //Profile Routes
 Route::get('/profile/{id?}', 'UserController@show')->name('profile')->middleware('auth');
+
+Route::get('test', function () {
+    return view('draganddrop');
+});
+
+
 
 //Leaderboard Routes
 Route::get('/leaderboard', function () {
@@ -74,8 +90,7 @@ Route::group(array('prefix' => 'assignment'), function () {
         ]])->middleware('auth');
 });
 
-// Article routes
-Route::resource('article' , 'ArticleController');
+
 
 //Jochems zn meuk
 Route::get('DokSTestingStuffDontTouch', function () {
