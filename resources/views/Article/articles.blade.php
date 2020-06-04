@@ -1,7 +1,7 @@
-@extends ('layouts.studentLayout')
+@extends ('layouts.layout')
 @section ('content')
     <head>
-        <link rel="stylesheet" type="text/css" href="public/css/Articles/article.css">
+        <link rel="stylesheet" type="text/css" href="../../../public/css/Articles/article.css">
         <title>CultureUp - Articles</title>
     </head>
     <section id="home">

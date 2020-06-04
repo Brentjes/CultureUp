@@ -16,7 +16,7 @@ class ArticleController extends Controller
     {
         $articles = Article::latest()->get();
 
-        return view('articles', compact('articles'));
+        return view('article.articles', compact('articles'));
 
 //        $articles = \App\Article::all();
 //
@@ -26,7 +26,7 @@ class ArticleController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * <<<<<<< HEAD
+     *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
