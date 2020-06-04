@@ -56,7 +56,6 @@
             </li>
         </ul>
     </nav>
-
     <div id="content">
         @include ('BookEngine.page', compact('page'))
     </div>
@@ -97,7 +96,7 @@
 
     @include('BookEngine.Editor.Page.PageForm', ['type' => "edit"])
     @include('BookEngine.Editor.Page.PageForm', ['type' => "new"])
-    @include ('BookEngine.Editor.Element.CreateImage')
+    @include ('BookEngine.Editor.Element.CreateQuestion')
 </div>
 
 <div id="ElementList">
