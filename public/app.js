@@ -8,7 +8,7 @@ function viewMore() {
         document.getElementById('viewMore').innerHTML = '<span class="material-icons btn">expand_more</span> View more';
 
     } else {
-        document.getElementById("overlay").style.top = "200vh";
+        document.getElementById("overlay").style.top = "550vh";
         document.getElementById('viewMore').innerHTML = '<span class="material-icons btn">expand_less</span> View less';
 
     }
@@ -34,16 +34,22 @@ $(document).ready(function () {
 // Dark mode button toggle
 function init() {
     document.getElementById('toggle-button').addEventListener('click', toggle_style, false);
-    if(localStorage.getItem('CultureUpDarkMode') === 'true'){
+    if (localStorage.getItem('CultureUpDarkMode') === 'true') {
         toggle_style()
     } else {
-        document.getElementById('logo').src = '/images/logoLight.png';
+        try {
+            document.getElementById('logo').src = '/images/logoLight.png';
+        } catch {
+
+        }
     }
 }
 
 function toggle_style() {
-    let byId = function(id) { return document.getElementById(id); };
-    if(byId('dynamic-style').href == window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/css/Main/darkMode.css') {
+    let byId = function (id) {
+        return document.getElementById(id);
+    };
+    if (byId('dynamic-style').href == window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/css/Main/darkMode.css') {
         byId('dynamic-style').href = '';
         try {
             byId('logo').src = '/images/logoLight.png';
@@ -67,4 +73,5 @@ function toggle_style() {
         localStorage.setItem('CultureUpDarkMode', 'true');
     }
 }
+
 window.addEventListener('load', init, false);

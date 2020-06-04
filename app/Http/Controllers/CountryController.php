@@ -46,7 +46,8 @@ class CountryController extends Controller
      */
     public function show(Country $country)
     {
-        //
+        $assignments = $country->assignments;
+        return view('AssignmentPage.list')->with('assignments', $assignments);
     }
 
     /**
