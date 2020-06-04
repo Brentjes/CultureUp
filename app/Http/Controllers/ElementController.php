@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Assignment;
 use Illuminate\Http\Request;
+use App\Element;
 
-class AssignmentController extends Controller
+class ElementController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,7 @@ class AssignmentController extends Controller
      */
     public function index()
     {
-        $allAssignments = Assignment::latest()->get();
-
-        return view('BookEngine.View.index', compact('allAssignments'));
+        //
     }
 
     /**
@@ -26,7 +24,7 @@ class AssignmentController extends Controller
      */
     public function create()
     {
-        //
+        return view ('BookEngine.Editor.Element.CreateElement');
     }
 
     /**
@@ -37,18 +35,32 @@ class AssignmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+            'positionX' => 'required|numeric',
+            'positionY' => 'required|numeric',
+            'width' => 'required|numeric',
+            'height' => 'required|numeric',
+        ]);
+        $element = new Element();
+        $element->positionX = $request->positionX;
+        $element->positionY = $request->positionY;
+        $element->width = $request->width;
+        $element->height = $request->height;
+
+        $element->save();
+        dd($request);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param \App\assignment $assignment
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Assignment $assignment)
+    public function show($id)
     {
-        return view('BookEngine.View.start', compact('assignment'));
+        //
     }
 
     /**

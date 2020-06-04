@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Answer extends Model
 {
     /**
-     * Get the question that this anwser belongs to.
+     * Get the question that this answer belongs to.
      */
     public function post()
     {

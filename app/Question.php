@@ -15,10 +15,18 @@ class Question extends Model
     }
 
     /**
-     * Get the anwsers for the question.
+     * Get the answers for the question.
      */
-    public function anwsers()
+    public function answers()
     {
-        return $this->hasMany(Anwser::class);
+        return $this->hasMany(Answer::class);
+    }
+
+    /**
+     * The student(s) that have answered this question.
+     */
+    public function students()
+    {
+        return $this->belongsToMany(Student::class, 'student_question');
     }
 }

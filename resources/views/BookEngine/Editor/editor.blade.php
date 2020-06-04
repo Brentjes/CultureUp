@@ -28,11 +28,12 @@
 <div class="wrapper">
     <!-- Sidebar -->
     <nav id="sidebar" style="z-index: 100">
-        <button type="button" id="sidebarCollapse" class="blue-icon btn d-flex justify-content-center">
+        <button type="button" id="sidebarCollapse" class="blue-icon btn align-content-center">
             <i class="m-0 fas fa-pencil-ruler"></i>
         </button>
         <div class="sidebar-header">
             <h3>CultureUP Editor</h3>
+            <h4>{{$page->name}}</h4>
         </div>
 
         <ul class="list-unstyled components">
@@ -78,13 +79,13 @@
                 </div>
             </div>
             <div class="col-auto my-auto">
-                <button type="button" id="newPageToggleButton" class="btn blue-icon d-flex justify-content-center">
+                <button type="button" id="newPageToggleButton" class="btn blue-icon align-content-center">
                     <i class="fas fa-plus"></i>
                 </button>
             </div>
         </div>
 
-        <button type="button" id="bottombarCollapse" class="btn blue-icon d-flex justify-content-center"
+        <button type="button" id="bottombarCollapse" class="btn blue-icon align-content-center"
                 style="padding: 12px 6px;">
             <i class="fas fa-film"></i>
         </button>
@@ -128,11 +129,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
         integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
-
-{{--Bootstrap select--}}
-<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
-
-<script src="/editor.js"></script>
 
 {{--interactjs--}}
 <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>

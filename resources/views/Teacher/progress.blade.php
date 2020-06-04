@@ -25,7 +25,7 @@
                 @foreach($students as $student)
                     <tr data-toggle="collapse" data-target="#row{{$student->id}}" class="accordion-toggle">
                         <td>{{$student->user->name}}</td>
-                        <td>{{$student->course_name}}</td>
+                        <td>{{$student->course->name}}</td>
                         <td>TODO: 3/10 Completed</td>
                     </tr>
                     <tr>
@@ -42,19 +42,18 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($student->assignments() as $assignment)
+
+                                        @foreach($student->assignments as $assignment)
                                         <tr>
-                                            <td>Test1</td>
+                                            <td>{{$assignment->name}}</td>
                                             <td>
                                                 <div class="progress-group">
                                                     <div class="progress sm">
-
-                                                        <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
-
+                                                        <div class="progress-bar progress-bar-aqua" style="width: {{$assignment->pivot->progress}}0%"></div>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td>9/10</td>
+                                            <td>{{$assignment->pivot->progress}}/10</td>
                                             <td></td>
                                         </tr>
                                             @endforeach

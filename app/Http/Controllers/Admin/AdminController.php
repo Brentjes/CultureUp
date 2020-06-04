@@ -1,12 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Assignment;
+use App\Teacher;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class AssignmentController extends Controller
+class AdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,9 +20,9 @@ class AssignmentController extends Controller
      */
     public function index()
     {
-        $allAssignments = Assignment::latest()->get();
+        $teachers = Teacher::all();
 
-        return view('BookEngine.View.index', compact('allAssignments'));
+        return view('admin.management')->with('teachers', $teachers);
     }
 
     /**
@@ -43,12 +49,12 @@ class AssignmentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\assignment $assignment
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Assignment $assignment)
+    public function show($id)
     {
-        return view('BookEngine.View.start', compact('assignment'));
+        //
     }
 
     /**
