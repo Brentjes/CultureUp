@@ -11,7 +11,8 @@
                 <form method="POST" action="/article/{{$article->id}}">
                     @csrf
                     @method('DELETE')
-                    <button class="btn btn-danger float-right mt-2 mb-2 mr-2 ml-0" type="submit"><i class="fas fa-trash-alt"></i></button>
+                    <button class="btn btn-danger float-right mt-2 mb-2 mr-2 ml-0" type="submit"><i
+                            class="fas fa-trash-alt"></i></button>
                 </form>
                 <p class="ribbonText text-center p-3 m-0 ml-5">Edit your Article</p>
             </div>
