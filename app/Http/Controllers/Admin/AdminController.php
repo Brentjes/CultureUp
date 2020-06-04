@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Teacher;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
 {
@@ -32,7 +35,13 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        $users = DB::select('    SELECT users.* FROM users
+                                 LEFT JOIN teachers ON users.id=teachers.user_id
+                                 LEFT JOIN students ON users.id=students.user_id
+                                 WHERE teachers.id IS NULL AND students.id IS NULL
+                            ');
+
+        return view('admin.create_teacher')->with('users', $users);
     }
 
     /**
@@ -43,7 +52,11 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $teacher = new Teacher();
+        $teacher->user_id = request('user_id');
+        $teacher->save();
+
+        return redirect()->route('admin.teachers.index')->with('success',"You have enrolled {$teacher->user->name} as a Teacher!");
     }
 
     /**
@@ -86,8 +99,13 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(teacher $teacher)
     {
-        //
+        if($teacher->user->id == Auth::user()->id) {
+            return redirect()->route('admin.teachers.index')->with('danger','You can not remove your own role!');
+        }
+        $teacher->delete();
+
+        return redirect()->route('admin.teachers.index')->with('warning',"You have removed {$teacher->user->name}'s Teacher role!");
     }
 }

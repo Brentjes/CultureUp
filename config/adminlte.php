@@ -225,18 +225,24 @@ return [
             'icon' => 'fas fa-chart-line',
             'url' => 'teacher/progress',
         ],
+        ['header' => 'TEACHER OPTIONS'],
+        [
+            'text' => 'Manage my courses',
+            'icon' => 'fas fa-bookmark',
+            'url' => 'teacher/courses',
+        ],
 
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'change_password',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
+//        ['header' => 'account_settings'],
+//        [
+//            'text' => 'profile',
+//            'url' => 'admin/settings',
+//            'icon' => 'fas fa-fw fa-user',
+//        ],
+//        [
+//            'text' => 'change_password',
+//            'url' => 'admin/settings',
+//            'icon' => 'fas fa-fw fa-lock',
+//        ],
 
         ['header' => 'ADMINISTRATION OPTIONS'],
         [

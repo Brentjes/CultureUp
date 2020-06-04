@@ -57,11 +57,12 @@ Route::get('/leaderboard', function () {
 Route::namespace('Teacher')->prefix('teacher')->name('teacher.')->middleware('auth')->group(function () {
     Route::resource('/', 'TeacherController', ['except' => ['show', 'create', 'store']]);
     Route::resource('/progress', 'ProgressController', ['except' => ['show', 'create', 'store']]);
+    Route::resource('/courses', 'CoursesController', ['except' => ['show', 'update', 'edit', 'create']]);
 });
 
 //Administration routes
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth')->group(function () {
-    Route::resource('/teachers', 'AdminController', ['except' => ['show', 'create', 'store']]);
+    Route::resource('/teachers', 'AdminController', ['except' => ['show', 'edit']]);
 });
 
 Route::group(array('prefix' => 'assignment'), function () {

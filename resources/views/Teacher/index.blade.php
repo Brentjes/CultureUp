@@ -15,6 +15,8 @@
             </div>
         </div>
     </div>
+
+    @include('flash-message')
 @stop
 
 @section('content')

@@ -1,23 +1,22 @@
+{{-- resources/views/admin/dashboard.blade.php --}}
+
 @extends('adminlte::page')
 
 @section('Manage Teachers', 'Dashboard')
 
-
 @section('content_header')
-    @include('flash-message')
 
 @stop
 
 @section('content')
     <div class="card w-100 h-auto">
+
         <div class="card-header">
-            <h3 class="card-title">Active Teachers</h3>
+            <h3 class="card-title">Unsorted users</h3>
 
             <div class="card-tools">
-                <a class="btn btn-xs btn-success float-left mr-2" href="{{route('admin.teachers.create')}}">
-                    <i class="fas fa-plus-circle"></i> Add Teacher</a>
-                <div class="input-group input-group-sm" style="width: 150px;">
-                    <input id="TeacherTableSearch" type="text" onkeyup="tableSearch()" name="table_search" class="form-control float-right" placeholder="Search">
+                <div class="input-group input-group-sm" style="width: 350px;">
+                    <input id="TeacherTableSearch" type="text" onkeyup="tableSearch()" name="table_search" class="form-control float-right" placeholder="Search for a user">
 
                     <div class="input-group-append">
                         <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
@@ -37,19 +36,20 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($teachers as $teacher)
+                @foreach($users as $user)
                     <tr>
-                        <td>{{$teacher->user->id}}</td>
-                        <td>{{$teacher->user->name}}</td>
-                        <td>{{$teacher->user->email}}</td>
+                        <td>{{$user->id}}</td>
+                        <td>{{$user->name}}</td>
+                        <td>{{$user->email}}</td>
                         <td><form class="mb-0"
-                                  action="{{route('admin.teachers.destroy', $teacher)}}"
+                                  action="{{route('admin.teachers.store')}}"
                                   method="POST">
                                 @csrf
-                                {{ method_field('DELETE') }}
-                                <button @if(!$teacher->user->id == Auth::user()->id)type="submit" @endif class="btn btn-danger  @if($teacher->user->id == Auth::user()->id)disabled @endif btn-sm float-right">
-                                    <i class="fas fa-minus-circle"></i> Remove Teacher Role
+                                {{ method_field('POST') }}
+                                <button type="submit" class="btn btn-success btn-sm float-right">
+                                    <i class="fas fa-plus-circle"></i> Make Teacher
                                 </button>
+                                <input type="hidden" name="user_id" value="{{$user->id}}">
                             </form>
                         </td>
                     </tr>
@@ -62,7 +62,8 @@
 @stop
 
 @section('css')
-
+    <link rel="stylesheet" href="/css/admin_custom.css">
+    <link rel="stylesheet" type="text/css" href="student.css">
 @stop
 
 @section('js')
