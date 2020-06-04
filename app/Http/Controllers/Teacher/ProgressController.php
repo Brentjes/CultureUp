@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Teacher;
 
 use App\Http\Controllers\Controller;
 use App\Teacher;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProgressController extends Controller
 {
@@ -22,9 +22,12 @@ class ProgressController extends Controller
     public function index()
     {
         $teacher = Teacher::where('user_id', Auth::id())->first();
+        if ($teacher == null) {
+            return redirect()->route('teacher.index')->with('warning', 'You need to be enrolled as a teacher in order to view the progression page');
+        }
         $courses = $teacher->courses;
-        if(count($courses) == null) {
-            return view('teacher.progress')->with('warning','You need to subscribe to at least 1 course.');
+        if (count($courses) == null) {
+            return redirect()->route('teacher.courses.index')->with('warning', 'In order to view the progress of your students you need to be assigned to a course first.');
         }
         $course = $courses[0];
 
@@ -46,7 +49,7 @@ class ProgressController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -57,7 +60,7 @@ class ProgressController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -68,7 +71,7 @@ class ProgressController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -79,8 +82,8 @@ class ProgressController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -91,7 +94,7 @@ class ProgressController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

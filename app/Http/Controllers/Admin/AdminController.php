@@ -56,7 +56,7 @@ class AdminController extends Controller
         $teacher->user_id = request('user_id');
         $teacher->save();
 
-        return redirect()->route('admin.teachers.index')->with('success','Teacher created successfully!');
+        return redirect()->route('admin.teachers.index')->with('success',"You have enrolled {$teacher->user->name} as a Teacher!");
     }
 
     /**
@@ -106,6 +106,6 @@ class AdminController extends Controller
         }
         $teacher->delete();
 
-        return redirect()->route('admin.teachers.index')->with('warning','Teacher role removed!');
+        return redirect()->route('admin.teachers.index')->with('warning',"You have removed {$teacher->user->name}'s Teacher role!");
     }
 }

@@ -227,8 +227,8 @@ return [
         ],
         ['header' => 'TEACHER OPTIONS'],
         [
-            'text' => 'Courses',
-            'icon' => 'fas fa-school',
+            'text' => 'Manage my courses',
+            'icon' => 'fas fa-bookmark',
             'url' => 'teacher/courses',
         ],
 
