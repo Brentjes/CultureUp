@@ -54,18 +54,19 @@
                             <button class="btn btn-success" type="submit">Submit</button>
                         </div>
                         <div class="col">
-                            <button class="btn btn-light" onclick="validateArticle()">Cancel</button>
+                            <button class="btn btn-light">Cancel</button>
                         </div>
 
-                        <form method="POST" action="/article/{{ $article->id }}">
-                            @csrf
-                            @method('delete')
-                            <div class="col">
-                                <div class="control">
-                                    <button class="btn btn-danger" type="submit">Delete</button>
-                                </div>
-                            </div>
-                        </form>
+                    </div>
+                </form>
+
+                <form method="POST" action="/article/{{$article->id}}">
+                    @csrf
+                    @method('DELETE')
+                    <div class="col">
+                        <div class="control">
+                            <button class="btn btn-danger" type="submit">Delete</button>
+                        </div>
                     </div>
                 </form>
             </div>
