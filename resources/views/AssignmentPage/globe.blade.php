@@ -6,7 +6,6 @@
 
         <link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css"/>
         <link rel="stylesheet" href="/css/Assignment/globe.css"/>
-
         <script src="https://js.arcgis.com/4.15/"></script>
 
         <script>
@@ -16,12 +15,10 @@
                 "esri/layers/TileLayer",
                 "esri/layers/GeoJSONLayer",
                 "esri/Basemap",
-
                 "esri/geometry/Mesh"
+
             ], function (Map, SceneView, TileLayer, GeoJSONLayer, Basemap, Mesh) {
-
                 const offset = 300000; // offset from the ground used for the clouds
-
                 try {
                     document.getElementById('toggle-button').addEventListener('click', switchMapTexture)
                 } catch {
@@ -33,10 +30,10 @@
                     map.basemap = mapTexture
                 }
 
-                var map = new Map({
+                // Renders the map
+                const map = new Map({
                     basemap: mapTexture
                 });
-
                 const view = new SceneView({
                     container: "viewDiv",
                     map: map,
@@ -73,9 +70,9 @@
                         haloOpacity: 0.5
                     }
                 });
-
                 view.ui.empty("top-left");
 
+                // The country descriptions & popup
                 const extremesLayer = new GeoJSONLayer({
                     url: "/GeoJSON/cases.geojson",
                     elevationInfo: {
@@ -88,7 +85,8 @@
                             type: "point-3d",
                             symbolLayers: [
                                 {
-                                    type: "icon", // autocasts as new IconSymbol3DLayer()
+                                    // autocasts as new IconSymbol3DLayer()
+                                    type: "icon",
                                     resource: {
                                         href: '/images/map-marker-alt-solid.svg'
                                     },
@@ -98,41 +96,42 @@
                         },
                     },
                     popupTemplate: {
-                        title: "{name}",
-                        content: `
-            <div class="popupImage">
+                        title: "{country}",
+                        content:
+                            `<div class="popupImage">
               <img src="{imageUrl}"/>
             </div>
             <div class="popupDescription">
               <p class="info">
-                <span class="esri-icon-favorites"></span> {type}
+                <span class="esri-icon-map-pin"></span><span> {location}</span>
               </p>
               <p class="info">
-                <span class="esri-icon-map-pin"></span><span class="locationUrl">{location}</span>
+                <span class="esri-icon-chat"></span><span> {language}</span>
               </p>
               <p class="info">
-                <span class="esri-icon-documentation"></span> {facts}
+                <span class="esri-icon-group"></span> {population}
+              </p>
+              <p class="info">
+                <span class="esri-icon-collection"></span> {facts}
               </p>
                <div class="text-center">
                 <a class="link-unstyled btn btn-outline-light putUrlHere" href="">
                     Take me there!
                 </a>
                </div>
-            </div>
-          `
+            </div>`
                     }
                 });
                 map.layers.add(extremesLayer);
             });
 
-
-
-            function updateUrlButton(){
+            function updateUrlButton() {
                 let counter = 0;
-                function update(counter){
+
+                function update(counter) {
                     try {
                         document.getElementsByClassName('putUrlHere')[0].href = document.getElementsByClassName('locationUrl')[0].innerText;
-                    }catch {
+                    } catch {
                         if (counter >= 5) {
                             return;
                         }
@@ -142,18 +141,17 @@
                         }, 1000)
                     }
                 }
+
                 update(counter)
             }
-
         </script>
     </head>
 
     <body class="assignment-background">
     <div id="viewDiv"></div>
-
     </body>
-        <script>
-            document.getElementById('viewDiv').addEventListener('click', updateUrlButton)
-        </script>
+    <script>
+        document.getElementById('viewDiv').addEventListener('click', updateUrlButton)
+    </script>
     </html>
 @endsection
