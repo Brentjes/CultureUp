@@ -66,7 +66,8 @@
                                     <div class="col text-left pr-0">
                                         <div class="img-fluid">
                                             <img class="rounded" src="https://picsum.photos/id/{{$article->id}}/1080/1080"
-                                                 style="width: 150px; height: 150px;">
+{{--                                                 style="width: 150px; height: 150px;"> this is the old scaling, it clips--}}
+                                                    style="width: 10vw; height: auto;">
                                         </div>
                                     </div>
                                     <div class="col text-left pl-0">
