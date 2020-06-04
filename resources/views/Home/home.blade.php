@@ -1,6 +1,25 @@
-@extends ('layouts.studentLayout')
-@extends ('layouts.home')
-@section ('home')
+@extends ('layouts.layout')
+@section('title', 'Home')
+@section ('content')
+    <head>
+        <link rel="stylesheet" type="text/css" href="/css/main/home.css">
+    </head>
+
+
+    <div class="container-fluid text-center p-0">
+        <div class="card w-100 h-auto">
+            <div class="row my-auto">
+                <div class="col pl-5 mt-5 mb-5 my-auto">
+                    <h1 class="display-3 lead text-left" style="font-size:4vw"> Welcome, {{\Auth::user()->name}}</h1>
+                </div>
+                <div class="col mr-20 text-center mt-5 mb-5">
+                    <img id="logo" class="img-fluid switch" style="width:25vw; height: auto"
+                         src="/images/logoLight.png">
+                </div>
+            </div>
+        </div>
+
+
 
     <div class="row">
         <div class="col-7 mt-5 ml-5 mr-5 pl-0 pr-0">
@@ -11,7 +30,7 @@
                             <p class="ribbonText text-left mb-0">Progress</p>
                         </div>
                         <div class="col-1 my-auto">
-                            <a class="custom-tooltip icon" href="/articles">
+                            <a class="custom-tooltip icon" href="#">
                                 <i class="fas fa-ellipsis-h hoverText ribbonText"></i>
                                 <span class="tooltiptext">View all assignments</span>
                             </a>
@@ -66,14 +85,15 @@
                                     <div class="col text-left pr-0">
                                         <div class="img-fluid">
                                             <img class="rounded" src="https://picsum.photos/id/{{$article->id}}/1080/1080"
-                                                 style="width: 150px; height: 150px;">
+{{--                                                 style="width: 150px; height: 150px;"> this is the old scaling, it clips--}}
+                                                    style="width: 10vw; height: auto;">
                                         </div>
                                     </div>
                                     <div class="col text-left pl-0">
                                         <h4 class="h4">{{$article->title}}</h4>
                                         <blockquote class="blockquote">
                                             <p class="h6 lead">{{$article->excerpt}}</p>
-                                            <footer class="blockquote-footer">Author?</footer>
+                                            <footer class="blockquote-footer">{{$article->user->name}}</footer>
                                         </blockquote>
                                     </div>
                                 </div>
@@ -83,5 +103,6 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 @endsection

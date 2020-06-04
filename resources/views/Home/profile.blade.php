@@ -1,13 +1,16 @@
-@extends ('layouts.teacherLayout')
-@extends ('layouts.profile')
-@section ('profile')
+@extends ('layouts.layout')
+@section('title', $user->name)
+@section ('content')
+    <head>
+        <link rel="stylesheet" type="text/css" href="/css/teacher/profile.css">
+
+    </head>
 
 
-    <div id="studentpage">
+    <section id="studentpage">
         <div class="container">
             <div class="row">
                 <div class="col-5">
-
                     <div class="card rounded text-center w-100 p-0 m-5">
                         <div class="card-header d-block justify-content-center ribbon p-0">
                             <div class="row">
@@ -25,9 +28,9 @@
                                 <div class="row center-row text-left">
                                     <div class="col">
                                         <p class="display-5 display-sm-3 display-m-4 display-md-5 mb-0">
-                                            <b>Name:</b> Teacher</p>
-                                        <p class="display-5 mb-0"><b>Class</b> HBO-ICT</p>
-                                        <p class="display-5 mb-0"><b>Country:</b> China</p>
+                                            <b>Name:</b> {{$user->name}}</p>
+                                        <p class="display-5 mb-0"><b>Teacher:</b> Bugs Bunny</p>
+                                        <p class="display-5 mb-0"><b>Country:</b> Bosnia Herzegovina</p>
 
                                     </div>
                                 </div>
@@ -40,6 +43,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-7 h-100 pl-5">
                     <div class="card rounded text-center w-100 h-75 p-0 m-5">
                         <div class="card-header d-block justify-content-center ribbon p-0 ">
@@ -148,7 +152,5 @@
                 </div>
             </div>
         </div>
-    </div>
-    </div>
     </section>
 @endsection
