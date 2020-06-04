@@ -29,7 +29,7 @@
                             <p class="ribbonText text-left mb-0">Progress</p>
                         </div>
                         <div class="col-1 my-auto">
-                            <a class="custom-tooltip icon" href="/articles">
+                            <a class="custom-tooltip icon" href="#">
                                 <i class="fas fa-ellipsis-h hoverText ribbonText"></i>
                                 <span class="tooltiptext">View all assignments</span>
                             </a>
@@ -84,7 +84,8 @@
                                     <div class="col text-left pr-0">
                                         <div class="img-fluid">
                                             <img class="rounded" src="https://picsum.photos/id/{{$article->id}}/1080/1080"
-                                                 style="width: 150px; height: 150px;">
+{{--                                                 style="width: 150px; height: 150px;"> this is the old scaling, it clips--}}
+                                                    style="width: 10vw; height: auto;">
                                         </div>
                                     </div>
                                     <div class="col text-left pl-0">
