@@ -44,11 +44,11 @@
       "properties": {
         "country_code": "US",
         "country": "United States",
-        "language": " ",
-        "imageUrl": " ",
-        "population": " ",
-        "location": " ",
-        "facts": " "
+        "imageUrl": "https://images.pexels.com/photos/1634279/pexels-photo-1634279.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "location": "North America",
+        "language": "The national language is English.",
+        "population": "The population of the United States is 328.2 million.",
+        "facts": "The major characteristic of the United States is probably its great variety. Its physical environment ranges from the Arctic to the subtropical, from the moist rain forest to the arid desert, from the rugged mountain peak to the flat prairie."
       },
       "geometry": {
         "type": "Point",
@@ -67,7 +67,7 @@
         "location": "Southeast Asia and Oceania",
         "language": "The official language is Indonesian",
         "population": "The population is 267.7 million",
-        "facts": " "
+        "facts": "Despite the abundance of islands, tourists tend to cram onto just one and fight for space: Bali. Because of that reason, tourism is a great part of the economy. It's also a major exporter of crude petroleum and natural gas."
       },
       "geometry": {
         "type": "Point",
@@ -82,11 +82,11 @@
       "properties": {
         "country_code": "BR",
         "country": "Brazil",
-        "imageUrl": " ",
-        "location": " ",
-        "language": " ",
-        "population": " ",
-        "facts": " "
+        "imageUrl": "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+        "location": "South America",
+        "language": "The official language is Portuguese.",
+        "population": "The population of Brazil is 209.5 million.",
+        "facts": " Brazil is a top global producer of coffee, and the country's economy is active in the agricultural, manufacturing, mining and service sectors. Brazil is one of the world's top tourist destinations, but the country in the 21st century faces serious questions regarding poverty, inequality, governance and the environment."
       },
       "geometry": {
         "type": "Point",
@@ -177,11 +177,11 @@
       "properties": {
         "country_code": "MX",
         "country": "Mexico",
-        "imageUrl": " ",
-        "location": " ",
-        "language": " ",
-        "population": " ",
-        "facts": " "
+        "imageUrl": "https://images.unsplash.com/photo-1512813195386-6cf811ad3542?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+        "location": "North America",
+        "language": "The official language is Spanish.",
+        "population": "The population of Mexico is 126.2 million.",
+        "facts": "Mexico is a country with great problems and great potential. It has lots of valuable, natural resources like oil, silver, copper and agricultural products, too. But political and economic problems have kept much of the population in poverty."
       },
       "geometry": {
         "type": "Point",
