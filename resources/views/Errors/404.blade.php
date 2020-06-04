@@ -1,4 +1,4 @@
-@extends ('layouts.errorLayout')
+@extends ('layouts.layout')
 @section ('content')
 
     <head>
