@@ -2,9 +2,10 @@
     <a href="{{$element->linkPage}}">
         @endif
         <div class="element-Game
-            @if($element->type == "img") element-Game-Image
+            @if($element->type == "image") element-Game-Image
             @elseif ($element->type == "text") element-Game-Text
             @elseif ($element->type == "link") element-Game-Link
+            @elseif($element->type == 'question') element-Game-Question
             @endif"
 
              style="
@@ -20,8 +21,9 @@
             ">
 
             @if($element->type == "text")
-                <p>{{$element->text}}</p>
+                <p></p>
             @endif
+                <p>{{$element->type}}</p>
 
         </div>
         @if($element->type == "link")

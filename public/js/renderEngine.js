@@ -42,10 +42,19 @@ function dragMoveListener (event) {
     target.style.height = event.rect.height + 'px'
 
     let inputs = target.children[0].children
-    inputs[0].value = x
+    try {
+        inputs[0].value = x
+    }catch{}
+    try{
     inputs[1].value = y
+    }catch{}
+    try{
     inputs[2].value = target.style.width
+    }catch{}
+    try{
     inputs[3].value = target.style.height
+    }catch{}
+
 }
 
 // this function is used later in the resizing and gesture demos
@@ -78,10 +87,18 @@ interact('.resize-drag')
 
 
                 let inputs = target.children[0].children
-                inputs[0].value = x
-                inputs[1].value = y
-                inputs[2].value = target.style.width
-                inputs[3].value = target.style.height
+                try {
+                    inputs[0].value = x
+                }catch{}
+                try{
+                    inputs[1].value = y
+                }catch{}
+                try{
+                    inputs[2].value = target.style.width
+                }catch{}
+                try{
+                    inputs[3].value = target.style.height
+                }catch{}
 
             }
         },

@@ -100,19 +100,21 @@ class ElementController extends Controller
 
 
                 break;
-            case 'image':
-                $element->type = $request->type;
-                $request->validate([
-                    'alt' => 'required|string',
-                    'image' => 'required|image'
-                ]);
-                $type = new Image();
-                $type->alt = $request->alt;
-                $type->image = $request->image;
-
-                break;
+//            case 'image':
+//                $element->type = $request->type;
+//                $request->validate([
+//                    'alt' => 'required|string',
+//                    'image' => 'required|image'
+//                ]);
+//                $type = new Image();
+//                $type->alt = $request->alt;
+//                $type->image = $request->image;
+//
+//                break;
             case 'question':
+
                 $element->type = $request->type;
+//                dd($request);
                 $request->validate([
                     'question' => 'required|string',
                     'answers' => 'required|array|between:2,5',
@@ -122,26 +124,36 @@ class ElementController extends Controller
                 ]);
 
                 $type = new Question();
-                $type->name = $request->question;
+                $type->question = $request->question;
                 $type->score = $request->score;
+
 
                 $allAnswer = [];
 
     //                for ($i = 0; $i < sizeof($request->answers); $i++) {
     //                    dd($request->answers[$i]);
     //                }
+                if(isset($request->answers) && (count($request->answers) >= 2)) {
+                    foreach ($request->answers as $answerReq) {
 
-                foreach ($request->answers as $answerReq) {
 
-                    dd($answerReq->answer);
 
-                    $answer = new Answer();
-                    $answer->answer = $answerReq->answer;
-                    $answer->isCorrect = (($answerReq->isCorrect== 'on') ? true : false);
+                        $answer = new Answer();
+                        $answer->answer = $answerReq['answer'];
+                        if(isset($answerReq['isCorrect'])){
 
-                    array_push($allAnswer, $answer);
 
+                        $answer->isCorrect = (($answerReq['isCorrect'] === 'on') ? true : false);
+                        } else {
+                            $answer->isCorrect = false;
                         }
+
+                        array_push($allAnswer, $answer);
+
+                    }
+                } else {
+                    return 'not enough answers';
+                }
                 break;
             default;
             $returnMessage = 'Type is not defined or Incorrect '.($request->type?$request->type:'undefined');
@@ -152,13 +164,14 @@ class ElementController extends Controller
         $element->save();
         $type->element_id = $element->id;
         $type->save();
-        if($type === 'Question'){
+        if($element->type === 'question'){
+
             foreach ($allAnswer as $answer){
                 $answer->question_id = $type->id;
                 $answer->save();
             }
         }
-        dd($request);
+
     }
 
     /**

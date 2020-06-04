@@ -100,16 +100,16 @@
                         <input type="text" name="question"></input>
                     </div>
                     <div>
-                        <input type="text" name="answers[0]answer" value="['test']">
+                        <input type="text" name="answers[0][answer]" value="['test']">
                     </div>
                     <div>
-                        <input type="checkbox" name="answers[0]isCorrect">
+                        <input type="checkbox" name="answers[0][isCorrect]">
                     </div>
                     <div>
-                        <input type="text" name="answers[1]answer" value="['test']">
+                        <input type="text" name="answers[1][answer]" value="['test']">
                     </div>
                     <div>
-                        <input type="checkbox" name="answers[1]isCorrect">
+                        <input type="checkbox" name="answers[1][isCorrect]">
                     </div>
                     <div>
                         <input name="score" type="number"></input>

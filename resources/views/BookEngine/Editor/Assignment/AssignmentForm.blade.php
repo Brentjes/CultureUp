@@ -26,24 +26,33 @@
             </div>
 
             <div class="form-group">
-                <label class="label" for="inputState">Country</label>
-                <select id="inputState" class="form-control selectpicker" data-live-search="true"
+                <label class="label" for="Country">Country</label>
+                <select id="assignmentCountry" name="country" class="form-control selectpicker" data-live-search="true"
                         data-size="10">
-                    <option>Afghanistan</option>
-                    <option>African central republic</option>
-                    <option>Albania</option>
-                    <option>Algeria</option>
-                    <option>Andorra</option>
-                    <option>Antigua and barbud</option>
-                    <option>Argentina</option>
-                    <option>Armenia</option>
-                    <option>Australia</option>
-                    <option>...</option>
-                    <option>...</option>
-                    <option>...</option>
-                    <option>...</option>
-                    <option>...</option>
+                    @foreach($countries as $country)
+                        <option value="{{$country->id}}">{{$country->country}}</option>
+                    @endforeach
                 </select>
+            </div>
+
+            <div class="pt-3">
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" class="form-check-input" id="isHidden" name="isHidden"
+                           @if( (old('isLocked') ) == (true||1) ) checked @endif>
+                    @error('isHidden')
+                    <p>{{$errors->first('isHidden')}}</p>
+                    @enderror
+                    <label class="form-check-label p-1" for="isHidden">Hide case</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" class="form-check-input" id="isLocked" name="isLocked"
+                           @if( (old('isLocked') ) == (true||1) ) checked @endif>
+                    @error('isLocked')
+                    <p>{{$errors->first('isLocked')}}</p>
+                    @enderror
+                    <label class="form-check-label p-1" for="isLocked">Lock case </label>
+                </div>
             </div>
 
             <div class="row text-center pt-4">
