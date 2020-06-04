@@ -2,12 +2,12 @@
 @section ('content')
     <head>
         <link rel="stylesheet" type="text/css" href="public/css/Articles/article.css">
-        <title>CultureUp - Assignments</title>
+        <title>CultureUp - Articles</title>
     </head>
     <section id="home">
 
-        <div class="container-fluid cards">
-            <div class="wow fadeInUp card-columns d-inline-block">
+        <div class="container-fluid mt-2">
+            <div class="wow fadeInUp card-columns mt-2">
                 @foreach ($articles as $article)
                     <a href="{{ route('article.show', $article -> id) }}" class="custom-card">
                         <div class="card rounded text-center h-auto rounded softshadow">
