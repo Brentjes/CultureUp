@@ -9,7 +9,7 @@
                 <label class="label" for="title">Title</label>
                 <input class="form-control" type="text" id="assignmentName" placeholder="Enter title"
                        required
-                       value="{{old("name")}}">
+                       value="{{old("name")?old("name"):$assignment->name}}">
                 @error('title')
                 <p>{{$errors->first('name')}}</p>
                 @enderror
@@ -19,7 +19,7 @@
                 <label class="label" for="subject">Description</label>
                 <input class="form-control" type="text" id="assignmentSubject" placeholder="Enter description"
                        required
-                       value="{{old("subject")}}">
+                       value="{{old("subject")?old("subject"):$assignment->subject}}">
                 @error('subject')
                 <p>{{$errors->first('subject')}}</p>
                 @enderror
@@ -30,7 +30,10 @@
                 <select id="assignmentCountry" name="country" class="form-control selectpicker" data-live-search="true"
                         data-size="10">
                     @foreach($countries as $country)
-                        <option value="{{$country->id}}">{{$country->country}}</option>
+                        <option value="{{$country->id}}" @if($country->id === $assignment->country_id)
+                            selected="selected"
+                                @endif
+                        >{{$country->country}}</option>
                     @endforeach
                 </select>
             </div>
@@ -38,7 +41,7 @@
             <div class="pt-3">
                 <div class="form-check form-check-inline">
                     <input type="checkbox" class="form-check-input" id="isHidden" name="isHidden"
-                           @if( (old('isLocked') ) == (true||1) ) checked @endif>
+                           @if( (old('isHidden')?old('isHidden'):$assignment->isHidden) == (true||1) ) checked @endif>
                     @error('isHidden')
                     <p>{{$errors->first('isHidden')}}</p>
                     @enderror
@@ -47,7 +50,7 @@
 
                 <div class="form-check form-check-inline">
                     <input type="checkbox" class="form-check-input" id="isLocked" name="isLocked"
-                           @if( (old('isLocked') ) == (true||1) ) checked @endif>
+                           @if( (old('isLocked')?old('isLocked'):$assignment->isLocked ) == (true||1) ) checked @endif>
                     @error('isLocked')
                     <p>{{$errors->first('isLocked')}}</p>
                     @enderror

@@ -142,7 +142,7 @@ class AssignmentEditorController extends Controller
         $assignment->isLocked = $request->isLocked;
 
         $assignment->save();
-        dd(($request->isLocked == 'on'));
+
 
         return 'success';
     }

@@ -29,7 +29,7 @@
     <nav id="sidebar" style="z-index: 100">
         <div class="sidebar-header">
             <h3>CultureUP Editor</h3>
-            <h4>{{$assignment->name}}</h4>
+            <h4 style="word-wrap: break-word">{{$assignment->name}}</h4>
         </div>
         <ul class="list-unstyled components">
             <li class="softshadow stick">

@@ -48,6 +48,7 @@ assignmentDone(text);
 function assignmentDone(text) {
 if (text === 'success') {
 editAssignmentToggle();
+window.location.reload(false);
 }
 }
 }
