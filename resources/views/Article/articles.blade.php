@@ -1,8 +1,8 @@
 @extends ('layouts.layout')
+@section('title', 'Articles')
 @section ('content')
     <head>
         <link rel="stylesheet" type="text/css" href="../../../public/css/Articles/article.css">
-        <title>CultureUp - Articles</title>
     </head>
     <section id="home">
 

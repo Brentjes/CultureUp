@@ -24,7 +24,7 @@ Route::resource('article' , 'ArticleController');
 Route::get('/articles', 'ArticleController@index')->name('articles')->middleware('auth');
 //
 Route::get('/{name}', function () {
-    return view('StudentPage.home', [
+    return view('Home.home', [
         'assignments' => \App\Assignment::take(5)->latest()->get(),
         'articles' => \App\Article::take(4)->latest()->get()
     ]);
@@ -49,7 +49,7 @@ Route::get('test', function () {
 
 //Leaderboard Routes
 Route::get('/leaderboard', function () {
-    return view('StudentPage.leaderboard');
+    return view('Home.leaderboard');
 })->name('Leaderboard')->middleware('auth');
 
 

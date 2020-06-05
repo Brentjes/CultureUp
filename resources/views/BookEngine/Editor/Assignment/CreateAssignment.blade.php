@@ -1,4 +1,6 @@
 @extends ('layouts.layout')
+@section('title', 'Create assignment')
+
 @section ('content')
 
 @foreach ($errors->all() as $error)
