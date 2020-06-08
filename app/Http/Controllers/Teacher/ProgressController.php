@@ -17,28 +17,31 @@ class ProgressController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
         // Check if enrolled as a teacher
         $teacher = Teacher::where('user_id', Auth::id())->first();
         if ($teacher == null) {
-            return redirect()->route('teacher.index')->with('warning', 'You need to be enrolled as a teacher in order to view the progression page');
+            return redirect()->route('teacher.index')->with(
+                'warning',
+                'You need to be enrolled as a teacher in order to view the progression page'
+            );
         }
 
-        // Get the courses belonging to the logged in teacher
         $courses = $teacher->courses;
-        
+
         // Check if assigned/subscribed to at least one course
         if (count($courses) == null) {
-            return redirect()->route('teacher.courses.index')->with('warning', 'In order to view the progress of your students you need to be assigned to a course first.');
+            return redirect()->route('teacher.courses.index')
+                ->with('warning', 'In order to view the progress of
+                your students you need to be assigned to a course first.');
         }
 
-        $course = $courses[0];
-        $students = $course->students;
 
-        return view('teacher.progress')->with('students', $students)->with('courses', $courses);
+        return view('teacher.progress')->with('courses', $courses);
     }
 
     /**
