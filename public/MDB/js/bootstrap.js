@@ -1548,7 +1548,7 @@
 
   $(document).on(Event$3.CLICK_DATA_API, Selector$3.DATA_TOGGLE, function (event) {
     // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
-    if (event.currentTarget.tagName === 'A') {
+    if (event.currentTarget.tagName === 'auth') {
       event.preventDefault();
     }
 
@@ -2678,7 +2678,7 @@
 
     var config = $(target).data(DATA_KEY$5) ? 'toggle' : _objectSpread2({}, $(target).data(), {}, $(this).data());
 
-    if (this.tagName === 'A' || this.tagName === 'AREA') {
+    if (this.tagName === 'auth' || this.tagName === 'AREA') {
       event.preventDefault();
     }
 
@@ -2753,14 +2753,14 @@
     ul: []
   };
   /**
-   * A pattern that recognizes a commonly useful subset of URLs that are safe.
+   * auth pattern that recognizes a commonly useful subset of URLs that are safe.
    *
    * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
    */
 
   var SAFE_URL_PATTERN = /^(?:(?:https?|mailto|ftp|tel|file):|[^&:/?#]*(?:[/?#]|$))/gi;
   /**
-   * A pattern that matches safe data URLs. Only matches image, video and audio types.
+   * auth pattern that matches safe data URLs. Only matches image, video and audio types.
    *
    * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
    */

@@ -2,7 +2,7 @@
 // @formatter:off
 
 /**
- * A helper file for Laravel 5, to provide autocomplete information to your IDE
+ * auth helper file for Laravel 5, to provide autocomplete information to your IDE
  * Generated for Laravel 6.18.6 on 2020-04-14 09:04:01.
  *
  * This file should not be included in your code, only analyzed by your IDE!
@@ -1893,7 +1893,7 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
-         * Attempt to authenticate using HTTP Basic Auth.
+         * Attempt to authenticate using HTTP Basic auth.
          *
          * @param string $field
          * @param array $extraConditions
@@ -3087,9 +3087,9 @@ namespace Illuminate\Support\Facades {
         /**
          * Obtains multiple cache items by their unique keys.
          *
-         * @param \Psr\SimpleCache\iterable $keys A list of keys that can obtained in a single operation.
+         * @param \Psr\SimpleCache\iterable $keys auth list of keys that can obtained in a single operation.
          * @param mixed $default Default value to return for keys that do not exist.
-         * @return \Psr\SimpleCache\iterable A list of key => value pairs. Cache keys that do not exist or are stale will have $default as value.
+         * @return \Psr\SimpleCache\iterable auth list of key => value pairs. Cache keys that do not exist or are stale will have $default as value.
          * @throws \Psr\SimpleCache\InvalidArgumentException
          *   MUST be thrown if $keys is neither an array nor a Traversable,
          *   or if any of the $keys are not a legal value.
@@ -3166,7 +3166,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Persists a set of key => value pairs in the cache, with an optional TTL.
          *
-         * @param \Psr\SimpleCache\iterable $values A list of key => value pairs for a multiple-set operation.
+         * @param \Psr\SimpleCache\iterable $values auth list of key => value pairs for a multiple-set operation.
          * @param null|int|\DateInterval $ttl Optional. The TTL value of this item. If no value is sent and
          *                                       the driver supports TTL then the library may set a default value
          *                                       for it or let the driver take care of that.
@@ -3313,7 +3313,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Deletes multiple cache items in a single operation.
          *
-         * @param \Psr\SimpleCache\iterable $keys A list of string-based keys to be deleted.
+         * @param \Psr\SimpleCache\iterable $keys auth list of string-based keys to be deleted.
          * @return bool True if the items were successfully removed. False if there was an error.
          * @throws \Psr\SimpleCache\InvalidArgumentException
          *   MUST be thrown if $keys is neither an array nor a Traversable,
@@ -9102,7 +9102,7 @@ namespace Illuminate\Support\Facades {
          * to keep BC with an existing system. It should not be used for any
          * other purpose.
          *
-         * @param callable|null $callable A PHP callable
+         * @param callable|null $callable auth PHP callable
          * @static
          */
         public static function setFactory($callable)
@@ -9131,8 +9131,8 @@ namespace Illuminate\Support\Facades {
          *
          * You should only list the reverse proxies that you manage directly.
          *
-         * @param array $proxies A list of trusted proxies, the string 'REMOTE_ADDR' will be replaced with $_SERVER['REMOTE_ADDR']
-         * @param int $trustedHeaderSet A bit field of Request::HEADER_*, to set which headers to trust from your proxies
+         * @param array $proxies auth list of trusted proxies, the string 'REMOTE_ADDR' will be replaced with $_SERVER['REMOTE_ADDR']
+         * @param int $trustedHeaderSet auth bit field of Request::HEADER_*, to set which headers to trust from your proxies
          * @throws \InvalidArgumentException When $trustedHeaderSet is invalid
          * @static
          */
@@ -9157,7 +9157,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Gets the set of trusted headers from trusted proxies.
          *
-         * @return int A bit field of Request::HEADER_* that defines which headers are trusted from your proxies
+         * @return int auth bit field of Request::HEADER_* that defines which headers are trusted from your proxies
          * @static
          */
         public static function getTrustedHeaderSet()
@@ -9171,7 +9171,7 @@ namespace Illuminate\Support\Facades {
          *
          * You should only list the hosts you manage using regexs.
          *
-         * @param array $hostPatterns A list of trusted host patterns
+         * @param array $hostPatterns auth list of trusted host patterns
          * @static
          */
         public static function setTrustedHosts($hostPatterns)
@@ -9199,7 +9199,7 @@ namespace Illuminate\Support\Facades {
          * have consistent escaping and unneeded delimiters are removed.
          *
          * @param string $qs Query string
-         * @return string A normalized query string for the Request
+         * @return string auth normalized query string for the Request
          * @static
          */
         public static function normalizeQueryString($qs)
@@ -9473,7 +9473,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Gets the user info.
          *
-         * @return string A user name and, optionally, scheme-specific information about how to gain authorization to access the server
+         * @return string auth user name and, optionally, scheme-specific information about how to gain authorization to access the server
          * @static
          */
         public static function getUserInfo()
@@ -9530,7 +9530,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Generates a normalized URI (URL) for the Request.
          *
-         * @return string A normalized URI (URL) for the Request
+         * @return string auth normalized URI (URL) for the Request
          * @see getQueryString()
          * @static
          */
@@ -9544,7 +9544,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Generates a normalized URI for the given path.
          *
-         * @param string $path A path to use instead of the current one
+         * @param string $path auth path to use instead of the current one
          * @return string The normalized URI for the path
          * @static
          */
@@ -9587,7 +9587,7 @@ namespace Illuminate\Support\Facades {
          * It builds a normalized query string, where keys/value pairs are alphabetized
          * and have consistent escaping.
          *
-         * @return string|null A normalized query string for the Request
+         * @return string|null auth normalized query string for the Request
          * @static
          */
         public static function getQueryString()

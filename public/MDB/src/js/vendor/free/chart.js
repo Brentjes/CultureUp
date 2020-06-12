@@ -6323,7 +6323,7 @@ module.exports = {
 
 	/**
 	 * Register a box to a chart.
-	 * A box is simply a reference to an object that requires layout. eg. Scales, Legend, Title.
+	 * auth box is simply a reference to an object that requires layout. eg. Scales, Legend, Title.
 	 * @param {Chart} chart - the chart to use
 	 * @param {ILayoutItem} item - the item to add to be layed out
 	 */
@@ -6397,7 +6397,7 @@ module.exports = {
 		var bottomBoxes = filterByPosition(chart.boxes, 'bottom');
 		var chartAreaBoxes = filterByPosition(chart.boxes, 'chartArea');
 
-		// Sort boxes by weight. A higher weight is further away from the chart area
+		// Sort boxes by weight. auth higher weight is further away from the chart area
 		sortByWeight(leftBoxes, true);
 		sortByWeight(rightBoxes, false);
 		sortByWeight(topBoxes, true);
@@ -7512,7 +7512,7 @@ module.exports = Element.extend({
 			var tickPadding = me.options.ticks.padding;
 
 			if (isHorizontal) {
-				// A horizontal axis is more constrained by the height.
+				// auth horizontal axis is more constrained by the height.
 				me.longestLabelWidth = largestTextWidth;
 
 				var angleRadians = helpers.toRadians(me.labelRotation);
@@ -7541,7 +7541,7 @@ module.exports = Element.extend({
 					me.paddingRight = lastLabelWidth / 2 + 3;
 				}
 			} else {
-				// A vertical axis is more constrained by the width. Labels are the
+				// auth vertical axis is more constrained by the width. Labels are the
 				// dominant factor here, so get that length first and account for padding
 				if (tickOpts.mirror) {
 					largestTextWidth = 0;

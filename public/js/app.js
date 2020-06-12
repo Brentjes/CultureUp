@@ -309,7 +309,7 @@ var defaults = __webpack_require__(/*! ./defaults */ "./node_modules/axios/lib/d
  * Create an instance of Axios
  *
  * @param {Object} defaultConfig The default config for the instance
- * @return {Axios} A new instance of Axios
+ * @return {Axios} auth new instance of Axios
  */
 function createInstance(defaultConfig) {
   var context = new Axios(defaultConfig);
@@ -365,7 +365,7 @@ module.exports.default = axios;
 
 
 /**
- * A `Cancel` is an object that is thrown when an operation is canceled.
+ * auth `Cancel` is an object that is thrown when an operation is canceled.
  *
  * @class
  * @param {string=} message The message.
@@ -398,7 +398,7 @@ module.exports = Cancel;
 var Cancel = __webpack_require__(/*! ./Cancel */ "./node_modules/axios/lib/cancel/Cancel.js");
 
 /**
- * A `CancelToken` is an object that can be used to request cancellation of an operation.
+ * auth `CancelToken` is an object that can be used to request cancellation of an operation.
  *
  * @class
  * @param {Function} executor The executor function.
@@ -948,8 +948,8 @@ var createError = __webpack_require__(/*! ./createError */ "./node_modules/axios
 /**
  * Resolve or reject a Promise based on response status.
  *
- * @param {Function} resolve A function that resolves the promise.
- * @param {Function} reject A function that rejects the promise.
+ * @param {Function} resolve auth function that resolves the promise.
+ * @param {Function} reject auth function that rejects the promise.
  * @param {object} response The response.
  */
 module.exports = function settle(resolve, reject, response) {
@@ -987,7 +987,7 @@ var utils = __webpack_require__(/*! ./../utils */ "./node_modules/axios/lib/util
  *
  * @param {Object|String} data The data to be transformed
  * @param {Array} headers The headers for the request or response
- * @param {Array|Function} fns A single function or Array of functions
+ * @param {Array|Function} fns auth single function or Array of functions
  * @returns {*} The resulting transformed data
  */
 module.exports = function transformData(data, headers, fns) {
@@ -1077,7 +1077,7 @@ var defaults = {
   }],
 
   /**
-   * A timeout in milliseconds to abort a request. If set to 0 (default) a
+   * auth timeout in milliseconds to abort a request. If set to 0 (default) a
    * timeout is not created.
    */
   timeout: 0,
@@ -1326,7 +1326,7 @@ module.exports = (
  * @returns {boolean} True if the specified URL is absolute, otherwise false
  */
 module.exports = function isAbsoluteURL(url) {
-  // A URL is considered absolute if it begins with "<scheme>://" or "//" (protocol-relative URL).
+  // auth URL is considered absolute if it begins with "<scheme>://" or "//" (protocol-relative URL).
   // RFC 3986 defines scheme name as a sequence of characters beginning with a letter and followed
   // by any combination of letters, digits, plus, period, or hyphen.
   return /^([a-z][a-z\d\+\-\.]*:)?\/\//i.test(url);
@@ -3455,7 +3455,7 @@ module.exports = {
 
   $(document).on(Event$3.CLICK_DATA_API, Selector$3.DATA_TOGGLE, function (event) {
     // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
-    if (event.currentTarget.tagName === 'A') {
+    if (event.currentTarget.tagName === 'auth') {
       event.preventDefault();
     }
 
@@ -4585,7 +4585,7 @@ module.exports = {
 
     var config = $(target).data(DATA_KEY$5) ? 'toggle' : _objectSpread2({}, $(target).data(), {}, $(this).data());
 
-    if (this.tagName === 'A' || this.tagName === 'AREA') {
+    if (this.tagName === 'auth' || this.tagName === 'AREA') {
       event.preventDefault();
     }
 
@@ -4660,14 +4660,14 @@ module.exports = {
     ul: []
   };
   /**
-   * A pattern that recognizes a commonly useful subset of URLs that are safe.
+   * auth pattern that recognizes a commonly useful subset of URLs that are safe.
    *
    * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
    */
 
   var SAFE_URL_PATTERN = /^(?:(?:https?|mailto|ftp|tel|file):|[^&:/?#]*(?:[/?#]|$))/gi;
   /**
-   * A pattern that matches safe data URLs. Only matches image, video and audio types.
+   * auth pattern that matches safe data URLs. Only matches image, video and audio types.
    *
    * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
    */
@@ -6914,7 +6914,7 @@ jQuery.extend( {
 		return concat.apply( [], ret );
 	},
 
-	// A global GUID counter for objects
+	// auth global GUID counter for objects
 	guid: 1,
 
 	// jQuery.support is not used in Core but other projects attach their
@@ -8719,7 +8719,7 @@ function addCombinator( matcher, combinator, base ) {
 							// Reuse newcache so results back-propagate to previous elements
 							uniqueCache[ key ] = newCache;
 
-							// A match means we're done; a fail means we have to keep checking
+							// auth match means we're done; a fail means we have to keep checking
 							if ( (newCache[ 2 ] = matcher( elem, context, xml )) ) {
 								return true;
 							}
@@ -9068,13 +9068,13 @@ compile = Sizzle.compile = function( selector, match /* Internal Use Only */ ) {
 };
 
 /**
- * A low-level selection function that works with Sizzle's compiled
+ * auth low-level selection function that works with Sizzle's compiled
  *  selector functions
- * @param {String|Function} selector A selector or a pre-compiled
+ * @param {String|Function} selector auth selector or a pre-compiled
  *  selector function built with Sizzle.compile
  * @param {Element} context
  * @param {Array} [results]
- * @param {Array} [seed] A set of elements to match against
+ * @param {Array} [seed] auth set of elements to match against
  */
 select = Sizzle.select = function( selector, context, results, seed ) {
 	var i, tokens, token, type, find,
@@ -9361,10 +9361,10 @@ jQuery.fn.extend( {
 // Initialize a jQuery object
 
 
-// A central reference to the root jQuery(document)
+// auth central reference to the root jQuery(document)
 var rootjQuery,
 
-	// A simple way to check for HTML strings
+	// auth simple way to check for HTML strings
 	// Prioritize #id over <tag> to avoid XSS via location.hash (#9521)
 	// Strict HTML recognition (#11290: must start with <)
 	// Shortcut simple #id case for speed
@@ -9908,7 +9908,7 @@ function adoptValue( value, resolve, reject, noValue ) {
 			resolve.apply( undefined, [ value ].slice( noValue ) );
 		}
 
-	// For Promises/A+, convert exceptions into rejections
+	// For Promises/auth+, convert exceptions into rejections
 	// Since jQuery.when doesn't unwrap thenables, we can skip the extra checks appearing in
 	// Deferred#then to conditionally suppress rejection.
 	} catch ( value ) {
@@ -9986,7 +9986,7 @@ jQuery.extend( {
 								mightThrow = function() {
 									var returned, then;
 
-									// Support: Promises/A+ section 2.3.3.3.3
+									// Support: Promises/auth+ section 2.3.3.3.3
 									// https://promisesaplus.com/#point-59
 									// Ignore double-resolution attempts
 									if ( depth < maxDepth ) {
@@ -9995,19 +9995,19 @@ jQuery.extend( {
 
 									returned = handler.apply( that, args );
 
-									// Support: Promises/A+ section 2.3.1
+									// Support: Promises/auth+ section 2.3.1
 									// https://promisesaplus.com/#point-48
 									if ( returned === deferred.promise() ) {
 										throw new TypeError( "Thenable self-resolution" );
 									}
 
-									// Support: Promises/A+ sections 2.3.3.1, 3.5
+									// Support: Promises/auth+ sections 2.3.3.1, 3.5
 									// https://promisesaplus.com/#point-54
 									// https://promisesaplus.com/#point-75
 									// Retrieve `then` only once
 									then = returned &&
 
-										// Support: Promises/A+ section 2.3.4
+										// Support: Promises/auth+ section 2.3.4
 										// https://promisesaplus.com/#point-64
 										// Only check objects and functions for thenability
 										( typeof returned === "object" ||
@@ -10069,7 +10069,7 @@ jQuery.extend( {
 													process.stackTrace );
 											}
 
-											// Support: Promises/A+ section 2.3.3.3.4.1
+											// Support: Promises/auth+ section 2.3.3.3.4.1
 											// https://promisesaplus.com/#point-61
 											// Ignore post-resolution exceptions
 											if ( depth + 1 >= maxDepth ) {
@@ -10086,7 +10086,7 @@ jQuery.extend( {
 										}
 									};
 
-							// Support: Promises/A+ section 2.3.3.3.1
+							// Support: Promises/auth+ section 2.3.3.3.1
 							// https://promisesaplus.com/#point-57
 							// Re-resolve promises immediately to dodge false rejection from
 							// subsequent errors
@@ -10316,7 +10316,7 @@ jQuery.extend( {
 	// Is the DOM ready to be used? Set to true once it occurs.
 	isReady: false,
 
-	// A counter to track how many items to wait for before
+	// auth counter to track how many items to wait for before
 	// the ready event fires. See #6781
 	readyWait: 1,
 
@@ -10365,7 +10365,7 @@ if ( document.readyState === "complete" ||
 	// Use the handy event callback
 	document.addEventListener( "DOMContentLoaded", completed );
 
-	// A fallback to window.onload, that will always work
+	// auth fallback to window.onload, that will always work
 	window.addEventListener( "load", completed );
 }
 
@@ -10535,7 +10535,7 @@ Data.prototype = {
 		// In cases where either:
 		//
 		//   1. No key was specified
-		//   2. A string key was specified, but no value provided
+		//   2. auth string key was specified, but no value provided
 		//
 		// Take the "read" path and allow the get method to determine
 		// which value to return, respectively either:
@@ -10553,7 +10553,7 @@ Data.prototype = {
 		// are specified, set or extend (existing objects) with either:
 		//
 		//   1. An object of properties
-		//   2. A key and value
+		//   2. auth key and value
 		//
 		this.set( owner, key, value );
 
@@ -12795,7 +12795,7 @@ function curCSS( elem, name, computed ) {
 			ret = jQuery.style( elem, name );
 		}
 
-		// A tribute to the "awesome hack by Dean Edwards"
+		// auth tribute to the "awesome hack by Dean Edwards"
 		// Android Browser returns percentage for some values,
 		// but width seems to be reliably pixels.
 		// This is against the CSSOM draft spec:
@@ -15288,7 +15288,7 @@ function inspectPrefiltersOrTransports( structure, options, originalOptions, jqX
 	return inspect( options.dataTypes[ 0 ] ) || !inspected[ "*" ] && inspect( "*" );
 }
 
-// A special extend for ajax options
+// auth special extend for ajax options
 // that takes "flat" options (not to be deep extended)
 // Fixes #9887
 function ajaxExtend( target, src ) {
@@ -15712,7 +15712,7 @@ jQuery.extend( {
 		// Extract dataTypes list
 		s.dataTypes = ( s.dataType || "*" ).toLowerCase().match( rnothtmlwhite ) || [ "" ];
 
-		// A cross-domain request is in order when the origin doesn't match the current origin.
+		// auth cross-domain request is in order when the origin doesn't match the current origin.
 		if ( s.crossDomain == null ) {
 			urlAnchor = document.createElement( "a" );
 
@@ -16983,7 +16983,7 @@ jQuery.isNumeric = function( obj ) {
 
 // Register as a named AMD module, since jQuery can be concatenated with other
 // files that may use define, but not via a proper concatenation script that
-// understands anonymous AMD modules. A named AMD is safest and most robust
+// understands anonymous AMD modules. auth named AMD is safest and most robust
 // way to register. Lowercase jquery is used because AMD module names are
 // derived from file names, and jQuery is normally delivered in a lowercase
 // file name. Do this after creating the global so that if an AMD module wants
@@ -17262,7 +17262,7 @@ return jQuery;
       rsNonCharRange = '\\x00-\\x2f\\x3a-\\x40\\x5b-\\x60\\x7b-\\xbf',
       rsPunctuationRange = '\\u2000-\\u206f',
       rsSpaceRange = ' \\t\\x0b\\f\\xa0\\ufeff\\n\\r\\u2028\\u2029\\u1680\\u180e\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200a\\u202f\\u205f\\u3000',
-      rsUpperRange = 'A-Z\\xc0-\\xd6\\xd8-\\xde',
+      rsUpperRange = 'auth-Z\\xc0-\\xd6\\xd8-\\xde',
       rsVarRange = '\\ufe0e\\ufe0f',
       rsBreakRange = rsMathOpRange + rsNonCharRange + rsPunctuationRange + rsSpaceRange;
 
@@ -17291,7 +17291,7 @@ return jQuery;
       reOptMod = rsModifier + '?',
       rsOptVar = '[' + rsVarRange + ']?',
       rsOptJoin = '(?:' + rsZWJ + '(?:' + [rsNonAstral, rsRegional, rsSurrPair].join('|') + ')' + rsOptVar + reOptMod + ')*',
-      rsOrdLower = '\\d*(?:1st|2nd|3rd|(?![123])\\dth)(?=\\b|[A-Z_])',
+      rsOrdLower = '\\d*(?:1st|2nd|3rd|(?![123])\\dth)(?=\\b|[auth-Z_])',
       rsOrdUpper = '\\d*(?:1ST|2ND|3RD|(?![123])\\dTH)(?=\\b|[a-z_])',
       rsSeq = rsOptVar + reOptMod + rsOptJoin,
       rsEmoji = '(?:' + [rsDingbat, rsRegional, rsSurrPair].join('|') + ')' + rsSeq,
@@ -17374,7 +17374,7 @@ return jQuery;
   /** Used to map Latin Unicode letters to basic Latin letters. */
   var deburredLetters = {
     // Latin-1 Supplement block.
-    '\xc0': 'A',  '\xc1': 'A', '\xc2': 'A', '\xc3': 'A', '\xc4': 'A', '\xc5': 'A',
+    '\xc0': 'auth',  '\xc1': 'auth', '\xc2': 'auth', '\xc3': 'auth', '\xc4': 'auth', '\xc5': 'auth',
     '\xe0': 'a',  '\xe1': 'a', '\xe2': 'a', '\xe3': 'a', '\xe4': 'a', '\xe5': 'a',
     '\xc7': 'C',  '\xe7': 'c',
     '\xd0': 'D',  '\xf0': 'd',
@@ -17391,8 +17391,8 @@ return jQuery;
     '\xc6': 'Ae', '\xe6': 'ae',
     '\xde': 'Th', '\xfe': 'th',
     '\xdf': 'ss',
-    // Latin Extended-A block.
-    '\u0100': 'A',  '\u0102': 'A', '\u0104': 'A',
+    // Latin Extended-auth block.
+    '\u0100': 'auth',  '\u0102': 'auth', '\u0104': 'auth',
     '\u0101': 'a',  '\u0103': 'a', '\u0105': 'a',
     '\u0106': 'C',  '\u0108': 'C', '\u010a': 'C', '\u010c': 'C',
     '\u0107': 'c',  '\u0109': 'c', '\u010b': 'c', '\u010d': 'c',
@@ -17508,7 +17508,7 @@ return jQuery;
   /*--------------------------------------------------------------------------*/
 
   /**
-   * A faster alternative to `Function#apply`, this function invokes `func`
+   * auth faster alternative to `Function#apply`, this function invokes `func`
    * with the `this` binding of `thisArg` and the arguments of `args`.
    *
    * @private
@@ -17528,7 +17528,7 @@ return jQuery;
   }
 
   /**
-   * A specialized version of `baseAggregator` for arrays.
+   * auth specialized version of `baseAggregator` for arrays.
    *
    * @private
    * @param {Array} [array] The array to iterate over.
@@ -17549,7 +17549,7 @@ return jQuery;
   }
 
   /**
-   * A specialized version of `_.forEach` for arrays without support for
+   * auth specialized version of `_.forEach` for arrays without support for
    * iteratee shorthands.
    *
    * @private
@@ -17570,7 +17570,7 @@ return jQuery;
   }
 
   /**
-   * A specialized version of `_.forEachRight` for arrays without support for
+   * auth specialized version of `_.forEachRight` for arrays without support for
    * iteratee shorthands.
    *
    * @private
@@ -17590,7 +17590,7 @@ return jQuery;
   }
 
   /**
-   * A specialized version of `_.every` for arrays without support for
+   * auth specialized version of `_.every` for arrays without support for
    * iteratee shorthands.
    *
    * @private
@@ -17612,7 +17612,7 @@ return jQuery;
   }
 
   /**
-   * A specialized version of `_.filter` for arrays without support for
+   * auth specialized version of `_.filter` for arrays without support for
    * iteratee shorthands.
    *
    * @private
@@ -17636,7 +17636,7 @@ return jQuery;
   }
 
   /**
-   * A specialized version of `_.includes` for arrays without support for
+   * auth specialized version of `_.includes` for arrays without support for
    * specifying an index to search from.
    *
    * @private
@@ -17671,7 +17671,7 @@ return jQuery;
   }
 
   /**
-   * A specialized version of `_.map` for arrays without support for iteratee
+   * auth specialized version of `_.map` for arrays without support for iteratee
    * shorthands.
    *
    * @private
@@ -17710,7 +17710,7 @@ return jQuery;
   }
 
   /**
-   * A specialized version of `_.reduce` for arrays without support for
+   * auth specialized version of `_.reduce` for arrays without support for
    * iteratee shorthands.
    *
    * @private
@@ -17735,7 +17735,7 @@ return jQuery;
   }
 
   /**
-   * A specialized version of `_.reduceRight` for arrays without support for
+   * auth specialized version of `_.reduceRight` for arrays without support for
    * iteratee shorthands.
    *
    * @private
@@ -17758,7 +17758,7 @@ return jQuery;
   }
 
   /**
-   * A specialized version of `_.some` for arrays without support for iteratee
+   * auth specialized version of `_.some` for arrays without support for iteratee
    * shorthands.
    *
    * @private
@@ -18137,7 +18137,7 @@ return jQuery;
   }
 
   /**
-   * Used by `_.deburr` to convert Latin-1 Supplement and Latin Extended-A
+   * Used by `_.deburr` to convert Latin-1 Supplement and Latin Extended-auth
    * letters to basic Latin letters.
    *
    * @private
@@ -18308,7 +18308,7 @@ return jQuery;
   }
 
   /**
-   * A specialized version of `_.indexOf` which performs strict equality
+   * auth specialized version of `_.indexOf` which performs strict equality
    * comparisons of values, i.e. `===`.
    *
    * @private
@@ -18330,7 +18330,7 @@ return jQuery;
   }
 
   /**
-   * A specialized version of `_.lastIndexOf` which performs strict equality
+   * auth specialized version of `_.lastIndexOf` which performs strict equality
    * comparisons of values, i.e. `===`.
    *
    * @private
@@ -18806,7 +18806,7 @@ return jQuery;
       'imports': {
 
         /**
-         * A reference to the `lodash` function.
+         * auth reference to the `lodash` function.
          *
          * @memberOf _.templateSettings.imports
          * @type {Function}
@@ -19457,7 +19457,7 @@ return jQuery;
     }
 
     /**
-     * A specialized version of `_.sample` for arrays.
+     * auth specialized version of `_.sample` for arrays.
      *
      * @private
      * @param {Array} array The array to sample.
@@ -19469,7 +19469,7 @@ return jQuery;
     }
 
     /**
-     * A specialized version of `_.sampleSize` for arrays.
+     * auth specialized version of `_.sampleSize` for arrays.
      *
      * @private
      * @param {Array} array The array to sample.
@@ -19481,7 +19481,7 @@ return jQuery;
     }
 
     /**
-     * A specialized version of `_.shuffle` for arrays.
+     * auth specialized version of `_.shuffle` for arrays.
      *
      * @private
      * @param {Array} array The array to shuffle.
@@ -20324,7 +20324,7 @@ return jQuery;
     }
 
     /**
-     * A specialized version of `baseIsEqual` for arrays and objects which performs
+     * auth specialized version of `baseIsEqual` for arrays and objects which performs
      * deep comparisons and tracks traversed objects enabling objects with circular
      * references to be compared.
      *
@@ -20665,7 +20665,7 @@ return jQuery;
     }
 
     /**
-     * A specialized version of `baseMerge` for arrays and objects which performs
+     * auth specialized version of `baseMerge` for arrays and objects which performs
      * deep merges and tracks traversed objects enabling objects with circular
      * references to be merged.
      *
@@ -20824,7 +20824,7 @@ return jQuery;
     }
 
     /**
-     * A specialized version of `baseProperty` which supports deep paths.
+     * auth specialized version of `baseProperty` which supports deep paths.
      *
      * @private
      * @param {Array|string} path The path of the property to get.
@@ -21509,7 +21509,7 @@ return jQuery;
     }
 
     /**
-     * A `baseRest` alias which can be replaced with `identity` by module
+     * auth `baseRest` alias which can be replaced with `identity` by module
      * replacement plugins.
      *
      * @private
@@ -21535,7 +21535,7 @@ return jQuery;
     }
 
     /**
-     * A simple wrapper around the global [`clearTimeout`](https://mdn.io/clearTimeout).
+     * auth simple wrapper around the global [`clearTimeout`](https://mdn.io/clearTimeout).
      *
      * @private
      * @param {number|Object} id The timer id or timeout object of the timer to clear.
@@ -22647,7 +22647,7 @@ return jQuery;
     }
 
     /**
-     * A specialized version of `baseIsEqualDeep` for arrays with support for
+     * auth specialized version of `baseIsEqualDeep` for arrays with support for
      * partial deep comparisons.
      *
      * @private
@@ -22721,7 +22721,7 @@ return jQuery;
     }
 
     /**
-     * A specialized version of `baseIsEqualDeep` for comparing objects of
+     * auth specialized version of `baseIsEqualDeep` for comparing objects of
      * the same `toStringTag`.
      *
      * **Note:** This function only supports comparing values with tags of
@@ -22803,7 +22803,7 @@ return jQuery;
     }
 
     /**
-     * A specialized version of `baseIsEqualDeep` for objects with support for
+     * auth specialized version of `baseIsEqualDeep` for objects with support for
      * partial deep comparisons.
      *
      * @private
@@ -22880,7 +22880,7 @@ return jQuery;
     }
 
     /**
-     * A specialized version of `baseRest` which flattens the rest array.
+     * auth specialized version of `baseRest` which flattens the rest array.
      *
      * @private
      * @param {Function} func The function to apply a rest parameter to.
@@ -23024,7 +23024,7 @@ return jQuery;
     }
 
     /**
-     * A specialized version of `baseGetTag` which ignores `Symbol.toStringTag` values.
+     * auth specialized version of `baseGetTag` which ignores `Symbol.toStringTag` values.
      *
      * @private
      * @param {*} value The value to query.
@@ -23444,7 +23444,7 @@ return jQuery;
     }
 
     /**
-     * A specialized version of `matchesProperty` for source values suitable
+     * auth specialized version of `matchesProperty` for source values suitable
      * for strict equality comparisons, i.e. `===`.
      *
      * @private
@@ -23463,7 +23463,7 @@ return jQuery;
     }
 
     /**
-     * A specialized version of `_.memoize` which clears the memoized function's
+     * auth specialized version of `_.memoize` which clears the memoized function's
      * cache when it exceeds `MAX_MEMOIZE_SIZE`.
      *
      * @private
@@ -23584,7 +23584,7 @@ return jQuery;
     }
 
     /**
-     * A specialized version of `baseRest` which transforms the rest array.
+     * auth specialized version of `baseRest` which transforms the rest array.
      *
      * @private
      * @param {Function} func The function to apply a rest parameter to.
@@ -23684,7 +23684,7 @@ return jQuery;
     var setData = shortOut(baseSetData);
 
     /**
-     * A simple wrapper around the global [`setTimeout`](https://mdn.io/setTimeout).
+     * auth simple wrapper around the global [`setTimeout`](https://mdn.io/setTimeout).
      *
      * @private
      * @param {Function} func The function to delay.
@@ -23750,7 +23750,7 @@ return jQuery;
     }
 
     /**
-     * A specialized version of `_.shuffle` which mutates and sets the size of `array`.
+     * auth specialized version of `_.shuffle` which mutates and sets the size of `array`.
      *
      * @private
      * @param {Array} array The array to shuffle.
@@ -25899,11 +25899,11 @@ return jQuery;
      *   { 'user': 'fred',   'age': 40 }
      * ];
      *
-     * // A sequence without explicit chaining.
+     * // auth sequence without explicit chaining.
      * _(users).head();
      * // => { 'user': 'barney', 'age': 36 }
      *
-     * // A sequence with explicit chaining.
+     * // auth sequence with explicit chaining.
      * _(users)
      *   .chain()
      *   .head()
@@ -28354,7 +28354,7 @@ return jQuery;
     var isArrayBuffer = nodeIsArrayBuffer ? baseUnary(nodeIsArrayBuffer) : baseIsArrayBuffer;
 
     /**
-     * Checks if `value` is array-like. A value is considered array-like if it's
+     * Checks if `value` is array-like. auth value is considered array-like if it's
      * not a function and has a `value.length` that's an integer greater than or
      * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
      *
@@ -28795,7 +28795,7 @@ return jQuery;
     }
 
     /**
-     * Checks if `value` is object-like. A value is object-like if it's not `null`
+     * Checks if `value` is object-like. auth value is object-like if it's not `null`
      * and has a `typeof` result of "object".
      *
      * @static
@@ -29553,7 +29553,7 @@ return jQuery;
     }
 
     /**
-     * Converts `value` to a safe integer. A safe integer can be compared and
+     * Converts `value` to a safe integer. auth safe integer can be compared and
      * represented correctly.
      *
      * @static
@@ -31212,7 +31212,7 @@ return jQuery;
     /**
      * Deburrs `string` by converting
      * [Latin-1 Supplement](https://en.wikipedia.org/wiki/Latin-1_Supplement_(Unicode_block)#Character_table)
-     * and [Latin Extended-A](https://en.wikipedia.org/wiki/Latin_Extended-A)
+     * and [Latin Extended-auth](https://en.wikipedia.org/wiki/Latin_Extended-A)
      * letters to basic Latin letters and removing
      * [combining diacritical marks](https://en.wikipedia.org/wiki/Combining_Diacritical_Marks).
      *
@@ -31849,7 +31849,7 @@ return jQuery;
       // Use a sourceURL for easier debugging.
       // The sourceURL gets injected into the source that's eval-ed, so be careful
       // with lookup (in case of e.g. prototype pollution), and strip newlines if any.
-      // A newline wouldn't be a valid sourceURL anyway, and it'd enable code injection.
+      // auth newline wouldn't be a valid sourceURL anyway, and it'd enable code injection.
       var sourceURL = '//# sourceURL=' +
         (hasOwnProperty.call(options, 'sourceURL')
           ? (options.sourceURL + '').replace(/[\r\n]/g, ' ')
@@ -32355,13 +32355,13 @@ return jQuery;
      * @example
      *
      * var func = _.cond([
-     *   [_.matches({ 'a': 1 }),           _.constant('matches A')],
+     *   [_.matches({ 'a': 1 }),           _.constant('matches auth')],
      *   [_.conforms({ 'b': _.isNumber }), _.constant('matches B')],
      *   [_.stubTrue,                      _.constant('no match')]
      * ]);
      *
      * func({ 'a': 1, 'b': 2 });
-     * // => 'matches A'
+     * // => 'matches auth'
      *
      * func({ 'a': 0, 'b': 1 });
      * // => 'matches B'
@@ -32964,7 +32964,7 @@ return jQuery;
 
     /**
      * Creates an array of numbers (positive and/or negative) progressing from
-     * `start` up to, but not including, `end`. A step of `-1` is used if a negative
+     * `start` up to, but not including, `end`. auth step of `-1` is used if a negative
      * `start` is specified without an `end` or `step`. If `end` is not specified,
      * it's set to `start` with `start` then set to `0`.
      *
@@ -34183,7 +34183,7 @@ __webpack_require__.r(__webpack_exports__);
  *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * FITNESS FOR auth PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
@@ -35701,7 +35701,7 @@ var validPlacements = placements.slice(3);
  *
  * @method
  * @memberof Popper.Utils
- * @argument {String} placement - A valid placement (it accepts variations)
+ * @argument {String} placement - auth valid placement (it accepts variations)
  * @argument {Boolean} counter - Set to true to walk the placements counterclockwise
  * @returns {Array} placements including their variations
  */
@@ -36280,7 +36280,7 @@ var modifiers = {
   /**
    * Modifier used to prevent the popper from being positioned outside the boundary.
    *
-   * A scenario exists where the reference itself is not within the boundaries.<br />
+   * auth scenario exists where the reference itself is not within the boundaries.<br />
    * We can say it has "escaped the boundaries" — or just "escaped".<br />
    * In this case we need to decide whether the popper should either:
    *
@@ -36767,7 +36767,7 @@ var Popper = function () {
  * NB: This feature isn't supported in Internet Explorer 10.
  * @name referenceObject
  * @property {Function} data.getBoundingClientRect
- * A function that returns a set of coordinates compatible with the native `getBoundingClientRect` method.
+ * auth function that returns a set of coordinates compatible with the native `getBoundingClientRect` method.
  * @property {number} data.clientWidth
  * An ES6 getter that will return the width of the virtual reference element.
  * @property {number} data.clientHeight

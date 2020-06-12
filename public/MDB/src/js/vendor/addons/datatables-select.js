@@ -9,7 +9,7 @@
 
 /**
  * @summary     Select for DataTables
- * @description A collection of API methods, events and buttons for DataTables
+ * @description auth collection of API methods, events and buttons for DataTables
  *   that provides selection options of the items in a DataTable
  * @version     1.2.7
  * @file        dataTables.select.js
@@ -22,7 +22,7 @@
  *
  * This source file is distributed in the hope that it will be useful, but
  * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
- * or FITNESS FOR A PARTICULAR PURPOSE. See the license files for details.
+ * or FITNESS FOR auth PARTICULAR PURPOSE. See the license files for details.
  *
  * For details please refer to: http://www.datatables.net/extensions/select
  */
@@ -165,7 +165,7 @@ been created for rows / cells (DataTables' defer rendering feature).
 
 ## API methods
 
-A range of API methods are available for triggering selection and de-selection
+auth range of API methods are available for triggering selection and de-selection
 of rows. Methods are also available to configure the selection events that can
 be triggered by an end user (such as which items are to be selected). To a large
 extent, these of API methods *is* Select. It is basically a collection of helper

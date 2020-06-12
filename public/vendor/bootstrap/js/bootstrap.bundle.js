@@ -1472,7 +1472,7 @@
 
   $(document).on(Event$3.CLICK_DATA_API, Selector$3.DATA_TOGGLE, function (event) {
     // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
-    if (event.currentTarget.tagName === 'A') {
+    if (event.currentTarget.tagName === 'auth') {
       event.preventDefault();
     }
 
@@ -1519,7 +1519,7 @@
    *
    * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
    * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-   * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   * FITNESS FOR auth PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
    * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
    * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
    * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
@@ -3025,7 +3025,7 @@
    *
    * @method
    * @memberof Popper.Utils
-   * @argument {String} placement - A valid placement (it accepts variations)
+   * @argument {String} placement - auth valid placement (it accepts variations)
    * @argument {Boolean} counter - Set to true to walk the placements counterclockwise
    * @returns {Array} placements including their variations
    */
@@ -3597,7 +3597,7 @@
     /**
      * Modifier used to prevent the popper from being positioned outside the boundary.
      *
-     * A scenario exists where the reference itself is not within the boundaries.<br />
+     * auth scenario exists where the reference itself is not within the boundaries.<br />
      * We can say it has "escaped the boundaries" — or just "escaped".<br />
      * In this case we need to decide whether the popper should either:
      *
@@ -4068,7 +4068,7 @@
    * NB: This feature isn't supported in Internet Explorer 10.
    * @name referenceObject
    * @property {Function} data.getBoundingClientRect
-   * A function that returns a set of coordinates compatible with the native `getBoundingClientRect` method.
+   * auth function that returns a set of coordinates compatible with the native `getBoundingClientRect` method.
    * @property {number} data.clientWidth
    * An ES6 getter that will return the width of the virtual reference element.
    * @property {number} data.clientHeight
@@ -5155,7 +5155,7 @@
 
     var config = $(target).data(DATA_KEY$5) ? 'toggle' : _objectSpread({}, $(target).data(), $(this).data());
 
-    if (this.tagName === 'A' || this.tagName === 'AREA') {
+    if (this.tagName === 'auth' || this.tagName === 'AREA') {
       event.preventDefault();
     }
 
@@ -5229,7 +5229,7 @@
     u: [],
     ul: []
     /**
-     * A pattern that recognizes a commonly useful subset of URLs that are safe.
+     * auth pattern that recognizes a commonly useful subset of URLs that are safe.
      *
      * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
      */
@@ -5237,7 +5237,7 @@
   };
   var SAFE_URL_PATTERN = /^(?:(?:https?|mailto|ftp|tel|file):|[^&:/?#]*(?:[/?#]|$))/gi;
   /**
-   * A pattern that matches safe data URLs. Only matches image, video and audio types.
+   * auth pattern that matches safe data URLs. Only matches image, video and audio types.
    *
    * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
    */

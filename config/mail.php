@@ -24,7 +24,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | Here you may provide the host address of the SMTP server used by your
-    | applications. A default option is provided that is compatible with
+    | applications. auth default option is provided that is compatible with
     | the Mailgun mail service which will provide reliable deliveries.
     |
     */
@@ -66,7 +66,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | Here you may specify the encryption protocol that should be used when
-    | the application send e-mail messages. A sensible default using the
+    | the application send e-mail messages. auth sensible default using the
     | transport layer security protocol should provide great security.
     |
     */
@@ -94,7 +94,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | When using the "sendmail" driver to send e-mails, we will need to know
-    | the path to where Sendmail lives on this server. A default path has
+    | the path to where Sendmail lives on this server. auth default path has
     | been provided here, which will work well on most of your systems.
     |
     */

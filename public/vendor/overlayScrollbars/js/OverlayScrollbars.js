@@ -60,13 +60,13 @@
             function firstLetterToUpper(str) {
                 return str.charAt(0).toUpperCase() + str.slice(1);
             }
-          
+
             return {
                 _cssPrefixes: cssPrefixes,
                 _jsPrefixes: jsPrefixes,
                 _cssProperty : function(name) {
                     var result = cssCache[name];
-                    
+
                     if(cssCache[LEXICON.hOP](name))
                         return result;
 
@@ -92,14 +92,14 @@
                             }
                         }
                     }
-                    
+
                     cssCache[name] = result;
                     return result;
                 },
                 _jsAPI : function(name, isInterface, fallback) {
                     var i = 0;
                     var result = jsCache[name];
-                    
+
                     if(!jsCache[LEXICON.hOP](name)) {
                         result = window[name];
                         for(; i < jsPrefixes[LEXICON.l]; i++)
@@ -108,7 +108,7 @@
                     }
                     return result || fallback;
                 }
-                
+
             }
         })();
         var COMPATIBILITY = (function() {
@@ -133,7 +133,7 @@
 
                 return fBound;
             }
-            
+
             return {
                 /**
                  * Gets the current window width.
@@ -329,7 +329,7 @@
                 a : MATH.abs,
                 o : 1.70158
             };
-            
+
             /*
              x : current percent (0 - 1),
              t : current time (duration * percent),
@@ -422,8 +422,8 @@
                 },
                 easeOutElastic: function (x, t, b, c, d) {
                     var s=_easingsMath.o;var p=0;var a=c;
-                    if (t==0) return b;  
-                    if ((t/=d)==1) return b+c;  
+                    if (t==0) return b;
+                    if ((t/=d)==1) return b+c;
                     if (!p) p=d*.3;
                     if (a < _easingsMath.a(c)) { a=c; s=p/4; }
                     else s = p/(2*_easingsMath.p) * _easingsMath.n (c/a);
@@ -431,8 +431,8 @@
                 },
                 easeInOutElastic: function (x, t, b, c, d) {
                     var s=_easingsMath.o;var p=0;var a=c;
-                    if (t==0) return b;  
-                    if ((t/=d/2)==2) return b+c;  
+                    if (t==0) return b;
+                    if ((t/=d/2)==2) return b+c;
                     if (!p) p=d*(.3*1.5);
                     if (a < _easingsMath.a(c)) { a=c; s=p/4; }
                     else s = p/(2*_easingsMath.p) * _easingsMath.n (c/a);
@@ -473,33 +473,33 @@
             /*
              *
              * TERMS OF USE - EASING EQUATIONS
-             * 
-             * Open source under the BSD License. 
-             * 
+             *
+             * Open source under the BSD License.
+             *
              * Copyright Â© 2001 Robert Penner
              * All rights reserved.
-             * 
-             * Redistribution and use in source and binary forms, with or without modification, 
+             *
+             * Redistribution and use in source and binary forms, with or without modification,
              * are permitted provided that the following conditions are met:
-             * 
-             * Redistributions of source code must retain the above copyright notice, this list of 
+             *
+             * Redistributions of source code must retain the above copyright notice, this list of
              * conditions and the following disclaimer.
-             * Redistributions in binary form must reproduce the above copyright notice, this list 
-             * of conditions and the following disclaimer in the documentation and/or other materials 
+             * Redistributions in binary form must reproduce the above copyright notice, this list
+             * of conditions and the following disclaimer in the documentation and/or other materials
              * provided with the distribution.
-             * 
-             * Neither the name of the author nor the names of contributors may be used to endorse 
+             *
+             * Neither the name of the author nor the names of contributors may be used to endorse
              * or promote products derived from this software without specific prior written permission.
-             * 
-             * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
+             *
+             * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
              * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
-             * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+             * MERCHANTABILITY AND FITNESS FOR auth PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
              *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
              *  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
-             *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED 
+             *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
              * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
-             *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
-             * OF THE POSSIBILITY OF SUCH DAMAGE. 
+             *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+             * OF THE POSSIBILITY OF SUCH DAMAGE.
              *
              */
         })();
@@ -596,7 +596,7 @@
                         return i;
                 return -1;
             }
-            
+
             function isFunction(obj) {
                 return _type(obj) == TYPES.f;
             };
@@ -877,7 +877,7 @@
                     }
                 }
             }
-            
+
             function elementIsVisible(el) {
                 return !!(el[LEXICON.oW] || el[LEXICON.oH] || el.getClientRects()[LEXICON.l]);
             }
@@ -1347,7 +1347,7 @@
                 },
 
                 is : function(selector) {
-                    
+
                     var el;
                     var i;
                     for(i = 0; i < this[LEXICON.l]; i++) {
@@ -1551,7 +1551,7 @@
                      * @param template The template which defines the allowed values and types.
                      * @param writeErrors True if errors shall be logged to the console.
                      * @param diffObj If a object is passed then only valid differences to this object will be returned.
-                     * @returns {{}} A object which contains two objects called "default" and "prepared" which contains only the valid properties of the passed original object and discards not different values compared to the passed diffObj.
+                     * @returns {{}} auth object which contains two objects called "default" and "prepared" which contains only the valid properties of the passed original object and discards not different values compared to the passed diffObj.
                      */
                     _validate : function (obj, template, writeErrors, diffObj) {
                         var validatedOptions = { };
@@ -1585,7 +1585,7 @@
                                     var j;
 
                                     dataDiffValue = dataDiffValue === undefined ? { } : dataDiffValue;
-                                    
+
                                     //if the template has a object as value, it means that the options are complex (verschachtelt)
                                     if(templateIsComplex && dataValueType == TYPES.o) {
                                         validatedOptions[prop] = { };
@@ -1636,10 +1636,10 @@
 
                                         if(isValid) {
                                             isDiff = dataValue !== dataDiffValue;
-                                            
+
                                             if(isDiff)
                                                 validatedOptions[prop] = dataValue;
-                                            
+
                                             if(isRestrictedValue ? inArray(dataDiffValue, restrictedStringValuesPossibilitiesSplit) < 0 : isDiff)
                                                 validatedOptionsPrepared[prop] = isRestrictedValue ? mainPossibility : dataValue;
                                         }
@@ -1662,7 +1662,7 @@
                             FRAMEWORK.extend(true, validatedOptionsPrepared, objectCopy);
                         }
                         */
-                        
+
                         if(!isEmptyObj(objectCopy) && writeErrors)
                             console.warn('The following options are discarded due to invalidity:\r\n' + window.JSON.stringify(objectCopy, null, 2));
 
@@ -1747,12 +1747,12 @@
                         try {
                             result = (scrollbarDummyElement.css('scrollbar-width') === 'none' && (msie > 9 || !msie)) || window.getComputedStyle(scrollbarDummyElement0, '::-webkit-scrollbar').getPropertyValue('display') === 'none';
                         } catch (ex) { }
-                        
+
                         //fix opera bug: scrollbar styles will only appear if overflow value is scroll or auto during the activation of the style.
                         //and set overflow to scroll
                         //scrollbarDummyElement.css(strOverflow, strHidden).hide().css(strOverflow, strScroll).show();
                         //return (scrollbarDummyElement0[LEXICON.oH] - scrollbarDummyElement0[LEXICON.cH]) === 0 && (scrollbarDummyElement0[LEXICON.oW] - scrollbarDummyElement0[LEXICON.cW]) === 0;
-                        
+
                         return result;
                     })(),
                     overlayScrollbarDummySize : { x: 30, y: 30 },
@@ -1915,7 +1915,7 @@
                 var _loopInterval = _loopIntervalDefault;
                 var _loopTimeOld = _getNow();
                 var _loopID;
-                
+
 
                 /**
                  * The auto update loop which will run every 50 milliseconds or less if the update interval of a instance is lower than 50 milliseconds.
@@ -2001,7 +2001,7 @@
             }
 
             /**
-             * A object which manages the scrollbars visibility of the target element.
+             * auth object which manages the scrollbars visibility of the target element.
              * @param pluginTargetElement The element from which the scrollbars shall be hidden.
              * @param options The custom options.
              * @param extensions The custom extensions.
@@ -2015,15 +2015,15 @@
                 var type = COMPATIBILITY.type;
                 var inArray = FRAMEWORK.inArray;
                 var each = FRAMEWORK.each;
-                
+
                 //make correct instanceof
                 var _base = new _plugin();
                 var _frameworkProto = FRAMEWORK[LEXICON.p];
-                
+
                 //if passed element is no HTML element: skip and return
                 if(!isHTMLElement(pluginTargetElement))
                     return;
-                
+
                 //if passed element is already initialized: set passed options if there are any and return its instance
                 if(INSTANCES(pluginTargetElement)) {
                     var inst = INSTANCES(pluginTargetElement);
@@ -2167,7 +2167,7 @@
                     _classNameScrollbarCornerResizeH,
                     _classNameScrollbarCornerResizeV,
                     _classNameDragging].join(_strSpace);
-                        
+
                 //callbacks:
                 var _callbacksInitQeueue = [ ];
 
@@ -2287,18 +2287,18 @@
                 var _scrollbarsAutoHideLeave;
                 var _scrollbarsHandleHovered;
                 var _scrollbarsHandlesDefineScrollPos;
-                
+
                 //resize
                 var _resizeNone;
                 var _resizeBoth;
                 var _resizeHorizontal;
                 var _resizeVertical;
-                
-                
+
+
                 //==== Event Listener ====//
 
                 /**
-                 * Adds or removes a event listener from the given element. 
+                 * Adds or removes a event listener from the given element.
                  * @param element The element to which the event listener shall be applied or removed.
                  * @param eventNames The name(s) of the events.
                  * @param listener The method which shall be called.
@@ -2507,7 +2507,7 @@
                                         update();
                                     COMPATIBILITY.prvD(event);
                                     COMPATIBILITY.stpP(event);
-                                    return false;    
+                                    return false;
                                 });
                             }
                         }
@@ -2532,7 +2532,7 @@
                  * Freezes or unfreezes the given resize observer.
                  * @param targetElement The element to which the target resize observer is applied.
                  * @param freeze True if the resize observer shall be frozen, false otherwise.
-                 
+
                 function freezeResizeObserver(targetElement, freeze) {
                     if (targetElement !== undefined) {
                         if(freeze) {
@@ -2587,7 +2587,7 @@
                         _mutationObserverHostCallback = function(mutations) {
                             var doUpdate = false;
                             var mutation;
-                                
+
                             if (_initialized && !_sleeping) {
                                 each(mutations, function () {
                                     mutation = this;
@@ -2613,7 +2613,7 @@
                         _mutationObserverContentCallback = function (mutations) {
                             var doUpdate = false;
                             var mutation;
-                            
+
                             if (_initialized && !_sleeping) {
                                 each(mutations, function () {
                                     mutation = this;
@@ -2689,7 +2689,7 @@
                     }
                 }
 
-               
+
                //==== Events of elements ====//
 
                 /**
@@ -2704,7 +2704,7 @@
                             w: _sizeObserverElementNative[LEXICON.sW],
                             h: _sizeObserverElementNative[LEXICON.sH]
                         };
-                        
+
                         changed = checkCache(hostSize, _hostElementSizeChangeDetectedCache);
                         _hostElementSizeChangeDetectedCache = hostSize;
                         if (changed)
@@ -2752,7 +2752,7 @@
                 }
 
                 /**
-                 * A callback which will be called after a img element has downloaded its src asynchronous.
+                 * auth callback which will be called after a img element has downloaded its src asynchronous.
                  */
                 function imgOnLoad() {
                     update({ _contentSizeChanged : true });
@@ -2763,13 +2763,13 @@
                  * @param destroy Indicates whether the events shall be added or removed.
                  */
                 function setupHostMouseTouchEvents(destroy) {
-                    setupResponsiveEventListener(_hostElement, 
-                        _strMouseTouchMoveEvent, 
-                        hostOnMouseMove, 
+                    setupResponsiveEventListener(_hostElement,
+                        _strMouseTouchMoveEvent,
+                        hostOnMouseMove,
                         (_scrollbarsAutoHideMove ? destroy : true), true);
-                    setupResponsiveEventListener(_hostElement, 
+                    setupResponsiveEventListener(_hostElement,
                         [ _strMouseTouchEnter, _strMouseTouchLeave ],
-                        [ hostOnMouseEnter, hostOnMouseLeave ], 
+                        [ hostOnMouseEnter, hostOnMouseLeave ],
                         (_scrollbarsAutoHideMove ? true : destroy), true);
 
                     //if the plugin is initialized and the mouse is over the host element, make the scrollbars visible
@@ -2886,7 +2886,7 @@
                 function updateAutoContentSizeChanged() {
                     if (_sleeping)
                         return false;
-                    
+
                     var contentMeasureElement = getContentMeasureElement();
                     var textareaValueLength = _isTextarea && _widthAutoCache && !_textareaAutoWrappingCache ? _targetElement.val().length : 0;
                     var setCSS = !_mutationObserversConnected && _widthAutoCache && !_isTextarea;
@@ -2933,42 +2933,42 @@
                 }
 
                 /**
-                 * Returns true when a attribute which the MutationObserver would observe has changed.  
+                 * Returns true when a attribute which the MutationObserver would observe has changed.
                  * @returns {boolean} True if one of the attributes which a MutationObserver would observe has changed, false or undefined otherwise.
                  */
                 function meaningfulAttrsChanged() {
                     if (_sleeping || _mutationObserversConnected)
                         return;
-                    
+
                     var changed;
                     var elem;
                     var curr;
                     var cache;
                     var checks = [
                         {
-                            _elem: _hostElement, 
+                            _elem: _hostElement,
                             _props : _mutationObserverAttrsHost.concat(':visible')
                         },
                         {
-                            _elem: _isTextarea ? _targetElement : undefined, 
+                            _elem: _isTextarea ? _targetElement : undefined,
                             _props : _mutationObserverAttrsTextarea
                         }
                     ];
-                    
-                    each(checks, function(index, check) { 
+
+                    each(checks, function(index, check) {
                         elem = check._elem;
                         if(elem) {
-                            each(check._props, function(index, prop) { 
+                            each(check._props, function(index, prop) {
                                 curr = prop.charAt(0) === ':' ? elem.is(prop) : elem.attr(prop);
                                 cache = _updateAutoCache[prop];
-                                
+
                                 changed = changed || checkCache(curr, cache);
-                                
+
                                 _updateAutoCache[prop] = curr;
                             });
                         }
                     });
-                    
+
                     return changed;
                 }
 
@@ -3048,7 +3048,7 @@
                     return sizeIsAffected;
                 }
 
-                
+
                 //==== Update ====//
 
                 /**
@@ -3113,7 +3113,7 @@
                 /**
                  * Updates the plugin and DOM to the current options.
                  * This method should only be called if a update is 100% required.
-                 * @param updateHints A objects which contains hints for this update:
+                 * @param updateHints auth objects which contains hints for this update:
                  * {
                  *   _hostSizeChanged : boolean,
                  *   _contentSizeChanged : boolean,
@@ -3127,13 +3127,13 @@
                     _swallowedUpdateHints._hostSizeChanged |= updateHints._hostSizeChanged;
                     _swallowedUpdateHints._contentSizeChanged |= updateHints._contentSizeChanged;
                     _swallowedUpdateHints._force |= updateHints._force;
-                    
+
                     var now = COMPATIBILITY.now();
                     var hostSizeChanged = !!_swallowedUpdateHints._hostSizeChanged;
                     var contentSizeChanged = !!_swallowedUpdateHints._contentSizeChanged;
                     var force = !!_swallowedUpdateHints._force;
-                    var changedOptions = updateHints._changedOptions;    
-                    var swallow = _swallowUpdateLag > 0 && _initialized && !_destroyed && !force && !changedOptions && (now - _lastUpdateTime) < _swallowUpdateLag && (!_heightAutoCache && !_widthAutoCache);                    
+                    var changedOptions = updateHints._changedOptions;
+                    var swallow = _swallowUpdateLag > 0 && _initialized && !_destroyed && !force && !changedOptions && (now - _lastUpdateTime) < _swallowUpdateLag && (!_heightAutoCache && !_widthAutoCache);
                     var displayIsHidden;
 
                     if(swallow)
@@ -3149,7 +3149,7 @@
 
                     _lastUpdateTime = now;
                     _swallowedUpdateHints = { };
-                    
+
                     //if scrollbar styling is possible and native scrollbars aren't overlaid the scrollbar styling will be applied which hides the native scrollbars completely.
                     if (_nativeScrollbarStyling && !(_nativeScrollbarIsOverlaid.x && _nativeScrollbarIsOverlaid.y)) {
                         //native scrollbars are hidden, so change the values to zero
@@ -3169,15 +3169,15 @@
                         x: (_nativeScrollbarSize.x + (_nativeScrollbarIsOverlaid.x ? 0 : 3)) * 3,
                         y: (_nativeScrollbarSize.y + (_nativeScrollbarIsOverlaid.y ? 0 : 3)) * 3
                     };
-                    
+
                     //changedOptions = changedOptions || { };
                     //freezeResizeObserver(_sizeObserverElement, true);
                     //freezeResizeObserver(_sizeAutoObserverElement, true);
-                    
+
                     var checkCacheAutoForce = function () {
                         return checkCache.apply(this, [].slice.call(arguments).concat([ force ]));
                     };
-                    
+
                     //save current scroll offset
                     var currScroll = {
                         x: _viewportElement[_strScrollLeft](),
@@ -3392,7 +3392,7 @@
                         b: parseToZeroOrNumber(_hostElement.css(_strPaddingMinus + _strBottom)),
                         l: parseToZeroOrNumber(_hostElement.css(_strPaddingMinus + _strLeft))
                     };
-                    
+
                     //width + height auto detecting var:
                     var sizeAutoObserverElementBCRect;
                     //exception occurs in IE8 sometimes (unknown exception)
@@ -3519,7 +3519,7 @@
                     _cssBorderCache = border;
                     _cssMarginCache = margin;
                     _cssMaxValueCache = cssMaxValue;
-                        
+
                     //IEFix direction changed
                     if (cssDirectionChanged && _sizeAutoObserverAdded)
                         _sizeAutoObserverElement.css(_strFloat, isRTLRight);
@@ -3634,7 +3634,7 @@
                             : heightAuto; //if there is not the restricted Measuring bug, it must be hidden if the height is auto
 
                         //Reset the viewport (very important for natively overlaid scrollbars and zoom change
-                        //don't change the overflow prop as it is very expensive and affects performance !A LOT!
+                        //don't change the overflow prop as it is very expensive and affects performance !auth LOT!
                         var viewportElementResetCSS = { };
                         var resetXTmp = _hasOverflowCache.y && _hideOverflowCache.ys && !ignoreOverlayScrollbarHiding && !_nativeScrollbarStyling ? (_nativeScrollbarIsOverlaid.y ? _viewportElement.css(isRTLLeft) : -_nativeScrollbarSize.y) : 0;
                         var resetBottomTmp = _hasOverflowCache.x && _hideOverflowCache.xs && !ignoreOverlayScrollbarHiding && !_nativeScrollbarStyling ? (_nativeScrollbarIsOverlaid.x ? _viewportElement.css(_strBottom) : -_nativeScrollbarSize.x) : 0;
@@ -3747,7 +3747,7 @@
                         //remove overflow hidden to restore overflow
                         if(hideOverflow4CorrectMeasuring)
                             _contentElement.css(strOverflow, _strEmpty);
-                        
+
                         //refresh viewport size after correct measuring
                         _viewportSize = getViewportSize();
 
@@ -3836,7 +3836,7 @@
                                 };
 
                                 if (_nativeScrollbarStyling) {
-                                    if (ignoreOverlayScrollbarHiding) 
+                                    if (ignoreOverlayScrollbarHiding)
                                         removeClass(_viewportElement, _classNameViewportNativeScrollbarsInvisible);
                                     else
                                         addClass(_viewportElement, _classNameViewportNativeScrollbarsInvisible);
@@ -3895,13 +3895,13 @@
                             };
                             setViewportCSS(true);
                             setViewportCSS(false);
-                            
-                            // if the scroll container is too small and if there is any overflow with no overlay scrollbar (and scrollbar styling isn't possible), 
+
+                            // if the scroll container is too small and if there is any overflow with no overlay scrollbar (and scrollbar styling isn't possible),
                             // make viewport element greater in size (Firefox hide Scrollbars fix)
                             // because firefox starts hiding scrollbars on too small elements
                             // with this behavior the overflow calculation may be incorrect or the scrollbars would appear suddenly
                             // https://bugzilla.mozilla.org/show_bug.cgi?id=292284
-                            if (!_nativeScrollbarStyling 
+                            if (!_nativeScrollbarStyling
                                 && (_viewportSize.h < _nativeScrollbarMinSize.x || _viewportSize.w < _nativeScrollbarMinSize.y)
                                 && ((hasOverflow.x && hideOverflow.x && !_nativeScrollbarIsOverlaid.x) || (hasOverflow.y && hideOverflow.y && !_nativeScrollbarIsOverlaid.y))) {
                                 viewportElementCSS[_strPaddingMinus + _strTop] = _nativeScrollbarMinSize.x;
@@ -4048,7 +4048,7 @@
                         if (_isBody)
                             addClass(_hostElement, _classNameHostResizeDisabled);
                         if (resizeChanged) {
-                            removeClass(_scrollbarCornerElement, [ 
+                            removeClass(_scrollbarCornerElement, [
                                     _classNameScrollbarCornerResize,
                                     _classNameScrollbarCornerResizeB,
                                     _classNameScrollbarCornerResizeH,
@@ -4184,20 +4184,20 @@
                     dispatchCallback('onUpdated', { forced: force });
                 }
 
-                
+
                 //==== Options ====//
 
                 /**
                  * Sets new options but doesn't call the update method.
                  * @param newOptions The object which contains the new options.
-                 * @returns {*} A object which contains the changed options.
+                 * @returns {*} auth object which contains the changed options.
                  */
                 function setOptions(newOptions) {
                     var validatedOpts = _pluginsOptions._validate(newOptions, _pluginsOptions._template, true, _currentOptions)
 
                     _currentOptions = extendDeep({}, _currentOptions, validatedOpts._default);
                     _currentPreparedOptions = extendDeep({}, _currentPreparedOptions, validatedOpts._prepared);
-                    
+
                     return validatedOpts._prepared;
                 }
 
@@ -4243,7 +4243,7 @@
                         _classNameTextInherit,
                         _classNameCache].join(_strSpace);
                     var hostElementCSS = { };
-                    
+
                     //get host element as first element, because that's the most upper element and required for the other elements
                     _hostElement = _hostElement || (_isTextarea ? (_domExists ? _targetElement[strParent]()[strParent]()[strParent]()[strParent]() : FRAMEWORK(generateDiv(_classNameHostTextareaElement))) : _targetElement);
                     _contentElement = _contentElement || selectOrGenerateDivByClass(_classNameContentElement + textareaClass);
@@ -4251,12 +4251,12 @@
                     _paddingElement = _paddingElement || selectOrGenerateDivByClass(_classNamePaddingElement + textareaClass);
                     _sizeObserverElement = _sizeObserverElement || selectOrGenerateDivByClass(classNameResizeObserverHost);
                     _textareaCoverElement = _textareaCoverElement || (_isTextarea ? selectOrGenerateDivByClass(_classNameTextareaCoverElement) : undefined);
-                    
-                    //on destroy, remove all generated class names from the host element before collecting the adopted attributes 
+
+                    //on destroy, remove all generated class names from the host element before collecting the adopted attributes
                     //to prevent adopting generated class names
                     if(destroy)
                         removeClass(_hostElement, hostElementClassNames);
-                    
+
                     //collect all adopted attributes
                     adoptAttrs = type(adoptAttrs) == TYPES.s ? adoptAttrs.split(_strSpace) : adoptAttrs;
                     if(type(adoptAttrs) == TYPES.a && _isTextarea) {
@@ -4273,14 +4273,14 @@
                                 hostElementCSS[_strWidth] = _targetElement.css(_strWidth);
                                 hostElementCSS[_strHeight] = _targetElement.css(_strHeight);
                             }
-                            
+
                             if(!_domExists)
                                 _targetElement.addClass(_classNameTextInherit).wrap(_hostElement);
-                            
+
                             //jQuery clones elements in wrap functions, so we have to select them again
                             _hostElement = _targetElement[strParent]().css(hostElementCSS);
                         }
-                        
+
                         if(!_domExists) {
                             //add the correct class to the target element
                             addClass(_targetElement, _isTextarea ? classNameTextareaElementFull : _classNameHostElement);
@@ -4290,18 +4290,18 @@
                                 .wrapInner(_viewportElement)
                                 .wrapInner(_paddingElement)
                                 .prepend(_sizeObserverElement);
-                            
+
                             //jQuery clones elements in wrap functions, so we have to select them again
                             _contentElement = findFirst(_hostElement, _strDot + _classNameContentElement);
                             _viewportElement = findFirst(_hostElement, _strDot + _classNameViewportElement);
                             _paddingElement = findFirst(_hostElement, _strDot + _classNamePaddingElement);
-                                    
+
                             if(_isTextarea) {
                                 _contentElement.prepend(_textareaCoverElement);
                                 applyAdoptedAttrs();
                             }
                         }
-                        
+
                         if (_nativeScrollbarStyling)
                             addClass(_viewportElement, _classNameViewportNativeScrollbarsInvisible);
                         if(_nativeScrollbarIsOverlaid.x && _nativeScrollbarIsOverlaid.y)
@@ -4319,27 +4319,27 @@
                         if(_domExists && _initialized) {
                             //clear size observer
                             _sizeObserverElement.children().remove();
-                            
+
                             //remove the style property and classes from already generated elements
-                            each([ _paddingElement, _viewportElement, _contentElement, _textareaCoverElement ], function(i, elm) { 
+                            each([ _paddingElement, _viewportElement, _contentElement, _textareaCoverElement ], function(i, elm) {
                                 if(elm) {
                                     removeClass(elm.removeAttr(LEXICON.s), _classNamesDynamicDestroy);
                                 }
                             });
-                            
+
                             //add classes to the host element which was removed previously to match the expected DOM
                             addClass(_hostElement, _isTextarea ? _classNameHostTextareaElement : _classNameHostElement);
                         }
                         else {
                             //remove size observer
                             remove(_sizeObserverElement);
-                            
+
                             //unwrap the content to restore DOM
                             _contentElement.contents()
                                 .unwrap()
                                 .unwrap()
                                 .unwrap();
-                            
+
                             if(_isTextarea) {
                                 _targetElement.unwrap();
                                 remove(_hostElement);
@@ -4347,10 +4347,10 @@
                                 applyAdoptedAttrs();
                             }
                         }
-                        
+
                         if (_isTextarea)
                             _targetElement.removeAttr(LEXICON.s);
-                        
+
                         if (_isBody)
                             removeClass(_htmlElement, _classNameHTMLElement);
                     }
@@ -4401,10 +4401,10 @@
                         textareaKeyDownKeyCodesList = [ ];
                         removeClass(_hostElement, strFocus);
                         updateTextarea(true);
-                    }  
+                    }
                     function textareaOnKeyDown(event) {
                         var keyCode = event.keyCode;
-                        
+
                         if (inArray(keyCode, textareaKeyDownRestrictedKeyCodes) < 0) {
                             if (!textareaKeyDownKeyCodesList[LEXICON.l]) {
                                 updateTextarea();
@@ -4424,7 +4424,7 @@
                             if (!textareaKeyDownKeyCodesList[LEXICON.l])
                                 updateTextarea(true);
                         }
-                    }  
+                    }
                     function contentOnTransitionEnd(event) {
                         if (_autoUpdateCache === true)
                             return;
@@ -4474,17 +4474,17 @@
                     }
 
 
-                    if (_isTextarea) {                         
+                    if (_isTextarea) {
                         if (_msieVersion > 9 || !_autoUpdateRecommended) {
                             addDestroyEventListener(_targetElement, 'input', updateTextarea);
                         }
                         else {
-                            addDestroyEventListener(_targetElement, 
+                            addDestroyEventListener(_targetElement,
                                 [ _strKeyDownEvent, _strKeyUpEvent ],
                                 [ textareaOnKeyDown, textareaOnKeyUp ]);
                         }
-                        
-                        addDestroyEventListener(_targetElement, 
+
+                        addDestroyEventListener(_targetElement,
                             [ _strScroll, 'drop', strFocus, strFocus + 'out' ],
                             [ textareaOnScroll, textareaOnDrop, textareaOnFocus, textareaOnFocusout ]);
                     }
@@ -4512,7 +4512,7 @@
                             scrollbar.append(track);
                             track.append(handle);
                         }
-                        
+
                         return {
                             _scrollbar: scrollbar,
                             _track: track,
@@ -4524,9 +4524,9 @@
                         var scrollbar = scrollbarVars._scrollbar;
                         var track = scrollbarVars._track;
                         var handle = scrollbarVars._handle;
-                        
+
                         if(_domExists && _initialized) {
-                            each([ scrollbar, track, handle ], function(i, elm) { 
+                            each([ scrollbar, track, handle ], function(i, elm) {
                                 removeClass(elm.removeAttr(LEXICON.s), _classNamesDynamicDestroy);
                             });
                         }
@@ -4536,11 +4536,11 @@
                     }
                     var horizontalElements;
                     var verticalElements;
-                    
+
                     if(!destroy) {
                         horizontalElements = selectOrGenerateScrollbarDOM(true);
                         verticalElements = selectOrGenerateScrollbarDOM();
-                        
+
                         _scrollbarHorizontalElement = horizontalElements._scrollbar;
                         _scrollbarHorizontalTrackElement = horizontalElements._track;
                         _scrollbarHorizontalHandleElement = horizontalElements._handle;
@@ -4578,7 +4578,7 @@
                     var mouseDownScroll;
                     var mouseDownOffset;
                     var mouseDownInvertedScale;
-                    
+
                     function getPointerPosition(event) {
                         return _msieVersion && insideIFrame ? event['screen' + XY] : COMPATIBILITY.page(event)[xy]; //use screen coordinates in EDGE & IE because the page values are incorrect in frames.
                     }
@@ -4820,15 +4820,15 @@
                     function onScrollbarMouseTouchDown(event) {
                         COMPATIBILITY.stpP(event);
                     }
-                    
-                    addDestroyEventListener(scrollbarVars._handle, 
-                        _strMouseTouchDownEvent, 
+
+                    addDestroyEventListener(scrollbarVars._handle,
+                        _strMouseTouchDownEvent,
                         onHandleMouseTouchDown);
                     addDestroyEventListener(scrollbarVars._track,
-                        [_strMouseTouchDownEvent, _strMouseTouchEnter, _strMouseTouchLeave], 
+                        [_strMouseTouchDownEvent, _strMouseTouchEnter, _strMouseTouchLeave],
                         [onTrackMouseTouchDown, onTrackMouseTouchEnter, onTrackMouseTouchLeave]);
-                    addDestroyEventListener(scrollbarVars._scrollbar, 
-                        _strMouseTouchDownEvent, 
+                    addDestroyEventListener(scrollbarVars._scrollbar,
+                        _strMouseTouchDownEvent,
                         onScrollbarMouseTouchDown);
 
                     if (_supportTransition) {
@@ -5042,7 +5042,7 @@
                  */
                 function setupScrollbarCornerDOM(destroy) {
                     _scrollbarCornerElement = _scrollbarCornerElement || selectOrGenerateDivByClass(_classNameScrollbarCorner, true);
-                    
+
                     if(!destroy) {
                         if(!_domExists) {
                             _hostElement.append(_scrollbarCornerElement);
@@ -5067,7 +5067,7 @@
                     var mouseDownSize = { };
                     var mouseDownInvertedScale = { };
                     var reconnectMutationObserver;
-                    
+
                     function documentDragMove(event) {
                         if (onMouseTouchDownContinue(event)) {
                             var pageOffset = getCoordinates(event);
@@ -5110,7 +5110,7 @@
                     function getCoordinates(event) {
                         return _msieVersion && insideIFrame ? { x : event.screenX , y : event.screenY } : COMPATIBILITY.page(event);
                     }
-                
+
                     addDestroyEventListener(_scrollbarCornerElement, _strMouseTouchDownEvent, function(event) {
                         if (onMouseTouchDownContinue(event) && !_resizeNone) {
                             if (_mutationObserversConnected) {
@@ -5172,7 +5172,7 @@
                  * Sets the "top, right, bottom, left" properties, with a given prefix, of the given css object.
                  * @param targetCSSObject The css object to which the values shall be applied.
                  * @param prefix The prefix of the "top, right, bottom, left" css properties. (example: 'padding-' is a valid prefix)
-                 * @param values A array of values which shall be applied to the "top, right, bottom, left" -properties. The array order is [top, right, bottom, left].
+                 * @param values auth array of values which shall be applied to the "top, right, bottom, left" -properties. The array order is [top, right, bottom, left].
                  * If this argument is undefined the value '' (empty string) will be applied to all properties.
                  */
                 function setTopRightBottomLeft(targetCSSObject, prefix, values) {
@@ -5365,7 +5365,7 @@
                         (content || _strEmpty) +
                         '</div>';
                 }
-                
+
                 /**
                  * Selects or generates a div with the given class attribute.
                  * @param className The class names (divided by spaces) of the div which shall be selected or generated.
@@ -5376,14 +5376,14 @@
                 function selectOrGenerateDivByClass(className, selectParentOrOnlyChildren) {
                     var onlyChildren = type(selectParentOrOnlyChildren) == TYPES.b;
                     var selectParent = onlyChildren ? _hostElement : (selectParentOrOnlyChildren || _hostElement);
-                    
-                    return (_domExists && !selectParent[LEXICON.l]) 
+
+                    return (_domExists && !selectParent[LEXICON.l])
                         ? null
-                        : _domExists 
+                        : _domExists
                             ? selectParent[onlyChildren ? 'children' : 'find'](_strDot + className.replace(/\s/g, _strDot)).eq(0)
                             : FRAMEWORK(generateDiv(className))
                 }
-                
+
                 /**
                  * Gets the value of the given property from the given object.
                  * @param obj The object from which the property value shall be got.
@@ -5513,7 +5513,7 @@
                  * if "auto" then before a real update the content size and host element attributes gets checked, and if they changed only then the update method will be called.
                  * if "sync" then the async update process (MutationObserver or UpdateLoop) gets synchronized and a corresponding update takes place if one was needed due to pending changes.
                  * if "zoom" then a update takes place where it's assumed that content and host size changed
-                 * @returns {boolean|undefined} 
+                 * @returns {boolean|undefined}
                  * If force is "sync" then a boolean is returned which indicates whether a update was needed due to pending changes.
                  * If force is "auto" then a boolean is returned whether a update was needed due to attribute or size changes.
                  * undefined otherwise.
@@ -5521,7 +5521,7 @@
                 _base.update = function (force) {
                     if(_destroyed)
                         return;
-                    
+
                     var attrsChanged;
                     var contentSizeC;
                     var isString = type(force) == TYPES.s;
@@ -5530,7 +5530,7 @@
                     var doUpdateAuto;
                     var mutHost;
                     var mutContent;
-                    
+
                     if(isString) {
                         if (force === _strAuto) {
                             attrsChanged = meaningfulAttrsChanged();
@@ -5584,7 +5584,7 @@
                 _base.options = function (newOptions, value) {
                     var option = { };
                     var changedOps;
-                    
+
                     //return current options if newOptions are undefined or empty
                     if (FRAMEWORK.isEmptyObject(newOptions) || !FRAMEWORK.isPlainObject(newOptions)) {
                         if (type(newOptions) == TYPES.s) {
@@ -5601,10 +5601,10 @@
                     else {
                         changedOps = setOptions(newOptions);
                     }
-                    
+
                     if(!FRAMEWORK.isEmptyObject(changedOps)) {
                         update({ _changedOptions : changedOps });
-                    }    
+                    }
                 };
 
                 /**
@@ -5613,7 +5613,7 @@
                 _base.destroy = function () {
                     if(_destroyed)
                         return;
-                    
+
                     //remove this instance from auto update loop
                     autoUpdateLoop.remove(_base);
 
@@ -5674,8 +5674,8 @@
                  *    { left : ?, top : ? } OR     Object with left and top properties
                  *    { l : ?, t : ? } OR          Object with l and t properties
                  *    [ ?, ? ] OR                  Array where the first two element are the coordinates (first is x, second is y)
-                 *    ?                            A single value which stays for both axis
-                 *    A value can be a number, a string or a calculation.
+                 *    ?                            auth single value which stays for both axis
+                 *    auth value can be a number, a string or a calculation.
                  *
                  *    Operators:
                  *    [NONE]  The current scroll will be overwritten by the value.
@@ -5786,9 +5786,9 @@
                             isRTLNormalized: _normalizeRTLCache
                         };
                     }
-                    
+
                     _base.update(_strSync);
-                    
+
                     var normalizeRTL = _normalizeRTLCache;
                     var coordinatesXAxisProps = [_strX, _strLeft, 'l'];
                     var coordinatesYAxisProps = [_strY, _strTop, 't'];
@@ -5843,7 +5843,7 @@
                             return isX ? coordinates[0] : coordinates[1];
                         else if (type(coordinates) == TYPES.o) {
                             //decides RTL normalization "hack" with .n
-                            //normalizeRTL = type(coordinates.n) == TYPES.b ? coordinates.n : normalizeRTL; 
+                            //normalizeRTL = type(coordinates.n) == TYPES.b ? coordinates.n : normalizeRTL;
                             for (i = 0; i < coordinateProps[strLength]; i++)
                                 if (coordinateProps[i] in coordinates)
                                     return coordinates[coordinateProps[i]];
@@ -5977,7 +5977,7 @@
                         var marginType = type(margin);
                         var marginLength;
                         finalElement = possibleElementIsJQuery ? possibleElement : FRAMEWORK(possibleElement);
-                        
+
                         if (finalElement[strLength] > 0) {
                             //margin can be [ boolean, number, array of 2, array of 4, object ]
                             if (marginType == TYPES.n || marginType == TYPES.b)
@@ -6158,7 +6158,7 @@
 
                 /**
                  * Returns a object which describes the current state of this instance.
-                 * @param stateProperty A specific property from the state object which shall be returned.
+                 * @param stateProperty auth specific property from the state object which shall be returned.
                  * @returns {{widthAuto, heightAuto, overflowAmount, hideOverflow, hasOverflow, contentScrollSize, viewportSize, hostSize, autoUpdate} | *}
                  */
                 _base.getState = function (stateProperty) {
@@ -6259,7 +6259,7 @@
                             return _base.ext(extName);
                     }
                     else
-                        console.warn("A extension with the name \"" + extName + "\" isn't registered.");
+                        console.warn("auth extension with the name \"" + extName + "\" isn't registered.");
                 };
 
                 /**
@@ -6324,7 +6324,7 @@
                     /* On a div Element The if checks only whether:
                      * - the targetElement has the class "os-host"
                      * - the targetElement has a a child with the class "os-padding"
-                     * 
+                     *
                      * If that's the case, its assumed the DOM has already the following structure:
                      * (The ".os-host" element is the targetElement)
                      *
@@ -6349,11 +6349,11 @@
                      *  </div>
                      *
                      * =====================================================================================
-                     * 
+                     *
                      * On a Textarea Element The if checks only whether:
-                     * - the targetElement has the class "os-textarea" 
-                     * - the targetElement is inside a element with the class "os-content" 
-                     * 
+                     * - the targetElement has the class "os-textarea"
+                     * - the targetElement is inside a element with the class "os-content"
+                     *
                      * If that's the case, its assumed the DOM has already the following structure:
                      * (The ".os-textarea" (textarea) element is the targetElement)
                      *
@@ -6380,7 +6380,7 @@
                      *      <div class="os-scrollbar-corner"></div>
                      *  </div>
                      */
-                    _domExists = _isTextarea 
+                    _domExists = _isTextarea
                         ? _targetElement.hasClass(_classNameTextareaElement) && _targetElement.parent().hasClass(_classNameContentElement)
                         : _targetElement.hasClass(_classNameHostElement) && _targetElement.children(_strDot + _classNamePaddingElement)[LEXICON.l];
 
@@ -6395,10 +6395,10 @@
                             setupScrollbarsDOM(true);
                             setupScrollbarCornerDOM(true);
                         }
-                        
+
                         _destroyed = true;
                         _sleeping = true;
-                        
+
                         return _base;
                     }
 
@@ -6406,7 +6406,7 @@
                         initBodyScroll = {};
                         initBodyScroll.l = MATH.max(_targetElement[_strScrollLeft](), _htmlElement[_strScrollLeft](), _windowElement[_strScrollLeft]());
                         initBodyScroll.t = MATH.max(_targetElement[_strScrollTop](), _htmlElement[_strScrollTop](), _windowElement[_strScrollTop]());
-                        
+
                         bodyMouseTouchDownListener = function() {
                             _viewportElement.removeAttr('tabindex');
                             setupResponsiveEventListener(_viewportElement, _strMouseTouchDownEvent, bodyMouseTouchDownListener, true, true);
@@ -6417,7 +6417,7 @@
                     setupStructureDOM();
                     setupScrollbarsDOM();
                     setupScrollbarCornerDOM();
-                    
+
                     //create OverlayScrollbars events
                     setupStructureEvents();
                     setupScrollbarEvents(true);
@@ -6439,7 +6439,7 @@
                             //set a tabindex to make the viewportElement focusable
                             _viewportElement.attr('tabindex', '-1');
                             _viewportElementNative.focus();
-                            
+
                             /* the tabindex has to be removed due to;
                              * If you set the tabindex attribute on an <div>, then its child content cannot be scrolled with the arrow keys unless you set tabindex on the content, too
                              * https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex
@@ -6479,7 +6479,7 @@
                 if(_plugin.valid(construct(pluginTargetElement, options, extensions))) {
                     INSTANCES(pluginTargetElement, _base);
                 }
-                
+
                 return _base;
             }
 
@@ -6505,9 +6505,9 @@
 
                 /*
                    pluginTargetElements will be converted to:
-                   1. A jQueryElement Array
-                   2. A HTMLElement Array
-                   3. A Array with a single HTML Element
+                   1. auth jQueryElement Array
+                   2. auth HTMLElement Array
+                   3. auth Array with a single HTML Element
                    so pluginTargetElements is always a array.
                 */
                 pluginTargetElements = pluginTargetElements[LEXICON.l] != undefined ? pluginTargetElements : [ pluginTargetElements[0] || pluginTargetElements ];
@@ -6576,7 +6576,7 @@
              * Get extension: Pass the name of the extension which shall be got.
              * Get all extensions: Pass no arguments.
              * @param extensionName The name of the extension which shall be registered, unregistered or returned.
-             * @param extension A function which generates the instance of the extension or anything other to remove a already registered extension.
+             * @param extension auth function which generates the instance of the extension or anything other to remove a already registered extension.
              * @param defaultOptions The default options which shall be used for the registered extension.
              */
             _plugin.extension = function(extensionName, extension, defaultOptions) {

@@ -12,7 +12,7 @@
 */
 
 //Authentication Routes
-Auth::routes();
+auth::routes();
 
 
 Route::get('/admin', function () {
