@@ -44,6 +44,14 @@ body {
     color: #e0e0e0;
 }
 
+label {
+    color: #e0e0e0;
+}
+
+.ribbonText {
+    color: #e0e0e0;
+}
+
 .nav-link:hover {
     color: #EFEEEE;
 }
@@ -188,6 +196,7 @@ table.table-bordered > tbody > tr > th{
 
 table.table-bordered > tbody > tr > td{
     border:1px solid #313131;
+    color: white;
 }
 
 .bar {

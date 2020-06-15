@@ -2,7 +2,7 @@
 
 @extends('adminlte::page')
 
-@section('Teacher', 'Dashboard')
+@section('title', 'Teacher - Dashboard')
 
 @section('content_header')
     <div class="card w-100 h-auto">
@@ -15,6 +15,8 @@
             </div>
         </div>
     </div>
+
+    @include('flash-message')
 @stop
 
 @section('content')

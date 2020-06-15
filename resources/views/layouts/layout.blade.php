@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <title>CultureUp - @yield('title')</title>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -21,6 +22,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/css/Main/main.css">
+
     <link id="dynamic-style" rel="stylesheet" type="text/css" href="">
 
     {{--JQuery--}}
@@ -39,8 +41,24 @@
 <nav class="navbar fixed-top navbar-expand softshadow">
     <a class="navbar-brand" href="/">CultureUp</a>
     <ul class="navbar-nav ml-auto">
-        @yield ('teacherIcons')
-        @yield ('studentIcons')
+        <li class="nav-item">
+            <a class="nav-link icon custom-tooltip" href="/home">
+                <i class="fas fa-home"></i>
+                <span class="tooltiptext">Sends you to the homepage</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link icon custom-tooltip" href="/globe">
+                <i class="fas fa-globe-americas"></i>
+                <span class="tooltiptext">Shows a globe that grants access to a collection of courses</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link icon custom-tooltip" href="/leaderboard">
+                <i class="fas fa-crown"></i>
+                <span class="tooltiptext">View your score and other statistics</span>
+            </a>
+        </li>
         <li class="nav-item">
             <div class="dropdown show">
                 <a href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
@@ -48,7 +66,7 @@
                     <img class="rounded-circle user-icon" src="/images/default.jpg">
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                    <p class="dropdown-item dropdown-item-text disabled">J. Doe</p>
+                    <p class="dropdown-item dropdown-item-text disabled">{{\Auth::user()->name}}</p>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="/profile"><i class="fas fa-user"></i> Profile</a>
                     <a class="dropdown-item" href="#" id="toggle-button"><i id="toggleLightIcon"

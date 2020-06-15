@@ -1,12 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Teacher;
 
+use App\Course;
+use App\Teacher;
+use DB;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use App\User;
 
-class UserController extends Controller
+class CoursesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +18,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $courses = DB::table('courses')
+            ->leftJoin('teacher_course', 'teacher_course.course_id', '=', 'courses.id')
+            ->select('courses.id', 'courses.name', 'teacher_course.teacher_id')->get();
+        return view('teacher.courses')->with('courses', $courses);
     }
 
     /**
@@ -25,7 +31,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -34,9 +40,13 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request){
+        $teacher = Teacher::where('user_id', Auth::id())->first();
+        $course = Course::where('id', $request->course_id)->first();
+
+        $course->teachers()->attach($teacher->id);
+
+        return redirect()->route('teacher.courses.index')->with('success',"You are now following {$course->name}!");
     }
 
     /**
@@ -45,16 +55,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id = null)
+    public function show($id)
     {
-
-        if ($id == null) {
-            $user = \Auth::user();
-        } else {
-            $user = user::findorfail($id);
-        }
-//        dd($user);
-        return view('Home.profile', compact('user'));
+        //
     }
 
     /**
@@ -65,7 +68,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -77,7 +80,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**
@@ -88,6 +91,9 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $course = Course::where('id', $id)->first();
+        $teacher = Teacher::where('user_id', Auth::id())->first();
+        $teacher->courses()->detach($id);
+        return redirect()->route('teacher.courses.index')->with('success',"You are no longer following {$course->name}!");
     }
 }

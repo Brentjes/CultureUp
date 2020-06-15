@@ -1,4 +1,4 @@
-@extends ('layouts.studentLayout')
+@extends ('layouts.layout')
 @section ('content')
 
 <div class="container-fluid text-center">
@@ -9,6 +9,9 @@
         <div class="card-body">
             {{$article->excerpt}} <br>
             {{$article->text}}
+        </div>
+        <div class="card-footer text-center p-2">
+            {{$article->user->name}}
         </div>
     </div>
 

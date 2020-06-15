@@ -21,26 +21,20 @@
                         <div class="row d-flex justify-content-left">
                             <h2 class="pl-5 m-0">Want to fly here instead?</h2>
                         </div>
+                        <div class="col">
+                            <img class="img-fluid switch float-right mr-5" style="width:25vw; height: auto;" src="/images/placeholderPlane.png">
+                        </div>
                         <div class="row center-row text-left p-5">
                             <div class="col">
                                 <a href="/home">
-                                    <p>-home</p>
+                                    <p>Home</p>
                                 </a>
-                                <a href="/assignment">
-                                    <p>-assignment</p>
-                                </a>
-                                <a href="/notifications">
-                                    <p>-notifications</p>
+                                <a href="/assignments">
+                                    <p>Assignments</p>
                                 </a>
                                 <a href="/leaderboard">
                                     <p>-leaderboard</p>
                                 </a>
-                                <a href="/logout">
-                                    <p>-logout</p>
-                                </a>
-                            </div>
-                            <div class="col pr-5 text-right ">
-                                <img class="img-fluid switch" style="width:25vw; height: auto" src="/images/placeholderPlane.png">
                             </div>
                         </div>
                     </div>

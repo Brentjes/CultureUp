@@ -1,3 +1,7 @@
+* {
+    transition-duration: 3s;
+}
+
 @media (min-width: 375px) {
     .card-columns {
         column-count: 1;

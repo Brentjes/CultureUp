@@ -1,47 +1,36 @@
 <?php
 
-namespace App\Http\Controllers\Teacher;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Teacher;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
-class ProgressController extends Controller
+class LeaderboardController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\RedirectResponse
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        // Check if enrolled as a teacher
-        $teacher = Teacher::where('user_id', Auth::id())->first();
-        if ($teacher == null) {
-            return redirect()->route('teacher.index')->with(
-                'warning',
-                'You need to be enrolled as a teacher in order to view the progression page'
-            );
-        }
+        $students = DB::select('
+        SELECT users.name, courses.name AS course, SUM(student_assignment.progress) AS score FROM student_assignment
 
-        $courses = $teacher->courses;
+        LEFT JOIN students
+        ON students.id = student_assignment.student_id
 
-        // Check if assigned/subscribed to at least one course
-        if (count($courses) == null) {
-            return redirect()->route('teacher.courses.index')
-                ->with('warning', 'In order to view the progress of
-                your students you need to be assigned to a course first.');
-        }
+        LEFT JOIN courses
+        ON courses.id = students.course_id
 
+        LEFT JOIN users
+        ON users.id = student_assignment.student_id
 
-        return view('teacher.progress')->with('courses', $courses);
+            GROUP BY student_assignment.student_id
+            ORDER BY score DESC
+    ');
+
+        return view('Home.leaderboard')->with('students', $students);
     }
 
     /**

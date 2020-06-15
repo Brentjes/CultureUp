@@ -322,3 +322,21 @@ a.custom-card:hover {
     border-radius: .50rem !important;
 }
 
+.btn-danger {
+    background-color: #ef476f !important;
+}
+
+.btn-submit {
+    background-color: #69B5E8;
+    color: white;
+}
+
+.page-link {
+    color: #212529
+}
+
+.page-item.active .page-link {
+    background-color: white !important;
+    color: #212529;
+    border-color: #a9acaf;
+}

@@ -30,7 +30,7 @@ body,
 }
 
 .esri-feature__main-container .popupImage {
-    max-height: 200px;
+    max-height: 150px;
     overflow: hidden;
 }
 
@@ -58,7 +58,7 @@ body,
 }
 
 p.info {
-    margin-bottom: 2em;
+    margin-bottom: 1.5em;
     font-size: 1.1em;
 }
 
@@ -69,3 +69,19 @@ p.info {
 .esri-attribution__sources.esri-interactive, .esri-attribution__powered-by {
     display: none;
 }
+
+.countryBtn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    margin: 100px 100px 0px 0px;
+    z-index: 1;
+    border-color: #69B5E8;
+    color: #69B5E8;
+}
+
+.countryBtn:hover {
+    background-color: #69B5E8;
+    color: #ffff;
+}
+

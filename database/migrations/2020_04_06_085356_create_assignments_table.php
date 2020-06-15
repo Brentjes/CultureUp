@@ -16,7 +16,7 @@ class CreateAssignmentsTable extends Migration
         Schema::create('assignments', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('course_id')->unsigned();
-            $table->bigInteger('teacher_id')->unsigned();
+            $table->bigInteger('teacher_id')->unsigned()->nullable();;
             $table->bigInteger('country_id')->unsigned();
             $table->string('name');
             $table->string('subject');
@@ -27,7 +27,7 @@ class CreateAssignmentsTable extends Migration
             $table->foreign('course_id')->references('id')->on('courses')
                 ->onDelete('cascade');
             $table->foreign('teacher_id')->references('id')->on('teachers')
-                ->onDelete('cascade');
+                ->onDelete('set null');
             $table->foreign('country_id')->references('id')->on('countries')
                 ->onDelete('cascade');
         });
