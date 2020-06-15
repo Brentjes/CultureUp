@@ -16,9 +16,12 @@ class CreateLinksTable extends Migration
         Schema::create('links', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('page_id')->unsigned();
+            $table->bigInteger('element_id')->unsigned();
             $table->timestamps();
 
             $table->foreign('page_id')->references('id')->on('pages')
+                ->onDelete('cascade');
+            $table->foreign('element_id')->references('id')->on('elements')
                 ->onDelete('cascade');
         });
     }

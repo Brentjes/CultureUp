@@ -42,6 +42,7 @@ html {
 }
 
 #sidebar {
+    top: 0;
     position: absolute;
     min-width: 250px;
     max-width: 250px;
@@ -206,6 +207,7 @@ ul ul a {
 .element-Game-Text{
     z-index: 1;
     background: white;
+    color: black;
     border: 3px solid #3399ff;
 }
 

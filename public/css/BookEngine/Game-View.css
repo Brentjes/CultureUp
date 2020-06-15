@@ -162,6 +162,7 @@ ul ul a {
 .element-Game-Text{
     z-index: 1;
     background: white;
+    color: black;
     border: 3px solid goldenrod;
 }
 

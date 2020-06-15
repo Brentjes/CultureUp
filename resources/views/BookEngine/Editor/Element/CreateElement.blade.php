@@ -1,7 +1,4 @@
-@extends ('layouts.layout')
-@section ('content')
-
-    <head>
+ <head>
         <link href="/css/main/main.css">
     </head>
     <div class="mt-5 pt-5 container d-flex justify-content-center">
@@ -10,7 +7,7 @@
                 <p class="ribbonText text-center p-3 m-0">Create an Element</p>
             </div>
             <div class="card-body">
-                <form method="POST" action="{{ route('element.store', ['assignmentID' => 1, 'pageID' => 1]) }}">
+                <form method="POST" action="{{ route('element.store', ['assignment' => $assignment->id, 'page' => $page->id]) }}">
                     @csrf
                     <div class="form-group">
                         <label class="label" for="positionX">position X</label>
@@ -68,26 +65,66 @@
                         @enderror
                     </div>
 
+{{--                    <div class="field">--}}
+{{--                        <label class="label" for="country">case type</label>--}}
+{{--                        <br>--}}
+{{--                        <textarea name="text"></textarea>--}}
+{{--                        @error('country')--}}
+{{--                        <p>{{$errors->first('country')}}</p>--}}
+{{--                        @enderror--}}
+{{--                    </div>--}}
+
                     <div class="field form-group">
                         <label class="label" for="text">text</label>
-                        <textarea id="textArea" name="textArea" rows="4" cols="50" placeholder="Insert text here"></textarea>
+                        <textarea id="textArea" name="text" rows="4" cols="50" placeholder="Insert text here"></textarea>
                         @error('text')
                         <p>{{$errors->first('text')}}</p>
                         @enderror
                     </div>
 
+                    <div class="field">
+                        <label class="label" for="page_id">page_id</label>
+                        <br>
+                        <select id="country" name="page_id">
+                            @foreach($assignment->pages as $pageInfo)
+                                @if($pageInfo->id !== $page->id)
+                                <option value="{{$pageInfo->id}}">{{$pageInfo->name}}</option>
+                                @endif
+                            @endforeach
+                        </select>
+                        @error('country')
+                        <p>{{$errors->first('country')}}</p>
+                        @enderror
+                    </div>
+                    <div>
+                        <input type="text" name="question"></input>
+                    </div>
+                    <div>
+                        <input type="text" name="answers[0][answer]" value="['test']">
+                    </div>
+                    <div>
+                        <input type="checkbox" name="answers[0][isCorrect]">
+                    </div>
+                    <div>
+                        <input type="text" name="answers[1][answer]" value="['test']">
+                    </div>
+                    <div>
+                        <input type="checkbox" name="answers[1][isCorrect]">
+                    </div>
+                    <div>
+                        <input name="score" type="number"></input>
+                    </div>
+
 
                     <div class="row text-center pt-4">
                         <div class="col">
-                            <button class="btn btn-light" type="submit">Submit</button>
+                            <button class="btn btn-danger">Cancel</button>
                         </div>
                         <div class="col">
-{{--                            <button class="btn btn-light">Cancel</button>--}}
-                            <button class="btn btn-danger">Cancel</button>
+                            <button class="btn btn-light" type="submit">Submit</button>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-@endsection

@@ -47,20 +47,23 @@
                 <a><i class="bar-icon fas fa-link"></i><span class="bar-text"> Add Link</span></a>
             </li>
             <li class="softshadow stick">
-                <a id="editPageToggleButton"><i class="bar-icon fas fa-cog"></i> <span class="bar-text"> Page settings</span></a>
+                <a id="editPageToggleButton"><i class="bar-icon fas fa-cog"></i> <span
+                        class="bar-text"> Page settings</span></a>
+            </li>
+            <li class="softshadow stick" id="test">
+                <a href="{{route('element.create', [$page->assignment->id, $page->id])}}"><i
+                        class="bar-icon fas fa-quote-right"></i><span class="bar-text"> elementText</span></a>
             </li>
         </ul>
     </nav>
-
     <div id="content">
-    @include ('BookEngine.page', compact('page'))
+        @include ('BookEngine.page', compact('page'))
     </div>
 
     <!-- Bottombar -->
     <nav id="bottombar" style="z-index: 100">
         <div class="text-center pt-2 sidebar-header">
-            <h3 class="d-inline" style="color: #212529;">Timeline</h3><i
-                class="d-inline ml-2 fas fa-ellipsis-h bar-icon" style="color: #323232; margin: 0px"></i>
+            <h3 class="d-inline" style="color: #212529;">Timeline</h3>
         </div>
         <div class="row w-100 text-center ml-2 pl-5" style="height: 200px; margin-top: -3px">
             <div class="col-auto p-3 my-auto">
@@ -93,26 +96,20 @@
 
     @include('BookEngine.Editor.Page.PageForm', ['type' => "edit"])
     @include('BookEngine.Editor.Page.PageForm', ['type' => "new"])
+    @include ('BookEngine.Editor.Element.CreateQuestion')
 </div>
 
 <div id="ElementList">
-<div>{{$page->title}}</div>
+    <div>{{$page->title}}</div>
 </div>
 <meta>
 <script>
 
 
+    {{--    @include("BookEngine.Editor.js.assignmentEdit")--}}
 
-
-
-
-
-{{--    @include("BookEngine.Editor.js.assignmentEdit")--}}
-
-{{--    @include("BookEngine.Editor.js.newPage")--}}
+    {{--    @include("BookEngine.Editor.js.newPage")--}}
     @include("BookEngine.Editor.js.editPage")
-
-
 </script>
 
 
@@ -134,6 +131,7 @@
 <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
 
 <script src="/js/renderEngine.js"></script>
+<script src="/editor.js"></script>
 
 </body>
 </html>
