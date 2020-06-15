@@ -26,6 +26,13 @@ class AssignmentEditorController extends Controller
      */
     public function create()
     {
+//        if(!\Auth::user()->teacher){
+//            abort(403);
+//        }
+//
+//        if(\Auth::user()->teacher->id !== $assignment->teacher_id){
+//            abort(403);
+//        }
         $countries = Country::all();
         return view('BookEngine.Editor.Assignment.CreateAssignment', compact('countries'));
     }
@@ -46,17 +53,31 @@ class AssignmentEditorController extends Controller
             'subject' => 'required|string',
             'isHidden'=> 'in:on',
             'isLocked'=> 'in:on',
-
+            'country' =>'required|numeric'
         ]);
+
         $assignment = new Assignment();
         $assignment->name = $request->title;
         $assignment->subject = $request->subject;
-        $assignment->course_id  = 1;
+        if(count(\Auth::user()->teacher->courses) > 1){
+
+            $request->validate([
+                'course' => 'required|numeric'
+            ]);
+
+            $assignment->course_id = $request->course;
+
+        } else if(count(\Auth::user()->teacher->courses) === 0){
+            abort(500);}
+        else {
+            $assignment->course_id  = \Auth::user()->teacher->courses[0]->id;
+        }
+
         $assignment->teacher_id = \Auth::user()->teacher->id;
         $assignment->createdBy = \Auth::user()->name;
-        $assignment->country_id = 1;
-        $assignment->isHidden = (($request->isHidden== 'on') ? true : false);
-        $assignment->isLocked = (($request->isLocked== 'on') ? true : false);
+        $assignment->country_id = $request->country;
+        $assignment->isHidden = (($request->isHidden== 'on') ? 1 : 0);
+        $assignment->isLocked = (($request->isLocked== 'on') ? 1 : 0);
 
         $assignment->save();
 
@@ -71,8 +92,8 @@ class AssignmentEditorController extends Controller
      */
     public function show(Assignment $assignment)
     {
-
-        return view('BookEngine.Editor.Assignment.EditAssignment', compact('assignment'));
+        $countries = Country::all();
+        return view('BookEngine.Editor.Assignment.EditAssignment', ['countries'=>$countries, 'assignment'=>$assignment]);
 
     }
 
@@ -85,7 +106,6 @@ class AssignmentEditorController extends Controller
     public function edit(assignment $assignment)
     {
 
-        return view('BookEngine.Editor.Assignment.EditAssignment', compact('assignment'));
     }
 
 
@@ -99,22 +119,30 @@ class AssignmentEditorController extends Controller
      */
     public function update(Request $request, Assignment $assignment)
     {
+        //dd($request);
         $request->validate([
             'name' => 'required|string',
             'subject' => 'required|string',
-            'isHidden'=> 'in:on',
-            'isLocked'=> 'in:on',
-
+            'isHidden'=> 'required|boolean',
+            'isLocked'=> 'required|boolean',
+            'country' =>'required|numeric'
         ]);
 
 
         $assignment->name = $request->json('name');
         $assignment->subject = $request->json('subject');
-        $assignment->course_id  = 1;
-        $assignment->isHidden = (($request->json('isHidden')== 'on') ? true : false);
-        $assignment->isLocked = (($request->json('isLocked')== 'on') ? true : false);
+        if(count(\Auth::user()->teacher->courses) > 1){
+            $request->validate([
+                'course_id' => 'required|numeric'
+            ]);
+            $assignment->course_id = $request->course_id;
+        }
+        $assignment->country_id = $request->country;
+        $assignment->isHidden = $request->isHidden;
+        $assignment->isLocked = $request->isLocked;
 
         $assignment->save();
+
 
         return 'success';
     }
@@ -131,41 +159,6 @@ class AssignmentEditorController extends Controller
     {
         $assignment->delete();
         return 'success';
-
-    }
-
-    /**
-     * Save The new info to the DataBase
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\assignment $assignment
-     * @return array
-     */
-    private function saveInfoToDB($request, $assignment){
-
-        $request->validate([
-            'title' => 'required|string',
-            'subject' => 'required|string',
-            'isHidden'=> 'in:on',
-            'isLocked'=> 'in:on',
-
-        ]);
-
-        $assignment->name = $request->title;
-        $assignment->subject = $request->subject;
-        $assignment->course_id  = 1;
-        $assignment->teacher_id = 1;
-        $assignment->createdBy = 1;
-        $assignment->isHidden = (($request->isHidden== 'on') ? true : false);
-        $assignment->isLocked = (($request->isLocked== 'on') ? true : false);
-
-        $assignment->save();
-
-        $response = [
-            'status' => 'success',
-            'message' => 'order stored',
-        ];
-        return $response;
 
     }
 }

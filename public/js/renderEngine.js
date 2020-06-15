@@ -18,15 +18,7 @@ interact('.draggable')
             move: dragMoveListener,
 
             // call this function on every dragend event
-            end (event) {
-                var textEl = event.target.querySelector('p')
 
-                textEl && (textEl.textContent =
-                    'moved a distance of ' +
-                    (Math.sqrt(Math.pow(event.pageX - event.x0, 2) +
-                        Math.pow(event.pageY - event.y0, 2) | 0))
-                        .toFixed(2) + 'px')
-            }
         }
     })
 
@@ -44,6 +36,25 @@ function dragMoveListener (event) {
     // update the posiion attributes
     target.setAttribute('data-x', x)
     target.setAttribute('data-y', y)
+
+    // update the element's style
+    target.style.width = event.rect.width + 'px'
+    target.style.height = event.rect.height + 'px'
+
+    let inputs = target.children[0].children
+    try {
+        inputs[0].value = x
+    }catch{}
+    try{
+    inputs[1].value = y
+    }catch{}
+    try{
+    inputs[2].value = target.style.width
+    }catch{}
+    try{
+    inputs[3].value = target.style.height
+    }catch{}
+
 }
 
 // this function is used later in the resizing and gesture demos
@@ -73,6 +84,22 @@ interact('.resize-drag')
 
                 target.setAttribute('data-x', x)
                 target.setAttribute('data-y', y)
+
+
+                let inputs = target.children[0].children
+                try {
+                    inputs[0].value = x
+                }catch{}
+                try{
+                    inputs[1].value = y
+                }catch{}
+                try{
+                    inputs[2].value = target.style.width
+                }catch{}
+                try{
+                    inputs[3].value = target.style.height
+                }catch{}
+
             }
         },
         modifiers: [
@@ -87,12 +114,15 @@ interact('.resize-drag')
             })
         ],
 
-        inertia: true
+        inertia: false
     })
 
     .draggable({
-        listeners: {move: window.dragMoveListener},
-        inertia: true,
+        listeners: {move: window.dragMoveListener,
+
+
+        },
+        inertia: false,
         modifiers: [
             interact.modifiers.restrictRect({
                 restriction: 'parent',

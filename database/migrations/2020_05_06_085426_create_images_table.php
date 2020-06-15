@@ -17,7 +17,10 @@ class CreateImagesTable extends Migration
             $table->bigIncrements('id');
             $table->string('image');
             $table->string('alt');
+            $table->bigInteger('element_id')->unsigned();
             $table->timestamps();
+            $table->foreign('element_id')->references('id')->on('elements')
+                ->onDelete('cascade');
         });
     }
 
