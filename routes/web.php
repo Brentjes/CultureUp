@@ -48,9 +48,7 @@ Route::get('test', function () {
 
 
 //Leaderboard Routes
-Route::get('/leaderboard', function () {
-    return view('Home.leaderboard');
-})->name('Leaderboard')->middleware('auth');
+Route::resource('/leaderboard', 'LeaderBoardController', ['except' => ['show', 'update', 'edit', 'create']]);
 
 
 //Teacher routes
