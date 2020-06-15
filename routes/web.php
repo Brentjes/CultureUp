@@ -25,7 +25,7 @@ Route::get('/articles', 'ArticleController@index')->name('articles')->middleware
 //
 Route::get('/{name}', function () {
     return view('Home.home', [
-        'assignments' => \App\Assignment::take(5)->latest()->get(),
+        'assignments' => \App\Assignment::paginate(5),
         'articles' => \App\Article::take(4)->latest()->get()
     ]);
 })->where('name', 'home||')->name('Home')->middleware('auth');
@@ -108,13 +108,7 @@ Route::get('/globe', function () {
 
 Route::resource('countries', 'CountryController')->middleware('auth');
 
-// test json decode
-Route::get('/globetest', function () {
-    $countries = json_decode(file_get_contents('GeoJSON/cases.geojson'))->country;
-
-
-    return view('AssignmentPage.json', compact('countries'));
-})->name('Globe')->middleware('auth');
-
 //test countries foreach
 Route::get('/{country}', 'CountryController@show')->name('country')->middleware('auth');
+
+
