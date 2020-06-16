@@ -29,14 +29,17 @@
                                     <div class="col">
                                         <p class="display-5 display-sm-3 display-m-4 display-md-5 mb-0">
                                             <b>Name:</b> {{$user->name}}</p>
-                                        <p class="display-5 mb-0"><b>Teacher:</b> Bugs Bunny</p>
-                                        <p class="display-5 mb-0"><b>Country:</b> Bosnia Herzegovina</p>
+                                        <p class="display-5 mb-0"><b>Teacher:</b>
+                                            @foreach($user->student->course->teachers as $teacher)
+                                                {{$teacher->user->name}}
+                                            @endforeach</p>
+                                        <p class="display-5 mb-0"><b>Country:</b> the Netherlands</p>
 
                                     </div>
                                 </div>
                                 <div class="row pt-4 center-row text-left">
                                     <div class="col">
-                                        <p class="display-5 mb-0"><b>Course:</b> English</p>
+                                        <p class="display-5 mb-0"><b>Course:</b> {{$user->student->course->name}}</p>
                                     </div>
                                 </div>
                             </li>
