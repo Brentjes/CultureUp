@@ -134,7 +134,7 @@
 <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
 
 <script src="/js/renderEngine.js"></script>
-
+<script src="/editor.js"></script>
 </body>
 </html>
 
