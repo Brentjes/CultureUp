@@ -23,5 +23,6 @@
                     </a>
                 @endforeach
             </div>
+        </div>
     </section>
 @endsection

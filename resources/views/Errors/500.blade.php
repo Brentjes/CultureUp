@@ -27,19 +27,13 @@
                         <div class="row center-row text-left p-5">
                             <div class="col">
                                 <a href="/home">
-                                    <p>-home</p>
+                                    <p>Home</p>
                                 </a>
-                                <a href="/assignment">
-                                    <p>-assignment</p>
-                                </a>
-                                <a href="/notifications">
-                                    <p>-notifications</p>
+                                <a href="/assignments">
+                                    <p>Assignments</p>
                                 </a>
                                 <a href="/leaderboard">
                                     <p>-leaderboard</p>
-                                </a>
-                                <a href="/logout">
-                                    <p>-logout</p>
                                 </a>
                             </div>
                         </div>

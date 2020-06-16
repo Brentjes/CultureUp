@@ -58,6 +58,9 @@
                             </li>
                         @endforeach
                     </ul>
+                    <div class="pagination justify-content-center" style="margin-top: 2vh">
+                    {{$assignments->render()}}
+                    </div>
                 </div>
             </div>
         </div>
