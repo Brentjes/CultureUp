@@ -30,7 +30,7 @@
 
 
                     <div class="field form-group">
-                        <label class="label" for="excerpt">excerpt</label>
+                        <label class="label" for="excerpt">Excerpt</label>
                         <input class="form-control" type="text" name="excerpt" id="excerpt"
                                placeholder="Your excerpt goes here"
                                value="{{old("excerpt")}}"
@@ -42,8 +42,8 @@
 
 
                     <div class="field form-group">
-                        <label class="label" for="text">text</label>
-                        <textarea id="textArea" name="text" rows="4" cols="50"
+                        <label class="label" for="text">Text</label>
+                        <textarea class="w-100" id="textArea" name="text" style="resize: none" rows="4" cols="50"
                                   placeholder="Your text goes here">{{old("text")}}</textarea>
                         @error('text')
                         <p>{{$errors->first('text')}}</p>
