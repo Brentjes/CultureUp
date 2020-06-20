@@ -14,9 +14,9 @@
 //Authentication Routes
 Auth::routes();
 
-Route::get('/admin', function () {
-    return view('home');
-})->name('home')->middleware('auth');
+//Route::get('/admin', function () {
+//    return view('home');
+//})->name('home')->middleware('auth');
 
 // Article routes
 Route::resource('article' , 'ArticleController');
@@ -40,14 +40,15 @@ Route::get('/{name}', function () {
 //Profile Routes
 Route::get('/profile/{id?}', 'UserController@show')->name('profile')->middleware('auth');
 
-Route::get('test', function () {
-    return view('draganddrop');
-});
+//unused should get removed
+//Route::get('test', function () {
+//    return view('draganddrop');
+//});
 
 
 
 //Leaderboard Routes
-Route::resource('/leaderboard', 'LeaderBoardController', ['except' => ['show', 'update', 'edit', 'create']]);
+Route::resource('/leaderboard', 'LeaderboardController', ['except' => ['show', 'update', 'edit', 'create']]);
 
 
 //Teacher routes
@@ -90,15 +91,16 @@ Route::group(array('prefix' => 'assignment'), function () {
 
 
 
-//Jochems zn meuk
-Route::get('DokSTestingStuffDontTouch', function () {
-    session()->regenerate();
-    return response()->json([
-        "token" => csrf_token()],
-        200);
-})->name('home')->middleware('auth');
+//unused should get removed
+//Route::get('DokSTestingStuffDontTouch', function () {
+//    session()->regenerate();
+//    return response()->json([
+//        "token" => csrf_token()],
+//        200);
+//})->name('home')->middleware('auth');
 
-Route::resource('current', "AssignmentEditorController")->middleware('auth');
+//unused should get removed
+//Route::resource('current', "AssignmentEditorController")->middleware('auth');
 
 // Routes for GLOBE and COUNTRIES(AssignmentPage)
 Route::get('/globe', function () {

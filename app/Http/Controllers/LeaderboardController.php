@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Student;
 
 class LeaderboardController extends Controller
 {
@@ -14,21 +15,37 @@ class LeaderboardController extends Controller
      */
     public function index()
     {
-        $students = DB::select('
-        SELECT users.name, courses.name AS course, SUM(student_assignment.progress) AS score FROM student_assignment
+//        $students = DB::select('
+//        SELECT users.name, courses.name AS course, SUM(student_assignment.progress) AS score FROM student_assignment
+//
+//        LEFT JOIN students
+//        ON students.id = student_assignment.student_id
+//
+//        LEFT JOIN courses
+//        ON courses.id = students.course_id
+//
+//        LEFT JOIN users
+//        ON users.id = student_assignment.student_id
+//
+//            GROUP BY student_assignment.student_id
+//            ORDER BY score DESC
+//    ');
 
-        LEFT JOIN students
-        ON students.id = student_assignment.student_id
+        $students = Student::paginate(15);
+        //this is bad, but time constraints
+        //sums all the students assingments scores
+        foreach($students as $student){
+            $Array = [];
 
-        LEFT JOIN courses
-        ON courses.id = students.course_id
+            foreach($student->assignments as $assignment){
+                array_push($Array, $assignment->pivot->progress);
+            };
+            if($Array = []){
+                $Array = [0];
+            }
+           $student->Score =  array_sum($Array);
+        }
 
-        LEFT JOIN users
-        ON users.id = student_assignment.student_id
-
-            GROUP BY student_assignment.student_id
-            ORDER BY score DESC
-    ');
 
         return view('Home.leaderboard')->with('students', $students);
     }

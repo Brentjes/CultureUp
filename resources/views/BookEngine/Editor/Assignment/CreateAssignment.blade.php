@@ -43,9 +43,11 @@
                     <div class="form-group">
                         <select id="inputState" name="course" class="form-control selectpicker" data-live-search="true"
                                 data-size="10">
+
                             @foreach(\Auth::user()->teacher->courses as $course)
                                 <option value="{{$course->id}}">{{$course->name}}</option>
                             @endforeach
+
                         </select>
                     </div>
                     @error('course')
