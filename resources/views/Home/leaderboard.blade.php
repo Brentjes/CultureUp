@@ -10,19 +10,19 @@
                     <div class="col-2 pt-10 h-15">
                         <div class="animated fadeInUp">
                             <i class="fas fa-crown silver mt-5"></i>
-                            <p class="podiumfont lineheight-min">{{$students[2]->name}}</p>
+                            <p class="podiumfont lineheight-min">{{$students[2]?$students[2]->user->name:''}}</p>
                         </div>
                     </div>
                     <div class="col-2 h-15">
                         <div class="animated fadeInUp">
                             <i class="fas fa-crown gold mt-5"></i>
-                            <p class="podiumfont lineheight-min">{{$students[0]->name}}</p>
+                            <p class="podiumfont lineheight-min">{{$students[0]?$students[0]->user->name:''}}</p>
                         </div>
                     </div>
                     <div class="col-2 pt-20 h-15">
                         <div class="animated fadeInUp">
                             <i class="fas fa-crown bronze mt-5"></i>
-                            <p class="podiumfont lineheight-min">{{$students[1]->name}}</p>
+                            <p class="podiumfont lineheight-min">{{$students[1]?$students[1]->user->name:''}}</p>
                         </div>
                     </div>
                 </div>
@@ -63,8 +63,9 @@
                             @foreach($students as $student)
                             <tr>
                                 <th scope="row"><?php echo $i ?></th>
-                                <td>{{$student->name}}</td>
-                                <td>{{$student->course}}</td>
+                                <td>{{$student->user->name}}</td>
+                                <td>{{$student->course?$student->course->name:''}}</td>
+
                                 <td>{{$student->score}}</td>
                             </tr>
                                 <?php $i++ ?>

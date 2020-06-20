@@ -30,7 +30,7 @@
                                         <p class="display-5 display-sm-3 display-m-4 display-md-5 mb-0">
                                             <b>Name:</b> {{$user->name}}</p>
                                         <p class="display-5 mb-0"><b>Teacher:</b>
-                                            @foreach($user->student->course->teachers as $teacher)
+                                            @foreach($user->student?($user->student->course?$user->student->course->teachers:[]):[] as $teacher)
                                                 {{$teacher->user->name}}
                                             @endforeach</p>
                                         <p class="display-5 mb-0"><b>Country:</b> the Netherlands</p>
@@ -39,7 +39,7 @@
                                 </div>
                                 <div class="row pt-4 center-row text-left">
                                     <div class="col">
-                                        <p class="display-5 mb-0"><b>Course:</b> {{$user->student->course->name}}</p>
+                                        <p class="display-5 mb-0"><b>Course:</b> {{$user->student?$user->student->course?$user->student->course->name:'No Course':'No Course'}}</p>
                                     </div>
                                 </div>
                             </li>
