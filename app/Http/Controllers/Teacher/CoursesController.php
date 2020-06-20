@@ -23,7 +23,7 @@ class CoursesController extends Controller
         if ($teacher == null) {
             return redirect()->route('teacher.index')->with(
                 'warning',
-                'You need to be enrolled as a teacher in order to view the progression page'
+                'You need to be enrolled as a teacher in order to subscribe to any courses.'
             );
         }
 
