@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Assignment;
+use App\Teacher;
 use Illuminate\Http\Request;
 use App\User;
 use App\Country;
@@ -33,6 +34,15 @@ class AssignmentEditorController extends Controller
 //        if(\Auth::user()->teacher->id !== $assignment->teacher_id){
 //            abort(403);
 //        }
+        // Check if enrolled as a teacher
+        $teacher = Teacher::where('user_id', Auth::id())->first();
+        if ($teacher == null) {
+            return redirect()->route('teacher.index')->with(
+                'warning',
+                'You need to be enrolled as a teacher in order to view the progression page'
+            );
+        }
+        
         $countries = Country::all();
         return view('BookEngine.Editor.Assignment.CreateAssignment', compact('countries'));
     }
