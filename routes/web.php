@@ -23,7 +23,7 @@ Route::resource('article' , 'ArticleController');
 Route::get('/articles', 'ArticleController@index')->name('articles')->middleware('auth');
 //
 Route::get('/{name}', function () {
-    return view('Home.home', [
+    return view('home.home', [
         'assignments' => \App\Assignment::paginate(5),
         'articles' => \App\Article::take(4)->latest()->get()
     ]);
@@ -104,7 +104,7 @@ Route::group(array('prefix' => 'assignment'), function () {
 
 // Routes for GLOBE and COUNTRIES(AssignmentPage)
 Route::get('/globe', function () {
-    return view('AssignmentPage.globe');
+    return view('assignmentPage.globe');
 })->name('Globe')->middleware('auth');
 
 Route::resource('countries', 'CountryController')->middleware('auth');

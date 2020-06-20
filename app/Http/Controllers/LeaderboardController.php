@@ -47,7 +47,7 @@ class LeaderboardController extends Controller
         }
 
 
-        return view('Home.leaderboard')->with('students', $students);
+        return view('home.leaderboard')->with('students', $students);
     }
 
     /**

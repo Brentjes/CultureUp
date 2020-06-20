@@ -54,7 +54,7 @@ class UserController extends Controller
             $user = user::findorfail($id);
         }
 //        dd($user);
-        return view('Home.profile', compact('user'));
+        return view('home.profile', compact('user'));
     }
 
     /**
