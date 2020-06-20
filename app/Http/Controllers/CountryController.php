@@ -15,7 +15,7 @@ class CountryController extends Controller
     public function index()
     {
         $countries = Country::all();
-        return view('AssignmentPage.countries')->with('countries', $countries);
+        return view('assignmentPage.countries')->with('countries', $countries);
 
     }
 
@@ -49,7 +49,7 @@ class CountryController extends Controller
     public function show(Country $country)
     {
         $assignments = $country->assignments;
-        return view('AssignmentPage.list')->with('assignments', $assignments);
+        return view('assignmentPage.list')->with('assignments', $assignments);
     }
 
     /**
