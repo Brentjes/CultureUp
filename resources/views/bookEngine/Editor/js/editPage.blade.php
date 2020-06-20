@@ -1,7 +1,7 @@
 
 
 
-@include('BookEngine.Editor.js.newPage')
+@include('bookEngine.Editor.js.newPage')
 
 const pageInfo = {
 name: '{{$page->name}}',
