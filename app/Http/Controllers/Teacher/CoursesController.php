@@ -18,6 +18,15 @@ class CoursesController extends Controller
      */
     public function index()
     {
+        // Check if enrolled as a teacher
+        $teacher = Teacher::where('user_id', Auth::id())->first();
+        if ($teacher == null) {
+            return redirect()->route('teacher.index')->with(
+                'warning',
+                'You need to be enrolled as a teacher in order to view the progression page'
+            );
+        }
+
         $courses = DB::table('courses')
             ->leftJoin('teacher_course', 'teacher_course.course_id', '=', 'courses.id')
             ->select('courses.id', 'courses.name', 'teacher_course.teacher_id')->get();
