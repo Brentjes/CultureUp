@@ -44,8 +44,8 @@
         </ul>
     </nav>
 
-    @include('BookEngine.Editor.Assignment.AssignmentForm')
-    @include('BookEngine.Editor.Page.PageForm', ['type' => "new"])
+    @include('bookEngine.Editor.Assignment.AssignmentForm')
+    @include('bookEngine.Editor.Page.PageForm', ['type' => "new"])
 
     <div class="row position-absolute" style="margin-left: 15%; width: 85vw;">
         @foreach($assignment->pages as $page)
@@ -69,9 +69,9 @@
     <meta>
 
     <script>
-        @include("BookEngine.Editor.js.assignmentEdit")
-        @include("BookEngine.Editor.js.newPage")
-        @include("BookEngine.Editor.js.DeletePage")
+        @include("bookEngine.Editor.js.assignmentEdit")
+        @include("bookEngine.Editor.js.newPage")
+        @include("bookEngine.Editor.js.DeletePage")
 
         document.getElementById('DeleteButton').addEventListener('click', deleteAssignment);
 

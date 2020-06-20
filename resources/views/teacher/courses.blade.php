@@ -16,7 +16,7 @@
         <div class="card-body">
             <div class="row">
                 @foreach($courses as $course)
-                    @if($course->teacher_id === Auth::user()->teacher?Auth::user()->teacher->id:false)
+                    @if($course->teacher_id === Auth::user()->teacher->id)
                         <div class="col-3">
                             <form class="mb-0" method="post" action="{{route('teacher.courses.destroy', $course->id)}}">
                                 @csrf

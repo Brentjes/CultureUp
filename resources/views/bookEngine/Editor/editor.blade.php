@@ -57,7 +57,7 @@
         </ul>
     </nav>
     <div id="content">
-        @include ('BookEngine.page', compact('page'))
+        @include ('bookEngine.page', compact('page'))
     </div>
 
     <!-- Bottombar -->
@@ -94,9 +94,9 @@
         </button>
     </nav>
 
-    @include('BookEngine.Editor.Page.PageForm', ['type' => "edit"])
-    @include('BookEngine.Editor.Page.PageForm', ['type' => "new"])
-    @include ('BookEngine.Editor.Element.CreateQuestion')
+    @include('bookEngine.Editor.Page.PageForm', ['type' => "edit"])
+    @include('bookEngine.Editor.Page.PageForm', ['type' => "new"])
+    @include ('bookEngine.Editor.Element.CreateQuestion')
 </div>
 
 <div id="ElementList">
@@ -109,7 +109,7 @@
     {{--    @include("BookEngine.Editor.js.assignmentEdit")--}}
 
     {{--    @include("BookEngine.Editor.js.newPage")--}}
-    @include("BookEngine.Editor.js.editPage")
+    @include("bookEngine.Editor.js.editPage")
 </script>
 
 
