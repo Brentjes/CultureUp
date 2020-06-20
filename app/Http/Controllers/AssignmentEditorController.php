@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Assignment;
 use App\Teacher;
 use Illuminate\Http\Request;
-use App\User;
 use App\Country;
+use Illuminate\Support\Facades\Auth;
 
 class AssignmentEditorController extends Controller
 {
@@ -42,7 +42,7 @@ class AssignmentEditorController extends Controller
                 'You need to be enrolled as a teacher in order to view the progression page'
             );
         }
-        
+
         $countries = Country::all();
         return view('BookEngine.Editor.Assignment.CreateAssignment', compact('countries'));
     }
