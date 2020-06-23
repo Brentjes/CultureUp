@@ -39,7 +39,7 @@
 
 <body>
 <nav class="navbar fixed-top navbar-expand softshadow">
-    <a class="navbar-brand" href="/">CultureUp</a>
+    <a class="navbar-brand" href="/">AutomaticUP</a>
     <ul class="navbar-nav ml-auto">
         <li class="nav-item">
             <a class="nav-link icon custom-tooltip" href="/home">
