@@ -96,7 +96,7 @@
 
     @include('bookEngine.Editor.Page.PageForm', ['type' => "edit"])
     @include('bookEngine.Editor.Page.PageForm', ['type' => "new"])
-    @include ('bookEngine.Editor.Element.CreateQuestion')
+{{--    @include ('bookEngine.Editor.Element.CreateQuestion')--}}
 </div>
 
 <div id="ElementList">

@@ -44,7 +44,7 @@ class AssignmentEditorController extends Controller
         }
 
         $countries = Country::all();
-        return view('BookEngine.Editor.Assignment.CreateAssignment', compact('countries'));
+        return view('bookEngine.Editor.Assignment.CreateAssignment', compact('countries'));
     }
 
     /**
@@ -103,7 +103,7 @@ class AssignmentEditorController extends Controller
     public function show(Assignment $assignment)
     {
         $countries = Country::all();
-        return view('BookEngine.Editor.Assignment.EditAssignment', ['countries'=>$countries, 'assignment'=>$assignment]);
+        return view('bookEngine.Editor.Assignment.EditAssignment', ['countries'=>$countries, 'assignment'=>$assignment]);
 
     }
 

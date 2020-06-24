@@ -35,7 +35,7 @@ class ElementController extends Controller
     public function create(Assignment $assignment, Page $page)
     {
 
-        return view ('BookEngine.Editor.Element.CreateElement', ['assignment'=>$assignment, 'page'=>$page,]);
+        return view ('bookEngine.Editor.Element.CreateElement', ['assignment'=>$assignment, 'page'=>$page,]);
     }
 
     /**

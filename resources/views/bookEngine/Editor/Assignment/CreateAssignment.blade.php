@@ -75,6 +75,7 @@
                         @error('isHidden')
                         <p>{{$errors->first('isHidden')}}</p>
                         @enderror
+                        <label class="form-check-label p-1" for="isHidden">Hide case</label>
                     </div>
 
                     <div class="form-check form-check-inline">
@@ -83,6 +84,7 @@
                         @error('isLocked')
                         <p>{{$errors->first('isLocked')}}</p>
                         @enderror
+                        <label class="form-check-label p-1" for="isLocked">Lock case </label>
                     </div>
                 </div>
                 <div class="row text-center pt-4">
