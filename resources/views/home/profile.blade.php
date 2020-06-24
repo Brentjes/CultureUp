@@ -2,7 +2,7 @@
 @section('title', $user->name)
 @section ('content')
     <head>
-        <link rel="stylesheet" type="text/css" href="/css/teacher/profile.css">
+        <link rel="stylesheet" type="text/css" href="/css/Teacher/profile.css">
 
     </head>
 
