@@ -61,16 +61,13 @@ function addElement() {
         case 'addText':
 
             element.textContent = "test";
-            element.classList.add('resize-drag element-Game');
             document.getElementById('content').appendChild(element);
             break;
         case 'addImg':
-            element.classList.add('resize-drag element-Game');
             element.style = "background-image: url(https://picsum.photos/id/" + Math.floor(Math.random() * 40) + 1 + "/1080); background-size: cover; background-color: transparent;";
             element.classList.add('element-Game-Image');
             break;
         case 'addLink':
-            element.classList.add('resize-drag element-Game');
             element.style = "background-color: transparent; border: 1px dashed #3399ff;";
             element.classList.add('element-Game-Link');
             break;
