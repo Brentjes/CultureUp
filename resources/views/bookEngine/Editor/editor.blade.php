@@ -52,7 +52,7 @@
             </li>
             <li class="softshadow stick" id="test">
                 <a href="{{route('element.create', [$page->assignment->id, $page->id])}}"><i
-                        class="bar-icon fas fa-quote-right"></i><span class="bar-text"> elementText</span></a>
+                        class="bar-icon fas fa-bug"></i><span class="bar-text"> Debug</span></a>
             </li>
         </ul>
     </nav>
